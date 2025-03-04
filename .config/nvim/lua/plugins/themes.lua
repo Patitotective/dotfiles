@@ -1,4 +1,9 @@
 return {
   { "EdenEast/nightfox.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "carbonfox",
+    },
+  },
 }

@@ -137,12 +137,18 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/cristobal/.zshrc'
 
-autoload -Uz compinit
-# compinit # Commented out because zimfw told me to...
+# Commented out because zimfw told me to...
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
+
+autoload -U zmv
 
 export PATH=$PATH:~/.nimble/bin
 
 source /usr/share/nvm/init-nvm.sh
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+dotadd () { dot add "$@"}
+dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
