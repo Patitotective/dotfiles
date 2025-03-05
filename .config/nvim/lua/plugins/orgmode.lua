@@ -8,6 +8,9 @@ return {
       org_agenda_files = "~/Documents/orgfiles/**/*",
       org_default_notes_file = "~/Documents/orgfiles/refile.org",
       -- org_startup_folded = "content",
+      org_priority_highest = "A",
+      org_priority_default = "C",
+      org_priority_lowest = "E",
       org_blank_before_new_entry = {
         heading = false,
         plain_list_item = false,
