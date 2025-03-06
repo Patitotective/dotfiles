@@ -1,0 +1,8 @@
+[TimerPresets]
+timerPresets=[]
+
+[Timezones]
+Asia/Seoul=true
+Asia/Tokyo=true
+Europe/Athens=true
+Europe/Madrid=true

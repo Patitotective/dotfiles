@@ -1,0 +1,13 @@
+anki-bin
+choosenim-bin
+darkly-bin
+floorp-bin
+input-remapper-git
+nvm
+ocs-url
+spicetify-cli
+spicetify-themes-git
+spotify
+syncthingtray-qt6
+yay
+yay-debug
