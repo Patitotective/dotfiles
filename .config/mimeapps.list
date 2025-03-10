@@ -1,0 +1,37 @@
+[Added Associations]
+application/json=nvim.desktop;
+application/x-docbook+xml=nvim.desktop;
+application/x-extension-htm=userapp-Floorp-S0Z522.desktop;
+application/x-extension-html=userapp-Floorp-S0Z522.desktop;
+application/x-extension-shtml=userapp-Floorp-S0Z522.desktop;
+application/x-extension-xht=userapp-Floorp-S0Z522.desktop;
+application/x-extension-xhtml=userapp-Floorp-S0Z522.desktop;
+application/x-yaml=nvim.desktop;
+application/xhtml+xml=userapp-Floorp-S0Z522.desktop;
+text/html=userapp-Floorp-S0Z522.desktop;
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop;
+text/x-cmake=nvim.desktop;
+x-scheme-handler/chrome=userapp-Floorp-S0Z522.desktop;
+x-scheme-handler/http=userapp-Floorp-S0Z522.desktop;
+x-scheme-handler/https=userapp-Floorp-S0Z522.desktop;
+x-scheme-handler/mailto=floorp.desktop;
+
+[Default Applications]
+application/json=nvim.desktop;
+application/x-docbook+xml=nvim.desktop;
+application/x-extension-htm=userapp-Floorp-S0Z522.desktop
+application/x-extension-html=userapp-Floorp-S0Z522.desktop
+application/x-extension-shtml=userapp-Floorp-S0Z522.desktop
+application/x-extension-xht=userapp-Floorp-S0Z522.desktop
+application/x-extension-xhtml=userapp-Floorp-S0Z522.desktop
+application/x-yaml=nvim.desktop;
+application/xhtml+xml=userapp-Floorp-S0Z522.desktop
+text/html=userapp-Floorp-S0Z522.desktop
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop;
+text/x-cmake=nvim.desktop;
+x-scheme-handler/chrome=userapp-Floorp-S0Z522.desktop
+x-scheme-handler/http=userapp-Floorp-S0Z522.desktop
+x-scheme-handler/https=userapp-Floorp-S0Z522.desktop
+x-scheme-handler/mailto=floorp.desktop;
