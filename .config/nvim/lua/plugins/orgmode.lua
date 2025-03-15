@@ -4,9 +4,10 @@ return {
   ft = { "org" },
   config = function()
     -- Setup orgmode
-    require("orgmode").setup({
+    local org = require("orgmode")
+    org.setup({
       org_agenda_files = "~/Documents/orgfiles/**/*",
-      org_default_notes_file = "~/Documents/orgfiles/refile.org",
+      org_default_notes_file = "~/Documents/orgfiles/Default.org",
       -- org_startup_folded = "content",
       org_priority_highest = "A",
       org_priority_default = "D",
@@ -17,11 +18,10 @@ return {
       },
     })
 
-    -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-    -- add ~org~ to ignore_install
-    -- require("nvim-treesitter.configs").setup({
-    --   ensure_installed = "all",
-    --   ignore_install = { "org" },
-    -- })
+    vim.keymap.set("n", "<leader>cor", function()
+      -- local Agenda = require("orgmode.agenda")
+      -- org.agenda:open_view("search", { search = "install" })
+      require("orgmode.api.agenda").agenda({})
+    end)
   end,
 }

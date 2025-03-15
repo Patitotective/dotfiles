@@ -1,6 +1,9 @@
 return {
   "snacks.nvim",
   opts = {
+    explorer = {
+      enabled = false,
+    },
     dashboard = {
       preset = {
         -- stylua: ignore

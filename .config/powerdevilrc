@@ -1,0 +1,6 @@
+[Battery][Display]
+DimDisplayIdleTimeoutSec=300
+TurnOffDisplayIdleTimeoutSec=600
+
+[LowBattery][RunScript]
+ProfileLoadCommand=kdialog --title "Low battery" --sorry "The battery is low. Please plug in your laptop to avoid losing any data."

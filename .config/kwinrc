@@ -3,14 +3,14 @@ Id_1=6e6d3bef-c145-4d20-8ff5-ce5d826f967c
 Number=1
 Rows=1
 
-[Effect-translucency]
-ComboboxPopups=72
-Dialogs=69
-Menus=70
-MoveResize=60
+[NightColor]
+Active=true
+Mode=Times
+NightTemperature=5900
 
 [Plugins]
 blurEnabled=true
+dimscreenEnabled=true
 translucencyEnabled=true
 
 [Tiling]
@@ -25,7 +25,13 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][8de71781-a1fd-57b7-959c-2024b44afecf]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][a74ad1a8-ef74-54d0-8416-b8a3397894b2]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][ae0f6d1a-8637-59a2-b325-4481750e7f57]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][b2cb987d-9df9-5f83-b0c4-3e78bdfb8b55]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][c86b5c2e-9966-53b1-92fb-16399ee270f8]
@@ -39,6 +45,15 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Wayland]
 InputMethod[$e]=/usr/share/applications/org.fcitx.Fcitx5.desktop
+VirtualKeyboardEnabled=true
 
 [Xwayland]
 Scale=1
+
+[org.kde.kdecoration2]
+BorderSize=None
+BorderSizeAuto=false
+ButtonsOnLeft=MF
+ButtonsOnRight=IAX
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__Space

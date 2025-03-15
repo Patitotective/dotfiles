@@ -19,8 +19,8 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][20][Configuration]
 PreloadWeight=100
-popupHeight=450
-popupWidth=560
+popupHeight=486
+popupWidth=486
 
 [Containments][2][Applets][20][Configuration][Appearance]
 boldText=true
@@ -61,8 +61,8 @@ plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=555
-popupWidth=704
+popupHeight=510
+popupWidth=655
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=540
@@ -94,8 +94,13 @@ plugin=org.kde.plasma.pager
 immutability=1
 plugin=org.kde.plasma.icontasks
 
+[Containments][2][Applets][5][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][2][Applets][5][Configuration][General]
 launchers=applications:floorp.desktop,applications:org.kde.dolphin.desktop,applications:kitty.desktop,applications:spotify.desktop
+middleClickAction=Close
 
 [Containments][2][Applets][6]
 immutability=1
@@ -149,7 +154,7 @@ positions={"1920x1080":[]}
 Image=/home/cristobal/Pictures/wallpapers/grimgar3.jpg
 
 [Containments][30][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/cristobal/Pictures/wallpapers/overlord.3.png
+Image=file:///home/cristobal/Pictures/wallpapers/grimgar.10.jpg
 SlideInterval=86400
 SlidePaths=/home/cristobal/Pictures/wallpapers/
 SlideshowMode=1
@@ -161,13 +166,16 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=459
-popupWidth=459
+popupHeight=457
+popupWidth=457
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
 immutability=1
 plugin=org.kde.plasma.manage-inputmethod
+
+[Containments][8][Applets][10][Configuration]
+PreloadWeight=60
 
 [Containments][8][Applets][11]
 immutability=1
@@ -199,14 +207,14 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=75
+PreloadWeight=80
 
 [Containments][8][Applets][17]
 immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][17][Configuration]
-PreloadWeight=70
+PreloadWeight=100
 
 [Containments][8][Applets][18]
 immutability=1
@@ -220,7 +228,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][8][Applets][19][Configuration]
-PreloadWeight=65
+PreloadWeight=85
 
 [Containments][8][Applets][22]
 immutability=1
@@ -241,14 +249,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][8][Applets][26]
 immutability=1
@@ -262,7 +270,7 @@ immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][8][Applets][31][Configuration]
-PreloadWeight=60
+PreloadWeight=65
 selectedConfig=0
 
 [Containments][8][Applets][32]
@@ -270,7 +278,7 @@ immutability=1
 plugin=org.kde.kdeconnect
 
 [Containments][8][Applets][32][Configuration]
-PreloadWeight=70
+PreloadWeight=90
 
 [Containments][8][Applets][9]
 immutability=1
@@ -282,7 +290,7 @@ DialogWidth=720
 
 [Containments][8][General]
 extraItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.cameraindicator,martchus.syncthingplasmoid-qt6,org.kde.kdeconnect
-hiddenItems=org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,Fcitx
+hiddenItems=org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,Fcitx,org.kde.kdeconnect
 knownItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.kdeconnect
 shownItems=org.kde.plasma.battery,martchus.syncthingplasmoid-qt6
 
