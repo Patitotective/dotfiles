@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/home/cristobal/scripts/nvidia.sh
+Icon=application-x-shellscript
+Name=nvidia.sh
+Type=Application
+X-KDE-AutostartScript=true

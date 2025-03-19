@@ -8,6 +8,13 @@ return {
     org.setup({
       org_agenda_files = "~/Documents/orgfiles/**/*",
       org_default_notes_file = "~/Documents/orgfiles/Default.org",
+      org_todo_keywords = { "TODO(t)", "NEXT(n)", "|", "DONE(d)" },
+      org_todo_keyword_faces = {
+        -- Color list https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html#gsc.tab=0
+        TODO = ":foreground hotpink2",
+        NEXT = ":foreground orange",
+        DONE = ":foreground limegreen",
+      },
       -- org_startup_folded = "content",
       org_priority_highest = "A",
       org_priority_default = "D",
@@ -16,12 +23,19 @@ return {
         heading = false,
         plain_list_item = false,
       },
+      org_agenda_span = "month",
+      org_agenda_custom_commands = {
+        T = {
+          description = "To Do",
+          types = {
+            {
+              type = "tags_todo",
+              match = "-dev-contribute-crochet-cumpleaños/-DONE",
+              org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+            },
+          },
+        },
+      },
     })
-
-    vim.keymap.set("n", "<leader>cor", function()
-      -- local Agenda = require("orgmode.agenda")
-      -- org.agenda:open_view("search", { search = "install" })
-      require("orgmode.api.agenda").agenda({})
-    end)
   end,
 }

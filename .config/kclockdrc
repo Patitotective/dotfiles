@@ -1,0 +1,2 @@
+[Timers]
+timersList=[{"commandTimeout":"","label":"Workout","length":60,"looping":false,"uuid":"{51941512-86b9-4743-a66a-07c629e9b9db}"},{"commandTimeout":"","label":"Timer","length":1800,"looping":false,"uuid":"{908b9dfe-7a4d-4bc6-b6eb-70830fc7c8a1}"}]

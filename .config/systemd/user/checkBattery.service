@@ -1,0 +1,6 @@
+[Unit]
+Description=Check if the battery is 10 or below to trigger a script
+
+[Service]
+Type=oneshot
+ExecStart=/home/cristobal/scripts/checkBattery.sh
