@@ -1,2 +1,3 @@
 [Event/lowbattery]
-Sound=file:///usr/share/sounds/ocean/stereo/battery-low.oga
+Action=Popup|Sound
+Sound=file:///usr/share/sounds/freedesktop/stereo/suspend-error.oga

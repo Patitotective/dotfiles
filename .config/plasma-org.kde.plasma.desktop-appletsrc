@@ -166,8 +166,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=457
-popupWidth=457
+popupHeight=486
+popupWidth=486
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -235,7 +235,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=60
+PreloadWeight=57
 
 [Containments][8][Applets][23]
 immutability=1
@@ -252,14 +252,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=70
+PreloadWeight=58
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][8][Applets][26]
 immutability=1
@@ -273,7 +273,6 @@ immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][8][Applets][31][Configuration]
-PreloadWeight=100
 selectedConfig=0
 
 [Containments][8][Applets][32]
@@ -293,7 +292,7 @@ DialogWidth=720
 
 [Containments][8][General]
 extraItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.cameraindicator,martchus.syncthingplasmoid-qt6,org.kde.kdeconnect
-hiddenItems=org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,Fcitx,org.kde.kdeconnect
+hiddenItems=org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,Fcitx,org.kde.kdeconnect,chrome_status_icon_1
 knownItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.kdeconnect
 shownItems=org.kde.plasma.battery,martchus.syncthingplasmoid-qt6
 

@@ -1,6 +1,3 @@
-[Battery][Display]
-DimDisplayIdleTimeoutSec=300
-TurnOffDisplayIdleTimeoutSec=600
-
-[LowBattery][RunScript]
-ProfileLoadCommand=/home/cristobal/scripts/onLowBattery.sh
+[AC][Display]
+DimDisplayIdleTimeoutSec=120
+TurnOffDisplayIdleTimeoutSec=300

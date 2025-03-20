@@ -1,3 +1,11 @@
 [user]
 	email = cristobalriaga@gmail.com
 	name = Cristobal
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3

@@ -152,3 +152,23 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 dotadd () { dot add "$@"}
 dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
+yaysearch () { yay -Slq | fzf --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs -ro yay -S }
+yayremove () { yay -Qq | fzf --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs -ro yay -Rns }
+
+# ------------ https://junegunn.github.io/fzf/shell-integration/ ------------
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+
+# Print tree structure in the preview window
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"

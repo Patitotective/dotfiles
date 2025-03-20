@@ -2,7 +2,7 @@
 Description=Run checkBattery every minute
 
 [Timer]
-OnActiveSec=1min
+OnStartupSec=1min
 
 [Install]
 WantedBy=timers.target
