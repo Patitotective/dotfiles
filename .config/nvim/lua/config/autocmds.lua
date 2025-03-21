@@ -11,6 +11,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   -- group = group,
   callback = function()
     vim.opt_local.wrap = true
-    vim.cmd("TableModeEnable")
+    -- vim.cmd("TableModeEnable")
   end,
 })
