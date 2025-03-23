@@ -243,6 +243,7 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 17=Meta+N,none,Activate Notifications Widget
 activate widget 20=Meta+C,none,Activate Digital Clock Widget
 activate widget 27=none,none,Activate Syncthing Widget
 activate widget 33=none,none,Activate Syncthing Widget

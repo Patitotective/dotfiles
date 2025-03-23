@@ -152,8 +152,8 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 dotadd () { dot add "$@"}
 dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
-yaysearch () { yay -Slq | fzf --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs -ro yay -S }
-yayremove () { yay -Qq | fzf --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs -ro yay -Rns }
+yaysearch () { yay -Slq | fzf -q "$1" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs -ro yay -S }
+yayremove () { yay -Qq | fzf -q "$1" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs -ro yay -Rns }
 
 # ------------ https://junegunn.github.io/fzf/shell-integration/ ------------
 # Preview file content using bat (https://github.com/sharkdp/bat)

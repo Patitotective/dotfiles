@@ -154,7 +154,7 @@ positions={"1920x1080":[]}
 Image=/home/cristobal/Pictures/wallpapers/grimgar3.jpg
 
 [Containments][30][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/cristobal/Pictures/wallpapers/grimgar.12.png
+Image=file:///home/cristobal/Pictures/wallpapers/grimgar.4.jpg
 SlideInterval=86400
 SlidePaths=/home/cristobal/Pictures/wallpapers/
 SlideshowMode=1
@@ -216,6 +216,9 @@ plugin=org.kde.plasma.notifications
 [Containments][8][Applets][17][Configuration]
 PreloadWeight=100
 
+[Containments][8][Applets][17][Shortcuts]
+global=Meta+N
+
 [Containments][8][Applets][18]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
@@ -252,7 +255,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=58
+PreloadWeight=43
 
 [Containments][8][Applets][25]
 immutability=1
@@ -273,6 +276,7 @@ immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][8][Applets][31][Configuration]
+PreloadWeight=47
 selectedConfig=0
 
 [Containments][8][Applets][32]
@@ -291,7 +295,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][8][General]
-extraItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.cameraindicator,martchus.syncthingplasmoid-qt6,org.kde.kdeconnect
+extraItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.keyboardindicator,org.kde.plasma.cameraindicator,martchus.syncthingplasmoid-qt6,org.kde.kdeconnect,org.kde.plasma.clipboard
 hiddenItems=org.kde.plasma.keyboardindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.manage-inputmethod,Fcitx,org.kde.kdeconnect,chrome_status_icon_1
 knownItems=org.kde.plasma.brightness,org.kde.plasma.printmanager,org.kde.plasma.manage-inputmethod,org.kde.plasma.vault,org.kde.plasma.mediacontroller,org.kde.plasma.keyboardlayout,org.kde.plasma.networkmanagement,org.kde.plasma.cameraindicator,org.kde.plasma.battery,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.kscreen,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.clipboard,org.kde.kdeconnect
 shownItems=org.kde.plasma.battery,martchus.syncthingplasmoid-qt6
