@@ -142,24 +142,36 @@ zstyle :compinstall filename '/home/cristobal/.zshrc'
 # compinit
 # End of lines added by compinstall
 
+# ------------ ZSH ------------
+# utility to rename files in batch
 autoload -U zmv
 
+# ------------ DOTFILES ------------
 export PATH=$PATH:~/.nimble/bin
 
+# ------------ NODE VERSION MANAGER ------------
 source /usr/share/nvm/init-nvm.sh
 
+# ------------ DOTFILES ------------
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
 dotadd () { dot add "$@"}
 dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
+
+# ------------ YAY ------------
 yaysearch () { yay -Slq | fzf -q "$1" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs -ro yay -S }
 yayremove () { yay -Qq | fzf -q "$1" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs -ro yay -Rns }
 
-# ------------ https://junegunn.github.io/fzf/shell-integration/ ------------
+# ------------ FZF ------------
+export FZF_DEFAULT_COMMAND="fd --follow --hidden --color=always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type dir --follow --hidden --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+
+# Taken from https://junegunn.github.io/fzf/shell-integration/
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
+  --preview '~/scripts/fzf-preview.sh {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # CTRL-Y to copy the command into clipboard using pbcopy
@@ -171,4 +183,4 @@ export FZF_CTRL_R_OPTS="
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
-  --preview 'tree -C {}'"
+  --preview 'fd . {} | tree --fromfile -C'"

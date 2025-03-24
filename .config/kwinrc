@@ -6,7 +6,7 @@ Rows=1
 [NightColor]
 Active=true
 Mode=Times
-NightTemperature=5900
+NightTemperature=6000
 
 [Plugins]
 blurEnabled=true
