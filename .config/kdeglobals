@@ -102,7 +102,7 @@ ForegroundVisited=124,183,255
 
 [DirSelect Dialog]
 DirSelectDialog Size=820,582
-History Items[$e]=file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Downloads/Space,file:$HOME/Pictures/wallpapers
+History Items[$e]=file:$HOME/clones/kitsunekko-mirror,file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Downloads/Space,file:$HOME/Pictures/wallpapers
 
 [General]
 AccentColor=146,110,228
@@ -114,6 +114,7 @@ Theme=Tela-purple-dark
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=true
 widgetStyle=kvantum
 
 [KFileDialog Settings]
@@ -135,6 +136,10 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=140
 View Style=Simple
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
 
 [WM]
 activeBackground=47,52,63

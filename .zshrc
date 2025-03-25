@@ -154,8 +154,9 @@ source /usr/share/nvm/init-nvm.sh
 
 # ------------ DOTFILES ------------
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-dotadd () { dot add "$@"}
 dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
+# Filter through untracked files and add them
+dotadd-other () { dot ls-files -o | rg '(^(.config/)|(scripts/))|(^[^/]+$)' | fzf -m --ansi --preview '~/scripts/fzf-preview.sh {}' | sed '/^[[:space:]]*$/d' | while read -r i; do dot add "$i"; done }
 
 # ------------ YAY ------------
 yaysearch () { yay -Slq | fzf -q "$1" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs -ro yay -S }
@@ -176,7 +177,7 @@ export FZF_CTRL_T_OPTS="
 
 # CTRL-Y to copy the command into clipboard using pbcopy
 export FZF_CTRL_R_OPTS="
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
 

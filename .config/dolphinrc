@@ -11,3 +11,9 @@ MenuBar=Disabled
 
 [Notification Messages]
 warnAboutRisksBeforeActingAsAdmin=false
+
+[PreviewSettings]
+Plugins=exrthumbnail,audiothumbnail,directorythumbnail,ebookthumbnail,windowsimagethumbnail,jpegthumbnail,imagethumbnail,svgthumbnail,comicbookthumbnail,opendocumentthumbnail,appimagethumbnail,windowsexethumbnail,fontthumbnail,mltpreview,djvuthumbnail,cursorthumbnail,kraorathumbnail,gdk-pixbuf-thumbnailer,heif,jxl
+
+[VersionControl]
+enabledPlugins=Git

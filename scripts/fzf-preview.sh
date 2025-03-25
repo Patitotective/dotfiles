@@ -76,7 +76,7 @@ if [[ $KITTY_WINDOW_ID ]] || [[ $GHOSTTY_RESOURCES_DIR ]] && command -v kitten >
 #
 # # 3. If chafa is not found but imgcat is available, use it on iTerm2
 # elif command -v imgcat >/dev/null; then
-#   # NOTE: We should use https://iterm2.com/utilities/it2check to check if the
+#   # nOTE: We should use https://iterm2.com/utilities/it2check to check if the
 #   # user is running iTerm2. But for the sake of simplicity, we just assume
 #   # that's the case here.
 #   imgcat -W "${dim%%x*}" -H "${dim##*x}" "$file"

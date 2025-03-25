@@ -1,5 +1,5 @@
 [Unit]
-Description=Check if the battery is 10 or below to trigger a script
+Description=Runs different scrips depending on the batter level
 
 [Service]
 Type=oneshot
