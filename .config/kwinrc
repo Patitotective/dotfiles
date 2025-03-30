@@ -57,5 +57,3 @@ BorderSize=None
 BorderSizeAuto=false
 ButtonsOnLeft=MF
 ButtonsOnRight=IAX
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__Space

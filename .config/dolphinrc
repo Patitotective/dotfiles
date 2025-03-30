@@ -1,19 +1,40 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
+
 [General]
+ShowSelectionToggle=false
+ShowStatusBar=false
 Version=202
-ViewPropsTimestamp=2025,2,28,11,30,13.365
+ViewPropsTimestamp=2023,4,26,16,58,48.324
+
+[IconsMode]
+MaximumTextLines=1
+PreviewSize=112
+
+[InformationPanel]
+dateFormat=ShortFormat
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
-Places Icons Static Size=22
+Places Icons Static Size=16
+
+[KPropertiesDialog]
+2560x1080 screen: Window-Maximized=true
 
 [MainWindow]
 MenuBar=Disabled
 
-[Notification Messages]
-warnAboutRisksBeforeActingAsAdmin=false
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[PlacesPanel]
+IconSize=16
 
 [PreviewSettings]
-Plugins=exrthumbnail,audiothumbnail,directorythumbnail,ebookthumbnail,windowsimagethumbnail,jpegthumbnail,imagethumbnail,svgthumbnail,comicbookthumbnail,opendocumentthumbnail,appimagethumbnail,windowsexethumbnail,fontthumbnail,mltpreview,djvuthumbnail,cursorthumbnail,kraorathumbnail,gdk-pixbuf-thumbnailer,heif,jxl
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,ffmpegthumbs
 
-[VersionControl]
-enabledPlugins=Git
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
