@@ -194,6 +194,3 @@ export FZF_CTRL_R_OPTS="
 export FZF_ALT_C_OPTS="
 --walker-skip .git,node_modules,target
 --preview 'fd . {} | tree --fromfile -C'"
-
-# ------------ HYPRLAND ------------
-source ~/.config/zshrc.d/dots-hyprland.zsh

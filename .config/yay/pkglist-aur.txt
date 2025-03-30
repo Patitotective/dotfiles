@@ -1,7 +1,9 @@
 anki-bin
 choosenim-bin
+ddcci-driver-linux-dkms-git
 downgrade
 floorp-bin
+grimblast-git
 input-remapper-git
 kopia-bin
 kopia-ui-bin
@@ -11,7 +13,7 @@ onlyoffice-bin
 spicetify-cli
 spicetify-themes-git
 spotify
-stayfree-desktop
 syncthingtray-qt6
+wlogout
 yay
 yay-debug
