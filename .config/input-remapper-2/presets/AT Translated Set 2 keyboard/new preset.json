@@ -10,5 +10,17 @@
         "target_uinput": "keyboard",
         "output_symbol": "Escape",
         "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 1,
+                "origin_hash": "5ac48adcd1ee2a01d5a01fcae8891ea4"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "Caps_Lock",
+        "mapping_type": "key_macro"
     }
 ]

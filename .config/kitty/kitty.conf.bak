@@ -21,20 +21,19 @@ map --when-focus-on var:IS_NVIM ctrl+h
 map --when-focus-on var:IS_NVIM ctrl+l
 
 # the 3 here is the resize amount, adjust as needed
-map ctrl+shift+j kitten relative_resize.py down  2
-map ctrl+shift+k kitten relative_resize.py up    2
-map ctrl+shift+h kitten relative_resize.py left  2
-map ctrl+shift+l kitten relative_resize.py right 2
+map ctrl+shift+j kitten relative_resize.py down  3
+map ctrl+shift+k kitten relative_resize.py up    3
+map ctrl+shift+h kitten relative_resize.py left  3
+map ctrl+shift+l kitten relative_resize.py right 3
 
 map --when-focus-on var:IS_NVIM ctrl+shift+j
 map --when-focus-on var:IS_NVIM ctrl+shift+k
 map --when-focus-on var:IS_NVIM ctrl+shift+h
 map --when-focus-on var:IS_NVIM ctrl+shift+l
 
-# map --when-focus-on var:IS_NVIM ctrl+shift+j send_text all \x1b[74;5u
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font"
+font_family      family="JetBrainsMono Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

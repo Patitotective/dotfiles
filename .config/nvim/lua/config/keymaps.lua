@@ -3,3 +3,11 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<Leader>fp", "<cmd>let @+ = @%<CR>", { desc = "Copy absolute path" })
 -- vim.keymap.set("n", "<Leader>yx", "<cmd>let @+ = expand('<cfile>')<CR>", { desc = "Copy path/link" })
+vim.keymap.del("n", "<C-Down>")
+vim.keymap.del("n", "<C-Up>")
+vim.keymap.del("n", "<C-Left>")
+vim.keymap.del("n", "<C-Right>")
+vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<cr>")
+vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>")
+vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>")
+vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<cr>")

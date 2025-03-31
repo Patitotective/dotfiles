@@ -86,6 +86,51 @@ showDownloads=false
 showTabTexts=false
 size=25,25
 
+[Containments][2][Applets][36]
+immutability=1
+plugin=org.kde.plasma.systemmonitor.memory
+
+[Containments][2][Applets][36][Configuration]
+CurrentPreset=org.kde.plasma.systemmonitor
+PreloadWeight=70
+popupHeight=190
+popupWidth=234
+
+[Containments][2][Applets][36][Configuration][Appearance]
+chartFace=org.kde.ksysguard.piechart
+title=Memory Usage
+
+[Containments][2][Applets][36][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][36][Configuration][SensorColors]
+memory/physical/used=138,180,248
+
+[Containments][2][Applets][36][Configuration][Sensors]
+highPrioritySensorIds=["memory/physical/used"]
+lowPrioritySensorIds=["memory/physical/total"]
+totalSensors=["memory/physical/usedPercent"]
+
+[Containments][2][Applets][38]
+immutability=1
+plugin=org.kde.plasma.systemmonitor.cpu
+
+[Containments][2][Applets][38][Configuration]
+CurrentPreset=org.kde.plasma.systemmonitor
+
+[Containments][2][Applets][38][Configuration][Appearance]
+chartFace=org.kde.ksysguard.piechart
+title=Total CPU Use
+
+[Containments][2][Applets][38][Configuration][SensorColors]
+cpu/all/usage=138,180,248
+
+[Containments][2][Applets][38][Configuration][Sensors]
+highPrioritySensorIds=["cpu/all/usage"]
+lowPrioritySensorIds=["cpu/all/cpuCount","cpu/all/coreCount"]
+totalSensors=["cpu/all/usage"]
+
 [Containments][2][Applets][4]
 immutability=1
 plugin=org.kde.plasma.pager
@@ -115,7 +160,7 @@ PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][General]
-AppletOrder=3;4;5;6;7;20;21
+AppletOrder=3;36;38;4;5;6;7;20;21
 
 [Containments][22]
 activityId=918607ef-4cc3-4064-bb7d-899a63a718c9
@@ -148,7 +193,7 @@ DialogHeight=1052
 DialogWidth=1920
 
 [Containments][30][General]
-positions={"1920x1080":[]}
+positions={"1280x720":[],"1920x1080":[]}
 
 [Containments][30][Wallpaper][org.kde.image][General]
 Image=/home/cristobal/Pictures/wallpapers/grimgar3.jpg
@@ -158,6 +203,18 @@ Image=file:///home/cristobal/Pictures/wallpapers/grimgar.6.jpg
 SlideInterval=86400
 SlidePaths=/home/cristobal/Pictures/wallpapers/
 SlideshowMode=1
+
+[Containments][33]
+activityId=918607ef-4cc3-4064-bb7d-899a63a718c9
+formfactor=0
+immutability=1
+lastScreen=2
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+
+[Containments][33][General]
+positions={"640x360":[]}
 
 [Containments][8]
 activityId=
@@ -238,7 +295,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=49
+PreloadWeight=41
 
 [Containments][8][Applets][23]
 immutability=1
@@ -284,6 +341,12 @@ plugin=org.kde.kdeconnect
 
 [Containments][8][Applets][32][Configuration]
 PreloadWeight=100
+
+[Containments][8][Applets][34][Configuration]
+selectedConfig=0
+
+[Containments][8][Applets][39][Configuration]
+selectedConfig=0
 
 [Containments][8][Applets][9]
 immutability=1
