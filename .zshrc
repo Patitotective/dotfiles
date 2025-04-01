@@ -145,8 +145,9 @@ zstyle :compinstall filename '/home/cristobal/.zshrc'
 # utility to rename files in batch
 autoload -U zmv
 
-# ------------ DOTFILES ------------
+# ------------ PATH ------------
 export PATH=$PATH:~/.nimble/bin
+export EDITOR=/usr/bin/nvim
 
 # ------------ NODE VERSION MANAGER ------------
 source /usr/share/nvm/init-nvm.sh
@@ -173,7 +174,7 @@ yaylist () {
 
 # ------------ FZF ------------
 export FZF_DEFAULT_COMMAND="fd --follow --hidden --color=always"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="fd --type file --follow --hidden --color=always"
 export FZF_ALT_C_COMMAND="fd --type dir --follow --hidden --color=always"
 export FZF_DEFAULT_OPTS="--ansi"
 
