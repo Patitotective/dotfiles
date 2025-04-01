@@ -118,10 +118,17 @@ plugin=org.kde.plasma.systemmonitor.cpu
 
 [Containments][2][Applets][38][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
+PreloadWeight=55
+popupHeight=252
+popupWidth=152
 
 [Containments][2][Applets][38][Configuration][Appearance]
 chartFace=org.kde.ksysguard.piechart
 title=Total CPU Use
+
+[Containments][2][Applets][38][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2][Applets][38][Configuration][SensorColors]
 cpu/all/usage=138,180,248
@@ -160,7 +167,7 @@ PreloadWeight=100
 SystrayContainmentId=8
 
 [Containments][2][General]
-AppletOrder=3;36;38;4;5;6;7;20;21
+AppletOrder=3;4;5;36;6;7;38;20;21
 
 [Containments][22]
 activityId=918607ef-4cc3-4064-bb7d-899a63a718c9
@@ -346,6 +353,7 @@ PreloadWeight=100
 selectedConfig=0
 
 [Containments][8][Applets][39][Configuration]
+PreloadWeight=55
 selectedConfig=0
 
 [Containments][8][Applets][9]
