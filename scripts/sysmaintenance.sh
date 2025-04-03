@@ -24,7 +24,7 @@ echo ""
 echo "----------------------------------------------------"
 echo "REMOVING ORPHANED PACKAGES"
 echo "----------------------------------------------------"
-
+# Orphans are packages that were installed as a dependency and are no longer required by any package.
 orphaned=$(yay -Qdtq)
 if [ -n "$orphaned" ]; then
   echo "$orphaned" | yay -Rns -

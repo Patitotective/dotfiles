@@ -1,5 +1,5 @@
 [ExtractDialog]
-DirHistory[$e]=$HOME/.config/,$HOME/Downloads/
+DirHistory[$e]=$HOME/Downloads/,$HOME/.config/
 
 [Extraction]
 closeAfterExtraction=true

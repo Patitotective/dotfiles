@@ -4,7 +4,7 @@ acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
 
   if [ "$status" = Discharging ] && [ "$capacity" -le 10 ]; then
     ~/scripts/onLowBattery.sh
-  elif [ "$status" = Charging ] && [ "$capacity" -ge 98 ]; then
+  elif [ "$status" = Charging ] && [ "$capacity" -ge 100 ]; then
     ~/scripts/onFullBattery.sh
   fi
 }

@@ -1,1 +1,3 @@
-return { "alaviss/nim.nvim" }
+return {
+  "alaviss/nim.nvim",
+}

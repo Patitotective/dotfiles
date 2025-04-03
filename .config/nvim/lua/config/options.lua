@@ -1,6 +1,8 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+vim.opt.shada = "!,'10000,<50,s10,h" -- Increase the number of oldfiles (first number)
+
 vim.api.nvim_create_user_command("OverseerRestartLast", function()
   local overseer = require("overseer")
   local tasks = overseer.list_tasks({ recent_first = true })
