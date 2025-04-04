@@ -14,7 +14,7 @@ acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
     notify-send -u critical -a "Power Management (user)" "Low Battery" "Plug your computer to avoid losing any work."
     touch ~/scripts/.10BatteryNotif
     mpv --loop=1 /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-  elif [ "$status" = Discharging ] && [ "$capacity" -le 40 ] && [ ! -f ~/scripts/.35BatteryNotif ]; then
+  elif [ "$status" = Discharging ] && [ "$capacity" -le 40 ] && [ ! -f ~/scripts/.40BatteryNotif ]; then
     notify-send -u critical -a "Power Management (user)" "Battery At 40%" "Plug your computer."
     touch ~/scripts/.40BatteryNotif
     mpv /usr/share/sounds/ocean/stereo/outcome-failure.oga
