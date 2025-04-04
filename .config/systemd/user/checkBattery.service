@@ -1,5 +1,5 @@
 [Unit]
-Description=Runs different scrips depending on the batter level
+ Description=Do various things depending on the battery level
 
 [Service]
 Type=oneshot
