@@ -1,0 +1,27 @@
+{
+  "backup_device_uuid": "31034355-c699-4b7d-b9aa-a7d956823b91",
+  "parent_device_uuid": "",
+  "do_first_run": "true",
+  "btrfs_mode": "false",
+  "include_btrfs_home_for_backup": "false",
+  "include_btrfs_home_for_restore": "false",
+  "stop_cron_emails": "true",
+  "schedule_monthly": "false",
+  "schedule_weekly": "true",
+  "schedule_daily": "false",
+  "schedule_hourly": "false",
+  "schedule_boot": "false",
+  "count_monthly": "2",
+  "count_weekly": "3",
+  "count_daily": "5",
+  "count_hourly": "6",
+  "count_boot": "5",
+  "snapshot_size": "20222539860",
+  "snapshot_count": "435598",
+  "date_format": "%Y-%m-%d %H:%M:%S",
+  "exclude": [
+    "/home/cristobal/**",
+    "/root/**"
+  ],
+  "exclude-apps": []
+}
