@@ -1,5 +1,11 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
+  opts = {
+    keymaps = {
+      prevSubstitutionInHistory = "<up>", --"<c-p>",
+      nextSubstitutionInHistory = "<down>", --"<c-n>",
+    },
+  },
   keys = {
     {
       "g/",

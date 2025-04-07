@@ -206,7 +206,7 @@ positions={"1280x720":[],"1920x1080":[]}
 Image=/home/cristobal/Pictures/wallpapers/grimgar3.jpg
 
 [Containments][30][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/cristobal/Pictures/wallpapers/grimgar.7.png
+Image=file:///home/cristobal/Pictures/wallpapers/archive/grimgar.8.jpg
 SlideInterval=86400
 SlidePaths=/home/cristobal/Pictures/wallpapers/
 SlideshowMode=1
