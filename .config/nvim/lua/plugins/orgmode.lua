@@ -30,7 +30,37 @@ return {
           types = {
             {
               type = "tags_todo",
-              match = "-dev-contribute-crochet-cumpleaños/-DONE",
+              match = "-pc-dev-contribute-crochet-cumpleaños/-DONE",
+              org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+            },
+          },
+        },
+        p = {
+          description = "PC To Do",
+          types = {
+            {
+              type = "tags_todo",
+              match = "pc/-DONE",
+              org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+            },
+          },
+        },
+        d = {
+          description = "To Dev",
+          types = {
+            {
+              type = "tags_todo",
+              match = "dev/-DONE",
+              org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+            },
+          },
+        },
+        c = {
+          description = "To Crochet",
+          types = {
+            {
+              type = "tags_todo",
+              match = "crochet/-DONE",
               org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
             },
           },

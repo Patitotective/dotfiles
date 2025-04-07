@@ -11,7 +11,6 @@ mkinitcpio-firmware
 ocs-url
 onlyoffice-bin
 spicetify-cli
-spicetify-themes-git
 spotify
 syncthingtray-qt6
 wlogout

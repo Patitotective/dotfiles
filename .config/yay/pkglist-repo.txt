@@ -1,5 +1,7 @@
 acpi
-adobe-source-han-serif-jp-fonts
+adobe-source-han-serif-otc-fonts
+arch-wiki-docs
+arch-wiki-lite
 ark
 base
 base-devel
@@ -9,6 +11,7 @@ bcachefs-tools
 bluedevil
 bluez
 bluez-utils
+bottom
 breeze
 breeze-gtk
 breeze-plymouth
@@ -21,9 +24,12 @@ dolphin
 dolphin-plugins
 dosfstools
 drkonqi
+duf
 dunst
+dust
 efibootmgr
 exfatprogs
+eza
 f2fs-tools
 fastfetch
 fcitx5
@@ -32,6 +38,7 @@ fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
 fd
+feh
 ffmpegthumbs
 filelight
 flatpak-kcm
@@ -44,11 +51,11 @@ glaze
 grub
 gst-plugin-pipewire
 gwenview
-htop
 hypridle
 hyprland
 hyprland-protocols
 hyprlock
+hyprpaper
 hyprpicker
 hyprsunset
 intel-ucode
@@ -80,6 +87,7 @@ ksshaskpass
 ksystemstats
 kvantum
 kwallet-pam
+kwalletmanager
 kwayland
 kwin
 layer-shell-qt
@@ -87,6 +95,7 @@ lazygit
 libkscreen
 libksysguard
 libplasma
+libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
@@ -150,12 +159,13 @@ scx-scheds
 sddm-kcm
 sof-firmware
 spectacle
-swww
 syncthing
 systemsettings
 testdisk
 timeshift
+tldr
 tlp
+tlp-rdw
 tree
 udftools
 udiskie
@@ -163,6 +173,7 @@ uwsm
 wacomtablet
 waybar
 wev
+wget
 wireless-regdb
 wl-clipboard
 xdg-desktop-portal-hyprland
@@ -219,5 +230,6 @@ xorg-xwud
 xplr
 yazi
 zenity
+zoxide
 zsh
 zsh-completions
