@@ -1,7 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-vim.opt.shada = "!,'10000,<50,s10,h" -- Increase the number of oldfiles (first number)
+vim.opt.shada = "!,'10000,<100,s10,h" -- Increase the number of oldfiles (first number) and stored lines for registers
 
 vim.api.nvim_create_user_command("OverseerRestartLast", function()
   local overseer = require("overseer")
@@ -30,3 +30,9 @@ vim.api.nvim_create_user_command("FormatEnable", function()
 end, {
   desc = "Re-enable autoformat-on-save",
 })
+
+-- https://github.com/neovim/neovim/issues/5916#issuecomment-1103675837
+if vim.env.TERM == "xterm-kitty" then
+  vim.cmd([[autocmd UIEnter * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[>1u") | endif]])
+  vim.cmd([[autocmd UILeave * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[<1u") | endif]])
+end

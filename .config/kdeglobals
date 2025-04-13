@@ -102,7 +102,7 @@ ForegroundVisited=124,183,255
 
 [DirSelect Dialog]
 DirSelectDialog Size=960,540
-History Items[$e]=file:$HOME/dev,file:$HOME/clones/kitsunekko-mirror,file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Downloads/Space,file:$HOME/Pictures/wallpapers
+History Items[$e]=file:$HOME/Videos,file:$HOME/Music,file:///usr/local/share/fonts,file:$HOME/.local/share/fonts,file:$HOME/up to date dev/ repos,file:$HOME/dev,file:$HOME/clones/kitsunekko-mirror,file:$HOME/Pictures,file:$HOME/Documents,file:$HOME/Documents,file:$HOME/Downloads/Space,file:$HOME/Pictures/wallpapers
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xa8\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]

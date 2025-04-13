@@ -23,3 +23,7 @@ vim.keymap.set("i", "<c-k>", "<up>")
 vim.keymap.set("i", "<c-l>", "<right>")
 vim.keymap.set("i", "<c-a>", "<bs>")
 vim.keymap.set("i", "<c-s>", "<del>")
+
+-- vim.keymap.set("n", "<c-i>", function()
+--   vim.cmd([[execute "normal! <c-i>"]])
+-- end)

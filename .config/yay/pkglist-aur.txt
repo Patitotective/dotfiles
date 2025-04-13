@@ -10,6 +10,7 @@ kopia-ui-bin
 mkinitcpio-firmware
 ocs-url
 onlyoffice-bin
+pdf4qt-bin
 spicetify-cli
 spotify
 syncthingtray-qt6

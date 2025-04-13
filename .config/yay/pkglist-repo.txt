@@ -58,6 +58,7 @@ hyprlock
 hyprpaper
 hyprpicker
 hyprsunset
+inkscape
 intel-ucode
 jfsutils
 kactivitymanagerd
@@ -100,6 +101,7 @@ linux
 linux-firmware
 linux-headers
 luarocks
+ly
 man-db
 man-pages
 mariadb
@@ -156,7 +158,6 @@ rclone
 rofi-wayland
 rsync
 scx-scheds
-sddm-kcm
 sof-firmware
 spectacle
 syncthing
