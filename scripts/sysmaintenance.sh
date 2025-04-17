@@ -49,3 +49,7 @@ echo "----------------------------------------------------"
 
 sudo journalctl --vacuum-time=7d
 echo ""
+echo "----------------------------------------------------"
+echo "UPDATING FISH COMPLETIONS"
+echo "----------------------------------------------------"
+fish_update_completions
