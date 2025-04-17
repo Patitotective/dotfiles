@@ -206,7 +206,7 @@ positions={"1280x720":[],"1920x1080":[]}
 Image=/home/cristobal/Pictures/wallpapers/grimgar3.jpg
 
 [Containments][30][Wallpaper][org.kde.slideshow][General]
-Image=file:///home/cristobal/Pictures/wallpapers/grimgar3.jpg
+Image=file:///home/cristobal/Pictures/wallpapers/overlord.2.png
 SlideInterval=86400
 SlidePaths=/home/cristobal/Pictures/wallpapers/
 SlideshowMode=1
@@ -319,14 +319,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24][Configuration]
-PreloadWeight=32
+PreloadWeight=5
 
 [Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][8][Applets][25][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][8][Applets][26]
 immutability=1

@@ -10,12 +10,14 @@ vim.keymap.del("n", "<C-Down>")
 vim.keymap.del("n", "<C-Up>")
 vim.keymap.del("n", "<C-Left>")
 vim.keymap.del("n", "<C-Right>")
+
 -- Resize windows
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<cr>")
 vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>")
 vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>")
 vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<cr>")
 vim.keymap.set("n", "<cr>", "<cmd>write<cr>")
+
 -- Navigation in insert mode
 vim.keymap.set("i", "<c-h>", "<left>")
 vim.keymap.set("i", "<c-j>", "<down>")
@@ -23,7 +25,7 @@ vim.keymap.set("i", "<c-k>", "<up>")
 vim.keymap.set("i", "<c-l>", "<right>")
 vim.keymap.set("i", "<c-a>", "<bs>")
 vim.keymap.set("i", "<c-s>", "<del>")
+vim.keymap.set("i", "<c-b>", "<s-left>")
+vim.keymap.set("i", "<c-w>", "<s-right>")
 
--- vim.keymap.set("n", "<c-i>", function()
---   vim.cmd([[execute "normal! <c-i>"]])
--- end)
+vim.keymap.set("n", "<c-i>", "<c-i>")

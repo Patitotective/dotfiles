@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 vim.opt.shada = "!,'10000,<100,s10,h" -- Increase the number of oldfiles (first number) and stored lines for registers
+vim.o.shell = "/usr/bin/fish"
 
 vim.api.nvim_create_user_command("OverseerRestartLast", function()
   local overseer = require("overseer")
