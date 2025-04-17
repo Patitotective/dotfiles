@@ -13,6 +13,7 @@ return {
     },
     org_agenda_files = "~/Documents/orgfiles/**/*",
     org_default_notes_file = "~/Documents/orgfiles/1Default.org",
+    org_archive_location = "zArchive.%s::",
     org_todo_keywords = { "TODO(t)", "NEXT(n)", "|", "DONE(d)" },
     org_todo_keyword_faces = {
       -- Color list https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html#gsc.tab=0

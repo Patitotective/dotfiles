@@ -21,3 +21,22 @@ vim.api.nvim_create_autocmd("FileType", {
     require("csvview").enable()
   end,
 })
+
+-- https://github.com/echasnovski/mini.nvim/issues/1322
+local function miniFilesWinMaxHeight()
+  return vim.o.lines - vim.o.cmdheight - 10
+end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "MiniFilesWindowUpdate",
+  callback = function(args)
+    local config = vim.api.nvim_win_get_config(args.data.win_id)
+
+    -- Ensure fixed height
+    if config.height > miniFilesWinMaxHeight() then
+      config.height = miniFilesWinMaxHeight()
+    end
+
+    vim.api.nvim_win_set_config(args.data.win_id, config)
+  end,
+})
