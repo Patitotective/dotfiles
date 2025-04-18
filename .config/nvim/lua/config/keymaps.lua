@@ -26,6 +26,6 @@ vim.keymap.set("i", "<c-l>", "<right>")
 vim.keymap.set("i", "<c-a>", "<bs>")
 vim.keymap.set("i", "<c-s>", "<del>")
 vim.keymap.set("i", "<c-b>", "<s-left>")
-vim.keymap.set("i", "<c-w>", "<s-right>")
+vim.keymap.set("i", "<c-f>", "<s-right>")
 
 vim.keymap.set("n", "<c-i>", "<c-i>")

@@ -15,8 +15,8 @@ export CLUTTER_BACKEND=wayland
 # Nvidia
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
-export NVD_BACKEND=direct
 export LIBVA_DRIVER_NAME=nvidia
+export NVD_BACKEND=direct
 export MOZ_DISABLE_RDD_SANDBOX=1
 # export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json # DO NOT UNCOMMENT THIS, IT CAUSES A BUG
 # Controls if G-Sync capable monitors should use Variable Refresh Rate (VRR)

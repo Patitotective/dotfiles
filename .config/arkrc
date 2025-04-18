@@ -1,5 +1,5 @@
 [ExtractDialog]
-DirHistory[$e]=$HOME/Pictures/arras.io/,$HOME/Downloads/,$HOME/.config/
+DirHistory[$e]=$HOME/Downloads/,$HOME/Pictures/arras.io/,$HOME/.config/
 
 [Extraction]
 closeAfterExtraction=true
@@ -8,6 +8,3 @@ openDestinationFolderAfterExtraction=true
 [General]
 LockSidebar=true
 ShowSidebar=true
-
-[MainWindow]
-StatusBar=Disabled

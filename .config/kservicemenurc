@@ -1,4 +1,5 @@
 [Show]
+Menu-Refresh=true
 compressfileitemaction=true
 extractfileitemaction=true
 forgetfileitemaction=true

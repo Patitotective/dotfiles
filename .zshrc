@@ -150,7 +150,7 @@ export PATH=$PATH:~/.nimble/bin
 export EDITOR=/usr/bin/nvim
 
 # ------------ NODE VERSION MANAGER ------------
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 # ------------ DOTFILES ------------
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
@@ -159,8 +159,8 @@ dotlazygit () { lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME }
 dotaddother () { dot ls-files -o | rg '(^(.config/)|(scripts/))|(^[^/]+$)' | fzf -m --ansi --preview '~/scripts/fzf-preview.sh {}' | sed '/^[[:space:]]*$/d' | xargs echo >/dev/stderr | while read -r i; do dot add "$i"; done }
 
 # ------------ YAY ------------
-yayinstall () { yay -Slq | fzf -i -q "$1" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs echo >/dev/stderr | xargs -ro yay -S }
-yayremove () { yay -Qq | fzf -i -q "$1" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs echo >/dev/stderr | xargs -ro yay -Rns }
+yayinstall () { yay -Slq | fzf -i -q "$@" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml' | xargs echo >/dev/stderr | xargs -ro yay -S }
+yayremove () { yay -Qq | fzf -i -q "$@" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml' | xargs echo >/dev/stderr | xargs -ro yay -Rns }
 # Outputs installed pkgs, last installed first
 # TODO make it actually check if the pkg is installed
 yaylist () {

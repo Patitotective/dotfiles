@@ -13,6 +13,7 @@ return {
     org_priority_default = "D",
     org_priority_lowest = "G",
     org_agenda_span = "month",
+    org_deadline_warning_days = 4,
     org_todo_keywords = { "TODO(t)", "NEXT(n)", "|", "DONE(d)" },
     org_todo_keyword_faces = {
       -- Color list https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html#gsc.tab=0

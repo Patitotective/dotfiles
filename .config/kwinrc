@@ -9,11 +9,8 @@ Mode=Times
 NightTemperature=6000
 
 [Plugins]
-blurEnabled=true
 desktopchangeosdEnabled=false
-dimscreenEnabled=true
 synchronizeskipswitcherEnabled=false
-translucencyEnabled=true
 
 [Tiling]
 padding=4
