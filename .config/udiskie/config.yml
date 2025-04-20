@@ -1,0 +1,8 @@
+program_options:
+  tray: auto              # Show tray icon
+  menu: flat
+  notify: true           # Enable notifications
+  automount: true        # Enable automatic mounting
+  file_manager: xdg-open # Program to open mounted directories
+  password_cache: 10
+

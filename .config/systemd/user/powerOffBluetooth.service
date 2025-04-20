@@ -1,6 +1,7 @@
 [Unit]
 Description=Power bluetooth off after the bluetooth unit is started
-After=bluetooth.service
+; After=wayland-wm@hyprland.desktop.service
+After=wayland-wm-env@hyprland.desktop.service
 
 [Service]
 Type=oneshot

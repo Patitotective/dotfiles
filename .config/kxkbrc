@@ -1,6 +1,7 @@
 [Layout]
 DisplayNames=
 LayoutList=latam
+Options=caps:swapescape
+ResetOldOptions=true
 Use=true
 VariantList=
-

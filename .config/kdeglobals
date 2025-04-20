@@ -132,6 +132,9 @@ ForegroundNormal=252,252,252
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
+[General]
+ColorSchemeHash=8d483e98b770fbeba364db371382301dbfc92748
+
 [Icons]
 Theme=Tela-purple
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Here we iterate over the config files in ~/.config/etc that should be in /etc
 fd . ~/.config/etc --type file |
   while read -r i; do

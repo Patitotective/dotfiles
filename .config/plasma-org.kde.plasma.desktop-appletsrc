@@ -372,4 +372,4 @@ shownItems=org.kde.plasma.battery,martchus.syncthingplasmoid-qt6
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=
+screenMapping=desktop:/test.txt,0,918607ef-4cc3-4064-bb7d-899a63a718c9
