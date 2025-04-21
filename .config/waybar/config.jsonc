@@ -18,12 +18,12 @@
     "custom/l_end",
     "cpu",
     "memory",
-    "custom/cpuinfo",
-    "custom/gpuinfo",
+    // "custom/cpuinfo",
+    // "custom/gpuinfo",
     "custom/r_end",
     "custom/l_end",
-    "idle_inhibitor",
     "clock",
+    "idle_inhibitor",
     "custom/r_end",
     "custom/padd"
   ],
@@ -38,7 +38,7 @@
   "modules-right": [
     "custom/padd",
     "custom/l_end",
-    "backlight",
+    // "backlight",
     "network",
     "pulseaudio",
     "pulseaudio#microphone",
@@ -82,77 +82,67 @@
       "h": 60, // high
       "m": 30 // medium
     },
-    "interval": 30,
-    "format": "󰾆 {used}GB",
+    "interval": 10,
+    "format": "󰾆 {percentage}%",
     "rotate": 0,
-    "format-m": "󰾅 {used}GB",
-    "format-h": "󰓅 {used}GB",
-    "format-c": " {used}GB",
+    "format-m": "󰾅 {percentage}%",
+    "format-h": "󰓅 {percentage}%",
+    "format-c": " {percentage}%",
     "format-alt": "󰾆 {percentage}%",
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
   },
-  "custom/cpuinfo": {
-    "exec": " cpuinfo.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000
-  },
-  "custom/gpuinfo": {
-    "exec": " gpuinfo.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000,
-    "on-click": "gpuinfo.sh --toggle"
-  },
-  "custom/gpuinfo#nvidia": {
-    "exec": " gpuinfo.sh --use nvidia ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000
-  },
-  "custom/gpuinfo#amd": {
-    "exec": " gpuinfo.sh --use amd ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000
-  },
-  "custom/gpuinfo#intel": {
-    "exec": " gpuinfo.sh --use intel ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "rotate": 0,
-    "format-icons": {
-      "activated": "󰅶 ",
-      "deactivated": "󰛊 "
-    },
-    "tooltip-format-activated": "Caffeine Mode Active",
-    "tooltip-format-deactivated": "Caffeine Mode Inactive"
-  },
+  // "custom/cpuinfo": {
+  //   "exec": " cpuinfo.sh",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "rotate": 0,
+  //   "interval": 5, // once every 5 seconds
+  //   "tooltip": true,
+  //   "max-length": 1000
+  // },
+  // "custom/gpuinfo": {
+  //   "exec": " gpuinfo.sh",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "rotate": 0,
+  //   "interval": 5, // once every 5 seconds
+  //   "tooltip": true,
+  //   "max-length": 1000,
+  //   "on-click": "gpuinfo.sh --toggle"
+  // },
+  // "custom/gpuinfo#nvidia": {
+  //   "exec": " gpuinfo.sh --use nvidia ",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "rotate": 0,
+  //   "interval": 5, // once every 5 seconds
+  //   "tooltip": true,
+  //   "max-length": 1000
+  // },
+  // "custom/gpuinfo#amd": {
+  //   "exec": " gpuinfo.sh --use amd ",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "rotate": 0,
+  //   "interval": 5, // once every 5 seconds
+  //   "tooltip": true,
+  //   "max-length": 1000
+  // },
+  // "custom/gpuinfo#intel": {
+  //   "exec": " gpuinfo.sh --use intel ",
+  //   "return-type": "json",
+  //   "format": "{}",
+  //   "rotate": 0,
+  //   "interval": 5, // once every 5 seconds
+  //   "tooltip": true,
+  //   "max-length": 1000
+  // },
   "clock": {
-    "format": "{:%I:%M %p}",
+    "format": "󰥔 {:%R}",
     "rotate": 0,
-    "format-alt": "{:%R 󰃭 %d·%m·%y}",
+    // "format": "{:%R 󰃭 %d·%m·%y}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -173,6 +163,16 @@
       "on-scroll-down": "shift_down"
     }
   },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "rotate": 0,
+    "format-icons": {
+      "activated": "󰅶 ",
+      "deactivated": "󰛊 "
+    },
+    "tooltip-format-activated": "Caffeine Mode Active",
+    "tooltip-format-deactivated": "Caffeine Mode Inactive"
+  },
   "hyprland/workspaces": {
     "rotate": 0,
     "all-outputs": true,
@@ -184,17 +184,16 @@
     "persistent-workspaces": {}
   },
   "hyprland/window": {
-    "format": "  {}",
+    "format": "  {}",
     "rotate": 0,
     "separate-outputs": true,
     "rewrite": {
-      "cristobal@archlinux-nitro5:(.*)": "$1 ",
+      // "cristobal@archlinux-nitro5:(.*)": "$1 ",
+      "(.*) (~.*)": "$1 $2  ",
+      "(.*) (/.*)": "$1 $2  ",
+      "(.*) — Ablaze Floorp": "$1 󰖟",
       "(.*) — Mozilla Firefox": "$1 󰈹",
       "(.*)Mozilla Firefox": "Firefox 󰈹",
-      "(.*) - Visual Studio Code": "$1 󰨞",
-      "(.*)Visual Studio Code": "Code 󰨞",
-      "(.*) - Code - OSS": "$1 󰨞",
-      "(.*)Code - OSS": "Code 󰨞",
       "(.*) — Dolphin": "$1 󰉋",
       "(.*)Spotify": "Spotify 󰓇",
       "(.*)Steam": "Steam 󰓓",
@@ -242,7 +241,7 @@
     "interval": 2
   },
   "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon}  {volume}",
     "rotate": 0,
     "format-muted": "婢",
     "on-click": "pavucontrol -t 3",
@@ -250,7 +249,7 @@
     "on-click-middle": "volumecontrol.sh -o m",
     "on-scroll-up": "volumecontrol.sh -o i",
     "on-scroll-down": "volumecontrol.sh -o d",
-    "tooltip-format": "{icon} {desc} // {volume}%",
+    "tooltip-format": "{icon}  {desc} // {volume}%",
     "scroll-step": 5,
     "format-icons": {
       "headphone": "",

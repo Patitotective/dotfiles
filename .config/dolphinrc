@@ -3,6 +3,9 @@ MenuBar=Disabled
 [$Version]
 update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 
+[ContextMenu]
+ShowAddToPlaces=false
+
 [General]
 Version=202
 ViewPropsTimestamp=2023,4,26,16,58,48.324

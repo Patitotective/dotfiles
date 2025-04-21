@@ -1,11 +1,21 @@
 export XCURSOR_SIZE=30
 
+# Dark Theme
+export GTK_THEME=Breeze:dark
+export GTK2_RC_FILES=/usr/share/themes/Breeze-Dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Breeze-Dark
+
+# Toolkit Backend
+export GDK_BACKEND=wayland,x11,* # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
+export QT_QPA_PLATFORM=wayland;xcb # Qt: Use wayland if available, fall back to x11 if not.
+export SDL_VIDEODRIVER=wayland # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+export CLUTTER_BACKEND=wayland # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
+
 # QT
-export QT_QPA_PLATFORM=wayland;xcb
+export QT_QPA_PLATFORMTHEME=qt5ct # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
 export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_STYLE_OVERRIDE=kvantum
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
+export QT_AUTO_SCREEN_SCALE_FACTOR=1 # enables automatic scaling, based on the monitor’s pixel density
 
 # Toolkit Backend Variables
 export GDK_BACKEND=wayland,x11,*
@@ -13,13 +23,13 @@ export SDL_VIDEODRIVER=wayland
 export CLUTTER_BACKEND=wayland
 
 # Nvidia
+# To force GBM as a backend
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
-export LIBVA_DRIVER_NAME=nvidia
+
+export LIBVA_DRIVER_NAME=nvidia # Hardware acceleration on NVIDIA GPUs
+export __GL_GSYNC_ALLOWED=1 # Controls if G-Sync capable monitors should use Variable Refresh Rate (VRR)
+export __GL_VRR_ALLOWED=0 # Controls if Adaptive Sync should be used. Recommended to set as “0” to avoid having problems on some games.
+
+# VA-API hardware video acceleration 
 export NVD_BACKEND=direct
-export MOZ_DISABLE_RDD_SANDBOX=1
-# export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json # DO NOT UNCOMMENT THIS, IT CAUSES A BUG
-# Controls if G-Sync capable monitors should use Variable Refresh Rate (VRR)
-#export __GL_GSYNC_ALLOWED=true
-# Controls if Adaptive Sync should be used. Recommended to set as “0” to avoid having problems on some games.
-#export __GL_VRR_ALLOWED=0

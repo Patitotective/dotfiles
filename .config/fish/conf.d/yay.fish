@@ -16,10 +16,11 @@ end
 
 # Outputs installed pkgs, last installed first
 # TODO: make it actually check if the pkg is installed
-function yaylist
-    for i in $(yay -Qq)
-        do
-        grep "\[ALPM\] installed $i" /var/log/pacman.log
-        done | sort -u | sed -e 's/\[ALPM\] installed //' -e 's/(.*$//'
-    end
-end
+# TODO: doesnt work in fish
+# function yaylist
+#     for i in $(yay -Qq)
+#         do
+#         grep "\[ALPM\] installed $i" /var/log/pacman.log
+#         done | sort -u | sed -e 's/\[ALPM\] installed //' -e 's/(.*$//'
+#     end
+# end

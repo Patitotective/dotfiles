@@ -136,11 +136,12 @@ ForegroundVisited=155,89,182
 ColorSchemeHash=8d483e98b770fbeba364db371382301dbfc92748
 
 [Icons]
-Theme=Tela-purple
+Theme=Tela-circle-purple
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
-ShowDeleteCommand=false
+ShowDeleteCommand=true
+widgetStyle=qt6ct-style
 
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false

@@ -5,6 +5,7 @@ vim.opt.shada = "!,'10000,<100,s10,h" -- Increase the number of oldfiles (first 
 vim.o.shell = "/usr/bin/fish"
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+  filename = { ["env-hyprland"] = "conf" },
 })
 
 vim.api.nvim_create_user_command("OverseerRestartLast", function()
