@@ -23,9 +23,13 @@ vim.keymap.set("i", "<c-h>", "<left>")
 vim.keymap.set("i", "<c-j>", "<down>")
 vim.keymap.set("i", "<c-k>", "<up>")
 vim.keymap.set("i", "<c-l>", "<right>")
-vim.keymap.set("i", "<c-a>", "<bs>")
-vim.keymap.set("i", "<c-s>", "<del>")
 vim.keymap.set("i", "<c-b>", "<s-left>")
 vim.keymap.set("i", "<c-f>", "<s-right>")
 
+vim.keymap.set("i", "<c-a>", "<bs>")
+vim.keymap.set("i", "<c-s>", "<del>")
+
+vim.keymap.set("i", "<c-v>", "<c-r>+")
+
+-- Since Tab is mapped to toggle fold, c-i needs to be mapped to something for nvim to differentiate bet them
 vim.keymap.set("n", "<c-i>", "<c-i>")

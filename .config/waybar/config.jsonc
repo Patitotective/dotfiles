@@ -184,27 +184,28 @@
     "persistent-workspaces": {}
   },
   "hyprland/window": {
-    "format": "  {}",
+    "format": " {}",
     "rotate": 0,
     "separate-outputs": true,
     "rewrite": {
       // "cristobal@archlinux-nitro5:(.*)": "$1 ",
       "(.*) (~.*)": "$1 $2  ",
       "(.*) (/.*)": "$1 $2  ",
+      "(.*)Ablaze Floorp": "$1 Floorp 󰖟",
       "(.*) — Ablaze Floorp": "$1 󰖟",
       "(.*) — Mozilla Firefox": "$1 󰈹",
-      "(.*)Mozilla Firefox": "Firefox 󰈹",
+      "(.*)Mozilla Firefox": "$1 Firefox 󰈹",
       "(.*) — Dolphin": "$1 󰉋",
-      "(.*)Spotify": "Spotify 󰓇",
-      "(.*)Steam": "Steam 󰓓",
+      "(.*)Spotify": "$1 Spotify 󰓇",
+      "(.*)Steam": "$1 Steam 󰓓",
       "(.*) - Discord": "$1  ",
-      "(.*)Netflix": "Netflix 󰝆 ",
+      "(.*)Netflix": "$1 Netflix 󰝆 ",
       "(.*) — Google chrome": "$1  ",
-      "(.*)Google chrome": "Google chrome  ",
+      "(.*)Google chrome": "$1 Google chrome  ",
       "(.*) — Github": "$1  ",
-      "(.*)Github": "Github ",
-      "(.*)Spotify Free": "Spotify 󰓇",
-      "(.*)Spotify Premiun": "Spotify 󰓇"
+      "(.*)Github": "$1 Github ",
+      "(.*)Spotify Free": "$1 Spotify 󰓇",
+      "(.*)Spotify Premiun": "$1 Spotify 󰓇"
     },
     "max-length": 50
   },
