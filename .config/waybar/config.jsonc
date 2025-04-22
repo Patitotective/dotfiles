@@ -171,7 +171,8 @@
       "deactivated": "󰛊 "
     },
     "tooltip-format-activated": "Caffeine Mode Active",
-    "tooltip-format-deactivated": "Caffeine Mode Inactive"
+    "tooltip-format-deactivated": "Caffeine Mode Inactive",
+    "timeout": 15
   },
   "hyprland/workspaces": {
     "rotate": 0,
