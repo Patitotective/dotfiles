@@ -304,7 +304,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px" />
+       unit="mm" />
     <eventcontext
        id="text"
        usecurrent="1"
@@ -973,7 +973,12 @@
        unitType="1" />
     <group
        id="boot"
-       theme="custom" />
+       theme="symbolic"
+       mode="0">
+      <group
+         id="shown"
+         ver1.4.1="1" />
+    </group>
     <group
        id="rendering" />
     <group
@@ -993,8 +998,8 @@
      id="desktop"
      style="fill:#000000;text-orientation:auto;-inkscape-font-specification:'Source Han Serif';font-family:'Source Han Serif';font-size:11px;line-height:1000">
     <group
-       width="640"
-       height="480"
+       width="964"
+       height="1010"
        x="0"
        y="0"
        maximized="1"
@@ -1112,18 +1117,25 @@
   <group
      id="theme"
      defaultPreferDarkTheme="1"
-     defaultIconTheme="Tela-purple-dark"
-     defaultGtkTheme="&quot;Catppuccin-Mocha&quot;"
+     defaultIconTheme="Tela-purple"
+     defaultGtkTheme="Breeze"
      narrowSpinButton="1"
      preferDarkTheme="1"
      darkTheme="1"
      symbolicIcons="1"
      symbolicDefaultBaseColors="1"
-     symbolicDefaultHighColors="0"
+     symbolicDefaultHighColors="1"
      syntax-color-theme="inkscape-dark"
-     gtkTheme="Rose-Pine">
+     gtkTheme="Adwaita"
+     iconTheme="Adwaita">
     <group
        id="Tela-purple-dark"
        symbolicBaseColor="3772708095" />
+    <group
+       id="multicolor"
+       symbolicBaseColor="3958107135"
+       symbolicSuccessColor="10029823"
+       symbolicWarningColor="4279865599"
+       symbolicErrorColor="10086143" />
   </group>
 </inkscape>

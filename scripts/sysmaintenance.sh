@@ -54,3 +54,9 @@ echo "----------------------------------------------------"
 echo "UPDATING FISH COMPLETIONS"
 echo "----------------------------------------------------"
 fish -c fish_update_completions
+
+echo ""
+echo "----------------------------------------------------"
+echo "UPDATING FISHER"
+echo "----------------------------------------------------"
+fish -c fisher update

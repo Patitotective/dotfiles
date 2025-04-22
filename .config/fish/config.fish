@@ -8,8 +8,9 @@ bind ctrl-v fish_clipboard_paste
 set fzf_preview_dir_cmd eza --all --color=always
 set fzf_diff_highlighter delta --paging=never --width=20
 set fzf_history_time_format "%d-%m %H:%M:%S"
-fzf_configure_bindings --directory=ctrl-f
-fzf_configure_bindings --variables=ctrl-alt-v
+set fzf_preview_file_cmd ~/scripts/fzf-preview.sh
+
+fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
 
 if status is-interactive
 
