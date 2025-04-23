@@ -1,9 +1,9 @@
 export XCURSOR_SIZE=30
 
 # Dark Theme
-export GTK_THEME=Breeze:dark
-export GTK2_RC_FILES=/usr/share/themes/Breeze-Dark/gtk-2.0/gtkrc
-export QT_STYLE_OVERRIDE=Breeze-Dark
+# export GTK_THEME=Adwaita:dark
+# export GTK2_RC_FILES=/usr/share/themes/Adwaita-Dark/gtk-2.0/gtkrc
+# export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 # Toolkit Backend
 export GDK_BACKEND=wayland,x11,* # GTK: Use wayland if available. If not: try x11, then any other GDK backend.

@@ -136,7 +136,7 @@ ForegroundVisited=155,89,182
 ColorSchemeHash=8d483e98b770fbeba364db371382301dbfc92748
 
 [Icons]
-Theme=Tela-circle-purple
+Theme=Tela-purple
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop

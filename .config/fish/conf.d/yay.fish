@@ -2,7 +2,7 @@ function yayinstall
     set pkgsToInstall (yay -Slq | fzf -i -q "$argv" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml')
     if test -n "$pkgsToInstall" # If pkgsToInstall is not empty
         echo "$pkgsToInstall"
-        yay -S "$pkgsToInstall"
+        yay -S (string split -- " " "$pkgsToInstall")
     end
 
 end
@@ -10,7 +10,7 @@ function yayremove
     set pkgsToRemove (yay -Qq | fzf -i -q "$argv" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml')
     if test -n "$pkgsToRemove" # If pkgsToRemove is not empty
         echo "$pkgsToRemove"
-        yay -Rns "$pkgsToRemove"
+        yay -Rns (string split -- " " "$pkgsToRemove")
     end
 end
 

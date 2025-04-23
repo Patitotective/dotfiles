@@ -16,26 +16,26 @@ MouseWheelBehavior=MouseWheelBehavior::Zoom
 MenuBar=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/Pictures/arras.io/Screenshot from 2022-02-19 16-32-28.png
-File10[$e]=$HOME/Sync/scrapyard/ScrapYard Bogota Flyer.svg
-File2[$e]=$HOME/Pictures/arras.io/Screenshot from 2022-01-29 14-53-46.png
-File3[$e]=$HOME/Pictures/arras.io/!1642800183084_94089_1_AjapvJxtPTWekdMKm3G6.png
-File4[$e]=$HOME/Downloads/Screenshot_20250411-191204.png
-File5[$e]=$HOME/Sync/pictures/IMG_20250117_161744848_AE~2.jpg
-File6[$e]=$HOME/Sync/pictures/ズケズケ.png
-File7[$e]=$HOME/Downloads/IMG_20250414_115230361_AE.jpg
-File8[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
-File9[$e]=$HOME/Pictures/2025-04-21T22:20:46,733835021-05:00.png
-Name1[$e]=Screenshot from 2022-02-19 16-32-28.png
-Name10[$e]=ScrapYard Bogota Flyer.svg
-Name2[$e]=Screenshot from 2022-01-29 14-53-46.png
-Name3[$e]=!1642800183084_94089_1_AjapvJxtPTWekdMKm3G6.png
-Name4[$e]=Screenshot_20250411-191204.png
-Name5[$e]=IMG_20250117_161744848_AE~2.jpg
-Name6[$e]=ズケズケ.png
-Name7[$e]=IMG_20250414_115230361_AE.jpg
-Name8[$e]=steins gate.jpg
-Name9[$e]=2025-04-21T22:20:46,733835021-05:00.png
+File1[$e]=$HOME/Downloads/Screenshot_20250411-191204.png
+File10[$e]=$HOME/Pictures/2025-04-22T21:16:26,870086175-05:00.png
+File2[$e]=$HOME/Sync/pictures/IMG_20250117_161744848_AE~2.jpg
+File3[$e]=$HOME/Sync/pictures/ズケズケ.png
+File4[$e]=$HOME/Downloads/IMG_20250414_115230361_AE.jpg
+File5[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
+File6[$e]=$HOME/Pictures/2025-04-21T22:20:46,733835021-05:00.png
+File7[$e]=$HOME/Sync/scrapyard/ScrapYard Bogota Flyer.svg
+File8[$e]=$HOME/Pictures/2025-04-22T19:30:05,668238851-05:00.png
+File9[$e]=$HOME/Pictures/2025-04-22T21:16:34,292415158-05:00.png
+Name1[$e]=Screenshot_20250411-191204.png
+Name10[$e]=2025-04-22T21:16:26,870086175-05:00.png
+Name2[$e]=IMG_20250117_161744848_AE~2.jpg
+Name3[$e]=ズケズケ.png
+Name4[$e]=IMG_20250414_115230361_AE.jpg
+Name5[$e]=steins gate.jpg
+Name6[$e]=2025-04-21T22:20:46,733835021-05:00.png
+Name7[$e]=ScrapYard Bogota Flyer.svg
+Name8[$e]=2025-04-22T19:30:05,668238851-05:00.png
+Name9[$e]=2025-04-22T21:16:34,292415158-05:00.png
 
 [SideBar]
 InformationSplitterSizes=213,262
