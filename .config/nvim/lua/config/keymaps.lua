@@ -48,3 +48,9 @@ vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<leader><tab><s-tab>", "<cmd>tabprev<cr>")
 vim.keymap.set("n", "<leader><tab>0", "<cmd>tabfirst<cr>")
 vim.keymap.set("n", "<leader><tab>$", "<cmd>tablast<cr>")
+
+-- Comments
+-- vim.keymap.del("n", "gco")
+-- vim.keymap.del("n", "gcO")
+-- -- vim.keymap.del("n", "gcc") -- Uncommenting this makes it fail with Too much rescursion
+-- vim.keymap.set("n", "gc", "<cmd>norm gcc<CR>")
