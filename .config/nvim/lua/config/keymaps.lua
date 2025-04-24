@@ -23,8 +23,8 @@ vim.keymap.set({ "i", "c" }, "<c-h>", "<left>")
 vim.keymap.set({ "i", "c" }, "<c-j>", "<down>")
 vim.keymap.set({ "i", "c" }, "<c-k>", "<up>")
 vim.keymap.set({ "i", "c" }, "<c-l>", "<right>")
-vim.keymap.set({ "i", "c" }, "<c-b>", "<s-left>") -- prev word
-vim.keymap.set({ "i", "c" }, "<c-f>", "<s-right>") -- next word
+vim.keymap.set({ "i", "c" }, "<c-b>", "<esc>bi") -- prev word
+vim.keymap.set({ "i", "c" }, "<c-f>", "<esc>ea") -- next word
 
 vim.keymap.set({ "i", "c" }, "<c-a>", "<bs>") -- del prev char
 vim.keymap.set({ "i", "c" }, "<c-s>", "<del>") -- del next char
