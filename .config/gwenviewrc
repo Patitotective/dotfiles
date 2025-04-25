@@ -16,26 +16,26 @@ MouseWheelBehavior=MouseWheelBehavior::Zoom
 MenuBar=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/Screenshot_20250411-191204.png
-File10[$e]=$HOME/Pictures/2025-04-22T21:16:26,870086175-05:00.png
-File2[$e]=$HOME/Sync/pictures/IMG_20250117_161744848_AE~2.jpg
-File3[$e]=$HOME/Sync/pictures/ズケズケ.png
-File4[$e]=$HOME/Downloads/IMG_20250414_115230361_AE.jpg
-File5[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
-File6[$e]=$HOME/Pictures/2025-04-21T22:20:46,733835021-05:00.png
-File7[$e]=$HOME/Sync/scrapyard/ScrapYard Bogota Flyer.svg
-File8[$e]=$HOME/Pictures/2025-04-22T19:30:05,668238851-05:00.png
-File9[$e]=$HOME/Pictures/2025-04-22T21:16:34,292415158-05:00.png
-Name1[$e]=Screenshot_20250411-191204.png
-Name10[$e]=2025-04-22T21:16:26,870086175-05:00.png
-Name2[$e]=IMG_20250117_161744848_AE~2.jpg
-Name3[$e]=ズケズケ.png
-Name4[$e]=IMG_20250414_115230361_AE.jpg
-Name5[$e]=steins gate.jpg
-Name6[$e]=2025-04-21T22:20:46,733835021-05:00.png
-Name7[$e]=ScrapYard Bogota Flyer.svg
-Name8[$e]=2025-04-22T19:30:05,668238851-05:00.png
-Name9[$e]=2025-04-22T21:16:34,292415158-05:00.png
+File1[$e]=$HOME/.config/wlogout/logout-hover.png
+File10[$e]=$HOME/.config/wlogout/hibernate.png
+File2[$e]=$HOME/.config/wlogout/logout.png
+File3[$e]=$HOME/.config/wlogout/power-hover.png
+File4[$e]=$HOME/.config/wlogout/power.png
+File5[$e]=$HOME/.config/wlogout/restart-hover.png
+File6[$e]=$HOME/.config/wlogout/restart.png
+File7[$e]=$HOME/.config/wlogout/sleep-hover.png
+File8[$e]=$HOME/.config/wlogout/sleep.png
+File9[$e]=$HOME/.config/wlogout/hibernate-hover.png
+Name1[$e]=logout-hover.png
+Name10[$e]=hibernate.png
+Name2[$e]=logout.png
+Name3[$e]=power-hover.png
+Name4[$e]=power.png
+Name5[$e]=restart-hover.png
+Name6[$e]=restart.png
+Name7[$e]=sleep-hover.png
+Name8[$e]=sleep.png
+Name9[$e]=hibernate-hover.png
 
 [SideBar]
 InformationSplitterSizes=213,262

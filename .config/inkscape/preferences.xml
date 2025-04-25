@@ -304,7 +304,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm" />
+       unit="px" />
     <eventcontext
        id="text"
        usecurrent="1"
@@ -621,9 +621,13 @@
        append_extension="1"
        path="">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="page" />
       <group
          id="defaultxdpi" />
+      <group
+         id="batchexportarea"
+         value="layer" />
     </group>
     <group
        id="save_as"
@@ -631,7 +635,8 @@
        append_extension="1"
        enable_preview="1"
        path=""
-       use_current_dir="1" />
+       use_current_dir="1"
+       enable_svgexport="0" />
     <group
        id="save_copy"
        default=""
@@ -641,16 +646,17 @@
     <group
        id="open"
        enable_preview="1"
-       path="" />
+       path="/home/cristobal/Downloads/" />
     <group
        id="import"
        enable_preview="1"
        path=""
        ask="1"
        ask_svg="1"
-       link="link"
+       link="embed"
        scale="auto"
-       import_mode_svg="include" />
+       import_mode_svg="include"
+       forcexdpi="0" />
     <group
        id="clonetiler"
        dotrace="0" />
@@ -987,7 +993,37 @@
        id="ruler" />
     <group
        id="snapping"
-       snap-global-toggle="0" />
+       snap-global-toggle="0"
+       snap-bbox="1"
+       snap-bbox-edge="1"
+       snap-bbox-corner="1"
+       snap-bbox-edge-midpoint="0"
+       snap-bbox-center="0"
+       simple-snap-bbox="1"
+       snap-node-category="1"
+       snap-path="1"
+       snap-path-intersection="0"
+       snap-node-cusp="1"
+       snap-node-smooth="1"
+       snap-line-midpoint="1"
+       snap-line-tangential="0"
+       snap-line-perpendicular="0"
+       simple-snap-nodes="1"
+       snap-alignment="0"
+       snap-alignment-self="0"
+       snap-distribution="0"
+       simple-snap-alignment="0"
+       snap-others="1"
+       snap-object-midpoint="0"
+       snap-rotation-center="0"
+       snap-text-baseline="1"
+       snap-path-mask="1"
+       snap-path-clip="1"
+       snap-page-border="1"
+       snap-page-margin="1"
+       snap-grid="1"
+       snap-grid-line="1"
+       snap-guide="1" />
   </group>
   <group
      id="extensions"
@@ -996,10 +1032,10 @@
      org.inkscape.output.png.inkscape.png_antialias="2" />
   <group
      id="desktop"
-     style="fill:#000000;text-orientation:auto;-inkscape-font-specification:'Source Han Serif';font-family:'Source Han Serif';font-size:11px;line-height:1000">
+     style="fill:#18182a;text-orientation:auto;-inkscape-font-specification:'Source Han Serif';font-family:'Source Han Serif';font-size:11px;line-height:1000">
     <group
-       width="964"
-       height="1010"
+       width="1025"
+       height="613"
        x="0"
        y="0"
        maximized="1"
@@ -1118,7 +1154,7 @@
      id="theme"
      defaultPreferDarkTheme="1"
      defaultIconTheme="Tela-purple"
-     defaultGtkTheme="Breeze"
+     defaultGtkTheme="Adwaita-dark"
      narrowSpinButton="1"
      preferDarkTheme="1"
      darkTheme="1"

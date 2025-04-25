@@ -33,3 +33,7 @@ export __GL_VRR_ALLOWED=0 # Controls if Adaptive Sync should be used. Recommende
 
 # VA-API hardware video acceleration 
 export NVD_BACKEND=direct
+
+export EDITOR=/usr/bin/nvim
+export TERMINAL=/usr/bin/kitty
+# export FZF_DEFAULT_OPTS="--bind 'ctrl-u': "

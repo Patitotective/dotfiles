@@ -6,7 +6,11 @@ update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 [ContextMenu]
 ShowAddToPlaces=false
 
+[DetailsMode]
+RightPadding=13
+
 [General]
+UseTabForSwitchingSplitView=true
 Version=202
 ViewPropsTimestamp=2023,4,26,16,58,48.324
 
@@ -33,7 +37,7 @@ ToolButtonStyle=IconOnly
 IconSize=16
 
 [PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,ffmpegthumbs
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,opendocumentthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs,gdk-pixbuf-thumbnailer
 
 [Toolbar mainToolBar]
 IconSize=16

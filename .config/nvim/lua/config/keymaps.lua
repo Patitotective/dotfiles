@@ -20,14 +20,21 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<cr>")
 
 -- Navigation in insert mode
 vim.keymap.set({ "i", "c" }, "<c-h>", "<left>")
-vim.keymap.set({ "i", "c" }, "<c-j>", "<down>")
-vim.keymap.set({ "i", "c" }, "<c-k>", "<up>")
 vim.keymap.set({ "i", "c" }, "<c-l>", "<right>")
-vim.keymap.set({ "i", "c" }, "<c-b>", "<esc>bi") -- prev word
-vim.keymap.set({ "i", "c" }, "<c-f>", "<esc>ea") -- next word
+vim.keymap.set({ "i" }, "<c-j>", "<down>")
+vim.keymap.set({ "i" }, "<c-k>", "<up>")
 
-vim.keymap.set({ "i", "c" }, "<c-a>", "<bs>") -- del prev char
-vim.keymap.set({ "i", "c" }, "<c-s>", "<del>") -- del next char
+vim.keymap.set({ "i", "c" }, "<c-a>", "<home>") -- start of line
+vim.keymap.set({ "i", "c" }, "<c-e>", "<end>") -- end of line
+vim.keymap.set({ "c" }, "<c-b>", "<s-left>") -- prev word
+vim.keymap.set({ "c" }, "<c-f>", "<s-right>") -- next word
+vim.keymap.set({ "i" }, "<c-b>", "<c-o>b") -- prev word
+vim.keymap.set({ "i" }, "<c-f>", "<c-o>w") -- next word
+
+vim.keymap.set({ "i" }, "<c-u>", "<c-o>d0") -- del until start of line
+vim.keymap.set({ "i" }, "<c-c>", "<c-o>d$") -- del until end of line
+vim.keymap.set({ "i", "c" }, "<c-s>", "<bs>") -- del prev char
+vim.keymap.set({ "i", "c" }, "<c-d>", "<del>") -- del next char
 
 vim.keymap.set({ "i", "c" }, "<c-v>", "<c-r>+") -- paste
 

@@ -2,7 +2,7 @@ fish_add_path /usr/local/sbin /usr/local/bin /usr/bin
 fish_add_path ~/.nimble/bin
 
 set -g fish_key_bindings fish_vi_key_bindings
-bind ctrl-v fish_clipboard_paste
+# bind ctrl-v fish_clipboard_paste
 
 # fzf.fish
 set fzf_preview_dir_cmd eza --all --color=always
