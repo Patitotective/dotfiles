@@ -1,7 +1,0 @@
-{
-    "version": "2.1.1",
-    "autoload": {
-        "GXT 881 Gaming Keyboard": "new preset",
-        "AT Translated Set 2 keyboard": "new preset"
-    }
-}
