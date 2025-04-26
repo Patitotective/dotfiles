@@ -16,31 +16,31 @@ MouseWheelBehavior=MouseWheelBehavior::Zoom
 MenuBar=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/.config/wlogout/logout-hover.png
-File10[$e]=$HOME/.config/wlogout/hibernate.png
-File2[$e]=$HOME/.config/wlogout/logout.png
-File3[$e]=$HOME/.config/wlogout/power-hover.png
-File4[$e]=$HOME/.config/wlogout/power.png
-File5[$e]=$HOME/.config/wlogout/restart-hover.png
-File6[$e]=$HOME/.config/wlogout/restart.png
-File7[$e]=$HOME/.config/wlogout/sleep-hover.png
-File8[$e]=$HOME/.config/wlogout/sleep.png
-File9[$e]=$HOME/.config/wlogout/hibernate-hover.png
-Name1[$e]=logout-hover.png
-Name10[$e]=hibernate.png
-Name2[$e]=logout.png
-Name3[$e]=power-hover.png
-Name4[$e]=power.png
-Name5[$e]=restart-hover.png
-Name6[$e]=restart.png
-Name7[$e]=sleep-hover.png
-Name8[$e]=sleep.png
-Name9[$e]=hibernate-hover.png
+File1[$e]=$HOME/.config/wlogout/hibernate-hover.png
+File10[$e]=$HOME/Pictures/wallpapers/overlord.5.webp
+File2[$e]=$HOME/.config/wlogout/hibernate.png
+File3[$e]=$HOME/Downloads/marshmallow cat 3.webp
+File4[$e]=$HOME/Pictures/wallpapers/grimgar.7.png
+File5[$e]=$HOME/Pictures/wallpapers/grimgar.2.png
+File6[$e]=$HOME/Pictures/wallpapers/grimgar.4.jpg
+File7[$e]=$HOME/Pictures/2025-04-22T21:16:26,870086175-05:00.png
+File8[$e]=$HOME/Pictures/2025-04-21T22:20:46,733835021-05:00.png
+File9[$e]=$HOME/Pictures/wallpapers/grimgar.5.jpg
+Name1[$e]=hibernate-hover.png
+Name10[$e]=overlord.5.webp
+Name2[$e]=hibernate.png
+Name3[$e]=marshmallow cat 3.webp
+Name4[$e]=grimgar.7.png
+Name5[$e]=grimgar.2.png
+Name6[$e]=grimgar.4.jpg
+Name7[$e]=2025-04-22T21:16:26,870086175-05:00.png
+Name8[$e]=2025-04-21T22:20:46,733835021-05:00.png
+Name9[$e]=grimgar.5.jpg
 
 [SideBar]
 InformationSplitterSizes=213,262
 IsVisible ViewMode FullScreen=true
-SideBarSplitterSizes=218,714
+SideBarSplitterSizes=210,724
 
 [ThumbnailView]
 ThumbnailSize=144

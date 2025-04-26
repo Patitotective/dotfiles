@@ -2,7 +2,7 @@ return {
   "echasnovski/mini.snippets",
   opts = {
     mappings = {
-      expand = "<c-y>",
+      expand = "<c-,>",
       jump_next = "",
       jump_prev = "",
       stop = "<c-c>",

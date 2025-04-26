@@ -1,9 +1,8 @@
 #!/usr/bin/env -S nim e --hints:off
-import std/[json, sequtils, strformat, os]
+import std/[json, sequtils, strformat, os, parseopt]
 import ./[api]
 
 const
-  useHyprctl = false
   monitorsConfigPath = getConfigDir() / "hypr/monitors.conf"
 
   laptopMonitor = "Chimei Innolux Corporation 0x1521"
@@ -21,6 +20,28 @@ var
     """# See https://wiki.hyprland.org/Configuring/Monitors/
 # This was generated automatically by """ &
     currentSourcePath() & "\n"
+  useHyprctl = false
+  enableAll = false # Enable all monitors and ignore configuration rules
+  optParser: OptParser
+
+try:
+  optParser = initOptParser(longNoVal = @["enableAll"])
+  for kind, key, val in getopt():
+    case kind
+    of cmdArgument:
+      discard
+    of cmdShortOption:
+      discard
+    of cmdLongOption: #, cmdShortOption:
+      case key
+      of "enableAll":
+        # useHyprctl = true
+        enableAll = true
+        log "Detected option --enableAll"
+    of cmdEnd:
+      discard
+except ValueError:
+  discard
 
 proc contains[V](arr: openArray[V], values: varargs[V]): bool =
   for v in values:
@@ -31,6 +52,11 @@ proc contains[V](arr: openArray[V], values: varargs[V]): bool =
 
 proc getCurrentMonitors(): seq[Monitor] =
   let rawjson = run("hyprctl -j monitors all").output
+  let jsonData = rawjson.parseJson()
+  jsonData.to(seq[Monitor])
+
+proc getActiveMonitors(): seq[Monitor] =
+  let rawjson = run("hyprctl -j monitors").output
   let jsonData = rawjson.parseJson()
   jsonData.to(seq[Monitor])
 
@@ -47,23 +73,36 @@ proc monitorKeyword(v: string) =
 
 proc reloadMonitors*() =
   let currentMonitors = getCurrentMonitors()
+  let activeMonitors = getActiveMonitors()
   let currentMonitorsByDesc = currentMonitors.mapIt(it.description)
-  echo &"Found {currentMonitors.len} monitors: {currentMonitorsByDesc}"
-  case currentMonitors.len
-  of 1:
+  log &"Found {currentMonitors.len} monitors ({activeMonitors.len} active): {currentMonitorsByDesc}"
+
+  if enableAll:
     if laptopMonitor in currentMonitorsByDesc:
       monitorKeyword(laptopDefault)
-  of 2:
-    if [laptopMonitor, externalMonitor] in currentMonitorsByDesc:
-      monitorKeyword(&"desc:{laptopMonitor}, disable")
+    if externalMonitor in currentMonitorsByDesc:
       monitorKeyword(externalDefault)
-    if [laptopMonitor, tvMonitor] in currentMonitorsByDesc:
-      monitorKeyword(laptopDefault)
+    if tvMonitor in currentMonitorsByDesc:
       monitorKeyword(tvDefault)
+
+    writeFile(skipMonitorAddedEventPath, $(currentMonitors.len - activeMonitors.len))
   else:
-    discard
+    case currentMonitors.len
+    of 1:
+      if laptopMonitor in currentMonitorsByDesc:
+        monitorKeyword(laptopDefault)
+    of 2:
+      if [laptopMonitor, externalMonitor] in currentMonitorsByDesc:
+        monitorKeyword(&"desc:{laptopMonitor}, disable")
+        monitorKeyword(externalDefault)
+      if [laptopMonitor, tvMonitor] in currentMonitorsByDesc:
+        monitorKeyword(laptopDefault)
+        monitorKeyword(tvDefault)
+    else:
+      discard
 
   reloadConfig()
 
 when isMainModule:
   reloadMonitors()
+  log &"{monitorsConfigPath} ->\n{newConfig}"

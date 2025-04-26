@@ -196,7 +196,7 @@
       // "(.*)": " ",
       "(~.*)": "  $1",
       "nvim(.*)": " $1",
-      "yazi(.*)": "󰉋 $1",
+      "y(azi)?(.*)": "󰉋 $2",
       "(.*)Ablaze Floorp": "󰖟 $1 Floorp",
       "(.*) — Ablaze Floorp": "󰖟 $1",
       "(.*) — Mozilla Firefox": "󰈹 $1",

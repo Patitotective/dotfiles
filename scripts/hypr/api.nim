@@ -1,4 +1,4 @@
-import std/[strformat, osproc]
+import std/[strformat, osproc, os, times]
 
 type
   Event* = enum
@@ -74,8 +74,13 @@ type
     mirrorOf*: string
     availableModes*: seq[string]
 
+const skipMonitorAddedEventPath* = getConfigDir() / "hypr/.skipMonitorAddedEvent"
+
+proc log*(msg: string) =
+  echo &"({now().format(\"HH:mm:ss:fff\")}) {msg}"
+
 proc run*(
     cmd: string, input = "", workingDir = ""
 ): tuple[output: string, exitCode: int] {.discardable.} =
-  echo &"-> {cmd}"
+  log &"-> {cmd}"
   execCmdEx(cmd, input = input, workingDir = workingDir)
