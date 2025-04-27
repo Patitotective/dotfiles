@@ -1,3 +1,5 @@
+-- create tab if the tab being switched to does not exist
+
 --- @sync entry
 return {
 	entry = function()

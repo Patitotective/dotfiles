@@ -1,3 +1,5 @@
+-- create a tab and enter the hovered directory
+
 --- @sync entry
 local function entry(_, job)
 	local cur = cx.active.current
