@@ -64,4 +64,5 @@ Type=Application
 NoDisplay=true
 X-KDE-autostart-phase=1
 OnlyShowIn=KDE
-Hidden=true # To prevent it from autostarting
+Hidden=true
+ # To prevent it from autostarting
