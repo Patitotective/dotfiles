@@ -66,3 +66,9 @@ echo "----------------------------------------------------"
 echo "UPDATING YAZI PLUGINS"
 echo "----------------------------------------------------"
 ya pack --upgrade
+
+echo ""
+echo "----------------------------------------------------"
+echo "GENERATING ORGFILES INDEX"
+echo "----------------------------------------------------"
+/home/cristobal/dev/snippets/makeOrgfilesIndex
