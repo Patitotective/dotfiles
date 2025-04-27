@@ -74,7 +74,7 @@ type
     mirrorOf*: string
     availableModes*: seq[string]
 
-const skipMonitorAddedEventPath* = getConfigDir() / "hypr/.skipMonitorAddedEvent"
+const skipMonitorAddedEventPath* = getHomeDir() / "scripts/hypr/.skipMonitorAddedEvent"
 
 proc log*(msg: string) =
   echo &"({now().format(\"HH:mm:ss:fff\")}) {msg}"

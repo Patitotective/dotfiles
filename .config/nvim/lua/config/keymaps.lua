@@ -36,6 +36,8 @@ vim.keymap.set({ "i" }, "<c-c>", "<c-o>d$") -- del until end of line
 vim.keymap.set({ "i", "c" }, "<c-s>", "<bs>") -- del prev char
 vim.keymap.set({ "i", "c" }, "<c-d>", "<del>") -- del next char
 
+-- vim.keymap.set({ "i" }, "<c-w>", "<c-o>dvb", { noremap = true }) -- del prev word (case_Wise)
+
 -- vim.keymap.set({ "i", "c" }, "<c-v>", "<c-r>+") -- paste
 
 -- vim.keymap.set({ "i" }, "<c-m>", "<c-o>O") -- insert line before
