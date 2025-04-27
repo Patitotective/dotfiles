@@ -6,8 +6,8 @@ export XCURSOR_SIZE=30
 # export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 # Toolkit Backend
-export GDK_BACKEND=wayland,x11,* # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
-export QT_QPA_PLATFORM=wayland;xcb # Qt: Use wayland if available, fall back to x11 if not.
+export GDK_BACKEND="wayland,x11,*" # GTK: Use wayland if available. If not: try x11, then any other GDK backend.
+export QT_QPA_PLATFORM="wayland;xcb" # Qt: Use wayland if available, fall back to x11 if not.
 export SDL_VIDEODRIVER=wayland # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
 export CLUTTER_BACKEND=wayland # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
 
@@ -18,7 +18,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt
 export QT_AUTO_SCREEN_SCALE_FACTOR=1 # enables automatic scaling, based on the monitor’s pixel density
 
 # Toolkit Backend Variables
-export GDK_BACKEND=wayland,x11,*
+export GDK_BACKEND="wayland,x11,*"
 export SDL_VIDEODRIVER=wayland
 export CLUTTER_BACKEND=wayland
 
