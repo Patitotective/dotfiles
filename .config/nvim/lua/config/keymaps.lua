@@ -31,10 +31,14 @@ vim.keymap.set({ "c" }, "<c-f>", "<s-right>") -- next word
 vim.keymap.set({ "i" }, "<c-b>", "<c-o>b") -- prev word
 vim.keymap.set({ "i" }, "<c-f>", "<c-o>w") -- next word
 
+vim.keymap.set({ "i" }, "<c-z>", "<c-d>") -- deindent
+
 vim.keymap.set({ "i" }, "<c-u>", "<c-o>d0") -- del until start of line
 vim.keymap.set({ "i" }, "<c-c>", "<c-o>d$") -- del until end of line
 vim.keymap.set({ "i", "c" }, "<c-s>", "<bs>") -- del prev char
 vim.keymap.set({ "i", "c" }, "<c-d>", "<del>") -- del next char
+
+vim.keymap.set({ "i" }, "<c-x>", "<c-o>de") -- del next word
 
 -- vim.keymap.set({ "i" }, "<c-w>", "<c-o>dvb", { noremap = true }) -- del prev word (case_Wise)
 
