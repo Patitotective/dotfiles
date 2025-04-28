@@ -68,6 +68,11 @@ use = "imsi32/yatline-catppuccin"
 rev = "8cc4773"
 hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "864a021"
+hash = "7918aab6a71caf31b58411f789195677"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
 rev = "68326b4"
