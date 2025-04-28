@@ -1,5 +1,6 @@
 [Added Associations]
 application/json=nvim.desktop;
+application/pdf=org.kde.okular.desktop;
 application/x-docbook+xml=nvim.desktop;
 application/x-extension-htm=userapp-Floorp-S0Z522.desktop;
 application/x-extension-html=userapp-Floorp-S0Z522.desktop;
@@ -22,6 +23,7 @@ x-scheme-handler/mailto=floorp.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
+application/pdf=org.kde.okular.desktop;
 application/x-docbook+xml=nvim.desktop;
 application/x-extension-htm=userapp-Floorp-S0Z522.desktop
 application/x-extension-html=userapp-Floorp-S0Z522.desktop

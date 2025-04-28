@@ -1,28 +1,33 @@
 [Desktop Entry]
-FullScreen=false
+FullScreen=true
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
 
 [General]
 LockSidebar=true
 ShowSidebar=true
 
+[MainWindow]
+MenuBar=Disabled
+
 [Recent Files]
-File1[$e]=$HOME/Sync/spain/apostillas/Soporte De Pago Diploma Bachiller - 070040012310392.pdf
-File10[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
-File2[$e]=$HOME/Sync/spain/apostillas/Soporte De Pago ICFES - 070040012128396.pdf
-File3[$e]=$HOME/Sync/spain/apostillas/Diploma Bachiller Legalizado - CERT_CUN2025LR001766.pdf
-File4[$e]=$HOME/Sync/docs/T.I. Cristo.pdf
-File5[$e]=$HOME/Sync/docs/T.I. Cristo 2.pdf
-File6[$e]=$HOME/Sync/docs/Vitaminas.pdf
-File7[$e]=$HOME/Sync/spain/apostillas/ICFES Apostillado - Soporte_A2ZDD1133337821.PDF
-File8[$e]=$HOME/Downloads/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
-File9[$e]=$HOME/dev/ebird/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
-Name1[$e]=Soporte De Pago Diploma Bachiller - 070040012310392.pdf
-Name10[$e]=steins gate.jpg
-Name2[$e]=Soporte De Pago ICFES - 070040012128396.pdf
-Name3[$e]=Diploma Bachiller Legalizado - CERT_CUN2025LR001766.pdf
-Name4[$e]=T.I. Cristo.pdf
-Name5[$e]=T.I. Cristo 2.pdf
-Name6[$e]=Vitaminas.pdf
-Name7[$e]=ICFES Apostillado - Soporte_A2ZDD1133337821.PDF
-Name8[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
-Name9[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
+File1[$e]=$HOME/Sync/docs/T.I. Cristo.pdf
+File10[$e]=$HOME/Sync/spain/apostillas/ICFES Legalizado - Certificado Apostilla AC202430240200.pdf
+File2[$e]=$HOME/Sync/docs/T.I. Cristo 2.pdf
+File3[$e]=$HOME/Sync/docs/Vitaminas.pdf
+File4[$e]=$HOME/Sync/spain/apostillas/ICFES Apostillado - Soporte_A2ZDD1133337821.PDF
+File5[$e]=$HOME/Downloads/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
+File6[$e]=$HOME/dev/ebird/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
+File7[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
+File8[$e]=$HOME/Downloads/Riaga Bernal, Cristóbal - Resultados Pruebas Saber 11(1).pdf
+File9[$e]=$HOME/Downloads/Riaga Bernal, Cristóbal - Título De Bachiller.pdf
+Name1[$e]=T.I. Cristo.pdf
+Name10[$e]=ICFES Legalizado - Certificado Apostilla AC202430240200.pdf
+Name2[$e]=T.I. Cristo 2.pdf
+Name3[$e]=Vitaminas.pdf
+Name4[$e]=ICFES Apostillado - Soporte_A2ZDD1133337821.PDF
+Name5[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
+Name6[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
+Name7[$e]=steins gate.jpg
+Name8[$e]=Riaga Bernal, Cristóbal - Resultados Pruebas Saber 11(1).pdf
+Name9[$e]=Riaga Bernal, Cristóbal - Título De Bachiller.pdf
