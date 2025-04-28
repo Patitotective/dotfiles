@@ -1,45 +1,50 @@
 -- require("git"):setup()
 require("full-border"):setup()
+
 require("folder-rules"):setup()
+
 require("relative-motions"):setup({ show_numbers = "relative", show_motion = true, enter_mode = "first" })
+
+local catppuccin_theme = require("yatline-catppuccin"):setup("frappe") -- or "latte" | "frappe" | "macchiato"
 require("yatline"):setup({
 	--theme = my_theme,
-	section_separator = { open = "", close = "" },
-	part_separator = { open = "", close = "" },
-	inverse_separator = { open = "", close = "" },
-
-	style_a = {
-		fg = "black",
-		bg_mode = {
-			normal = "white",
-			select = "brightyellow",
-			un_set = "brightred",
-		},
-	},
-	style_b = { bg = "brightblack", fg = "brightwhite" },
-	style_c = { bg = "black", fg = "brightwhite" },
-
-	permissions_t_fg = "green",
-	permissions_r_fg = "yellow",
-	permissions_w_fg = "red",
-	permissions_x_fg = "cyan",
-	permissions_s_fg = "white",
-
+	theme = catppuccin_theme,
+	-- section_separator = { open = "", close = "" },
+	-- part_separator = { open = "", close = "" },
+	-- inverse_separator = { open = "", close = "" },
+	--
+	-- style_a = {
+	-- 	fg = "black",
+	-- 	bg_mode = {
+	-- 		normal = "white",
+	-- 		select = "brightyellow",
+	-- 		un_set = "brightred",
+	-- 	},
+	-- },
+	-- style_b = { bg = "brightblack", fg = "brightwhite" },
+	-- style_c = { bg = "black", fg = "brightwhite" },
+	--
+	-- permissions_t_fg = "green",
+	-- permissions_r_fg = "yellow",
+	-- permissions_w_fg = "red",
+	-- permissions_x_fg = "cyan",
+	-- permissions_s_fg = "white",
+	--
 	tab_width = 20,
 	tab_use_inverse = false,
-
-	selected = { icon = "󰻭", fg = "yellow" },
-	copied = { icon = "", fg = "green" },
-	cut = { icon = "", fg = "red" },
-
-	total = { icon = "󰮍", fg = "yellow" },
-	succ = { icon = "", fg = "green" },
-	fail = { icon = "", fg = "red" },
-	found = { icon = "󰮕", fg = "blue" },
-	processed = { icon = "󰐍", fg = "green" },
-
+	--
+	-- selected = { icon = "󰻭", fg = "yellow" },
+	-- copied = { icon = "", fg = "green" },
+	-- cut = { icon = "", fg = "red" },
+	--
+	-- total = { icon = "󰮍", fg = "yellow" },
+	-- succ = { icon = "", fg = "green" },
+	-- fail = { icon = "", fg = "red" },
+	-- found = { icon = "󰮕", fg = "blue" },
+	-- processed = { icon = "󰐍", fg = "green" },
+	--
 	show_background = true,
-
+	--
 	display_header_line = true,
 	display_status_line = true,
 
@@ -91,6 +96,7 @@ require("yatline"):setup({
 		},
 	},
 })
+
 require("bookmarks"):setup({
 	last_directory = { enable = true, persist = true },
 	persist = "vim",

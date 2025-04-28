@@ -72,7 +72,12 @@ run = [
 ]
 
 [[manager.prepend_keymap]]
-on = "T"
+on = ["T", "t"]
+run = "plugin toggle-pane min-preview"
+desc = "Hide or restore the preview pane"
+
+[[manager.prepend_keymap]]
+on = ["T", "T"]
 run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
