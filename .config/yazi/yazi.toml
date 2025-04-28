@@ -5,14 +5,14 @@
 # sort_translit = true
 linemode = "size"
 show_symlink = true
-scrolloff = 5
+scrolloff = 10
 
 [preview]
 wrap = "no"
 tab_size = 2
 image_delay = 10
-max_width = 5000
-max_height = 5000
+max_width = 2000
+max_height = 2000
 
 [opener]
 reveal = [{ run = "gwenview $@", orphan = true, for = "unix" }]

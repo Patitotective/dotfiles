@@ -99,7 +99,8 @@ require("bookmarks"):setup({
 	file_pick_mode = "hover",
 	custom_desc_input = false,
 })
+
 -- when it detects that you're using Yazi in nvim, the preview is hidden by default — you can always press T (or any key you've bound) to show it again.
-if os.getenv("NVIM") then
-	require("toggle-pane"):entry("min-preview")
-end
+-- if os.getenv("NVIM") then
+-- 	require("toggle-pane"):entry("min-preview")
+-- end
