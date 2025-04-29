@@ -1,4 +1,4 @@
 return {
   "lambdalisue/vim-suda",
-  lazy = true,
+  -- lazy = true,
 }
