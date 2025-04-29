@@ -16,6 +16,7 @@ max_height = 2000
 
 [opener]
 reveal = [{ run = "gwenview $@", orphan = true, for = "unix" }]
+play = [{ run = "gwenview $@", orphan = true, for = "unix" }]
 extract = [
   { run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
   { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },

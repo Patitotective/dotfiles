@@ -2,10 +2,24 @@
 # on = "!"
 # run = 'shell "$SHELL" --block' # TODO: open fish instead of bash
 # desc = "Open shell here"
+
 # To be able to delete with dd
 [[confirm.prepend_keymap]]
 on = ["d"]
 run = "close --submit"
+
+[[manager.prepend_keymap]]
+on = "y"
+run = [
+  'shell -- for path in "$@"; do echo -n "$path"; done | wl-copy -t text/uri-list',
+  "yank",
+]
+
+[[manager.prepend_keymap]]
+on = "<esc>"
+run = "escape --all"
+
+#################### bookmakrs ####################
 
 # [[manager.prepend_keymap]]
 # on = ["m"]
@@ -27,6 +41,8 @@ run = "close --submit"
 # run = "plugin bookmarks delete_all"
 # desc = "Delete all bookmarks"
 
+#################### tab_switch ####################
+
 [[manager.prepend_keymap]]
 on = "L"
 run = "tab_switch 1 --relative"
@@ -35,10 +51,14 @@ run = "tab_switch 1 --relative"
 on = "H"
 run = "tab_switch -1 --relative"
 
+#################### ouch ####################
+
 [[manager.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "Compress with ouch"
+
+#################### chmod ####################
 
 [[manager.prepend_keymap]]
 on = ["c", "m"]
@@ -50,30 +70,27 @@ on = ["g", "i"]
 run = "plugin lazygit"
 desc = "run lazygit"
 
+#################### restore ####################
+
 [[manager.prepend_keymap]]
 on = "u"
 run = "plugin restore"
 desc = "Restore last deleted files/folders"
 
+#################### kdeconnect-send ####################
+#
 [[manager.prepend_keymap]]
 on = ["<C-s>"]
 run = "plugin kdeconnect-send"
 desc = "Send selected files via KDE Connect"
 
+#################### mount ####################
+
 [[manager.prepend_keymap]]
 on = "M"
 run = "plugin mount"
 
-[[manager.prepend_keymap]]
-on = "y"
-run = [
-  'shell -- for path in "$@"; do echo -n "$path"; done | wl-copy -t text/uri-list',
-  "yank",
-]
-
-[[manager.prepend_keymap]]
-on = "<esc>"
-run = "escape --all"
+#################### toggle/select ####################
 
 [[manager.prepend_keymap]]
 on = "K"
@@ -85,10 +102,15 @@ on = "J"
 run = ["toggle", "arrow next"]
 desc = "Toggle the current selection state and go down"
 
-[[manager.prepend_keymap]]
-on = "l"
-run = "plugin smart-enter"
-desc = "Enter the child directory, or open the file"
+#################### smart-enter ####################
+
+# This seems to prevent yazi as a file picker (e.g.: for floorp) to detect opened files
+# [[manager.prepend_keymap]]
+# on = "l"
+# run = "plugin smart-enter"
+# desc = "Enter the child directory, or open the file"
+
+#################### preview ####################
 
 [[manager.prepend_keymap]]
 on = ["T", "t"]
@@ -100,6 +122,8 @@ on = ["T", "T"]
 run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
+#################### relative-motions ####################
+#
 [[manager.prepend_keymap]]
 on = ["1"]
 run = "plugin relative-motions 1"
@@ -144,3 +168,44 @@ desc = "Move in relative steps"
 on = ["9"]
 run = "plugin relative-motions 9"
 desc = "Move in relative steps"
+
+#################### projects.yazi ####################
+[[manager.prepend_keymap]]
+on = ["q"]
+run = "plugin projects quit"
+desc = "Save last project and exit the process"
+
+[[manager.prepend_keymap]]
+on = ["P", "s"]
+run = "plugin projects save"
+desc = "Save current project"
+
+[[manager.prepend_keymap]]
+on = ["P", "l"]
+run = "plugin projects load"
+desc = "Load project"
+
+[[manager.prepend_keymap]]
+on = ["P", "P"]
+run = "plugin projects load_last"
+desc = "Load last project"
+
+[[manager.prepend_keymap]]
+on = ["P", "d"]
+run = "plugin projects delete"
+desc = "Delete project"
+
+[[manager.prepend_keymap]]
+on = ["P", "D"]
+run = "plugin projects delete_all"
+desc = "Delete all projects"
+
+[[manager.prepend_keymap]]
+on = ["P", "m"]
+run = "plugin projects 'merge current'"
+desc = "Merge current tab to other projects"
+
+[[manager.prepend_keymap]]
+on = ["P", "M"]
+run = "plugin projects 'merge all'"
+desc = "Merge current project to other projects"
