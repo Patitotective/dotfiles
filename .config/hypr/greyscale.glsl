@@ -1,11 +1,17 @@
-// Taken from https://www.reddit.com/r/hyprland/comments/1es6xdk/comment/li4542l/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-// By Rcomian
+// From https://github.com/hyprwm/Hyprland/issues/1140#issuecomment-1546245134
+// By ulziibuyan
+
 precision mediump float;
 varying vec2 v_texcoord;
 uniform sampler2D tex;
 
 void main() {
-  vec4 this_colour = texture2D( tex, v_texcoord ); 
-  float new_colour = (this_colour.r+this_colour.g+this_colour.b)/3.0;
-  gl_FragColor = vec4(new_colour,new_colour,new_colour,1.0);
+    vec4 pixColor = texture2D(tex, v_texcoord);
+
+    gl_FragColor = vec4(
+        pixColor[0] * 0.299 + pixColor[1] * 0.587 + pixColor[2] * 0.114,
+        pixColor[0] * 0.299 + pixColor[1] * 0.587 + pixColor[2] * 0.114,
+        pixColor[0] * 0.299 + pixColor[1] * 0.587 + pixColor[2] * 0.114,
+        pixColor[3]
+    );
 }
