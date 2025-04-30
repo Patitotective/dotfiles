@@ -3,7 +3,11 @@ require("full-border"):setup()
 
 require("folder-rules"):setup()
 
-require("relative-motions"):setup({ show_numbers = "relative", show_motion = true, enter_mode = "first" })
+require("relative-motions"):setup({
+	show_numbers = "relative",
+	show_motion = true,
+	enter_mode = "first",
+})
 
 local catppuccin_theme = require("yatline-catppuccin"):setup("frappe") -- or "latte" | "frappe" | "macchiato"
 require("yatline"):setup({
