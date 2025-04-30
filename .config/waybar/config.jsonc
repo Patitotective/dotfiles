@@ -172,7 +172,7 @@
     },
     "tooltip-format-activated": "Caffeine Mode Active",
     "tooltip-format-deactivated": "Caffeine Mode Inactive",
-    "timeout": 15
+    "timeout": 30
   },
   "hyprland/workspaces": {
     "rotate": 0,
