@@ -1,4 +1,4 @@
-import std/[strformat, osproc, os, times]
+import std/[strformat, osproc, os, times, strutils]
 
 type
   Event* = enum
@@ -84,3 +84,7 @@ proc run*(
 ): tuple[output: string, exitCode: int] {.discardable.} =
   log &"-> {cmd}"
   execCmdEx(cmd, input = input, workingDir = workingDir)
+
+proc write*(path: string, content: string) =
+  log &"{path} ->\n{content.indent(2)}"
+  writeFile(path, content)
