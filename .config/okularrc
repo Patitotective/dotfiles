@@ -1,33 +1,33 @@
 [Desktop Entry]
 FullScreen=false
-shouldShowMenuBarComingFromFullScreen=true
-shouldShowToolBarComingFromFullScreen=true
+shouldShowMenuBarComingFromFullScreen=false
+shouldShowToolBarComingFromFullScreen=false
 
 [General]
 LockSidebar=true
-ShowSidebar=true
+ShowSidebar=false
 
 [MainWindow]
 MenuBar=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
-File10[$e]=$HOME/Sync/japan/2026_Application_Undergraduate.pdf
-File2[$e]=$HOME/dev/ebird/ebd_CO_smp_relMar-2025/eBird_Basic_Dataset_Metadata_v1.16.pdf
-File3[$e]=$HOME/Pictures/wallpapers/steins gate.jpg
-File4[$e]=$HOME/Downloads/Riaga Bernal, Cristóbal - Resultados Pruebas Saber 11(1).pdf
-File5[$e]=$HOME/Downloads/Riaga Bernal, Cristóbal - Título De Bachiller.pdf
-File6[$e]=$HOME/Sync/spain/apostillas/ICFES Legalizado - Certificado Apostilla AC202430240200.pdf
-File7[$e]=$HOME/Downloads/2026_Guidelines_Undergraduate_E.pdf
-File8[$e]=$HOME/Sync/japan/2026_SampleRecommendation_Undergraduate.pdf
-File9[$e]=$HOME/Sync/japan/2026_Placement_Undergraduate.pdf
-Name1[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
-Name10[$e]=2026_Application_Undergraduate.pdf
-Name2[$e]=eBird_Basic_Dataset_Metadata_v1.16.pdf
-Name3[$e]=steins gate.jpg
-Name4[$e]=Riaga Bernal, Cristóbal - Resultados Pruebas Saber 11(1).pdf
-Name5[$e]=Riaga Bernal, Cristóbal - Título De Bachiller.pdf
-Name6[$e]=ICFES Legalizado - Certificado Apostilla AC202430240200.pdf
-Name7[$e]=2026_Guidelines_Undergraduate_E.pdf
-Name8[$e]=2026_SampleRecommendation_Undergraduate.pdf
-Name9[$e]=2026_Placement_Undergraduate.pdf
+File1[$e]=$HOME/Downloads/TOEFL_Score_Report_1086345.pdf
+File10[$e]=$HOME/Sync/spain/pce/examenes/Examen-Fisica-2024-Escuela-PCE.pdf
+File2[$e]=$HOME/Sync/spain/apostillas/Soporte_A2ZEO114516686.PDF
+File3[$e]=$HOME/Sync/spain/apostillas/Riaga Bernal, Cristóbal - Certificado Pruebas Saber 11 (Apostillado).pdf
+File4[$e]=$HOME/Sync/spain/pce/resguardoAccesoExtranjerosEstudiante-277743(1).pdf
+File5[$e]=$HOME/Sync/spain/pce/comprobanteAccesoExtranjerosEstudiante-277743.pdf
+File6[$e]=$HOME/Sync/spain/pce/resguardoAccesoExtranjerosEstudiante-277743.pdf
+File7[$e]=$HOME/Sync/spain/ingrid/CC IRA.pdf
+File8[$e]=$HOME/Downloads/Examen-Ingles-2024-Escuela-PCE.pdf
+File9[$e]=$HOME/Sync/spain/pce/examenes/Examen-Matematicas-II-2024-Escuela-PCE.pdf
+Name1[$e]=TOEFL_Score_Report_1086345.pdf
+Name10[$e]=Examen-Fisica-2024-Escuela-PCE.pdf
+Name2[$e]=Soporte_A2ZEO114516686.PDF
+Name3[$e]=Riaga Bernal, Cristóbal - Certificado Pruebas Saber 11 (Apostillado).pdf
+Name4[$e]=resguardoAccesoExtranjerosEstudiante-277743(1).pdf
+Name5[$e]=comprobanteAccesoExtranjerosEstudiante-277743.pdf
+Name6[$e]=resguardoAccesoExtranjerosEstudiante-277743.pdf
+Name7[$e]=CC IRA.pdf
+Name8[$e]=Examen-Ingles-2024-Escuela-PCE.pdf
+Name9[$e]=Examen-Matematicas-II-2024-Escuela-PCE.pdf
