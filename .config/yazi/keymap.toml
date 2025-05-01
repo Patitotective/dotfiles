@@ -8,7 +8,7 @@
 on = ["d"]
 run = "close --submit"
 
-# TO copy the path of the file on y
+# To copy the path of the file on y
 [[manager.prepend_keymap]]
 on = "y"
 run = [
@@ -20,7 +20,18 @@ run = [
 on = "<esc>"
 run = "escape --all"
 
-#################### bookmakrs ####################
+#################### dragon (drag and) drop ####################
+[[manager.prepend_keymap]]
+on = "<C-n>"
+run = 'shell -- dragon-drop --and-exit --icon-only --on-top --all "$@"'
+
+#################### file-extra-metadata ####################
+[[manager.prepend_keymap]]
+on = "<tab>"
+run = "spot"
+desc = "Spot hovered file"
+
+#################### bookmarks ####################
 
 # [[manager.prepend_keymap]]
 # on = ["m"]

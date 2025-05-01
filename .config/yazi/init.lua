@@ -12,7 +12,7 @@ require("relative-motions"):setup({
 local catppuccin_theme = require("yatline-catppuccin"):setup("frappe") -- or "latte" | "frappe" | "macchiato"
 require("yatline"):setup({
 	--theme = my_theme,
-	theme = catppuccin_theme,
+	-- theme = catppuccin_theme,
 	-- section_separator = { open = "", close = "" },
 	-- part_separator = { open = "", close = "" },
 	-- inverse_separator = { open = "", close = "" },
@@ -120,7 +120,7 @@ require("projects"):setup({
 	last = {
 		update_after_save = true,
 		update_after_load = true,
-		load_after_start = true,
+		load_after_start = false,
 	},
 	merge = {
 		quit_after_merge = false,

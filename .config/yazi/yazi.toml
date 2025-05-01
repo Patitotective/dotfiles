@@ -15,14 +15,18 @@ max_width = 2000
 max_height = 2000
 
 [opener]
-reveal = [{ run = "gwenview $@", orphan = true, for = "unix" }]
+show = [{ run = "gwenview $@", orphan = true, for = "unix" }]
+pdf = [{ run = "okular $@", orphan = true, for = "unix" }]
 play = [{ run = "gwenview $@", orphan = true, for = "unix" }]
 extract = [
   { run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
   { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
 ]
 [open]
-prepend_rules = [{ mime = "image/*", use = "reveal" }]
+prepend_rules = [
+  { mime = "image/*", use = "show" },
+  { mime = "application/pdf", use = "pdf" },
+]
 
 [plugin]
 prepend_previewers = [
@@ -35,6 +39,8 @@ prepend_previewers = [
   { mime = "application/x-xz", run = "ouch" },
   { mime = "application/xz", run = "ouch" },
 ]
+append_previewers = [{ name = "*", run = "file" }]
+prepend_spotters = [{ name = "*", run = "file-extra-metadata" }]
 # [[plugin.prepend_fetchers]]
 # id = "git"
 # name = "*"
