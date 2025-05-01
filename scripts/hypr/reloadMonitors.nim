@@ -1,5 +1,5 @@
 #!/usr/bin/env -S nim e --hints:off
-import std/[json, sequtils, strformat, os, parseopt]
+import std/[json, sequtils, strformat, os, parseopt, strutils]
 import ./[api]
 
 type MonitorConfig = object
@@ -31,10 +31,21 @@ const
 
 var
   # New monitors.conf content if useHyprctl is false
-  newConfig =
-    """# See https://wiki.hyprland.org/Configuring/Monitors/
-# This was generated automatically by """ &
-    currentSourcePath() & "\n"
+  newConfig = join(
+    [
+      "# See https://wiki.hyprland.org/Configuring/Monitors/",
+      &"# This was generated automatically by {currentSourcePath()}",
+      "# Default config for the defined monitors:",
+      block:
+        var monitorsDefault = ""
+        for name, config in monitors.fieldPairs:
+          # Remember std/strformat doesn't work with fieldPairs
+          monitorsDefault.add "# monitor = " & config.default() & "\n"
+        monitorsDefault,
+      "monitor = , preferred, auto, 1",
+    ],
+    "\n",
+  )
   enableAll = false # Enable all monitors and ignore configuration rules
   disableEnable = false
     # Disable and enable the active monitors to fix some resolution issues
