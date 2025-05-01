@@ -1,7 +1,7 @@
 return {
   "stevearc/overseer.nvim",
   opts = {
-    templates = { "builtin", "user.nim_run", "user.nimscript", "user.shell" },
+    templates = { "builtin", "user.nim_run", "user.nimscript", "user.shell", "user.nim_compile" },
     on_output_quickfix = {
       items_only = true,
       open = true,
