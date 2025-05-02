@@ -43,6 +43,7 @@ var
           monitorsDefault.add "# monitor = " & config.default() & "\n"
         monitorsDefault,
       "monitor = , preferred, auto, 1",
+      "\n",
     ],
     "\n",
   )
