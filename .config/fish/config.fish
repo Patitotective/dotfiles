@@ -2,6 +2,9 @@ fish_add_path /usr/local/sbin /usr/local/bin /usr/bin
 fish_add_path ~/.nimble/bin
 fish_add_path ~/.local/share/nvim/lazy/nvim_rocks/bin
 set -g fish_key_bindings fish_vi_key_bindings
+# Tried to set normal mode as defualt, but no luck
+# fish_vi_key_bindings defualt
+# set fish_bind_mode default
 
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste

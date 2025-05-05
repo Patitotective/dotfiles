@@ -16,11 +16,12 @@ return {
     org_deadline_warning_days = 4,
     org_startup_indented = true,
     org_indent_mode_turns_on_hiding_stars = false,
-    org_todo_keywords = { "TODO(t)", "NEXT(n)", "|", "DONE(d)" },
+    org_todo_keywords = { "TODO(t)", "NEXT(n)", "DOING(i)", "|", "DONE(d)" },
     org_todo_keyword_faces = {
       -- Color list https://codeyarns.com/tech/2011-07-29-vim-chart-of-color-names.html#gsc.tab=0
       TODO = ":foreground hotpink2",
       NEXT = ":foreground orange",
+      DOING = ":foreground orchid",
       DONE = ":foreground limegreen",
     },
     org_blank_before_new_entry = {

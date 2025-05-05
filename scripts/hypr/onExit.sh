@@ -1,5 +1,5 @@
 #!/bin/bash
-rm ~/scripts/hypr/.skipMonitorAddedEvent
+hyprnim monitors --enableAll
 # Save prev brightness
 ~/scripts/hypr/getBrightness.sh >~/scripts/hypr/.prevBrightness
 # Set brightness to 100%
