@@ -116,3 +116,16 @@ vim.api.nvim_create_autocmd("User", {
     set_mark("~", "~", "Home directory")
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "/tmp/nvim-everywhere/*",
+  callback = function()
+    vim.opt_local.wrap = true
+  end,
+})
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "/tmp/nvim-everywhere/*",
+  callback = function()
+    vim.cmd("quit")
+  end,
+})

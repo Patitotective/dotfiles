@@ -9,6 +9,10 @@ local header = [[
 
 return {
   "snacks.nvim",
+  keys = {
+    -- disable the keymap for the explorer
+    { "<leader>e", false },
+  },
   opts = {
     explorer = {
       enabled = false,

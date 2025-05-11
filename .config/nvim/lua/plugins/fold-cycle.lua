@@ -1,5 +1,6 @@
 return {
   "jghauser/fold-cycle.nvim",
+  enabled = false,
   keys = {
     {
       "<tab>",

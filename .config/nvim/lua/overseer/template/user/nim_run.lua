@@ -1,5 +1,5 @@
 return {
-  name = "nim c -r",
+  name = "nim compile and run",
   builder = function()
     local file = vim.fn.expand("%:p")
     return {
