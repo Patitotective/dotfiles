@@ -120,7 +120,7 @@ require("projects"):setup({
 	last = {
 		update_after_save = true,
 		update_after_load = true,
-		load_after_start = false,
+		load_after_start = true,
 	},
 	merge = {
 		quit_after_merge = false,

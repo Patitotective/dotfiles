@@ -10,8 +10,8 @@ hash = "f3853bbdd1da2fad09d059ab5464abfd"
 
 [[plugin.deps]]
 use = "dedukun/bookmarks"
-rev = "a70648a"
-hash = "b836fb264381f35dec79930438a906d5"
+rev = "fbb7c00"
+hash = "1d231a808d3344546380df33daf43e91"
 
 [[plugin.deps]]
 use = "dedukun/relative-motions"
@@ -20,8 +20,8 @@ hash = "23915860e59348bf4166778bb0e606f7"
 
 [[plugin.deps]]
 use = "stelcodes/bunny"
-rev = "a64f32a"
-hash = "22d9e6f72230be88ab322040626623a"
+rev = "1062775"
+hash = "f9cc64457c9fbab166894c0c8cb5598d"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
@@ -85,5 +85,5 @@ hash = "433d4fcb211b823b44bdb00451ef4934"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "68326b4"
+rev = "02f3fc6"
 hash = "7780fbbc8965da5a31a76a0dcd4d1216"
