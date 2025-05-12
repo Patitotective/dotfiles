@@ -229,6 +229,11 @@ run = "cd ~"
 desc = "Go home"
 
 [[manager.prepend_keymap]]
+on = ["g", "t"]
+run = "cd ~/.local/share/Trash/files"
+desc = "Go to Trash"
+
+[[manager.prepend_keymap]]
 on = ["g", "d"]
 run = "cd ~/Downloads"
 desc = "Go to Downloads"
