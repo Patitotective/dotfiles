@@ -15,7 +15,7 @@ kitty --class=nvim-everywhere --override confirm_os_window_close=0 nvim -n "+nno
 
 set content (string trim <$tmpfile)
 if string length -q $content
-    printf %s\n $content | wl-copy
+    printf %s\n $content | wl-copy -n
     # wtype may be dangerous with a big file
     # if test (string length $content) -lt 100
     #     wtype (wl-paste --no-newline)
