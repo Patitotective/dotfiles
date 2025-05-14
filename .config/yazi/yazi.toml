@@ -15,8 +15,9 @@ max_width = 2000
 max_height = 2000
 
 [opener]
-show = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
+view = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
 pdf = [{ run = 'okular "$@"', orphan = true, for = "unix" }]
+svg = [{ run = 'inkscape "$@"', orphan = true, for = "unix" }]
 play = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
 extract = [
   { run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
@@ -24,7 +25,8 @@ extract = [
 ]
 [open]
 prepend_rules = [
-  { mime = "image/*", use = "show" },
+  { mime = "image/svg+xml", use = "svg" },
+  { mime = "image/*", use = "view" },
   { mime = "application/pdf", use = "pdf" },
 ]
 
