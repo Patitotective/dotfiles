@@ -224,6 +224,11 @@ desc = "Merge current project to other projects"
 
 #################### Go To ####################
 [[manager.prepend_keymap]]
+on = ["<space>"]
+run = "cd --interactive"
+desc = "Jump interactively"
+
+[[manager.prepend_keymap]]
 on = ["g", "h"]
 run = "cd ~"
 desc = "Go home"
