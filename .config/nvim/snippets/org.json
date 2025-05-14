@@ -1,0 +1,6 @@
+{
+  "Crochet inc6": {
+    "prefix": "c6",
+    "body": "*** 1. MR, sc6 (6)\n*** 2. inc6 (12)\n*** 3. [sc, inc]x6 (18)\n*** 4. [sc2, inc]x6 (24)\n*** 5. [sc3, inc]x6 (30)\n*** 6. [sc4, inc]x6 (36)\n*** 7. [sc5, inc]x6 (42)\n*** 8. [sc5, dec]x6 (36)\n*** 9. [sc4, dec]x6 (30)\n*** 10. [sc3, dec]x6 (24)\n*** 11. [sc2, dec]x6 (18)\n*** 12. [sc, dec]x6 (12)\n*** 13. dec6 (6)"
+  }
+}

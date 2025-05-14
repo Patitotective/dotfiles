@@ -7,5 +7,8 @@ return {
       jump_prev = "",
       stop = "<c-c>",
     },
+    -- snippets = {
+    --
+    -- },
   },
 }
