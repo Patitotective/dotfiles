@@ -1,5 +1,6 @@
 window {
-    font-family: monospace;
+    font-family: JetBrainsMonoNerdFont;
+    font-weight: bold;
     font-size: 15pt;
     color: #f2f4f8; /* text */
     background-color: rgba(0, 0, 0, 0);
@@ -8,7 +9,7 @@ window {
 button {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25%;
+    background-size: 30%;
     border: none;
     background-color: rgba(22, 22, 22, 1);
     margin: 20px;
@@ -29,43 +30,43 @@ button:hover {
 }
 
 #lock {
-    background-image: image(url("./icons/lock_white.png"));
+    background-image: url("./icons/lock_light.svg");
 }
 #lock:focus, #lock:hover {
-    background-image: image(url("./icons/lock_black.png"));
+    background-image: image(url("./icons/lock_dark.svg"));
 }
 
 #logout {
-    background-image: image(url("./icons/logout_white.png"));
+    background-image: image(url("./icons/logout_light.svg"));
 }
 #logout:focus, #logout:hover {
-    background-image: image(url("./icons/logout_black.png"));
+    background-image: image(url("./icons/logout_dark.svg"));
 }
 
 #suspend {
-    background-image: image(url("./icons/suspend_white.png"));
+    background-image: image(url("./icons/suspend_light.svg"));
 }
 #suspend:focus, #suspend:hover {
-    background-image: image(url("./icons/suspend_black.png"));
+    background-image: image(url("./icons/suspend_dark.svg"));
 }
 
 #shutdown {
-    background-image: image(url("./icons/shutdown_white.png"));
+    background-image: image(url("./icons/shutdown_light.svg"));
 }
 #shutdown:focus, #shutdown:hover {
-    background-image: image(url("./icons/shutdown_black.png"));
+    background-image: image(url("./icons/shutdown_dark.svg"));
 }
 
 #reboot {
-    background-image: image(url("./icons/reboot_white.png"));
+    background-image: image(url("./icons/reboot_light.svg"));
 }
 #reboot:focus, #reboot:hover {
-    background-image: image(url("./icons/reboot_black.png"));
+    background-image: image(url("./icons/reboot_dark.svg"));
 }
 
 #hibernate {
-    background-image: image(url("./icons/hibernate_white.png"));
+    background-image: image(url("./icons/hibernate_light.svg"));
 }
 #hibernate:focus, #hibernate:hover {
-    background-image: image(url("./icons/hibernate_black.png"));
+    background-image: image(url("./icons/hibernate_dark.svg"));
 }
