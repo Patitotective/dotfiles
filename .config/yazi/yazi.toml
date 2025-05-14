@@ -18,11 +18,12 @@ max_height = 2000
 view = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
 pdf = [{ run = 'okular "$@"', orphan = true, for = "unix" }]
 svg = [{ run = 'inkscape "$@"', orphan = true, for = "unix" }]
-play = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
+play = [{ run = 'vlc "$@"', orphan = true, for = "unix" }]
 extract = [
   { run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
   { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
 ]
+
 [open]
 prepend_rules = [
   { mime = "image/svg+xml", use = "svg" },
