@@ -123,9 +123,24 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.opt_local.wrap = true
   end,
 })
+-- Quit on sav e
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "/tmp/nvim-everywhere/*",
   callback = function()
     vim.cmd("quit")
+  end,
+})
+
+-- Unmap <cr> to save on command line window, since it executes the command of the current line there
+vim.api.nvim_create_autocmd("CmdwinEnter", {
+  callback = function()
+    vim.keymap.del("n", "<cr>")
+  end,
+})
+
+vim.api.nvim_create_autocmd("CmdwinLeave", {
+  callback = function()
+    -- TODO: make it actually restore the previous keymap
+    vim.keymap.set("n", "<cr>", "<cmd>write<cr>") -- save file
   end,
 })
