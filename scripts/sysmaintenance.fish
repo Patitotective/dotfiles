@@ -7,6 +7,7 @@ echo ----------------------------------------------------
 echo "BACKUP PACMAN PKGS LIST"
 echo ----------------------------------------------------
 ~/scripts/backupPkgs.sh
+echo "Backed up native and foreign packages successfully"
 
 echo
 echo ----------------------------------------------------
