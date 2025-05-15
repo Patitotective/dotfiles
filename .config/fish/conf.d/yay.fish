@@ -4,8 +4,8 @@ function yayinstall
         echo "$pkgsToInstall"
         yay -S (string split -- " " "$pkgsToInstall")
     end
-
 end
+
 function yayremove
     set pkgsToRemove (yay -Qq | fzf -i -q "$argv" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml')
     if test -n "$pkgsToRemove" # If pkgsToRemove is not empty
@@ -15,12 +15,16 @@ function yayremove
 end
 
 # Outputs installed pkgs, last installed first
-# TODO: make it actually check if the pkg is installed
-# TODO: doesnt work in fish
-# function yaylist
-#     for i in $(yay -Qq)
-#         do
-#         grep "\[ALPM\] installed $i" /var/log/pacman.log
-#         done | sort -u | sed -e 's/\[ALPM\] installed //' -e 's/(.*$//'
-#     end
-# end
+function yaylist
+    set installed (yay -Qq)
+    set pkgs
+    # TODO: make it actually list pkgs in order of installation
+    # Probably because rg uses parallelism, it doesn't output in the same order
+    # Should instead use sort with the installation time
+    for pkg in (rg "\[ALPM\] installed (\w+)" /var/log/pacman.log --replace '$1' --no-line-number --only-matching)
+        if contains $pkg $installed; and not contains $pkg $pkgs
+            set -p pkgs $pkg
+        end
+    end
+    echo (printf %s\n $pkgs | fzf -i -q "$argv" --multi --preview 'yay -Qi {1} | bat -n --color=always -l yaml')
+end
