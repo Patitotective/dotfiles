@@ -1,7 +1,7 @@
 // From https://github.com/hyprwm/Hyprland/issues/1140#issuecomment-1546245134
 // By ulziibuyan
 
-precision mediump float;
+precision highp float; // https://github.com/hyprwm/Hyprland/issues/1140#issuecomment-1950960827
 varying vec2 v_texcoord;
 uniform sampler2D tex;
 
