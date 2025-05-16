@@ -1,4 +1,12 @@
 {
+  "Crochet inc6 8": {
+    "prefix": "6i8",
+    "body": "** 1. MR, sc6 (6)\n** 2. inc6 (12)\n** 3. [sc, inc]x6 (18)\n** 4. [sc2, inc]x6 (24)\n** 5. [sc3, inc]x6 (30)\n** 6. [sc4, inc]x6 (36)\n** 7. [sc5, inc]x6 (42)\n** 8. [sc6, inc]x6 (48)"
+  },
+  "Crochet dec6 8": {
+    "prefix": "6d8",
+    "body": "** 9. [sc6, dec]x6 (42)\n** 10. [sc5, dec]x6 (36)\n** 11. [sc4, dec]x6 (30)\n** 12. [sc3, dec]x6 (24)\n** 13. [sc2, dec]x6 (18)\n** 14. [sc, dec]x6 (12)\n** 15. dec6 (6)"
+  },
   "Crochet inc6 7": {
     "prefix": "6i7",
     "body": "** 1. MR, sc6 (6)\n** 2. inc6 (12)\n** 3. [sc, inc]x6 (18)\n** 4. [sc2, inc]x6 (24)\n** 5. [sc3, inc]x6 (30)\n** 6. [sc4, inc]x6 (36)\n** 7. [sc5, inc]x6 (42)"
@@ -23,12 +31,16 @@
     "prefix": "6d5",
     "body": "** 6. [sc3, dec]x6 (24)\n** 7. [sc2, dec]x6 (18)\n** 8. [sc, dec]x6 (12)\n** 9. dec6 (6)"
   },
+  "Crochet inc6 2": {
+    "prefix": "6i2",
+    "body": "** 1. MR, sc6 (6)\n** 2. inc6 (12)"
+  },
+  "Crochet dec6 2": {
+    "prefix": "6d1",
+    "body": "** 3. dec6 (6)"
+  },
   "Crochet inc6 1": {
     "prefix": "6i1",
     "body": "** 1. MR, sc6 (6)"
-  },
-  "Crochet dec6 1": {
-    "prefix": "6d1",
-    "body": "** 2. dec6 (6)"
   }
 }
