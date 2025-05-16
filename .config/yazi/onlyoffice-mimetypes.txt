@@ -1,0 +1,20 @@
+application/vnd.openxmlformats-officedocument.wordprocessingml.document
+application/msword
+application/vnd.ms-word.document.macroenabled.12
+application/vnd.openxmlformats-officedocument.wordprocessingml.template
+application/epub+zip
+# text/html
+message/rfc822
+application/vnd.oasis.opendocument.text
+application/vnd.oasis.opendocument.text-template
+application/rtf
+application/vnd.sun.xml.writer.template
+application/vnd.sun.xml.writer
+application/vnd.ms-works
+# text/plain
+# application/xml
+text/csv
+application/vnd.oasis.opendocument.spreadsheet
+application/vnd.oasis.opendocument.spreadsheet-template
+application/vnd.sun.xml.calc
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
