@@ -120,7 +120,7 @@ require("projects"):setup({
 	last = {
 		update_after_save = true,
 		update_after_load = true,
-		load_after_start = true,
+		load_after_start = false, -- If this is enabled, then when you open yazi inside nvim it doesn't open the current file but this project
 	},
 	merge = {
 		quit_after_merge = false,
