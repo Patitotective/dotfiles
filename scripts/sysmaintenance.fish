@@ -15,6 +15,7 @@ echo "BACKUP PACMAN DATABASE"
 echo ----------------------------------------------------
 mkdir -p ~/backup
 tar -cjf ~/backup/pacman_database.tar.bz2 /var/lib/pacman/local
+echo "Backed up pacman database"
 
 echo
 echo ----------------------------------------------------
@@ -79,18 +80,18 @@ echo ----------------------------------------------------
 echo "CLEARING HOME CACHE"
 echo ----------------------------------------------------
 
-set home_cache_used "$(du -sh ~/.cache)"
+set home_cache_used "$(sudo du -sh ~/.cache)"
 rm -rf ~/.cache/
 
 echo "Clearing ~/.cache/..."
 echo "Spaced saved: $home_cache_used"
 
-# echo
-# echo ----------------------------------------------------
-# echo "CLEARING SYSTEM LOGS"
-# echo ----------------------------------------------------
-#
-# sudo journalctl --vacuum-time=7d
+echo
+echo ----------------------------------------------------
+echo "CLEARING SYSTEM LOGS"
+echo ----------------------------------------------------
+
+sudo journalctl --vacuum-time=1y
 
 echo
 echo ----------------------------------------------------
@@ -104,7 +105,7 @@ echo ----------------------------------------------------
 echo "UPDATING FISHER"
 echo ----------------------------------------------------
 
-fish -c fisher update
+fish -c "fisher update"
 
 echo
 echo ----------------------------------------------------
