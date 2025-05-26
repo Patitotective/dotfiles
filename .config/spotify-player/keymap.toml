@@ -22,3 +22,7 @@ key_sequence = "o"
 [[keymaps]]
 command = "ShowActionsOnCurrentTrack"
 key_sequence = "O"
+
+[[keymaps]]
+command = "PreviousPage"
+key_sequence = "h"
