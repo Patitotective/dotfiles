@@ -1,0 +1,24 @@
+# https://github.com/aome510/spotify-player/blob/master/README.md#commands
+[[keymaps]]
+command = "ChooseSelected"
+key_sequence = "l"
+
+[[keymaps]]
+command = "LyricsPage"
+key_sequence = "g L"
+
+[[keymaps]]
+command = "FocusPreviousWindow"
+key_sequence = "C-h"
+
+[[keymaps]]
+command = "FocusNextWindow"
+key_sequence = "C-l"
+
+[[keymaps]]
+command = "ShowActionsOnSelectedItem"
+key_sequence = "o"
+
+[[keymaps]]
+command = "ShowActionsOnCurrentTrack"
+key_sequence = "O"
