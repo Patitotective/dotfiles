@@ -1,2 +1,2 @@
 [Timers]
-timersList=[{"commandTimeout":"","label":"Workout","length":60,"looping":false,"uuid":"{51941512-86b9-4743-a66a-07c629e9b9db}"},{"commandTimeout":"","label":"Timer","length":1800,"looping":false,"uuid":"{908b9dfe-7a4d-4bc6-b6eb-70830fc7c8a1}"}]
+timersList=[{"commandTimeout":"","label":"Workout","length":60,"looping":false,"uuid":"{51941512-86b9-4743-a66a-07c629e9b9db}"},{"commandTimeout":"","label":"Timer","length":1800,"looping":false,"uuid":"{908b9dfe-7a4d-4bc6-b6eb-70830fc7c8a1}"},{"commandTimeout":"","label":"Timer","length":300,"looping":false,"uuid":"{660b12bd-a100-43b0-8d4a-aca45a93b0b1}"},{"commandTimeout":"","label":"Timer","length":180,"looping":false,"uuid":"{de1f1db0-b325-4760-9a15-47a7c1b05a05}"}]
