@@ -75,3 +75,7 @@ prepend_spotters = [{ name = "*", run = "file-extra-metadata" }]
 # id = "git"
 # name = "*/"
 # run = "git"
+[[plugin.prepend_fetchers]]
+id = "simple-tag"
+name = "*"
+run = "simple-tag"

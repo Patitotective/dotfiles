@@ -83,6 +83,11 @@ use = "boydaihungst/file-extra-metadata"
 rev = "d1d3bbc"
 hash = "6a1fde367290834907064aaaf7d68850"
 
+[[plugin.deps]]
+use = "boydaihungst/simple-tag"
+rev = "2bc47d1"
+hash = "7faa45bbce138653868377c985223dac"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
 rev = "02f3fc6"
