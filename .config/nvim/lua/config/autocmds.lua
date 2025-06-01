@@ -12,6 +12,8 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "org", "text", "plaintex", "typst", "gitcommit", "markdown" },
   callback = function()
     vim.opt_local.wrap = true
+    vim.opt_local.smartindent = false
+    vim.opt_local.autoindent = false
     -- vim.opt_local.spell = true
   end,
 })
