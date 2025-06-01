@@ -82,6 +82,15 @@ return {
       cyclic = true,
     })
 
+    local disabledEnabled = augend.constant.new({
+      elements = {
+        "disabled",
+        "enabled",
+      },
+      word = true,
+      cyclic = true,
+    })
+
     return {
       dials_by_ft = {
         css = "css",
@@ -99,17 +108,18 @@ return {
       },
       groups = {
         default = {
-          augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
-          augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
-          augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
-          augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
-          ordinal_numbers,
           weekdays,
           months,
           capitalized_boolean,
           augend.constant.alias.bool, -- boolean value (true <-> false)
           logical_alias,
           yesno,
+          disabledEnabled,
+          augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
+          augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
+          augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
+          augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
+          ordinal_numbers,
         },
         vue = {
           augend.constant.new({ elements = { "let", "const" } }),
