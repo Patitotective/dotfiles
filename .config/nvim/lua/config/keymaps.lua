@@ -55,6 +55,7 @@ vim.keymap.set("n", "<cr>", "<cmd>write<cr>") -- save file
 -- Since Tab is mapped to toggle fold, c-i needs to be mapped to something for nvim to differentiate bet them
 vim.keymap.set("n", "<c-i>", "<c-i>")
 vim.keymap.set("n", "<tab>", "za")
+vim.keymap.set("n", "<s-tab>", "zA")
 
 -- Tabs
 vim.keymap.del("n", "<leader><tab><tab>")
