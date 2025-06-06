@@ -120,7 +120,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "/tmp/nvim-everywhere/*",
+  pattern = { "/tmp/nvim-everywhere/*", "/tmp/aerc-compose-*.eml" },
   callback = function()
     vim.opt_local.wrap = true
   end,
@@ -132,6 +132,22 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.cmd("quit")
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "/tmp/aerc-compose-*.eml",
+  callback = function()
+    vim.cmd("quit")
+  end,
+})
+
+-- Disable tab and shift tab since aerc uses that to switch between body and header
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "/tmp/aerc-compose-*.eml",
+--   callback = function()
+--     vim.keymap.del("n", "<tab>")
+--     vim.keymap.del("n", "<s-tab>")
+--   end,
+-- })
 
 -- Unmap <cr> to save on command line window, since it executes the command of the current line there
 vim.api.nvim_create_autocmd("CmdwinEnter", {
