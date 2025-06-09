@@ -13,10 +13,10 @@ vim.keymap.del("n", "<C-Left>")
 vim.keymap.del("n", "<C-Right>")
 
 -- Resize windows
-vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<cr>")
-vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>")
-vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>")
-vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<cr>")
+-- vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<cr>")
+-- vim.keymap.set("n", "<C-S-h>", "<cmd>vertical resize -2<cr>")
+-- vim.keymap.set("n", "<C-S-l>", "<cmd>vertical resize +2<cr>")
+-- vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<cr>")
 
 -- Navigation in insert mode
 vim.keymap.set({ "i", "c" }, "<c-h>", "<left>")
