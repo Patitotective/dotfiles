@@ -127,14 +127,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 -- Quit on sav e
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "/tmp/nvim-everywhere/*",
-  callback = function()
-    vim.cmd("quit")
-  end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "/tmp/aerc-compose-*.eml",
+  pattern = { "/tmp/nvim-everywhere/*", "/tmp/aerc-compose-*.eml", "/tmp/yazi-*/bulk-*" },
   callback = function()
     vim.cmd("quit")
   end,
