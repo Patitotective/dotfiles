@@ -5,7 +5,8 @@ return {
   opts = {
     org_agenda_files = "~/Documents/orgfiles/**/*",
     org_default_notes_file = "~/Documents/orgfiles/1Default.org",
-    org_archive_location = "zArchive.%s::",
+    -- org_archive_location = "zArchive.%s::",
+    org_archive_location = "%s_archive::",
     org_id_link_to_org_use_id = true,
     org_cycle_separator_lines = 1,
     -- org_startup_folded = "content",
