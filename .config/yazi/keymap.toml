@@ -9,481 +9,224 @@ on = ["d"]
 run = "close --submit"
 
 # To copy the path of the file on y
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "y"
 run = [
   'shell -- for path in "$@"; do echo -n "$path "; done | wl-copy -t text/uri-list',
   "yank",
 ]
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<esc>"
 run = "escape --all"
 
 #################### dragon (drag and) drop ####################
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<C-n>"
 run = 'shell -- dragon-drop --and-exit --icon-only --on-top --all "$@"'
 
 #################### file-extra-metadata ####################
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<tab>"
 run = "spot"
 desc = "Spot hovered file"
 
 #################### bookmarks ####################
 
-# [[manager.prepend_keymap]]
-# on = ["m"]
-# run = "plugin bookmarks save"
-# desc = "Save current position as a bookmark"
-#
-# [[manager.prepend_keymap]]
-# on = ["'"]
-# run = "plugin bookmarks jump"
-# desc = "Jump to a bookmark"
-#
-# [[manager.prepend_keymap]]
-# on = ["b", "d"]
-# run = "plugin bookmarks delete"
-# desc = "Delete a bookmark"
-#
-# [[manager.prepend_keymap]]
-# on = ["b", "D"]
-# run = "plugin bookmarks delete_all"
-# desc = "Delete all bookmarks"
+[[mgr.prepend_keymap]]
+on = ["m"]
+run = "plugin bookmarks save"
+desc = "Save current position as a bookmark"
+
+[[mgr.prepend_keymap]]
+on = ["'"]
+run = "plugin bookmarks jump"
+desc = "Jump to a bookmark"
+
+[[mgr.prepend_keymap]]
+on = ["b", "d"]
+run = "plugin bookmarks delete"
+desc = "Delete a bookmark"
+
+[[mgr.prepend_keymap]]
+on = ["b", "D"]
+run = "plugin bookmarks delete_all"
+desc = "Delete all bookmarks"
 
 #################### tab_switch ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "L"
 run = "tab_switch 1 --relative"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "H"
 run = "tab_switch -1 --relative"
 
 #################### ouch ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "Compress with ouch"
 
 #################### chmod ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "i"]
 run = "plugin lazygit"
 desc = "run lazygit"
 
 #################### restore ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "u"
 run = "plugin restore"
 desc = "Restore last deleted files/folders"
 
 #################### kdeconnect-send ####################
 #
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["<C-s>"]
 run = "plugin kdeconnect-send"
 desc = "Send selected files via KDE Connect"
 
 #################### mount ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "M"
 run = "plugin mount"
 
 #################### toggle/select ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "K"
 run = ["toggle", "arrow prev"]
 desc = "Toggle the current selection state and go up"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "J"
 run = ["toggle", "arrow next"]
 desc = "Toggle the current selection state and go down"
 
 #################### smart-enter ####################
 
-# This seems to prevent yazi as a file picker (e.g.: for floorp) to detect opened files
-# [[manager.prepend_keymap]]
-# on = "l"
-# run = "plugin smart-enter"
-# desc = "Enter the child directory, or open the file"
+[[mgr.prepend_keymap]]
+on = "l"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
 
 #################### preview ####################
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["T", "t"]
 run = "plugin toggle-pane min-preview"
 desc = "Hide or restore the preview pane"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["T", "T"]
 run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
-#################### relative-motions ####################
-#
-[[manager.prepend_keymap]]
-on = ["1"]
-run = "plugin relative-motions 1"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["2"]
-run = "plugin relative-motions 2"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["3"]
-run = "plugin relative-motions 3"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["4"]
-run = "plugin relative-motions 4"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["5"]
-run = "plugin relative-motions 5"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["6"]
-run = "plugin relative-motions 6"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["7"]
-run = "plugin relative-motions 7"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["8"]
-run = "plugin relative-motions 8"
-desc = "Move in relative steps"
-
-[[manager.prepend_keymap]]
-on = ["9"]
-run = "plugin relative-motions 9"
-desc = "Move in relative steps"
-
-#################### projects.yazi ####################
-# [[manager.prepend_keymap]]
-# on = ["q"]
-# run = "plugin projects quit"
-# desc = "Save last project and exit the process"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "s"]
-# run = "plugin projects save"
-# desc = "Save current project"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "l"]
-# run = "plugin projects load"
-# desc = "Load project"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "P"]
-# run = "plugin projects load_last"
-# desc = "Load last project"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "d"]
-# run = "plugin projects delete"
-# desc = "Delete project"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "D"]
-# run = "plugin projects delete_all"
-# desc = "Delete all projects"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "m"]
-# run = "plugin projects 'merge current'"
-# desc = "Merge current tab to other projects"
-#
-# [[manager.prepend_keymap]]
-# on = ["P", "M"]
-# run = "plugin projects 'merge all'"
-# desc = "Merge current project to other projects"
-
 #################### Go To ####################
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["<space>"]
 run = "cd --interactive"
 desc = "Jump interactively"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "h"]
 run = "cd ~"
 desc = "Go home"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "t"]
 run = "cd ~/.local/share/Trash/files"
 desc = "Go to Trash"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "d"]
 run = "cd ~/Downloads"
 desc = "Go to Downloads"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "s"]
 run = "cd ~/Sync"
 desc = "Go to Sync"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "c"]
 run = "cd ~/.config"
 desc = "Go to .config"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "C"]
 run = "cd ~/clones"
 desc = "Go to clones"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "D"]
 run = "cd ~/dev"
 desc = "Go to dev"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "p"]
 run = "cd ~/Pictures"
 desc = "Go to Pictures"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["g", "v"]
 run = "cd ~/Videos"
 desc = "Go to Videos"
 
-[[manager.prepend_keymap]]
-desc = "Toggle a tag (press any key)"
-on = ["t", "t", "k"]
-run = "plugin simple-tag -- toggle-tag"
+#################### relative-motions ####################
 
-[[manager.prepend_keymap]]
-desc = "Toggle tag(s) with fixed tag key(s) = (! and 1 and q)"
-on = ["`"]
-run = "plugin simple-tag -- toggle-tag --keys=!1q"
+[[mgr.prepend_keymap]]
+on = ["1"]
+run = "plugin relative-motions 1"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Toggle tag with fixed tag key = *"
-on = ["`"]
-run = "plugin simple-tag -- toggle-tag --keys=*"
+[[mgr.prepend_keymap]]
+on = ["2"]
+run = "plugin relative-motions 2"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Toggle tag with fixed tag key = *"
-on = ["`"]
-run = "plugin simple-tag -- toggle-tag --key=*"
+[[mgr.prepend_keymap]]
+on = ["3"]
+run = "plugin relative-motions 3"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Toggle tag(s) with value from (input box)"
-on = ["t", "t", "i"]
-run = "plugin simple-tag -- toggle-tag --input"
+[[mgr.prepend_keymap]]
+on = ["4"]
+run = "plugin relative-motions 4"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Add a tag (press any key)"
-on = ["t", "a", "k"]
-run = "plugin simple-tag -- add-tag"
+[[mgr.prepend_keymap]]
+on = ["5"]
+run = "plugin relative-motions 5"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Add tag(s) with fixed tag keys = (! and 1 and q)"
-on = ["t", "a", "f"]
-run = "plugin simple-tag -- add-tag --keys=!1q"
+[[mgr.prepend_keymap]]
+on = ["6"]
+run = "plugin relative-motions 6"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Add tag with fixed tag key = *"
-on = ["t", "a", "f"]
-run = "plugin simple-tag -- add-tag --keys=*"
+[[mgr.prepend_keymap]]
+on = ["7"]
+run = "plugin relative-motions 7"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Add tag with fixed tag key = *"
-on = ["t", "a", "f"]
-run = "plugin simple-tag -- add-tag --key=*"
+[[mgr.prepend_keymap]]
+on = ["8"]
+run = "plugin relative-motions 8"
+desc = "Move in relative steps"
 
-[[manager.prepend_keymap]]
-desc = "Add tag(s) with value from (input box)"
-on = ["t", "a", "i"]
-run = "plugin simple-tag -- add-tag --input"
-
-[[manager.prepend_keymap]]
-desc = "Remove a tag (press any key)"
-on = ["t", "d", "k"]
-run = "plugin simple-tag -- remove-tag"
-
-[[manager.prepend_keymap]]
-desc = "Remove tag(s) with fixed tag keys = (! and 1 and q)"
-on = ["t", "d", "f"]
-run = "plugin simple-tag -- remove-tag --keys=!1q"
-
-[[manager.prepend_keymap]]
-desc = "Remove tag with fixed tag key = *"
-on = ["t", "d", "f"]
-run = "plugin simple-tag -- remove-tag --keys=*"
-
-[[manager.prepend_keymap]]
-desc = "Remove tag with fixed tag key = *"
-on = ["t", "d", "f"]
-run = "plugin simple-tag -- remove-tag --key=*"
-
-[[manager.prepend_keymap]]
-desc = "Remove tag(s) with value from (input box)"
-on = ["t", "d", "i"]
-run = "plugin simple-tag -- remove-tag --input"
-
-[[manager.prepend_keymap]]
-desc = "Replace with a new tag (press any key)"
-on = ["t", "r", "k"]
-run = "plugin simple-tag -- replace-tag"
-
-[[manager.prepend_keymap]]
-desc = "Replace tag(s) with fixed tag keys = (! and 1 and q)"
-on = ["t", "r", "f"]
-run = "plugin simple-tag -- replace-tag --keys=!1q"
-
-[[manager.prepend_keymap]]
-desc = "Replace tag(s) with fixed tag key = *"
-on = ["t", "r", "f"]
-run = "plugin simple-tag -- replace-tag --keys=*"
-
-[[manager.prepend_keymap]]
-desc = "Replace tag(s) with fixed tag key = *"
-on = ["t", "r", "f"]
-run = "plugin simple-tag -- replace-tag --key=*"
-
-[[manager.prepend_keymap]]
-desc = "Replace tag(s) with value from (input box)"
-on = ["t", "r", "i"]
-run = "plugin simple-tag -- replace-tag --input"
-
-[[manager.prepend_keymap]]
-desc = "Edit tag(s) (input box)"
-on = ["t", "e"]
-run = "plugin simple-tag -- edit-tag "
-
-[[manager.prepend_keymap]]
-desc = "Clear all tags from selected or hovered files"
-on = ["t", "c"]
-run = "plugin simple-tag -- clear"
-
-[[manager.prepend_keymap]]
-desc = "Toggle tag indicator (icon > tag key > hidden)"
-on = ["t", "u", "s"]
-run = "plugin simple-tag -- toggle-ui"
-
-[[manager.prepend_keymap]]
-desc = "Hide all tags indicator"
-on = ["t", "u", "h"]
-run = "plugin simple-tag -- toggle-ui --mode=hidden"
-
-[[manager.prepend_keymap]]
-desc = "Filter files/folders by a tag (press any key)"
-on = ["t", "f"]
-run = "plugin simple-tag -- filter"
-
-[[manager.prepend_keymap]]
-desc = "Filter files/folders by tag(s) (input box)"
-on = ["t", "F"]
-run = "plugin simple-tag -- filter --input"
-
-[[manager.prepend_keymap]]
-desc = "Filter files/folders by contain tags (input box)"
-on = ["t", "F"]
-run = "plugin simple-tag -- filter --input --mode=or"
-
-[[manager.prepend_keymap]]
-desc = "Select a selection action then select a tag key (toggle-select)"
-on = ["t", "s", "t"]
-run = "plugin simple-tag -- toggle-select"
-
-[[manager.prepend_keymap]]
-desc = ""
-on = ["t", "s", "t"]
-run = "plugin simple-tag -- toggle-select --keys=!1q"
-
-[[manager.prepend_keymap]]
-desc = "replace-select"
-on = ["t", "s", "r"]
-run = "plugin simple-tag -- replace-select"
-
-[[manager.prepend_keymap]]
-desc = "unite-select"
-on = ["t", "s", "u"]
-run = "plugin simple-tag -- unite-select"
-
-[[manager.prepend_keymap]]
-desc = "intersect-select"
-on = ["t", "s", "i"]
-run = "plugin simple-tag -- intersect-select"
-
-[[manager.prepend_keymap]]
-desc = "subtract-select"
-on = ["t", "s", "s"]
-run = "plugin simple-tag -- subtract-select"
-
-[[manager.prepend_keymap]]
-desc = "exclude-select"
-on = ["t", "s", "e"]
-run = "plugin simple-tag -- exclude-select"
-
-[[manager.prepend_keymap]]
-desc = "Replaces the current selection list with files/folders that have (! and 1 and q) tag(s)"
-on = ["t", "s", "e"]
-run = "plugin simple-tag -- replace-select --keys=!1q"
-
-[[manager.prepend_keymap]]
-desc = "replace-select --input"
-on = ["t", "s", "R"]
-run = "plugin simple-tag -- replace-select --input"
-
-[[manager.prepend_keymap]]
-desc = "unite-select --input"
-on = ["t", "s", "U"]
-run = "plugin simple-tag -- unite-select --input"
-
-[[manager.prepend_keymap]]
-desc = "intersect-select --input"
-on = ["t", "s", "I"]
-run = "plugin simple-tag -- intersect-select --input"
-
-[[manager.prepend_keymap]]
-desc = "subtract-select --input"
-on = ["t", "s", "S"]
-run = "plugin simple-tag -- subtract-select --input"
-
-[[manager.prepend_keymap]]
-desc = "exclude-select --input"
-on = ["t", "s", "E"]
-run = "plugin simple-tag -- exclude-select --input"
-
-[[manager.prepend_keymap]]
-desc = "replace-select --input --mode=or"
-on = ["t", "s", "R"]
-run = "plugin simple-tag -- replace-select --input --mode=or"
-
-[[manager.prepend_keymap]]
-desc = "replace-select --keys=!1q --mode=or"
-on = ["t", "s", "R"]
-run = "plugin simple-tag -- replace-select --keys=!1q --mode=or"
-
-[[manager.prepend_keymap]]
-desc = "Undos/Redos the last selection action"
-on = ["t", "s", "u"]
-run = "plugin simple-tag -- undo-select"
+[[mgr.prepend_keymap]]
+on = ["9"]
+run = "plugin relative-motions 9"
+desc = "Move in relative steps"

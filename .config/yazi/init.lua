@@ -101,38 +101,14 @@ require("yatline"):setup({
 	},
 })
 
--- require("bookmarks"):setup({
--- 	last_directory = { enable = true, persist = true },
--- 	persist = "vim",
--- 	desc_format = "full",
--- 	notify = { enable = true },
--- 	file_pick_mode = "hover",
--- 	custom_desc_input = false,
--- })
-
--- require("projects"):setup({
--- 	save = {
--- 		method = "lua", -- yazi | lua
--- 		-- lua_save_path = "", -- comment out to get the default value
--- 		-- windows: "%APPDATA%/yazi/state/projects.json"
--- 		-- unix: "~/.local/state/yazi/projects.json"
--- 	},
--- 	last = {
--- 		update_after_save = true,
--- 		update_after_load = true,
--- 		load_after_start = true,
--- 	},
--- 	merge = {
--- 		quit_after_merge = false,
--- 	},
--- 	notify = {
--- 		enable = true,
--- 		title = "Projects",
--- 		timeout = 3,
--- 		level = "info",
--- 	},
--- })
--- when it detects that you're using Yazi in nvim, the preview is hidden by default — you can always press T (or any key you've bound) to show it again. if os.getenv("NVIM") then
--- 	require("toggle-pane"):entry("min-preview")
--- end
-require("simple-tag"):setup()
+require("bookmarks"):setup({
+	last_directory = { enable = true, persist = true },
+	persist = "vim",
+	desc_format = "full",
+	notify = { enable = true },
+	file_pick_mode = "hover",
+	custom_desc_input = false,
+})
+require("smart-enter"):setup({
+	open_multi = true,
+})
