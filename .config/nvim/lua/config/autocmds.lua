@@ -6,6 +6,15 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+local function contains(table, value)
+  for i = 1, #table do
+    if table[i] == value then
+      return true
+    end
+  end
+  return false
+end
+
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("wrap_spell", { clear = true }),
@@ -17,10 +26,35 @@ vim.api.nvim_create_autocmd("FileType", {
     -- vim.opt_local.spell = true
   end,
 })
+
+local specialCSV = {
+  "/home/cristobal/Sync/study_mext.csv",
+  "/home/cristobal/Sync/study_bunpou.csv",
+}
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
+  callback = function(args)
+    if not contains(specialCSV, args.file) then
+      require("csvview").enable()
+    else
+      -- vim.cmd("CsvViewEnable delimiter=:")
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = specialCSV,
   callback = function()
-    require("csvview").enable()
+    vim.cmd("silent %s/:/&\\r  /eg")
+    vim.cmd("silent %s/<br>/&\\r    /eg")
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWriteCmd", {
+  pattern = specialCSV,
+  callback = function()
+    vim.cmd("silent %s/:\\n  /:/e | write | silent %s/:/&\\r  /eg | set nomodified")
+    vim.cmd("silent %s/<br>\\n    /<br>/e | write | silent %s/<br>/&\\r  /eg | set nomodified")
   end,
 })
 
