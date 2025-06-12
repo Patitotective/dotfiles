@@ -9,6 +9,7 @@ return {
     org_archive_location = "%s_archive::",
     org_id_link_to_org_use_id = true,
     org_cycle_separator_lines = 1,
+    calendar_week_start_day = 0,
     -- org_startup_folded = "content",
     org_priority_highest = "A",
     org_priority_default = "D",
