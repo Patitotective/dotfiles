@@ -40,5 +40,7 @@ export TERMINAL=/usr/bin/kitty
 # export FZF_DEFAULT_OPTS="--bind 'ctrl-u': "
 
 # To force GTK to use the default file manager
-GTK_USE_PORTAL=1
-GDK_DEBUG=portals
+export GTK_USE_PORTAL=1
+export GDK_DEBUG=portals
+
+export XDG_SCREENSHOTS_DIR=$HOME/Pictures/screenshots
