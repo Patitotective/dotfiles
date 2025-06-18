@@ -28,8 +28,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 local specialCSV = {
-  "/home/cristobal/Sync/study_mext.csv",
-  "/home/cristobal/Sync/study_bunpou.csv",
+  "/home/cristobal/Sync/data/study_mext.csv",
+  "/home/cristobal/Sync/data/study_bunpou.csv",
 }
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
@@ -45,16 +45,21 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = specialCSV,
   callback = function()
-    vim.cmd("silent %s/:/&\\r  /eg")
-    vim.cmd("silent %s/<br>/&\\r    /eg")
+    vim.cmd("silent %s/:/:\\r  /eg")
+    vim.cmd("silent %s/<br>/<br>\\r    /eg")
   end,
 })
 
 vim.api.nvim_create_autocmd("BufWriteCmd", {
   pattern = specialCSV,
   callback = function()
-    vim.cmd("silent %s/:\\n  /:/e | write | silent %s/:/&\\r  /eg | set nomodified")
-    vim.cmd("silent %s/<br>\\n    /<br>/e | write | silent %s/<br>/&\\r  /eg | set nomodified")
+    vim.cmd("silent %s/:\\n  /:/e")
+    vim.cmd("silent %s/<br>\\n    /<br>/e")
+    vim.cmd("write")
+    vim.cmd("silent %s/:/&\\r  /eg")
+    vim.cmd("silent %s/<br>/&\\r    /eg")
+    vim.cmd("set nomodified")
+    vim.cmd("norm!``")
   end,
 })
 
