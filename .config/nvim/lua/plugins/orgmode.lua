@@ -32,6 +32,8 @@ return {
       heading = false,
       plain_list_item = false,
     },
+    org_meta_return = "",
+    org_insert_heading_respect_content = "<leader><cr>",
     org_agenda_custom_commands = {
       T = {
         description = "To Do",
