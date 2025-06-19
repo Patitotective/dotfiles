@@ -27,17 +27,23 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- This CSV files' fields are shown in different lines, not like a table
 local specialCSV = {
   "/home/cristobal/Sync/data/study_mext.csv",
   "/home/cristobal/Sync/data/study_bunpou.csv",
 }
+local semicolonCSV = {
+  "/home/cristobal/Documents/orgfiles/notasDeCorteUV.csv",
+  "/home/cristobal/Documents/orgfiles/notasDeCorteUPV.csv",
+}
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
   callback = function(args)
-    if not contains(specialCSV, args.file) then
+    local path = vim.api.nvim_buf_get_name(args.buf)
+    if contains(semicolonCSV, path) then
+      vim.cmd("CsvViewEnable delimiter=;")
+    elseif not contains(specialCSV, path) then
       require("csvview").enable()
-    else
-      -- vim.cmd("CsvViewEnable delimiter=:")
     end
   end,
 })
@@ -59,7 +65,7 @@ vim.api.nvim_create_autocmd("BufWriteCmd", {
     vim.cmd("silent %s/:/&\\r  /eg")
     vim.cmd("silent %s/<br>/&\\r    /eg")
     vim.cmd("set nomodified")
-    vim.cmd("norm!``")
+    vim.cmd("norm!``") -- Go back to where the cursor was before substituting
   end,
 })
 
