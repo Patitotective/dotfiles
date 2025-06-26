@@ -10,7 +10,7 @@ return {
     org_id_link_to_org_use_id = true,
     org_cycle_separator_lines = 1,
     calendar_week_start_day = 0,
-    org_startup_folded = "inherit",
+    org_startup_folded = "overview",
     org_priority_highest = "A",
     org_priority_default = "D",
     org_priority_lowest = "G",
@@ -32,8 +32,6 @@ return {
       heading = false,
       plain_list_item = false,
     },
-    org_meta_return = "",
-    org_insert_heading_respect_content = "<leader><cr>",
     org_agenda_custom_commands = {
       T = {
         description = "To Do",
@@ -80,6 +78,8 @@ return {
       org = {
         org_cycle = false,
         org_global_cycle = false,
+        org_meta_return = "<leader>oih",
+        org_insert_heading_respect_content = "<leader><cr>",
       },
     },
     ui = {
