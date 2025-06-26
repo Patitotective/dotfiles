@@ -49,11 +49,6 @@ rev = "88bd1c5"
 hash = "981acbe9b758b1af3a8154c932bb936d"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:mount"
-rev = "aeca767"
-hash = "277ba273e5d3d647feb5808d0fe4e4e0"
-
-[[plugin.deps]]
 use = "imsi32/yatline-catppuccin"
 rev = "8cc4773"
 hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
@@ -67,6 +62,11 @@ hash = "a7ab702e1ef0c097defbc976ed34c186"
 use = "boydaihungst/file-extra-metadata"
 rev = "ec035d6"
 hash = "b23b7db6beb2854a689c648a38843f8c"
+
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "9640407"
+hash = "37c4b4c6338316921821d35ad13d764d"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
