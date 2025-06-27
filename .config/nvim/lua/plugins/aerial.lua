@@ -16,6 +16,8 @@ return {
       ["l"] = "actions.jump",
       ["<tab>"] = "actions.tree_toggle",
       ["L"] = "actions.scroll",
+      ["J"] = "actions.down_and_scroll",
+      ["K"] = "actions.up_and_scroll",
     },
     layout = {
       resize_to_content = true,

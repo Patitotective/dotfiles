@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- TODO: ignore \: and \<br>
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = specialCSV,
   callback = function()
