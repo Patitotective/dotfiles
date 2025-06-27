@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/fish
 hyprnim monitors --all
-hyprnim 1 --dontSave # Set brightness to 100%
+hyprnim brightness 1 --dontSave # Set brightness to 100%
