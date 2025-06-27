@@ -1,6 +1,3 @@
 #!/bin/bash
-hyprnim monitors --enableAll
-# Save prev brightness
-~/scripts/hypr/getBrightness.sh >~/scripts/hypr/.prevBrightness
-# Set brightness to 100%
-~/scripts/hypr/setBrightness.sh 1
+hyprnim monitors --all
+hyprnim 1 --dontSave # Set brightness to 100%
