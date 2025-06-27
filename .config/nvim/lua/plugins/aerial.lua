@@ -18,6 +18,8 @@ return {
       ["L"] = "actions.scroll",
       ["J"] = "actions.down_and_scroll",
       ["K"] = "actions.up_and_scroll",
+      ["<c-k>"] = false,
+      ["<c-j>"] = false,
     },
     layout = {
       resize_to_content = true,
