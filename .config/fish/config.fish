@@ -1,13 +1,37 @@
 fish_add_path /usr/local/sbin /usr/local/bin /usr/bin
 fish_add_path ~/.nimble/bin
 fish_add_path ~/.local/share/nvim/lazy/nvim_rocks/bin
+
 set -g fish_key_bindings fish_vi_key_bindings
-# Tried to set normal mode as defualt, but no luck
-# fish_vi_key_bindings defualt
-# set fish_bind_mode default
 
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
+
+bind -M insert ctrl-w backward-kill-word
+bind -M insert ctrl-x kill-word
+
+bind -M insert ctrl-u backward-kill-line
+
+bind -M insert ctrl-a beginning-of-line
+bind -M insert ctrl-e end-of-line
+
+bind -M insert ctrl-s backward-delete-char
+bind -M insert ctrl-d delete-char
+
+bind -M insert ctrl-f forward-word
+bind -M insert ctrl-b backward-word
+
+bind -M insert ctrl-y accept-autosuggestion
+
+# TODO: make this bindings work by having kitty detect that fish is in insert mode...
+bind -M insert ctrl-h backward-char
+bind -M insert ctrl-l forward-char
+bind -M insert ctrl-j down-line
+bind -M insert ctrl-k up-line
+
+if status is-interactive
+
+end
 
 # fzf.fish
 set fzf_preview_dir_cmd eza --all --color=always
@@ -17,7 +41,3 @@ set fzf_preview_file_cmd ~/scripts/fzf-preview.sh
 set fzf_fd_opts --hidden --no-ignore # --max-depth 5
 
 fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
-
-if status is-interactive
-
-end
