@@ -9,7 +9,7 @@ wl-paste --primary --no-newline >$tmpfile
 # touch $tmpfile
 
 chmod o-r $tmpfile # Make file only readable to you
-kitty --class=nvim-everywhere --override confirm_os_window_close=0 nvim "+nnoremap q <cmd>wq<cr>" $tmpfile
+kitty --single-instance --class=nvim-everywhere --override confirm_os_window_close=0 nvim "+nnoremap q <cmd>wq<cr>" $tmpfile
 # -n to disable swap-file
 # +startinsert
 
