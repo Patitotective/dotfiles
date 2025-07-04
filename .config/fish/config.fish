@@ -6,6 +6,7 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
+# bind P fish_clipboard_paste # TODO: why does this not work? 😭
 
 bind -M insert ctrl-w backward-kill-word
 bind -M insert ctrl-x kill-word
