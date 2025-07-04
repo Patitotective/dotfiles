@@ -1,11 +1,20 @@
+function string:endswith(suffix)
+  return self:sub(-#suffix) == suffix
+end
+
 return {
   "echasnovski/mini.hipatterns",
   opts = {
     highlighters = {
       rgba_color_hashless = {
         pattern = "%f[%x]()%x%x%x%x%x%x%x%x()%f[%X]", -- To match RGBA colors without hash
-        group = function(_, _, data)
-          return require("mini.hipatterns").compute_hex_color_group("#" .. data.full_match:sub(1, 6), "bg")
+        group = function(buf_id, _, data)
+          local path = vim.api.nvim_buf_get_name(buf_id)
+          if path:endswith("ly/config.ini") then
+            return require("mini.hipatterns").compute_hex_color_group("#" .. data.full_match:sub(3, 8), "bg")
+          else
+            return require("mini.hipatterns").compute_hex_color_group("#" .. data.full_match:sub(1, 6), "bg")
+          end
         end,
         extmark_opts = { priority = 2000 },
       },
