@@ -1,31 +1,31 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "2ad42fa"
+rev = "b886025"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "2ad42fa"
+rev = "b886025"
 hash = "d6f60c24d8c0cf57a855bf46115b2502"
 
 [[plugin.deps]]
 use = "dedukun/bookmarks"
-rev = "fbb7c00"
-hash = "1d231a808d3344546380df33daf43e91"
+rev = "9ef1254"
+hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
 [[plugin.deps]]
 use = "dedukun/relative-motions"
-rev = "9d26460"
-hash = "6c0568cfa966a5d4ac496c926975a613"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "1ee69a5"
-hash = "63679f3daf8551ff8755be38b5ced0f"
+rev = "0742fff"
+hash = "2bd799b42b8e42b8ef100310be71f8d1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "2ad42fa"
+rev = "b886025"
 hash = "1adc12c2b2b025411ab61eb8f0879574"
 
 [[plugin.deps]]
@@ -35,8 +35,8 @@ hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "2c2802d"
-hash = "6513e9224b29ac1e2b3a7326ff648e81"
+rev = "84f1921"
+hash = "355f163cb374b5c9514aee2b64121678"
 
 [[plugin.deps]]
 use = "Deepak22903/kdeconnect-send"
@@ -55,7 +55,7 @@ hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "2ad42fa"
+rev = "b886025"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
@@ -65,10 +65,10 @@ hash = "b23b7db6beb2854a689c648a38843f8c"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "058cd24"
-hash = "885e3ab32c34087113b6d470a76a46bd"
+rev = "1e72117"
+hash = "c96b0ab2934e3add629832d2ee02f177"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "d04a298"
+rev = "d3fd3a5"
 hash = "d659c6fde5148fb5c066518d7fdecddc"

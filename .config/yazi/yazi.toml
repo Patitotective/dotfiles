@@ -64,8 +64,8 @@ prepend_previewers = [
   { mime = "application/x-xz", run = "ouch" },
   { mime = "application/xz", run = "ouch" },
 ]
-append_previewers = [{ name = "*", run = "file" }]
-prepend_spotters = [{ name = "*", run = "file-extra-metadata" }]
+# append_previewers = [{ name = "*", run = "file" }]
+# prepend_spotters = [{ name = "*", run = "file-extra-metadata" }]
 # [[plugin.prepend_fetchers]]
 # id = "git"
 # name = "*"
