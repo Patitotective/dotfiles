@@ -10,6 +10,9 @@ text/markdown=nvim.desktop;
 text/plain=nvim.desktop;
 text/x-cmake=nvim.desktop;
 x-scheme-handler/mailto=floorp.desktop;
+x-scheme-handler/http=userapp-Floorp-S0Z522.desktop;
+x-scheme-handler/https=userapp-Floorp-S0Z522.desktop;
+x-scheme-handler/chrome=userapp-Floorp-S0Z522.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
