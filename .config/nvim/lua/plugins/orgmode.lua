@@ -10,6 +10,7 @@ return {
     org_id_link_to_org_use_id = true,
     org_cycle_separator_lines = 1,
     calendar_week_start_day = 0,
+    org_agenda_start_on_weekday = 7,
     org_startup_folded = "overview",
     org_priority_highest = "A",
     org_priority_default = "D",
@@ -70,6 +71,15 @@ return {
             type = "tags_todo",
             match = "crochet/-DONE",
             org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+          },
+        },
+      },
+      A = {
+        description = "Weekly Agenda",
+        types = {
+          {
+            type = "agenda",
+            org_agenda_span = "week",
           },
         },
       },
