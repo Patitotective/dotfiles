@@ -39,7 +39,7 @@ return {
         types = {
           {
             type = "tags_todo",
-            match = "-pc-dev-contribute-crochet-cumpleaños/-DONE",
+            match = "-dev-contribute-cumpleaños/-DONE",
             org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
           },
         },
