@@ -9,12 +9,12 @@ wl-paste --primary --no-newline >$tmpfile
 # touch $tmpfile
 
 chmod o-r $tmpfile # Make file only readable to you
-kitty --single-instance --class=nvim-everywhere --override confirm_os_window_close=0 nvim "+nnoremap q <cmd>wq<cr>" $tmpfile
+kitty --single-instance --wait-for-single-instance-window-close --class=nvim-everywhere --override confirm_os_window_close=0 nvim "+nnoremap q <cmd>wq<cr>" $tmpfile
 # -n to disable swap-file
 # +startinsert
 
 set content (string trim <$tmpfile)
-if string length -q $content
+if string length -q -- $content
     printf %s\n $content | wl-copy -n
     # wtype may be dangerous with a big file
     # if test (string length $content) -lt 100
