@@ -120,3 +120,10 @@ echo "GENERATING ORGFILES INDEX"
 echo ----------------------------------------------------
 
 ~/dev/snippets/makeOrgfilesIndex
+
+echo
+echo ----------------------------------------------------
+echo "KOPIA MANTEINANCE"
+echo ----------------------------------------------------
+
+kopia maintenance run --full
