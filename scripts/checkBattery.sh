@@ -15,15 +15,15 @@ acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
     touch ~/scripts/.10BatteryNotif
     mpv --loop=1 /usr/share/sounds/freedesktop/stereo/suspend-error.oga
   elif [ "$status" = Discharging ] && [ "$capacity" -le 40 ] && [ ! -f ~/scripts/.40BatteryNotif ]; then
-    notify-send -u critical -a "Power Management (user)" "Battery At 40%" "Plug your computer."
+    # notify-send -u critical -a "Power Management (user)" "Battery At 40%" "Plug your computer."
     touch ~/scripts/.40BatteryNotif
     mpv /usr/share/sounds/ocean/stereo/outcome-failure.oga
   elif [ "$status" = Charging ] && [ "$capacity" -ge 100 ] && [ ! -f ~/scripts/.100BatteryNotif ]; then
-    notify-send -u normal -a "Power Management (user)" "Fully Charged" "You may unplug your computer."
+    # notify-send -u normal -a "Power Management (user)" "Fully Charged" "You may unplug your computer."
     touch ~/scripts/.100BatteryNotif
     mpv /usr/share/sounds/ocean/stereo/message-sent-instant.oga
   elif [ "$status" = Charging ] && [ "$capacity" -ge 60 ] && [ ! -f ~/scripts/.60BatteryNotif ]; then
-    notify-send -u critical -a "Power Management (user)" "Battery At 60%" "Unplug your computer."
+    # notify-send -u critical -a "Power Management (user)" "Battery At 60%" "Unplug your computer."
     touch ~/scripts/.60BatteryNotif
     mpv /usr/share/sounds/ocean/stereo/outcome-success.oga
   fi
