@@ -123,7 +123,7 @@ echo ----------------------------------------------------
 
 echo
 echo ----------------------------------------------------
-echo "KOPIA MANTEINANCE"
+echo "KOPIA MAINTENANCE"
 echo ----------------------------------------------------
 
 kopia maintenance run --full
