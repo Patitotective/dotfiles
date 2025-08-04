@@ -75,13 +75,13 @@ else
     echo "No orphaned packages to remove."
 end
 
-echo
-echo ----------------------------------------------------
-echo "CLEARING HOME CACHE"
-echo ----------------------------------------------------
-
-set home_cache_used "$(sudo du -sh ~/.cache)"
-rm -rf ~/.cache/
+# echo
+# echo ----------------------------------------------------
+# echo "CLEARING HOME CACHE"
+# echo ----------------------------------------------------
+#
+# set home_cache_used "$(sudo du -sh ~/.cache)"
+# rm -rf ~/.cache/
 
 echo "Clearing ~/.cache/..."
 echo "Spaced saved: $home_cache_used"
