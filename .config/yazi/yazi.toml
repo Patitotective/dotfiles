@@ -24,7 +24,7 @@ extract = [
   { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
 ]
 onlyoffice = [
-  { run = 'onlyoffice-desktopeditors "$@"', orphan = true, for = "unix" },
+  { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "$@"', orphan = true, for = "unix" },
 ]
 
 [open]
@@ -51,6 +51,9 @@ prepend_rules = [
   { mime = "application/vnd.oasis.opendocument.spreadsheet-template", use = "onlyoffice" },
   { mime = "application/vnd.sun.xml.calc", use = "onlyoffice" },
   { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "onlyoffice" },
+  { name = "*.docx", use = "onlyoffice" },
+  { name = "*.xlsx", use = "onlyoffice" },
+  { name = "*.pdf", use = "onlyoffice" },
 ]
 
 [plugin]
