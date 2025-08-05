@@ -42,3 +42,5 @@ set fzf_preview_file_cmd ~/scripts/fzf-preview.sh
 set fzf_fd_opts --hidden --no-ignore # --max-depth 5
 
 fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
+
+alias onlyoffice="onlyoffice-desktopeditors --xdg-desktop-portal=default"
