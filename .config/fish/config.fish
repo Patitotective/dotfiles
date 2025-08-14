@@ -44,3 +44,6 @@ set fzf_fd_opts --hidden --no-ignore # --max-depth 5
 fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
 
 alias onlyoffice="onlyoffice-desktopeditors --xdg-desktop-portal=default"
+alias ls=eza
+
+set -x LEDGER_FILE ~/Documents/finance/2025.journal
