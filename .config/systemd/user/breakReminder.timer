@@ -1,0 +1,8 @@
+[Unit]
+Description=Run breakReminder every 30 minutos
+
+[Timer]
+OnCalendar=30m
+
+[Install]
+WantedBy=timers.target
