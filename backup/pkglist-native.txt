@@ -18,8 +18,6 @@ bluez
 bluez-utils
 bottom
 breeze
-breeze-gtk
-breeze-plymouth
 brightnessctl
 brillo
 btrfs-progs
@@ -75,6 +73,8 @@ gst-plugin-pipewire
 gvfs
 gwenview
 hledger
+hledger-ui
+hledger-web
 hyprcursor-git
 hyprgraphics-git
 hypridle-git
