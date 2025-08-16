@@ -90,7 +90,6 @@ hyprwayland-scanner-git
 impala
 inkscape
 intel-ucode
-j4-dmenu-desktop
 jdk-openjdk
 jfsutils
 kactivitymanagerd
