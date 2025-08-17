@@ -1,8 +1,9 @@
 [Unit]
-Description=Run breakReminder at any hour o'clock or half an hour
+Description=Run breakReminder every 30 minutes
 
 [Timer]
-OnCalendar=*:0/30
+OnActiveSec=30min
+OnUnitActiveSec=30min
 
 [Install]
 WantedBy=timers.target
