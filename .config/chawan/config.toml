@@ -1,2 +1,4 @@
 [buffer]
 images = true
+[display]
+image-mode = "kitty"
