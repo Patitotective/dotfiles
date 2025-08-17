@@ -65,13 +65,8 @@ hash = "e65cd1dea5feb9ca58c33b870ca3070"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "0927f5f"
-hash = "2db4437f46d59832bdba83ea8279c71c"
-
-[[plugin.deps]]
-use = "luccahuguet/auto-layout"
-rev = "e24bee9"
-hash = "2e744ac2938468fd4244beca1e022c4f"
+rev = "8e97b2a"
+hash = "c746e1d1e09349caf0fa1ca03fe62ee4"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"

@@ -109,6 +109,7 @@ require("bookmarks"):setup({
 	file_pick_mode = "hover",
 	custom_desc_input = false,
 })
+
 require("smart-enter"):setup({
 	open_multi = true,
 })
