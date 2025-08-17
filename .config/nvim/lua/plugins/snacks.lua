@@ -36,5 +36,6 @@ return {
         header = header,
       },
     },
+    image = {},
   },
 }
