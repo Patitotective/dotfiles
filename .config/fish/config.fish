@@ -45,5 +45,6 @@ fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
 
 alias onlyoffice="onlyoffice-desktopeditors --xdg-desktop-portal=default"
 alias ls=eza
+alias jless="jless --relative-line-numbers"
 
 set -x LEDGER_FILE ~/Documents/finance/2025.journal
