@@ -171,7 +171,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.opt_local.wrap = true
   end,
 })
--- Quit on sav e
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = { "/tmp/nvim-everywhere/*" },
+--   callback = function()
+--     vim.keymap.del("i", "<c-v>") -- TODO: doesn't work, it says it doesn't exist
+--   end,
+-- })
+
+-- Quit on save
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "/tmp/nvim-everywhere/*", "/tmp/aerc-compose-*.eml", "/tmp/yazi-*/bulk-*" },
   callback = function()
