@@ -36,10 +36,12 @@ export NVD_BACKEND=direct
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/bin/kitty
-# export FZF_DEFAULT_OPTS="--bind 'ctrl-u': "
 
 # To force GTK to use the default file manager
 export GTK_USE_PORTAL=1
 export GDK_DEBUG=portals
 
 export XDG_SCREENSHOTS_DIR=$HOME/Pictures/screenshots
+
+# FZF
+export FZF_DEFAULT_OPTS_FILE=$HOME/.config/fzf/opts
