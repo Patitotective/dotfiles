@@ -23,7 +23,8 @@
     "custom/r_end",
     "custom/l_end",
     "clock",
-    "idle_inhibitor",
+    "custom/idle_inhibitor",
+    // "idle_inhibitor",
     "custom/r_end",
     "custom/padd"
   ],
@@ -173,6 +174,14 @@
     "tooltip-format-activated": "Caffeine Mode Active",
     "tooltip-format-deactivated": "Caffeine Mode Inactive",
     "timeout": 20
+  },
+  "custom/idle_inhibitor": {
+    "format": "{} ",
+    "rotate": 0,
+    "exec": "$HOME/scripts/hypr/checkIdle.sh",
+    "on-click": "$HOME/scripts/hypr/toggleIdle.sh",
+    "tooltip": false,
+    "signal": 10
   },
   "hyprland/workspaces": {
     "rotate": 0,
