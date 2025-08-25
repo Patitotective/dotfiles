@@ -197,12 +197,15 @@
     "disable-scroll": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
-    "persistent-workspaces": {}
+    "persistent-workspaces": {},
+    "signal": 30
   },
   "hyprland/window": {
     // "format": " {}",
     "format": "{}",
     "rotate": 0,
+    "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+30 $(pgrep waybar)",
+    "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+30 $(pgrep waybar)",
     "separate-outputs": true,
     // "rewrite": {
     //   // "cristobal@archlinux-nitro5:(.*)": "$1 ",
