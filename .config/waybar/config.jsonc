@@ -18,9 +18,10 @@
     "custom/l_end",
     "cpu",
     "memory",
+    "custom/r_end",
     // "custom/cpuinfo",
     // "custom/gpuinfo",
-    "custom/r_end",
+    "custom/padd",
     "custom/l_end",
     "clock",
     "custom/idle_inhibitor",
@@ -164,24 +165,29 @@
       "on-scroll-down": "shift_down"
     }
   },
-  "idle_inhibitor": {
+  // "idle_inhibitor": {
+  //   "format": "{icon}",
+  //   "rotate": 0,
+  //   "format-icons": {
+  //     "activated": "󰅶 ",
+  //     "deactivated": "󰛊 "
+  //   },
+  //   "tooltip-format-activated": "Caffeine Mode Active",
+  //   "tooltip-format-deactivated": "Caffeine Mode Inactive",
+  //   "timeout": 20
+  // },
+  "custom/idle_inhibitor": {
     "format": "{icon}",
     "rotate": 0,
     "format-icons": {
-      "activated": "󰅶 ",
-      "deactivated": "󰛊 "
+      "on": "󰅶 ",
+      "off": "󰛊 "
     },
-    "tooltip-format-activated": "Caffeine Mode Active",
-    "tooltip-format-deactivated": "Caffeine Mode Inactive",
-    "timeout": 20
-  },
-  "custom/idle_inhibitor": {
-    "format": "{} ",
-    "rotate": 0,
+    "return-type": "json",
     "exec": "$HOME/scripts/hypr/checkIdle.sh",
     "on-click": "$HOME/scripts/hypr/toggleIdle.sh",
-    "tooltip": false,
-    "signal": 10
+    "signal": 10,
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "rotate": 0,
@@ -401,7 +407,8 @@
     "format": "{}",
     "rotate": 0,
     // "exec": "echo ; echo  logout",
-    "on-click": "~/scripts/hypr/powerMenu.sh"
+    "on-click": "~/scripts/hypr/powerMenu.sh",
+    "tooltip": false
   },
   // modules for padding //
   "custom/l_end": {
