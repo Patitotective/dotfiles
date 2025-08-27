@@ -1,11 +1,13 @@
 [mgr]
-# sort_by = "natural"
+sort_by = "mtime"
+sort_reverse = true
 # sort_sensitive = true
-# sort_dir_first = true
+sort_dir_first = false
 # sort_translit = true
-linemode = "size"
+linemode = "rmtime"
 show_symlink = true
 scrolloff = 10
+title_format = "yazi {cwd}"
 
 [preview]
 wrap = "no"

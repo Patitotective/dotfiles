@@ -113,3 +113,26 @@ require("bookmarks"):setup({
 require("smart-enter"):setup({
 	open_multi = true,
 })
+
+function Linemode:rmtime() -- relative modified time
+	-- TODO: show yesterday when needed
+	-- TODO: show wekkday when same week
+	local time = math.floor(self._file.cha.mtime or 0)
+	local stime
+
+	if time == 0 then
+		stime = ""
+	elseif os.date("%d", time) == os.date("%d") then -- same day
+		stime = os.date("%H:%M", time)
+	elseif os.date("%Y", time) == os.date("%Y") then -- same year
+		stime = os.date("%b %d %H:%M", time)
+	else
+		stime = os.date("%b %d  %Y", time)
+	end
+
+	-- local size = self._file:size()
+	-- if size and ya.readable_size(size) then
+	-- 	return string.format("%s|%s", ya.readable_size(size), time)
+	-- else
+	return string.format("%s", stime)
+end
