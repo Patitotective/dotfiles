@@ -1,16 +1,12 @@
 advcpmv
 anki-bin
 bemoji
-blue-recorder-git
-calcure
-chawan-git
+bzmenu
 dragon-drop
 firefox-tridactyl-native-bin
 floorp-bin
-hererocks
 hyprpolkitagent-git
 ly-git
-mopidy-mpd
 showmethekey
 spotify-player-full
 wl-gammarelay-rs
