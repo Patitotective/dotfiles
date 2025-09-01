@@ -23,6 +23,7 @@ bind -M insert ctrl-f forward-word
 bind -M insert ctrl-b backward-word
 
 bind -M insert ctrl-y accept-autosuggestion
+bind -M insert --erase ctrl-n
 
 # TODO: make this bindings work by having kitty detect that fish is in insert mode...
 bind -M insert ctrl-h backward-char

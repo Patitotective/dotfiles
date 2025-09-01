@@ -117,7 +117,9 @@
       <eventcontext
          id="rect"
          style="fill:blue;"
-         usecurrent="1" />
+         usecurrent="1"
+         width="123.35172397884"
+         height="2435.12579970476" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -394,7 +396,8 @@
        selcue="1"
        gradientdrag="0"
        changelayer="1"
-       changepage="1" />
+       changepage="1"
+       lock_aspect_ratio="1" />
     <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
@@ -591,8 +594,8 @@
        applyseparately="0" />
     <group
        id="align"
-       objects-align-to="page"
-       sel-as-groups="0" />
+       sel-as-groups="0"
+       objects-align-to="first" />
     <group
        id="xml"
        h="500"
@@ -622,7 +625,7 @@
        path="">
       <group
          id="exportarea"
-         value="page" />
+         value="drawing" />
       <group
          id="defaultxdpi" />
       <group
@@ -651,7 +654,7 @@
        id="import"
        enable_preview="1"
        path=""
-       ask="1"
+       ask="0"
        ask_svg="1"
        link="embed"
        scale="auto"
@@ -993,7 +996,7 @@
        id="ruler" />
     <group
        id="snapping"
-       snap-global-toggle="0"
+       snap-global-toggle="1"
        snap-bbox="1"
        snap-bbox-edge="1"
        snap-bbox-corner="1"
@@ -1002,7 +1005,7 @@
        simple-snap-bbox="1"
        snap-node-category="1"
        snap-path="1"
-       snap-path-intersection="0"
+       snap-path-intersection="1"
        snap-node-cusp="1"
        snap-node-smooth="1"
        snap-line-midpoint="1"
@@ -1029,7 +1032,9 @@
      id="extensions"
      org.inkscape.output.png.inkscape.png_bitdepth="99"
      org.inkscape.output.png.inkscape.png_compression="6"
-     org.inkscape.output.png.inkscape.png_antialias="2" />
+     org.inkscape.output.png.inkscape.png_antialias="2"
+     org.inkscape.input.gdkpixbuf.jpg.do_not_ask="1"
+     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5" />
   <group
      id="desktop"
      style="fill:#18182a;text-orientation:auto;-inkscape-font-specification:'Source Han Serif';font-family:'Source Han Serif';font-size:11px;line-height:1000">
@@ -1038,7 +1043,7 @@
        height="613"
        x="0"
        y="0"
-       maximized="1"
+       maximized="0"
        fullscreen="0"
        id="geometry" />
     <group
@@ -1060,7 +1065,7 @@
      id="toolbox"
      icononly="1"
      secondary="1"
-     simplesnap="1"
+     simplesnap="0"
      small="1">
     <group
        id="tools"

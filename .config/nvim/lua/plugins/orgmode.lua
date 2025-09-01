@@ -34,6 +34,16 @@ return {
       plain_list_item = false,
     },
     org_agenda_custom_commands = {
+      -- D = { -- TODO: Fix nothing comiing out here
+      --   description = "Done",
+      --   types = {
+      --     {
+      --       type = "tags",
+      --       match = "/DONE",
+      --       -- org_agenda_sorting_strategy = { "time-up" },
+      --     },
+      --   },
+      -- },
       T = {
         description = "To Do",
         types = {
