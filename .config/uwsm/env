@@ -45,3 +45,6 @@ export XDG_SCREENSHOTS_DIR=$HOME/Pictures/screenshots
 
 # FZF
 export FZF_DEFAULT_OPTS_FILE=$HOME/.config/fzf/opts
+
+# KOPIA
+KOPIA_CHECK_FOR_UPDATES=false
