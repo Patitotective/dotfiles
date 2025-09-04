@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "d7588f6"
-hash = "3996fc74044bc44144b323686f887e1"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
 rev = "d7588f6"
 hash = "d6f60c24d8c0cf57a855bf46115b2502"
@@ -49,9 +44,9 @@ rev = "88bd1c5"
 hash = "981acbe9b758b1af3a8154c932bb936d"
 
 [[plugin.deps]]
-use = "imsi32/yatline-catppuccin"
-rev = "8cc4773"
-hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
+use = "boydaihungst/gvfs"
+rev = "b58c305"
+hash = "92dc8bdc3d9cbb36e03111b4cad231fc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
@@ -59,16 +54,9 @@ rev = "d7588f6"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
-use = "boydaihungst/file-extra-metadata"
-rev = "116a460"
-hash = "e65cd1dea5feb9ca58c33b870ca3070"
+use = "yazi-rs/plugins:full-border"
+rev = "d7588f6"
+hash = "3996fc74044bc44144b323686f887e1"
 
-[[plugin.deps]]
-use = "boydaihungst/gvfs"
-rev = "b58c305"
-hash = "92dc8bdc3d9cbb36e03111b4cad231fc"
-
-[[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "9cd2ac4"
-hash = "c769a6c541ae74b33a041ae1f00dcb40"
+[flavor]
+deps = []

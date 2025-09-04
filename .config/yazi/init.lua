@@ -9,10 +9,10 @@ require("relative-motions"):setup({
 	enter_mode = "first",
 })
 
-local catppuccin_theme = require("yatline-catppuccin"):setup("frappe") -- or "latte" | "frappe" | "macchiato"
+-- local catppuccin_theme = require("yatline-catppuccin"):setup("frappe") -- or "latte" | "frappe" | "macchiato"
 require("yatline"):setup({
 	--theme = my_theme,
-	theme = catppuccin_theme,
+	-- theme = catppuccin_theme,
 	-- section_separator = { open = "", close = "" },
 	-- part_separator = { open = "", close = "" },
 	-- inverse_separator = { open = "", close = "" },
