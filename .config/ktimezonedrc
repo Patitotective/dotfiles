@@ -1,4 +1,4 @@
 [TimeZones]
-LocalZone=America/Bogota
+LocalZone=Europe/Madrid
 ZoneinfoDir=/usr/share/zoneinfo
 Zonetab=/usr/share/zoneinfo/zone.tab
