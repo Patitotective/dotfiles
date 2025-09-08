@@ -19,13 +19,17 @@
     "cpu",
     "memory",
     "custom/r_end",
-    // "custom/cpuinfo",
-    // "custom/gpuinfo",
-    "custom/padd",
+    //
     "custom/l_end",
     "clock",
     "custom/idle_inhibitor",
-    // "idle_inhibitor",
+    "custom/r_end",
+    //
+    "custom/l_end",
+    // "custom/keybindhint",
+    "keyboard-state",
+    "keyboard-state#num",
+    "privacy",
     "custom/r_end",
     "custom/padd"
   ],
@@ -40,22 +44,16 @@
   "modules-right": [
     "custom/padd",
     "custom/l_end",
-    // "backlight",
-    // "network",
     "pulseaudio",
     "pulseaudio#microphone",
-    // "custom/updates",
-    // "custom/keybindhint",
     "custom/r_end",
+    //
+    //
     "custom/l_end",
-    "privacy",
     "tray",
     "custom/r_end",
+    //
     "custom/l_end",
-    // "custom/wallchange",
-    // "custom/theme",
-    // "custom/wbar",
-    // "custom/cliphist",
     "battery",
     "custom/power",
     "custom/r_end",
@@ -95,52 +93,6 @@
     "tooltip": true,
     "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
   },
-  // "custom/cpuinfo": {
-  //   "exec": " cpuinfo.sh",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "rotate": 0,
-  //   "interval": 5, // once every 5 seconds
-  //   "tooltip": true,
-  //   "max-length": 1000
-  // },
-  // "custom/gpuinfo": {
-  //   "exec": " gpuinfo.sh",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "rotate": 0,
-  //   "interval": 5, // once every 5 seconds
-  //   "tooltip": true,
-  //   "max-length": 1000,
-  //   "on-click": "gpuinfo.sh --toggle"
-  // },
-  // "custom/gpuinfo#nvidia": {
-  //   "exec": " gpuinfo.sh --use nvidia ",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "rotate": 0,
-  //   "interval": 5, // once every 5 seconds
-  //   "tooltip": true,
-  //   "max-length": 1000
-  // },
-  // "custom/gpuinfo#amd": {
-  //   "exec": " gpuinfo.sh --use amd ",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "rotate": 0,
-  //   "interval": 5, // once every 5 seconds
-  //   "tooltip": true,
-  //   "max-length": 1000
-  // },
-  // "custom/gpuinfo#intel": {
-  //   "exec": " gpuinfo.sh --use intel ",
-  //   "return-type": "json",
-  //   "format": "{}",
-  //   "rotate": 0,
-  //   "interval": 5, // once every 5 seconds
-  //   "tooltip": true,
-  //   "max-length": 1000
-  // },
   "clock": {
     "format": "󰥔 {:%R}",
     "rotate": 0,
@@ -165,17 +117,6 @@
       "on-scroll-down": "shift_down"
     }
   },
-  // "idle_inhibitor": {
-  //   "format": "{icon}",
-  //   "rotate": 0,
-  //   "format-icons": {
-  //     "activated": "󰅶 ",
-  //     "deactivated": "󰛊 "
-  //   },
-  //   "tooltip-format-activated": "Caffeine Mode Active",
-  //   "tooltip-format-deactivated": "Caffeine Mode Inactive",
-  //   "timeout": 20
-  // },
   "custom/idle_inhibitor": {
     "format": "{icon}",
     "rotate": 0,
@@ -234,38 +175,6 @@
     // },
     "max-length": 50
   },
-  "backlight": {
-    "device": "intel_backlight",
-    "rotate": 0,
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip-format": "{icon} {percent}% ",
-    "on-scroll-up": "brightnesscontrol.sh i 1",
-    "on-scroll-down": "brightnesscontrol.sh d 1",
-    "min-length": 6
-  },
-  "network": {
-    "tooltip": true,
-    "format-wifi": " ",
-    "rotate": 0,
-    "format-ethernet": "󰈀 ",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-    "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰖪 ",
-    "tooltip-format-disconnected": "Disconnected",
-    "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-    "interval": 2
-  },
   "pulseaudio": {
     "format": "{icon}  {volume}",
     "rotate": 0,
@@ -303,16 +212,6 @@
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5
   },
-  "custom/updates": {
-    // "exec": "systemupdate.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    // "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
-    "interval": 86400, // once every day
-    "tooltip": true,
-    "signal": 20
-  },
   "custom/keybindhint": {
     "format": " ",
     "tooltip-format": " Keybinds",
@@ -336,12 +235,38 @@
       }
     ]
   },
+  "keyboard-state": {
+    "capslock": true,
+    // "device-path": "/dev/input/event8", // check yours with sudo libinput list-devices
+    "binding-keys": [
+      1
+      // 58,
+    ], // esc, capslock; find out the key codes with sudo libinput debug-events --show-keycodes
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "󰪛",
+      "unlocked": "󰪛"
+    }
+  },
+  "keyboard-state#num": {
+    "numlock": true,
+    // "device-path": "/dev/input/event8", // check yours with sudo libinput list-devices
+    "binding-keys": [
+      69
+    ], // numlock; find out the key codes with sudo libinput debug-events --show-keycodes
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "󰎦",
+      "unlocked": "󰎦"
+    }
+  },
   "tray": {
     "icon-size": 16,
     "rotate": 0,
     "spacing": 5
   },
   "battery": {
+    "interval": 30,
     "states": {
       "good": 95,
       "warning": 30,
@@ -365,46 +290,6 @@
       "󰂂",
       "󰁹"
     ]
-  },
-  "custom/wallchange": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰆊 switch wallpaper",
-    "on-click": "swwwallpaper.sh -n",
-    "on-click-right": "swwwallpaper.sh -p",
-    "on-click-middle": "sleep 0.1 && swwwallselect.sh",
-    "interval": 86400, // once every day
-    "tooltip": true
-  },
-  "custom/theme": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰟡 switch theme",
-    "on-click": "themeswitch.sh -n",
-    "on-click-right": "themeswitch.sh -p",
-    "on-click-middle": "sleep 0.1 && themeselect.sh",
-    "interval": 86400, // once every day
-    "tooltip": true
-  },
-  "custom/wbar": {
-    "format": "{}", //    //
-    "rotate": 0,
-    "exec": "echo ; echo  switch bar //  dock",
-    "on-click": "wbarconfgen.sh n",
-    "on-click-right": "wbarconfgen.sh p",
-    "on-click-middle": "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin",
-    "interval": 86400,
-    "tooltip": true
-  },
-  "custom/cliphist": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰅇 clipboard history",
-    "on-click": "sleep 0.1 && cliphist.sh -c",
-    "on-click-right": "sleep 0.1 && cliphist.sh -d",
-    "on-click-middle": "sleep 0.1 && cliphist.sh -w",
-    "interval": 86400, // once every day
-    "tooltip": true
   },
   "custom/power": {
     "format": "{}",

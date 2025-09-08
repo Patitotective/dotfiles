@@ -9,6 +9,7 @@
 
 @import "theme.css";
 
+
 window#waybar {
     background: @bar-bg;
 }
@@ -133,6 +134,7 @@ tooltip {
 #workspaces,
 #workspaces,
 #workspaces,
+#keyboard-state,
 #custom-l_end,
 #custom-r_end,
 #custom-sl_end,
@@ -145,6 +147,15 @@ tooltip {
     margin: 3px 0px 3px 0px;
     padding-left: 4px;
     padding-right: 4px;
+}
+
+#keyboard-state label.locked {
+
+    opacity:1;
+}
+
+#keyboard-state label {
+    opacity:0.5;
 }
 
 #workspaces,
