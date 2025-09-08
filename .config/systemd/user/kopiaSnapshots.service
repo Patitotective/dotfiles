@@ -1,0 +1,6 @@
+[Unit]
+Description=Create Kopia snapshots
+
+[Service]
+Type=oneshot
+ExecStart=/home/cristobal/scripts/kopiaSnapshots.sh
