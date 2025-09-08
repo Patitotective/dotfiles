@@ -1,0 +1,6 @@
+ACTION=="add", SUBSYSTEM=="backlight", \
+RUN+="/bin/chgrp video $sys$devpath/brightness", \
+RUN+="/bin/chmod g+w $sys$devpath/brightness"
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="*::kbd_backlight", \
+RUN+="/bin/chgrp video /sys/class/leds/%k/brightness", \
+RUN+="/bin/chmod g+w /sys/class/leds/%k/brightness"
