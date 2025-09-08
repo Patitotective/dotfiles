@@ -3,4 +3,4 @@
 
 [Service]
 Type=oneshot
-ExecStart=dunstify --icon=%h/.local/share/icons/Tela-purple/16/status/package-supported.svg "Short Break 🌻" "It's time to rest your eyes and move your body a bit."
+ExecStart=dunstify --icon=/usr/share/icons/Tela-purple/16/status/package-supported.svg "Short Break 🌻" "It's time to rest your eyes and move your body a bit."
