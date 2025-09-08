@@ -94,6 +94,14 @@ return {
         },
       },
     },
+    org_capture_templates = {
+      o = {
+        description = "oneshot task",
+        target = "~/Documents/orgfiles/1Default.org",
+        headline = "Oneshot",
+        template = "** TODO %?\n %u",
+      },
+    },
     mappings = {
       org = {
         org_cycle = false,
