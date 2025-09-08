@@ -6,5 +6,5 @@ for file in (fd . ~/.config/etc --type file)
     # dir is the parent dir of file
     set parentDir (path dirname $etcFile)
     sudo mkdir -p "$parentDir"
-    sudo ln -fv "$etcFile" "$file" # Hard link the file from the HOME folder to /etc
+    sudo ln -fv "$file" "$etcFile" # Hard link the file from the HOME folder to /etc
 end
