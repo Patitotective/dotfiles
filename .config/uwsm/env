@@ -48,4 +48,10 @@ export XDG_SCREENSHOTS_DIR=$HOME/Pictures/screenshots
 export FZF_DEFAULT_OPTS_FILE=$HOME/.config/fzf/opts
 
 # KOPIA
-KOPIA_CHECK_FOR_UPDATES=false
+export KOPIA_CHECK_FOR_UPDATES=false
+
+# HLEDGER
+export LEDGER_FILE=$HOME/Documents/finance/2025.journal
+
+# MANPAGER
+export MANPAGER='/usr/bin/nvim +Man!'
