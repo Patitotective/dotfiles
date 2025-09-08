@@ -44,8 +44,8 @@
     // "network",
     "pulseaudio",
     "pulseaudio#microphone",
-    "custom/updates",
-    "custom/keybindhint",
+    // "custom/updates",
+    // "custom/keybindhint",
     "custom/r_end",
     "custom/l_end",
     "privacy",
@@ -294,21 +294,21 @@
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "rotate": 0,
-    "format-source": "",
+    "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
-    "on-click-middle": "volumecontrol.sh -i m",
-    "on-scroll-up": "volumecontrol.sh -i i",
-    "on-scroll-down": "volumecontrol.sh -i d",
+    // "on-click-middle": "volumecontrol.sh -i m",
+    // "on-scroll-up": "volumecontrol.sh -i i",
+    // "on-scroll-down": "volumecontrol.sh -i d",
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5
   },
   "custom/updates": {
-    "exec": "systemupdate.sh",
+    // "exec": "systemupdate.sh",
     "return-type": "json",
     "format": "{}",
     "rotate": 0,
-    "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
+    // "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
     "interval": 86400, // once every day
     "tooltip": true,
     "signal": 20
@@ -317,7 +317,7 @@
     "format": " ",
     "tooltip-format": " Keybinds",
     "rotate": 0,
-    "on-click": "keybinds_hint.sh"
+    // "on-click": "keybinds_hint.sh"
   },
   "privacy": {
     "icon-size": 12,
