@@ -1,7 +1,8 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font","JetBrainsMono NF";
+    font-family: "JetBrainsMono Nerd Font",
+    "JetBrainsMono NF";
     font-weight: bold;
     font-size: 10px;
     min-height: 10px;
@@ -44,14 +45,18 @@ tooltip {
     padding-right: 11px;
     margin-right: 2px;
     animation: ws_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.4s cubic-bezier(.55,
+    -0.68,.48,
+    1.682);
 }
 
 #workspaces button:hover {
     background: @wb-hvr-bg;
     color: @wb-hvr-fg;
     animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.3s cubic-bezier(.55,
+    -0.68,.48,
+    1.682);
 }
 
 #taskbar button {
@@ -77,14 +82,18 @@ tooltip {
     padding-right: 11px;
     margin-right: 2px;
     animation: tb_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.4s cubic-bezier(.55,
+    -0.68,.48,
+    1.682);
 }
 
 #taskbar button:hover {
     background: @wb-hvr-bg;
     color: @wb-hvr-color;
     animation: tb_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.3s cubic-bezier(.55,
+    -0.68,.48,
+    1.682);
 }
 
 #tray menu * {
@@ -135,6 +144,8 @@ tooltip {
 #workspaces,
 #workspaces,
 #keyboard-state,
+#custom-capslock,
+#custom-numlock,
 #custom-l_end,
 #custom-r_end,
 #custom-sl_end,
@@ -148,15 +159,13 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
 }
-
-#keyboard-state label.locked {
-
-    opacity:1;
-}
-
-#keyboard-state label {
-    opacity:0.5;
-}
+/* #keyboard-state label.locked, #custom-capslock.locked { */
+/*     opacity: 1; */
+/* } */
+/**/
+/* #keyboard-state label, #custom-capslock.unlocked  { */
+/*     opacity: 0.5; */
+/* } */
 
 #workspaces,
 #taskbar {

@@ -27,8 +27,10 @@
     //
     "custom/l_end",
     // "custom/keybindhint",
-    "keyboard-state",
-    "keyboard-state#num",
+    "custom/capslock",
+    "custom/numlock",
+    // "keyboard-state",
+    // "keyboard-state#num",
     "privacy",
     "custom/r_end",
     "custom/padd"
@@ -126,8 +128,8 @@
     },
     "return-type": "json",
     "exec": "$HOME/scripts/hypr/checkIdle.sh",
-    "on-click": "$HOME/scripts/hypr/toggleIdle.sh",
-    "signal": 10,
+    "on-click": "$HOME/scripts/hypr/toggleIdle.fish",
+    "signal": 1,
     "tooltip": false
   },
   "hyprland/workspaces": {
@@ -139,40 +141,40 @@
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "persistent-workspaces": {},
-    "signal": 30
+    "signal": 2
   },
   "hyprland/window": {
-    // "format": " {}",
-    "format": "{}",
+    "format": "  {}",
+    // "format": "{}",
     "rotate": 0,
-    "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+30 $(pgrep waybar)",
-    "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+30 $(pgrep waybar)",
+    "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+2 $(pgrep waybar)",
+    "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "separate-outputs": true,
-    // "rewrite": {
-    //   // "cristobal@archlinux-nitro5:(.*)": "$1 ",
-    //   // "(.*)(~.*)": "  $1 $2",
-    //   // "(.*)(/.*)": "  $1 $2",
-    //   // "(.*)": " ",
-    //   "(~.*)": "  $1",
-    //   "nvim(.*)": " $1",
-    //   "yazi(.*)": "󰉋 $2",
-    //   "y\\b(.*)": "󰉋 $2",
-    //   "(.*)Ablaze Floorp": "󰖟 $1 Floorp",
-    //   "(.*) — Ablaze Floorp": "󰖟 $1",
-    //   "(.*) — Mozilla Firefox": "󰈹 $1",
-    //   "(.*)Mozilla Firefox": "󰈹 $1 Firefox",
-    //   "(.*) — Dolphin": "󰉋 $1",
-    //   "(.*)Spotify": "󰓇 $1 Spotify",
-    //   "(.*)Steam": "󰓓 $1 Steam",
-    //   "(.*) - Discord": " $1",
-    //   "(.*)Netflix": "󰝆 $1 Netflix",
-    //   "(.*) — Google chrome": " $1",
-    //   "(.*)Google chrome": " $1 Google chrome",
-    //   "(.*) — Github": " $1",
-    //   "(.*)Github": " $1 Github",
-    //   "(.*)Spotify Free": "󰓇 $1 Spotify",
-    //   "(.*)Spotify Premiun": "󰓇 $1 Spotify "
-    // },
+    "rewrite": {
+      //   // "cristobal@archlinux-nitro5:(.*)": "$1 ",
+      //   // "(.*)(~.*)": "  $1 $2",
+      //   // "(.*)(/.*)": "  $1 $2",
+      //   // "(.*)": " ",
+      //   "(~.*)": "  $1",
+      //   "nvim(.*)": " $1",
+      //   "yazi(.*)": "󰉋 $2",
+      //   "y\\b(.*)": "󰉋 $2",
+      "Ablaze Floorp": "󰖟",
+      "(.*) — Ablaze Floorp": "$1 󰖟",
+      //   "(.*) — Mozilla Firefox": "󰈹 $1",
+      //   "(.*)Mozilla Firefox": "󰈹 $1 Firefox",
+      //   "(.*) — Dolphin": "󰉋 $1",
+      //   "(.*)Spotify": "󰓇 $1 Spotify",
+      //   "(.*)Steam": "󰓓 $1 Steam",
+      //   "(.*) - Discord": " $1",
+      //   "(.*)Netflix": "󰝆 $1 Netflix",
+      //   "(.*) — Google chrome": " $1",
+      //   "(.*)Google chrome": " $1 Google chrome",
+      //   "(.*) — Github": " $1",
+      //   "(.*)Github": " $1 Github",
+      //   "(.*)Spotify Free": "󰓇 $1 Spotify",
+      //   "(.*)Spotify Premiun": "󰓇 $1 Spotify "
+    },
     "max-length": 50
   },
   "pulseaudio": {
@@ -235,30 +237,28 @@
       }
     ]
   },
-  "keyboard-state": {
-    "capslock": true,
-    // "device-path": "/dev/input/event8", // check yours with sudo libinput list-devices
-    "binding-keys": [
-      1
-      // 58,
-    ], // esc, capslock; find out the key codes with sudo libinput debug-events --show-keycodes
+  // TODO: toggle on click
+  "custom/capslock": {
+    "exec": "$HOME/scripts/hypr/capslock.fish",
+    "tooltip": false,
     "format": "{icon}",
-    "format-icons": {
-      "locked": "󰪛",
-      "unlocked": "󰪛"
-    }
+    "format-icons": [
+      "<span foreground='#f2f4f87f'>󰪛</span>", // locked
+      "<span foreground='#f2f4f8ff'>󰪛</span>" // unlocked
+    ],
+    "signal": 3,
+    "return-type": "json"
   },
-  "keyboard-state#num": {
-    "numlock": true,
-    // "device-path": "/dev/input/event8", // check yours with sudo libinput list-devices
-    "binding-keys": [
-      69
-    ], // numlock; find out the key codes with sudo libinput debug-events --show-keycodes
+  "custom/numlock": {
+    "exec": "$HOME/scripts/hypr/numlock.fish",
+    "tooltip": false,
     "format": "{icon}",
-    "format-icons": {
-      "locked": "󰎦",
-      "unlocked": "󰎦"
-    }
+    "format-icons": [
+      "<span foreground='#f2f4f87f'>󰎦</span>", // locked
+      "<span foreground='#f2f4f8ff'>󰎦</span>" // unlocked
+    ],
+    "signal": 4,
+    "return-type": "json"
   },
   "tray": {
     "icon-size": 16,
