@@ -171,9 +171,9 @@
     "max-length": 50
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}", // note there is an en space and a thinspace
+    "format": "{icon}   {volume}", // note there is an en space, a thinspace and a six-per-em space
     "rotate": 0,
-    "format-muted": "󰖁  <s>{volume}</s>", // note there is an en space and a thinspace
+    "format-muted": "󰖁   <s>{volume}</s>", // note there is an en space, a thinspace and a six-per-em space
     "on-click": "pavucontrol -t 3",
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
