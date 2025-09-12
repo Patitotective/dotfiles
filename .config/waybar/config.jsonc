@@ -252,7 +252,7 @@
     "return-type": "json"
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 14,
     "rotate": 0,
     "spacing": 5
   },
