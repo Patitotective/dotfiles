@@ -7,7 +7,7 @@ if pidof -qx hypridle # if hypridle is running
     end
 else # if it's not
     if test "$argv[1]" = true -o (count $argv) -eq 0
-        hypridle
+        hypridle &
         kill -SIGRTMIN+1 $(pgrep waybar)
     end
 end
