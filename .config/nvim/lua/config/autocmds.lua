@@ -31,6 +31,9 @@ vim.api.nvim_create_autocmd("FileType", {
 local specialCSV = {
   "/home/cristobal/Sync/data/study_mext.csv",
   "/home/cristobal/Sync/data/study_bunpou.csv",
+  "/home/cristobal/Sync/spain/upv/anki/basico.csv",
+  "/home/cristobal/Sync/spain/upv/anki/derivadas.csv",
+  "/home/cristobal/Sync/spain/upv/anki/integrales.csv",
 }
 local semicolonCSV = {
   "/home/cristobal/Documents/orgfiles/notasDeCorteUV.csv",
