@@ -45,8 +45,8 @@ hash = "981acbe9b758b1af3a8154c932bb936d"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "b58c305"
-hash = "92dc8bdc3d9cbb36e03111b4cad231fc"
+rev = "f07b496"
+hash = "162bf7326809fb2b831d7fac7525b067"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"

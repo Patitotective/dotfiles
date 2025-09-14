@@ -1,6 +1,7 @@
 advcpmv
 anki-bin
 bemoji
+bluej
 bzmenu-git
 dragon-drop
 festival-freebsoft-utils
@@ -10,6 +11,7 @@ hyprpolkitagent-git
 nph-bin
 showmethekey
 tela-icon-theme
+wine-stable-mono
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug

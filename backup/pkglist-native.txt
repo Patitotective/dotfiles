@@ -182,7 +182,6 @@ plasma-thunderbolt
 plasma-vault
 plasma-welcome
 plasma-workspace
-plasma-workspace-wallpapers
 plasma5support
 plymouth-kcm
 polkit-kde-agent
@@ -232,6 +231,9 @@ wacomtablet
 waybar
 wev
 wget
+wine
+wine-gecko
+winetricks-git
 wireless-regdb
 wl-clipboard
 wlogout
