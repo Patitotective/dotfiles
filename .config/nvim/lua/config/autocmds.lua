@@ -15,6 +15,20 @@ local function contains(table, value)
   return false
 end
 
+local function startswith(table, value)
+  for i = 1, #table do
+    vim.notify(string.format("1 %s", value))
+    vim.notify(string.format("2 %s", table[i]))
+    vim.notify(string.format("3 %s", value:sub(1, #table[i])))
+    vim.notify(string.format("4 %s", value:sub(1, #table[i]) == table[i]))
+
+    if value:sub(1, #table[i]) == table[i] then
+      return true
+    end
+  end
+  return false
+end
+
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("wrap_spell", { clear = true }),
@@ -27,15 +41,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- This CSV files' fields are shown in different lines, not like a table
-local specialCSV = {
+-- This Csv files' fields are shown in different lines, not like a table
+local specialCsv = {
   "/home/cristobal/Sync/data/study_mext.csv",
   "/home/cristobal/Sync/data/study_bunpou.csv",
-  "/home/cristobal/Sync/spain/upv/anki/basico.csv",
-  "/home/cristobal/Sync/spain/upv/anki/derivadas.csv",
-  "/home/cristobal/Sync/spain/upv/anki/integrales.csv",
+  "/home/cristobal/Sync/spain/upv/anki/*",
 }
-local semicolonCSV = {
+-- local specialCsvDirs = {
+--   "/home/cristobal/Sync/spain/upv/anki",
+-- }
+local semicolonCsv = {
   "/home/cristobal/Documents/orgfiles/notasDeCorteUV.csv",
   "/home/cristobal/Documents/orgfiles/notasDeCorteUPV.csv",
 }
@@ -43,9 +58,9 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
   callback = function(args)
     local path = vim.api.nvim_buf_get_name(args.buf)
-    if contains(semicolonCSV, path) then
+    if contains(semicolonCsv, path) then
       vim.cmd("CsvViewEnable delimiter=;")
-    elseif not contains(specialCSV, path) then
+    elseif not contains(specialCsv, path) then
       require("csvview").enable()
     end
   end,
@@ -53,7 +68,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- TODO: ignore \: and \<br>
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = specialCSV,
+  pattern = specialCsv,
   callback = function()
     vim.cmd("silent %s/:/:\\r  /eg")
     vim.cmd("silent %s/<br>/<br>\\r    /eg")
@@ -61,7 +76,7 @@ vim.api.nvim_create_autocmd("BufRead", {
 })
 
 vim.api.nvim_create_autocmd("BufWriteCmd", {
-  pattern = specialCSV,
+  pattern = specialCsv,
   callback = function()
     vim.cmd("silent %s/:\\n  /:/e")
     vim.cmd("silent %s/<br>\\n    /<br>/e")
