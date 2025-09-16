@@ -17,16 +17,42 @@ end
 
 local function startswith(table, value)
   for i = 1, #table do
-    vim.notify(string.format("1 %s", value))
-    vim.notify(string.format("2 %s", table[i]))
-    vim.notify(string.format("3 %s", value:sub(1, #table[i])))
-    vim.notify(string.format("4 %s", value:sub(1, #table[i]) == table[i]))
-
     if value:sub(1, #table[i]) == table[i] then
       return true
     end
   end
   return false
+end
+
+local function serializeTable(val, name, skipnewlines, depth)
+  skipnewlines = skipnewlines or false
+  depth = depth or 0
+
+  local tmp = string.rep(" ", depth)
+
+  if name then
+    tmp = tmp .. name .. " = "
+  end
+
+  if type(val) == "table" then
+    tmp = tmp .. "{" .. (not skipnewlines and "\n" or "")
+
+    for k, v in pairs(val) do
+      tmp = tmp .. serializeTable(v, k, skipnewlines, depth + 1) .. "," .. (not skipnewlines and "\n" or "")
+    end
+
+    tmp = tmp .. string.rep(" ", depth) .. "}"
+  elseif type(val) == "number" then
+    tmp = tmp .. tostring(val)
+  elseif type(val) == "string" then
+    tmp = tmp .. string.format("%q", val)
+  elseif type(val) == "boolean" then
+    tmp = tmp .. (val and "true" or "false")
+  else
+    tmp = tmp .. '"[inserializeable datatype:' .. type(val) .. ']"'
+  end
+
+  return tmp
 end
 
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
@@ -42,14 +68,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- This Csv files' fields are shown in different lines, not like a table
+local specialCsvDirs = {
+  "/home/cristobal/Sync/spain/upv/anki/",
+}
 local specialCsv = {
   "/home/cristobal/Sync/data/study_mext.csv",
   "/home/cristobal/Sync/data/study_bunpou.csv",
-  "/home/cristobal/Sync/spain/upv/anki/*",
 }
--- local specialCsvDirs = {
---   "/home/cristobal/Sync/spain/upv/anki",
--- }
+for i = 1, #specialCsvDirs do
+  table.insert(specialCsv, string.format("%s*", specialCsvDirs[i]))
+end
+
 local semicolonCsv = {
   "/home/cristobal/Documents/orgfiles/notasDeCorteUV.csv",
   "/home/cristobal/Documents/orgfiles/notasDeCorteUPV.csv",
@@ -60,7 +89,7 @@ vim.api.nvim_create_autocmd("FileType", {
     local path = vim.api.nvim_buf_get_name(args.buf)
     if contains(semicolonCsv, path) then
       vim.cmd("CsvViewEnable delimiter=;")
-    elseif not contains(specialCsv, path) then
+    elseif not startswith(specialCsvDirs, path) and not contains(specialCsv, path) then
       require("csvview").enable()
     end
   end,
@@ -78,13 +107,14 @@ vim.api.nvim_create_autocmd("BufRead", {
 vim.api.nvim_create_autocmd("BufWriteCmd", {
   pattern = specialCsv,
   callback = function()
+    local cursorPos = vim.api.nvim_win_get_cursor(0)
     vim.cmd("silent %s/:\\n  /:/e")
     vim.cmd("silent %s/<br>\\n    /<br>/e")
     vim.cmd("write")
     vim.cmd("silent %s/:/&\\r  /eg")
     vim.cmd("silent %s/<br>/&\\r    /eg")
     vim.cmd("set nomodified")
-    vim.cmd("norm!``") -- Go back to where the cursor was before substituting
+    vim.api.nvim_win_set_cursor(0, cursorPos)
   end,
 })
 
