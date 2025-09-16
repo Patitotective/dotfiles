@@ -93,6 +93,16 @@ return {
           },
         },
       },
+      u = {
+        description = "To UPV",
+        types = {
+          {
+            type = "tags_todo",
+            match = "upv/-DONE",
+            org_agenda_sorting_strategy = { "todo-state-down", "priority-down" },
+          },
+        },
+      },
     },
     org_capture_templates = {
       o = {
