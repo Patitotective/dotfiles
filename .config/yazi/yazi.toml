@@ -59,7 +59,27 @@ prepend_rules = [
 ]
 
 [plugin]
+prepend_preloaders = [
+  ################## gvfs.yazi ##################
+  # Do not preload files in mounted locations:
+  # Environment variable won't work here.
+  # Using absolute path instead.
+  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+
+  # For mounted hard disk/drive
+  { name = "/run/media/cristobal/**/*", run = "noop" },
+
+  ################## mediainfo.yazi ##################
+  # Replace magick, image, video with mediainfo
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  # Adobe Illustrator, Adobe Photoshop is image/adobe.photoshop, already handled above
+  { mime = "application/postscript", run = "mediainfo" },
+]
 prepend_previewers = [
+  # Allow to preview folder.
+  { name = "*/", run = "folder" },
+  ################## ouch.yazi ##################
   # Archive previewer
   { mime = "application/*zip", run = "ouch" },
   { mime = "application/x-tar", run = "ouch" },
@@ -68,15 +88,23 @@ prepend_previewers = [
   { mime = "application/x-rar", run = "ouch" },
   { mime = "application/x-xz", run = "ouch" },
   { mime = "application/xz", run = "ouch" },
+
+  ################## gvfs.yazi ##################
+  # Do not previewing files in mounted locations.
+  # Uncomment the line below to allow previewing text files.
+  # { mime = "{text/*,application/x-subrip}", run = "code" },
+
+  # Using absolute path.
+  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+
+  # For mounted hard disk/drive.
+  { name = "/run/media/cristobal/**/*", run = "noop" },
+
+  ################## mediainfo.yazi ##################
+  # Replace magick, image, video with mediainfo
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  # Adobe Illustrator, Adobe Photoshop is image/adobe.photoshop, already handled above
+  { mime = "application/postscript", run = "mediainfo" },
 ]
-# append_previewers = [{ name = "*", run = "file" }]
-# prepend_spotters = [{ name = "*", run = "file-extra-metadata" }]
-# [[plugin.prepend_fetchers]]
-# id = "git"
-# name = "*"
-# run = "git"
-#
-# [[plugin.prepend_fetchers]]
-# id = "git"
-# name = "*/"
-# run = "git"
+append_spotters = [{ name = "*", run = "file-extra-metadata" }]
