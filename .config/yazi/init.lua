@@ -123,15 +123,15 @@ require("gvfs"):setup({
 	-- (Optional) Select where to save passwords.
 	-- Default: nil
 	-- Available options: "keyring", "pass", or nil
-	password_vault = "keyring",
+	-- password_vault = "keyring",
 
 	-- (Optional) Only need if you set password_vault = "pass"
 	-- Read the guide at SECURE_SAVED_PASSWORD.md to get your key_grip
-	key_grip = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+	-- key_grip = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
 
 	-- (Optional) Auto-save password after mount.
 	-- Default: false
-	save_password_autoconfirm = true,
+	-- save_password_autoconfirm = true,
 	-- (Optional) mountpoint of gvfs. Default: /run/user/USER_ID/gvfs
 	-- On some system it could be ~/.gvfs
 	-- You can't decide this path, it will be created automatically. Only changed if you know where gvfs mountpoint is.
