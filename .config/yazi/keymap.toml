@@ -239,6 +239,11 @@ on = ["g", "v"]
 run = "cd ~/Videos"
 desc = "Go to Videos"
 
+[[mgr.prepend_keymap]]
+on = ["g", "u"]
+run = "cd ~/Sync/spain/upv/"
+desc = "Go to upv"
+
 #################### relative-motions ####################
 
 [[mgr.prepend_keymap]]
