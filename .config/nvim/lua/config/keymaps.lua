@@ -75,3 +75,5 @@ vim.keymap.set("n", "<leader><tab>$", "<cmd>tablast<cr>")
 -- vim.keymap.del("n", "gcO")
 -- -- vim.keymap.del("n", "gcc") -- Uncommenting this makes it fail with Too much rescursion
 -- vim.keymap.set("n", "gc", "<cmd>norm gcc<CR>")
+
+vim.keymap.set("n", "<leader>ok", "<cmd>OverseerQuickAction stop<cr>", { desc = "Kill Task" })
