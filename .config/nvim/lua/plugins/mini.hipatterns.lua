@@ -3,7 +3,7 @@ function string:endswith(suffix)
 end
 
 return {
-  "echasnovski/mini.hipatterns",
+  "nvim-mini/mini.hipatterns",
   opts = {
     highlighters = {
       rgba_color_hashless = {

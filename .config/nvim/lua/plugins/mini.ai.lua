@@ -35,7 +35,7 @@
 -- print(matchUrlPath(txt))
 
 return {
-  "echasnovski/mini.ai",
+  "nvim-mini/mini.ai",
   opts = {
     custom_textobjects = {
       -- Match URL/file path

@@ -118,7 +118,7 @@ vim.api.nvim_create_autocmd("BufWriteCmd", {
   end,
 })
 
--- https://github.com/echasnovski/mini.nvim/issues/1322
+-- https://github.com/nvim-mini/mini.nvim/issues/1322
 local function miniFilesWinMaxHeight()
   return vim.o.lines - vim.o.cmdheight - 12
 end
