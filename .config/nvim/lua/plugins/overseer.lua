@@ -17,5 +17,6 @@ return {
   },
   keys = {
     { "<leader>or", "<cmd>OverseerRestartLast<cr>", desc = "Restart Last Task" },
+    { "<leader>oc", false }, -- Since it collides with orgmode capture binding
   },
 }
