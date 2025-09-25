@@ -89,18 +89,21 @@ vim.api.nvim_create_autocmd("FileType", {
     local path = vim.api.nvim_buf_get_name(args.buf)
     if contains(semicolonCsv, path) then
       vim.cmd("CsvViewEnable delimiter=;")
-    elseif not startswith(specialCsvDirs, path) and not contains(specialCsv, path) then
+    elseif startswith(specialCsvDirs, path) or contains(specialCsv, path) then
+      vim.opt_local.filetype = "tex"
+    else
       require("csvview").enable()
     end
   end,
 })
 
--- TODO: ignore \: and \<br>
+-- TODO: ignore \: and \<br> and \<hr>
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = specialCsv,
   callback = function()
     vim.cmd("silent %s/:/:\\r  /eg")
     vim.cmd("silent %s/<br>/<br>\\r    /eg")
+    vim.cmd("silent %s/<hr>/<hr>\\r    /eg")
   end,
 })
 
@@ -110,9 +113,11 @@ vim.api.nvim_create_autocmd("BufWriteCmd", {
     local cursorPos = vim.api.nvim_win_get_cursor(0)
     vim.cmd("silent %s/:\\n  /:/e")
     vim.cmd("silent %s/<br>\\n    /<br>/e")
+    vim.cmd("silent %s/<hr>\\n    /<br>/e")
     vim.cmd("write")
     vim.cmd("silent %s/:/&\\r  /eg")
     vim.cmd("silent %s/<br>/&\\r    /eg")
+    vim.cmd("silent %s/<hr>/&\\r    /eg")
     vim.cmd("set nomodified")
     vim.api.nvim_win_set_cursor(0, cursorPos)
   end,
@@ -255,5 +260,14 @@ vim.api.nvim_create_autocmd("CmdwinLeave", {
   callback = function()
     -- TODO: make it actually restore the previous keymap
     vim.keymap.set("n", "<cr>", "<cmd>write<cr>") -- save file
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rip-substitute",
+  callback = function(ctx)
+    vim.keymap.set({ "i", "n" }, "<c-p>", "<c-o><up>", { buffer = ctx.buf, remap = true })
+    vim.keymap.set({ "i", "n" }, "<c-n>", "<c-o><down>", { buffer = ctx.buf, remap = true })
+    vim.keymap.set("n", "q", "<esc>", { buffer = ctx.buf, remap = true })
   end,
 })
