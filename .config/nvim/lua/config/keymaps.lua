@@ -77,3 +77,23 @@ vim.keymap.set("n", "<leader><tab>$", "<cmd>tablast<cr>")
 -- vim.keymap.set("n", "gc", "<cmd>norm gcc<CR>")
 
 vim.keymap.set("n", "<leader>ok", "<cmd>OverseerQuickAction stop<cr>", { desc = "Kill Task" })
+
+vim.keymap.set("n", "<leader>soc", function()
+  local orgfiles = vim.fn.expand("$HOME/Documents/orgfiles/")
+  local paths = vim.split(vim.fn.glob(orgfiles .. "/Cheatsheet*.org"), "\n", { trimempty = true })
+
+  require("fzf-lua").live_grep({
+    rg_glob = true,
+    search_paths = paths,
+  })
+end, { desc = "Search Inside Cheatsheets" })
+
+vim.keymap.set("n", "<leader>soo", function()
+  local orgfiles = vim.fn.expand("$HOME/Documents/orgfiles/")
+  local paths = vim.split(vim.fn.glob(orgfiles .. "/*.org"), "\n", { trimempty = true })
+
+  require("fzf-lua").live_grep({
+    rg_glob = true,
+    search_paths = paths,
+  })
+end, { desc = "Search Inside Orgfiles" })
