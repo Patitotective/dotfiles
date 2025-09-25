@@ -1,9 +1,14 @@
 return {
   "chrisgrieser/nvim-rip-substitute",
   opts = {
+    popupWin = {
+      disableCompletions = false,
+    },
     keymaps = {
-      prevSubstitutionInHistory = "<up>", --"<c-p>",
-      nextSubstitutionInHistory = "<down>", --"<c-n>",
+      abort = "<esc>",
+      -- abort = { "q", "<esc>" },
+      -- prevSubstitutionInHistory = "<up>",
+      -- nextSubstitutionInHistory = "<down>",
     },
   },
   keys = {
