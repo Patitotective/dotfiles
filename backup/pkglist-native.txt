@@ -29,6 +29,7 @@ cpio
 cpu-x
 dconf-editor
 ddcci-driver-linux-dkms-git
+dex
 discover
 diskonaut
 dkms
@@ -70,6 +71,16 @@ grimblast-git
 grub
 gst-plugin-pipewire
 gvfs
+gvfs-afc
+gvfs-dnssd
+gvfs-goa
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-onedrive
+gvfs-smb
+gvfs-wsdd
 gwenview
 hledger
 hledger-ui
@@ -138,6 +149,7 @@ ly
 man-db
 man-pages
 mariadb
+mediainfo
 milou
 mkinitcpio-firmware
 mpv
@@ -204,6 +216,7 @@ rustup
 scdoc
 scx-scheds
 sddm-kcm
+showmethekey
 sof-firmware
 speech-dispatcher
 spicetify-cli
@@ -211,6 +224,8 @@ spotify
 sway-launcher-desktop
 syncthing
 tabiew
+tela-icon-theme
+telegram-desktop
 testdisk
 tldr
 tlp

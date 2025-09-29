@@ -9,9 +9,6 @@ firefox-tridactyl-native-bin
 floorp-bin
 hyprpolkitagent-git
 nph-bin
-showmethekey
-tela-icon-theme
-wine-stable-mono
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug
