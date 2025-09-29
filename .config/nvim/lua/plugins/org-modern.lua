@@ -1,5 +1,5 @@
 return {
-  "ficcdaf/org-modern.nvim",
+  "danilshvalov/org-modern.nvim",
   config = function()
     local Menu = require("org-modern.menu")
 

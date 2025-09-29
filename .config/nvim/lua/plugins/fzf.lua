@@ -23,5 +23,6 @@ return {
     { "<leader>bF", "<cmd>FzfLua blines<cr>", desc = "Find In Current Buffer" },
     { "<leader>s~", "<cmd>FzfLua files cwd=~<cr>", desc = "Search files in $HOME" },
     { "<leader>s/", "<cmd>FzfLua files cwd=/<cr>", desc = "Search files in /" },
+    { "<leader>fc", "<cmd>FzfLua files cwd=~/.config/<cr>", desc = "Search config files" },
   },
 }
