@@ -1,3 +1,51 @@
+function Linemode:rmtime() -- relative modified time
+	-- TODO: show yesterday when needed
+	-- TODO: show wekkday when same week
+	local time = math.floor(self._file.cha.mtime or 0)
+	local stime
+
+	if time == 0 then
+		stime = ""
+	elseif os.date("%Y", time) == os.date("%Y") then -- same year
+		if os.date("%m", time) == os.date("%m") then -- same month
+			if os.date("%d", time) == os.date("%d") then -- same day
+				stime = os.date("%H:%M", time)
+			else
+				stime = os.date("%d %H:%M", time)
+			end
+		else
+			stime = os.date("%b %d %H:%M", time)
+		end
+	else
+		stime = os.date("%b %d  %Y", time)
+	end
+
+	return string.format("%s", stime)
+end
+
+function Linemode:rbtime() -- relative birth time
+	local time = math.floor(self._file.cha.btime or 0)
+	local stime
+
+	if time == 0 then
+		stime = ""
+	elseif os.date("%Y", time) == os.date("%Y") then -- same year
+		if os.date("%m", time) == os.date("%m") then -- same month
+			if os.date("%d", time) == os.date("%d") then -- same day
+				stime = os.date("%H:%M", time)
+			else
+				stime = os.date("%d %H:%M", time)
+			end
+		else
+			stime = os.date("%b %d %H:%M", time)
+		end
+	else
+		stime = os.date("%b %d  %Y", time)
+	end
+
+	return string.format("%s", stime)
+end
+
 require("full-border"):setup()
 
 require("folder-rules"):setup()
@@ -10,10 +58,7 @@ require("relative-motions"):setup({
 
 require("yatline"):setup({
 	tab_width = 20,
-	tab_use_inverse = false,
 	show_background = true,
-	display_header_line = true,
-	display_status_line = true,
 
 	component_positions = { "header", "tab", "status" },
 
@@ -26,12 +71,8 @@ require("yatline"):setup({
 			section_c = {},
 		},
 		right = {
-			section_a = {
-				{ type = "string", custom = false, name = "date", params = { "%A, %d %B %Y" } },
-			},
-			section_b = {
-				{ type = "string", custom = false, name = "date", params = { "%X" } },
-			},
+			section_a = {},
+			section_b = {},
 			section_c = {},
 		},
 	},
@@ -45,21 +86,44 @@ require("yatline"):setup({
 				{ type = "string", custom = false, name = "hovered_size" },
 			},
 			section_c = {
-				{ type = "string", custom = false, name = "hovered_path" },
-				{ type = "coloreds", custom = false, name = "count" },
+				{ type = "string", custom = false, name = "hovered_name" },
 			},
 		},
 		right = {
-			section_a = {
-				{ type = "string", custom = false, name = "cursor_position" },
-			},
-			section_b = {
-				{ type = "string", custom = false, name = "cursor_percentage" },
-			},
 			section_c = {
 				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
 				{ type = "coloreds", custom = false, name = "permissions" },
+				{ type = "coloreds", custom = false, name = "count", params = { true } }, -- params doesn't do anything... it should show the filtered files as well
 			},
+			section_b = {
+				-- { type = "string", custom = false, name = "cursor_position" }, -- since count already shows the number of total files, i don't want to show the information twice, even if this also shows the current file index
+				{ type = "string", custom = false, name = "cursor_percentage" },
+			},
+			section_a = {
+				{ type = "string", custom = false, name = "date", params = { " %H:%M" } },
+			},
+		},
+	},
+	theme = {
+		style_a = {
+			fg = "black",
+			bg_mode = {
+				normal = "#78A9FF",
+				select = "#BE95FF",
+				-- un_set = "#d65d0e", -- what is this?
+			},
+		},
+		style_b = {
+			fg = "white",
+			bg = "#2C3B55",
+			-- bg_mode = { -- sadly, it seems this is not supported for style_b
+			-- 	normal = "#2C3B55",
+			-- 	select = "#413555",
+			-- },
+		},
+		style_c = {
+			fg = "white",
+			bg = "#0C0C0C",
 		},
 	},
 })
@@ -76,29 +140,6 @@ require("bookmarks"):setup({
 require("smart-enter"):setup({
 	open_multi = true,
 })
-
-function Linemode:rmtime() -- relative modified time
-	-- TODO: show yesterday when needed
-	-- TODO: show wekkday when same week
-	local time = math.floor(self._file.cha.mtime or 0)
-	local stime
-
-	if time == 0 then
-		stime = ""
-	elseif os.date("%d", time) == os.date("%d") then -- same day
-		stime = os.date("%H:%M", time)
-	elseif os.date("%Y", time) == os.date("%Y") then -- same year
-		stime = os.date("%b %d %H:%M", time)
-	else
-		stime = os.date("%b %d  %Y", time)
-	end
-
-	-- local size = self._file:size()
-	-- if size and ya.readable_size(size) then
-	-- 	return string.format("%s|%s", ya.readable_size(size), time)
-	-- else
-	return string.format("%s", stime)
-end
 
 require("gvfs"):setup({
 	-- (Optional) Allowed keys to select device.
@@ -137,4 +178,13 @@ require("gvfs"):setup({
 	-- You can't decide this path, it will be created automatically. Only changed if you know where gvfs mountpoint is.
 	-- Use command `ps aux | grep gvfs` to search for gvfs process and get the mountpoint path.
 	-- root_mountpoint = (os.getenv("XDG_RUNTIME_DIR") or ("/run/user/" .. ya.uid())) .. "/gvfs"
+})
+
+require("projects"):setup({
+	save = {
+		method = "lua",
+	},
+	last = {
+		load_after_start = true,
+	},
 })
