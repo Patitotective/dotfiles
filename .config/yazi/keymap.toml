@@ -83,7 +83,7 @@ keymap = [
   { on = "L", run = "tab_switch 1 --relative" },
   { on = "H", run = "tab_switch -1 --relative" },
   { on = ["g", "?"], run = "help" },
-  { on = "<C-d>", run = "shell -- dragon-drop --and-exit --icon-only --on-top --all \"$@\"" },  # dragon (drag and) drop
+  { on = "<C-n>", run = "shell -- dragon-drop --and-exit --icon-only --on-top --all \"$@\"" },  # dragon (drag and) drop
   { on = "<tab>", run = "spot", desc = "spot hovered file" },  # file-extra-metadata
   #
   # plugins
