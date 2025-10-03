@@ -1,3 +1,5 @@
+require("full-border"):setup()
+
 function Linemode:rmtime() -- relative modified time
 	-- TODO: show yesterday when needed
 	-- TODO: show wekkday when same week
@@ -45,8 +47,6 @@ function Linemode:rbtime() -- relative birth time
 
 	return string.format("%s", stime)
 end
-
-require("full-border"):setup()
 
 require("folder-rules"):setup()
 
@@ -180,11 +180,14 @@ require("gvfs"):setup({
 	-- root_mountpoint = (os.getenv("XDG_RUNTIME_DIR") or ("/run/user/" .. ya.uid())) .. "/gvfs"
 })
 
-require("projects"):setup({
-	save = {
-		method = "lua",
-	},
-	last = {
-		load_after_start = true,
-	},
-})
+-- When yazi is opened from nevoim by yazi.nvim
+if os.getenv("NVIM_CWD") == nil then
+	require("projects"):setup({
+		save = {
+			method = "lua",
+		},
+		last = {
+			load_after_start = true,
+		},
+	})
+end
