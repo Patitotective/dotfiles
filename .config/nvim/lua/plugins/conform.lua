@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       nim = { "nph" },
       zsh = { "beautysh" },
+      toml = { "tombi" },
     },
   },
 }
