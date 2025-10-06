@@ -189,5 +189,8 @@ if os.getenv("NVIM_CWD") == nil then
 		last = {
 			load_after_start = true,
 		},
+		notify = {
+			enable = false,
+		},
 	})
 end
