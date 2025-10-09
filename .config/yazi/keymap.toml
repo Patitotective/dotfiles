@@ -20,7 +20,7 @@ keymap = [
   { on = "d", run = "remove" },  # no need for dd, since to confirm you can also do d
   { on = "D", run = "remove --permanently" },
   { on = "o", run = "create" },
-  { on = "r", run = "rename --cursor=start" },
+  { on = "r", run = "rename --cursor=end" },
   # selection/visual mode
   { on = "v", run = "toggle" },
   { on = "V", run = "visual_mode" },
