@@ -1,49 +1,45 @@
 [Added Associations]
-application/json=nvim.desktop;
-application/pdf=org.kde.okular.desktop;
-application/x-docbook+xml=nvim.desktop;
-application/x-yaml=nvim.desktop;
 image/png=org.kde.gwenview.desktop;gimp.desktop;okularApplication_kimgio.desktop;feh.desktop;
-image/svg+xml=org.kde.gwenview.desktop;
 image/webp=org.kde.gwenview.desktop;gimp.desktop;okularApplication_kimgio.desktop;feh.desktop;
-text/markdown=nvim.desktop;
-text/plain=nvim-2.desktop;nvim.desktop;
-text/x-cmake=nvim.desktop;
-x-scheme-handler/chrome=floorp-apple music.desktop;userapp-Floorp-LLTKC3.desktop;userapp-Floorp-S0Z522.desktop;
-x-scheme-handler/http=floorp-apple music.desktop;userapp-Floorp-LLTKC3.desktop;userapp-Floorp-S0Z522.desktop;
-x-scheme-handler/https=floorp-apple music.desktop;userapp-Floorp-LLTKC3.desktop;userapp-Floorp-S0Z522.desktop;
-x-scheme-handler/mailto=floorp.desktop;
-text/html=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/x-extension-htm=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/x-extension-html=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/x-extension-shtml=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/xhtml+xml=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/x-extension-xhtml=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
-application/x-extension-xht=userapp-Floorp-LLTKC3.desktop;floorp-apple music.desktop;
 
 [Default Applications]
 application/json=nvim.desktop;
+application/x-yaml=nvim.desktop;
+application/x-docbook+xml=nvim.desktop;
+text/plain=nvim.desktop;
+text/markdown=nvim.desktop;
+text/x-cmake=nvim.desktop;
+
 application/pdf=org.kde.okular.desktop;
+
 application/pkcs7-mime+pem=onlyoffice-desktopeditors.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop
-application/x-docbook+xml=nvim.desktop;
-application/x-extension-htm=floorp-apple music.desktop
-application/x-extension-html=floorp-apple music.desktop
-application/x-extension-shtml=floorp-apple music.desktop
-application/x-extension-xht=floorp-apple music.desktop
-application/x-extension-xhtml=floorp-apple music.desktop
+
+application/x-extension-htm=floorp.desktop;
+application/x-extension-html=floorp.desktop;
+application/x-extension-shtml=floorp.desktop;
+application/x-extension-xht=floorp.desktop;
+application/x-extension-xhtml=floorp.desktop;
+x-scheme-handler/mailto=floorp.desktop;
+x-scheme-handler/http=floorp.desktop;
+x-scheme-handler/https=floorp.desktop;
+x-scheme-handler/chrome=floorp.desktop;
+application/xhtml+xml=floorp.desktop;
+text/html=floorp.desktop;
+
+inode/directory=yazi.desktop
 application/x-gnome-saved-search=yazi.desktop
-application/x-yaml=nvim.desktop;
-application/xhtml+xml=floorp-apple music.desktop
+
+# From https://doc.qt.io/qt-6/qimage.html#reading-and-writing-image-files and https://doc.qt.io/qt-6/qtimageformats-index.html
 image/png=org.kde.gwenview.desktop;
 image/svg+xml=org.kde.gwenview.desktop;
 image/webp=org.kde.gwenview.desktop;
-inode/directory=yazi.desktop
-text/html=floorp-apple music.desktop
-text/markdown=nvim.desktop;
-text/plain=nvim-2.desktop;
-text/x-cmake=nvim.desktop;
-x-scheme-handler/chrome=floorp-apple music.desktop
-x-scheme-handler/http=floorp-apple music.desktop
-x-scheme-handler/https=floorp-apple music.desktop
-x-scheme-handler/mailto=floorp.desktop;
+image/jpeg=org.kde.gwenview.desktop;
+image/gif=org.kde.gwenview.desktop;
+image/bmp=org.kde.gwenview.desktop;
+image/x-portable-bitmap=org.kde.gwenview.desktop;
+image/x-portable-graymap=org.kde.gwenview.desktop;
+image/x-portable-pixmap=org.kde.gwenview.desktop;
+image/x-xbitmap=org.kde.gwenview.desktop;
+image/x-xpixmap=org.kde.gwenview.desktop;
+image/tiff=org.kde.gwenview.desktop;
