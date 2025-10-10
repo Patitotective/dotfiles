@@ -5,6 +5,7 @@ return {
       nim = { "nph" },
       zsh = { "beautysh" },
       toml = { "tombi" },
+      kdl = { "kdlfmt" },
     },
   },
 }
