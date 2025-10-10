@@ -2,7 +2,7 @@
 sort_by = "mtime"
 sort_reverse = true
 # sort_sensitive = true
-sort_dir_first = false
+sort_dir_first = true
 # sort_translit = true
 linemode = "rmtime"
 show_symlink = true
@@ -60,16 +60,14 @@ prepend_rules = [
 
 [plugin]
 prepend_preloaders = [
-  ################## gvfs.yazi ##################
+  # ################# gvfs.yazi ##################
   # Do not preload files in mounted locations:
   # Environment variable won't work here.
   # Using absolute path instead.
   { name = "/run/user/1000/gvfs/**/*", run = "noop" },
-
   # For mounted hard disk/drive
   { name = "/run/media/cristobal/**/*", run = "noop" },
-
-  ################## mediainfo.yazi ##################
+  # ################# mediainfo.yazi ##################
   # Replace magick, image, video with mediainfo
   { mime = "{audio,video,image}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
@@ -79,7 +77,7 @@ prepend_preloaders = [
 prepend_previewers = [
   # Allow to preview folder.
   { name = "*/", run = "folder" },
-  ################## ouch.yazi ##################
+  # ################# ouch.yazi ##################
   # Archive previewer
   { mime = "application/*zip", run = "ouch" },
   { mime = "application/x-tar", run = "ouch" },
@@ -88,19 +86,15 @@ prepend_previewers = [
   { mime = "application/x-rar", run = "ouch" },
   { mime = "application/x-xz", run = "ouch" },
   { mime = "application/xz", run = "ouch" },
-
-  ################## gvfs.yazi ##################
+  # ################# gvfs.yazi ##################
   # Do not previewing files in mounted locations.
   # Uncomment the line below to allow previewing text files.
   # { mime = "{text/*,application/x-subrip}", run = "code" },
-
   # Using absolute path.
   { name = "/run/user/1000/gvfs/**/*", run = "noop" },
-
   # For mounted hard disk/drive.
   { name = "/run/media/cristobal/**/*", run = "noop" },
-
-  ################## mediainfo.yazi ##################
+  # ################# mediainfo.yazi ##################
   # Replace magick, image, video with mediainfo
   { mime = "{audio,video,image}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
@@ -108,3 +102,6 @@ prepend_previewers = [
   { mime = "application/postscript", run = "mediainfo" },
 ]
 append_spotters = [{ name = "*", run = "file-extra-metadata" }]
+
+[tasks]
+# image_alloc = 1073741824  # = 1024*1024*1024 = 1024MB
