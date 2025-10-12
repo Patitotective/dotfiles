@@ -147,6 +147,8 @@ require("gvfs"):setup({
 })
 
 -- When yazi is opened from nevoim by yazi.nvim
+-- From xdg-open (~/.config/xdg-desktop-portal-termfilechooser/config)
+-- Or from dbus (~/scripts/hypr/dbus-yazi-wrapper.fish)
 if os.getenv("NVIM_CWD") == nil then
 	require("projects"):setup({
 		save = {
