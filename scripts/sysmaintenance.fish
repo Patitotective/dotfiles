@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 # Based of https://github.com/kurealnum/dotfiles
 # References: Fernando Cejas (https://fernandocejas.com/blog/engineering/2022-03-30-arch-linux-system-maintance/)
 

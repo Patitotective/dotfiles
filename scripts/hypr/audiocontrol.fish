@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 
 if test "$argv[1]" = mute
     wpctl set-mute @DEFAULT_AUDIO_SINK@ 1

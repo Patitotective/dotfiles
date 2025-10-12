@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 function name-to-icon
     # Based from the icons in https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/src/dbus-common.c
     # blob = 5e2c83d52628b077116e366ba43a19b4edfc5266

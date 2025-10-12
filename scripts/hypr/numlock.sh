@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # # -o abg:d:
 # VALID_ARGS=$(getopt --long set:,get -- "$@")

@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 # Launches or focuses the next instance of the app
 # TODO: windows opened with fuzzel (from the desktop files) don't have the appropiate classes set (like yazi) so they won't be detected
 argparse i/id= c/class= l/launch= -- $argv

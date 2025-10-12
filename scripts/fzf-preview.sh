@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Taken from https://github.com/junegunn/fzf/blob/master/bin/fzf-preview.sh
 #
 # The purpose of this script is to demonstrate how to preview a file or an

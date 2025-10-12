@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Based off https://gist.github.com/ashish-kus/dd562b0bf5e8488a09e0b9c289f4574c by ashish-kus
 
 # Get the current battery percentage

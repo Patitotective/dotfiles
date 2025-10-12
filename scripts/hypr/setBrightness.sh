@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Relative changes +0.5, -0.5
 if [ "${1:0:1}" = "+" ] || [ "${1:0:1}" = "-" ]; then
   busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d "$1"

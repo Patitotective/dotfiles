@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 mkdir -p ~/backup
 yay -Qqen >~/backup/pkglist-native.txt
 yay -Qqem >~/backup/pkglist-foreign.txt

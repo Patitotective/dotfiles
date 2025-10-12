@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 function setShader
     hyprctl --quiet keyword decoration:screen_shader "$argv[1]"
 end

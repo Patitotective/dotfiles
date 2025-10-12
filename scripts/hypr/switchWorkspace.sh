@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Based off https://www.reddit.com/r/hyprland/comments/1b6bf39/comment/ktex67d/
 # Switch to the next workspace, but if a special workspace is open, close it (and don't swtich worspace)
 

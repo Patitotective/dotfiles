@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [ -f ~/scripts/hypr/.prevBrightness ]; then
   # read -ra ARRAY <<<"$(cat ~/scripts/hypr/.prevBrightness)"
   brightness="$(cat ~/scripts/hypr/.prevBrightness)"

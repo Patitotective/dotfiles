@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
   read -r status capacity
 

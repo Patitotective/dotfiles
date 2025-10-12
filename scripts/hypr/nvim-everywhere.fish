@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 # Based of https://github.com/JohnPiwinski/neovim-anywhere
 
 set tmpdir /tmp/nvim-everywhere

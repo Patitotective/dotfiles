@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 kopia snapshot create "$HOME/Videos"
 kopia snapshot create "$HOME/Pictures"
 kopia snapshot create "$HOME/Music"

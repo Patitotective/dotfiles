@@ -1,4 +1,4 @@
-#!/bin/fish
+#!/usr/bin/env fish
 if not pidof -qx hypridle # if hypridle is not running
     ~/scripts/hypr/toggleIdle.fish true
 end
