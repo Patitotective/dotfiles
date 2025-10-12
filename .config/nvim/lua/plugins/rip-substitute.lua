@@ -7,8 +7,8 @@ return {
     keymaps = {
       abort = "<esc>",
       -- abort = { "q", "<esc>" },
-      -- prevSubstitutionInHistory = "<up>",
-      -- nextSubstitutionInHistory = "<down>",
+      prevSubstitutionInHistory = "<up>",
+      nextSubstitutionInHistory = "<down>",
     },
   },
   keys = {
