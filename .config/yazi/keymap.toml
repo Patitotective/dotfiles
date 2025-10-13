@@ -35,28 +35,91 @@ keymap = [
   { on = ["y", "n"], run = "copy name_without_ext", desc = "copy filename without extension" },
   { on = "p", run = "paste" },
   # linemode
-  { on = ["U", "l", "s"], run = "linemode size", desc = "show size" },
-  { on = ["U", "l", "b"], run = "linemode rbtime", desc = "show creation time" },  # relative birth time, custom linemode defined in init.lua
-  { on = ["U", "l", "m"], run = "linemode rmtime", desc = "show modified time" },  # relative modified time, custom linemode defined in init.lua
-  { on = ["U", "l", "p"], run = "linemode permissions", desc = "show permissions" },
-  { on = ["U", "l", "o"], run = "linemode owner", desc = "show owner" },
+  { on = ["U", "l", "s"], run = [
+    "linemode size",
+    "plugin pref-by-location -- save",
+  ], desc = "show size" },
+  { on = ["U", "l", "b"], run = [
+    "linemode rbtime",
+    "plugin pref-by-location -- save",
+  ], desc = "show creation time" },  # relative birth time, custom linemode defined in init.lua
+  { on = ["U", "l", "m"], run = [
+    "linemode rmtime",
+    "plugin pref-by-location -- save",
+  ], desc = "show modified time" },  # relative modified time, custom linemode defined in init.lua
+  { on = ["U", "l", "p"], run = [
+    "linemode permissions",
+    "plugin pref-by-location -- save",
+  ], desc = "show permissions" },
+  { on = ["U", "l", "o"], run = [
+    "linemode owner",
+    "plugin pref-by-location -- save",
+  ], desc = "show owner" },
   # sorting
-  { on = ["U", "d"], run = "sort --dir-first", desc = "show directories first" },
-  { on = ["U", "D"], run = "sort --dir-first=no", desc = "don't show directories first" },
-  { on = ["U", "s", "m"], run = "sort mtime --reverse=no", desc = "sort by modified time" },
-  { on = ["U", "s", "b"], run = "sort btime --reverse=no", desc = "sort by creationg time" },
-  { on = ["U", "s", "e"], run = "sort extension --reverse=no", desc = "sort by extension" },
-  { on = ["U", "s", "a"], run = "sort alphabetical --reverse=no", desc = "sort by alphabetical" },
-  { on = ["U", "s", "n"], run = "sort natural --reverse=no", desc = "sort by natural" },
-  { on = ["U", "s", "s"], run = "sort size --reverse=no", desc = "sort by size" },
-  { on = ["U", "s", "r"], run = "sort random --reverse=no", desc = "sort by random" },
-  { on = ["U", "s", "M"], run = "sort mtime --reverse", desc = "sort by modified time (reverse)" },
-  { on = ["U", "s", "B"], run = "sort btime --reverse", desc = "sort by creation time (reverse)" },
-  { on = ["U", "s", "E"], run = "sort extension --reverse", desc = "sort by extension (reverse)" },
-  { on = ["U", "s", "A"], run = "sort alphabetical --reverse", desc = "sort by alphabetical (reverse)" },
-  { on = ["U", "s", "N"], run = "sort natural --reverse", desc = "sort by natural (reverse)" },
-  { on = ["U", "s", "S"], run = "sort size --reverse", desc = "sort by size (reverse)" },
-  { on = ["U", "s", "R"], run = "sort random --reverse", desc = "sort by random (reverse)" },
+  { on = ["U", "d"], run = [
+    "sort --dir-first",
+    "plugin pref-by-location -- save",
+  ], desc = "show directories first" },
+  { on = ["U", "D"], run = [
+    "sort --dir-first=no",
+    "plugin pref-by-location -- save",
+  ], desc = "don't show directories first" },
+  { on = ["U", "s", "m"], run = [
+    "sort mtime --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by modified time" },
+  { on = ["U", "s", "b"], run = [
+    "sort btime --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by creationg time" },
+  { on = ["U", "s", "e"], run = [
+    "sort extension --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by extension" },
+  { on = ["U", "s", "a"], run = [
+    "sort alphabetical --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by alphabetical" },
+  { on = ["U", "s", "n"], run = [
+    "sort natural --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by natural" },
+  { on = ["U", "s", "s"], run = [
+    "sort size --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by size" },
+  { on = ["U", "s", "r"], run = [
+    "sort random --reverse=no",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by random" },
+  { on = ["U", "s", "M"], run = [
+    "sort mtime --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by modified time (reverse)" },
+  { on = ["U", "s", "B"], run = [
+    "sort btime --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by creation time (reverse)" },
+  { on = ["U", "s", "E"], run = [
+    "sort extension --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by extension (reverse)" },
+  { on = ["U", "s", "A"], run = [
+    "sort alphabetical --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by alphabetical (reverse)" },
+  { on = ["U", "s", "N"], run = [
+    "sort natural --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by natural (reverse)" },
+  { on = ["U", "s", "S"], run = [
+    "sort size --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by size (reverse)" },
+  { on = ["U", "s", "R"], run = [
+    "sort random --reverse",
+    "plugin pref-by-location -- save",
+  ], desc = "sort by random (reverse)" },
   # searching/filtering
   { on = "s", run = "plugin fzf" },
   { on = "S", run = "search --via=rga", desc = "search content" },

@@ -146,6 +146,9 @@ require("gvfs"):setup({
 	-- which_keys = "1234567890qwertyuiopasdfghjklzxcvbnm-=[]\\;',./!@#$%^&*()_+{}|:\"<>?",
 })
 
+local pref_by_location = require("pref-by-location")
+pref_by_location:setup({})
+
 -- When yazi is opened from nevoim by yazi.nvim
 -- From xdg-open (~/.config/xdg-desktop-portal-termfilechooser/config)
 -- Or from dbus (~/scripts/hypr/dbus-yazi-wrapper.fish)
