@@ -1,1 +1,1 @@
-cmd=$HOME/scripts/hypr/dbus-yazi-wrapper.fish
+cmd=/usr/local/share/org.freedesktop.FileManager1.common/yazi-wrapper.sh

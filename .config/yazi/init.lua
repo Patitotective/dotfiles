@@ -149,10 +149,7 @@ require("gvfs"):setup({
 local pref_by_location = require("pref-by-location")
 pref_by_location:setup({})
 
--- When yazi is opened from nevoim by yazi.nvim
--- From xdg-open (~/.config/xdg-desktop-portal-termfilechooser/config)
--- Or from dbus (~/scripts/hypr/dbus-yazi-wrapper.fish)
-if os.getenv("NVIM_CWD") == nil then
+if os.getenv("YAZI_RESTORE") then
 	require("projects"):setup({
 		save = {
 			method = "lua",
