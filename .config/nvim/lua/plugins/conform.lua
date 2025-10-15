@@ -6,6 +6,7 @@ return {
       zsh = { "beautysh" },
       toml = { "tombi" },
       kdl = { "kdlfmt" },
+      python = { "black" },
     },
   },
 }
