@@ -21,6 +21,7 @@ brightnessctl
 btrfs-progs
 chaotic-keyring
 chaotic-mirrorlist
+choosenim
 chromium
 clang
 cliphist
@@ -98,6 +99,7 @@ hyprpicker
 hyprpolkitagent
 hyprutils
 hyprwayland-scanner
+inetutils
 inkscape
 intel-ucode
 jdk-openjdk
@@ -161,7 +163,6 @@ network-manager-applet
 networkmanager
 networkmanager-dmenu-git
 nilfs-utils
-nim
 npm
 nvidia-dkms
 nvidia-settings

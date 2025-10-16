@@ -7,7 +7,6 @@ dragon-drop
 festival-freebsoft-utils
 firefox-tridactyl-native-bin
 floorp-bin
-nph-bin
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug
