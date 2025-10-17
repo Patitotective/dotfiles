@@ -31,10 +31,6 @@ bind -M insert ctrl-l forward-char
 bind -M insert ctrl-j down-line
 bind -M insert ctrl-k up-line
 
-if status is-interactive
-
-end
-
 # fzf.fish
 set fzf_preview_dir_cmd eza --all --color=always
 set fzf_diff_highlighter delta --paging=never --width=20
@@ -54,4 +50,8 @@ alias orgfiles="cd ~/Documents/orgfiles; nvim \"+lua require('persistence').load
 
 function back_to_normal --on-event fish_prompt
     fish_vi_key_bindings default
+end
+
+if status is-interactive
+    # pokemon-colorscripts --random
 end
