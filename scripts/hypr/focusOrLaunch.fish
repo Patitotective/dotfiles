@@ -1,20 +1,21 @@
 #!/usr/bin/env fish
 # Launches or focuses the next instance of the app
 # TODO: windows opened with fuzzel (from the desktop files) don't have the appropiate classes set (like yazi) so they won't be detected
-argparse i/id= c/class= l/launch= -- $argv
+# TODO: if there's a process that matches the id, but not the class
+argparse t/title= c/class= l/launch= -- $argv
 or return
-if set -ql _flag_launch && set -ql _flag_class
-    set windows (hyprctl -j clients | jq --raw-output '[.[] | select(.class=="'$_flag_class'")]') # Select all windows matching the class
-    set windowsLength (echo $windows | jq --raw-output 'length')
-
-    # Use the process ID if provided, otherwise look for a window with the class
-    if set -ql _flag_id
-        pidof -qx $_flag_id
+if set -ql _flag_launch
+    if set -ql _flag_class
+        set windows (hyprctl -j clients | jq --raw-output '[.[] | select(.class=="'$_flag_class'")]') # Select all windows matching the class
+    else if set -ql _flag_title
+        set windows (hyprctl -j clients | jq --raw-output '[.[] | select(.title=="'$_flag_title'")]') # Select all windows matching the class
     else
-        test $windowsLength -gt 0
+        return
     end
 
-    if test $status -eq 0
+    set windowsLength (echo $windows | jq --raw-output 'length')
+
+    if test $windowsLength -gt 0
         set windowsHistoryIds (echo $windows | jq --raw-output '.[] | .focusHistoryID')
         set windowsAddresses (echo $windows | jq --raw-output '.[] | .address')
         set activeWindowAddress (hyprctl -j activewindow | jq --raw-output '.address')
