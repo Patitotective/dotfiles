@@ -58,7 +58,6 @@
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
-    "rotate": 0,
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
     "format-icons": [
       "▁",
@@ -79,7 +78,6 @@
     },
     "interval": 10,
     "format": "󰾆 {percentage}%",
-    "rotate": 0,
     "format-m": "󰾅 {percentage}%",
     "format-h": "󰓅 {percentage}%",
     "format-c": " {percentage}%",
@@ -90,7 +88,6 @@
   },
   "clock": {
     "format": "󰥔 {:%R}",
-    "rotate": 0,
     // "format": "{:%R 󰃭 %d·%m·%y}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
@@ -114,7 +111,6 @@
   },
   "custom/idle_inhibitor": {
     "format": "{icon}",
-    "rotate": 0,
     "format-icons": {
       "on": "󰅶 ",
       "off": "󰛊 "
@@ -126,14 +122,11 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
-    "rotate": 0,
     // "all-outputs": true,
     "active-only": true,
     "on-click": "activate",
-    "disable-scroll": false,
-    "on-scroll-up": "hyprctl dispatch workspace -1",
-    "on-scroll-down": "hyprctl dispatch workspace +1",
-    "persistent-workspaces": {},
+    // "on-scroll-up": "hyprctl dispatch workspace -1",
+    // "on-scroll-down": "hyprctl dispatch workspace +1",
     "signal": 2,
     "format": "{icon}",
     "format-icons": {
@@ -151,7 +144,6 @@
   "hyprland/window": {
     "format": "  {}",
     // "format": "{}",
-    "rotate": 0,
     "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "separate-outputs": true,
@@ -184,7 +176,6 @@
   },
   "pulseaudio": {
     "format": "{icon}   {volume}", // note there is an en space, a thinspace and a six-per-em space
-    "rotate": 0,
     "format-muted": "󰖁   <s>{volume}</s>", // note there is an en space, a thinspace and a six-per-em space
     "on-click": "pavucontrol -t 3",
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
@@ -207,7 +198,6 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "rotate": 0,
     "format-source": " {volume}", // note there is an U+2002 : EN SPACE
     "format-source-muted": " <s>{volume}</s>", // note there is an U+2002 : EN SPACE
     "on-click": "pavucontrol -t 4",
@@ -220,7 +210,6 @@
   "custom/keybindhint": {
     "format": " ",
     "tooltip-format": " Keybinds",
-    "rotate": 0,
     // "on-click": "keybinds_hint.sh"
   },
   "privacy": {
@@ -240,7 +229,7 @@
       }
     ]
   },
-  // TODO: toggle on click
+  // TODO: toggle on click (there doesn't seem to be a good tool to do it, both wtype and ydotool seem abandoned and they don't work really well)
   "custom/capslock": {
     "exec": "$HOME/scripts/hypr/capslock.fish",
     "tooltip": false,
@@ -265,21 +254,18 @@
   },
   "tray": {
     "icon-size": 14,
-    "rotate": 0,
     "spacing": 5
   },
   "battery": {
     "interval": 30,
     "states": {
-      "good": 95,
+      "good": 70,
       "warning": 30,
-      "critical": 20
+      "critical": 10
     },
     "format": "{icon} {capacity}%",
-    "rotate": 0,
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
     "format-icons": [
       "󰂎",
       "󰁺",
@@ -295,9 +281,7 @@
     ]
   },
   "custom/power": {
-    "format": "{}",
-    "rotate": 0,
-    // "exec": "echo ; echo  logout",
+    "format": "",
     "on-click": "~/scripts/hypr/powerMenu.sh",
     "tooltip": false
   },
@@ -338,3 +322,4 @@
     "tooltip": false
   }
 }
+
