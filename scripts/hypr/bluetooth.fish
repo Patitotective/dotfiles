@@ -106,7 +106,7 @@ function main
         else
             rfkill unblock bluetooth
             bluetoothctl power on
-            sleep 0.1
+            sleep 0.2
             main
         end
     else if test $selected -eq 1
