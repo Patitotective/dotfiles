@@ -14,13 +14,13 @@ battery_icons=("󱃍" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "�
 charging_icons=("󰢟" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅")
 
 # Calculate the index for the icon array
-icon_index=$((battery_percentage / 10))
+icon_index=$((battery_percentage / 10 - 1))
 
 # Get the corresponding icon
 battery_icon=${battery_icons[icon_index]}
 
 # Calculate the index for the icon array
-charging_icons_index=$((battery_percentage / 10))
+charging_icons_index=$((battery_percentage / 10 - 1))
 
 # Get the corresponding icon
 charging_battery_icon=${charging_icons[charging_icons_index]}
