@@ -1,3 +1,7 @@
+* {
+all: unset;
+}
+
 window {
     font-family: JetBrainsMonoNerdFont;
     font-weight: bold;
@@ -12,8 +16,8 @@ button {
     background-size: 30%;
     border: none;
     background-color: rgba(22, 22, 22, 1);
-    margin: 18;
-    padding: 0;
+    margin: 18px;
+    padding: 0px;
     border-radius: 30px;
     outline: none;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;

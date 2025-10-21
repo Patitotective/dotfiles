@@ -71,9 +71,9 @@ switch $argv[1]
     case right move_right
         set x (clamp (math $x + 1))
     case up move_up
-        set y (clamp (math $y + 1))
-    case down move_down
         set y (clamp (math $y - 1))
+    case down move_down
+        set y (clamp (math $y + 1))
     case query
         echo "($x,$y)"
         exit
