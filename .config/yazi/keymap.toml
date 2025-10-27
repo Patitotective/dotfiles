@@ -142,8 +142,8 @@ keymap = [
   # tabs
   { on = ["t", "d"], run = "close", desc = "close tab" },
   { on = ["t", "n"], run = "tab_create --current", desc = "new tab" },
-  { on = ["t", "h"], run = "tab_swap 1", desc = "move tab left" },
-  { on = ["t", "l"], run = "tab_swap -1", desc = "move tab right" },
+  { on = ["t", "l"], run = "tab_swap 1", desc = "move tab right" },
+  { on = ["t", "h"], run = "tab_swap -1", desc = "move tab left" },
   { on = "L", run = "tab_switch 1 --relative" },
   { on = "H", run = "tab_switch -1 --relative" },
   { on = ["g", "?"], run = "help" },
