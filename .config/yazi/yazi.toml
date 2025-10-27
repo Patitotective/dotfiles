@@ -28,6 +28,9 @@ extract = [
 onlyoffice = [
   { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "$@"', orphan = true, for = "unix" },
 ]
+appimage = [
+  { run = '"$0"', orphan = true, desc = "Run AppImage", for = "unix" }
+]
 
 [open]
 prepend_rules = [
@@ -56,6 +59,7 @@ prepend_rules = [
   { name = "*.docx", use = "onlyoffice" },
   { name = "*.xlsx", use = "onlyoffice" },
   { name = "*.pdf", use = "onlyoffice" },
+  { name = "*.AppImage", use = "appimage" },
 ]
 
 [plugin]
