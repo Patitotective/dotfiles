@@ -127,3 +127,9 @@ echo "KOPIA MAINTENANCE"
 echo ----------------------------------------------------
 
 kopia maintenance run --full
+
+echo
+echo ----------------------------------------------------
+echo "TLDR UPDATE CACHE"
+echo ----------------------------------------------------
+tldr --update
