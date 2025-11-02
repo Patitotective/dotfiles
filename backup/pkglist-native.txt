@@ -6,6 +6,7 @@ arch-wiki-docs
 arch-wiki-lite
 ark
 aurorae
+banner
 base
 base-devel
 bash-completion
@@ -28,6 +29,7 @@ cliphist
 cmake
 cpio
 cpu-x
+cups
 dconf-editor
 ddcci-driver-linux-dkms-git
 dex
@@ -59,6 +61,7 @@ ffmpegthumbs
 filelight
 fish
 flatpak-kcm
+font-manager
 fuzzel
 fwupd
 fzf
@@ -221,10 +224,9 @@ sddm-kcm
 showmethekey
 sof-firmware
 speech-dispatcher
-spicetify-cli
-spotify
 sway-launcher-desktop
 syncthing
+system-config-printer
 tabiew
 tela-icon-theme
 telegram-desktop
@@ -254,7 +256,6 @@ winetricks-git
 wireless-regdb
 wl-clipboard
 wlogout
-wtype
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xf86-video-intel

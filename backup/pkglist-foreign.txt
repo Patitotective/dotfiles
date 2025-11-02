@@ -2,11 +2,13 @@ advcpmv
 anki-bin
 bemoji
 bluej
+brother-mfc-l2860dwe
 bzmenu-git
 dragon-drop
 festival-freebsoft-utils
 firefox-tridactyl-native-bin
 floorp-bin
+hours
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug
