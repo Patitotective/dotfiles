@@ -53,5 +53,4 @@ function back_to_normal --on-event fish_prompt
 end
 
 if status is-interactive
-    # pokemon-colorscripts --random
 end
