@@ -3,10 +3,10 @@ return {
   opts = {
     formatters_by_ft = {
       nim = { "nph" },
-      zsh = { "beautysh" },
       toml = { "tombi" },
       kdl = { "kdlfmt" },
       python = { "black" },
+      rust = { "rustfmt" },
     },
   },
 }
