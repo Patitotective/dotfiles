@@ -4,21 +4,6 @@
 
 echo
 echo ----------------------------------------------------
-echo "BACKUP PACMAN PKGS LIST"
-echo ----------------------------------------------------
-~/scripts/backupPkgs.sh
-echo "Backed up native and foreign packages successfully"
-
-echo
-echo ----------------------------------------------------
-echo "BACKUP PACMAN DATABASE"
-echo ----------------------------------------------------
-mkdir -p ~/backup
-tar -cjf ~/backup/pacman_database.tar.bz2 /var/lib/pacman/local
-echo "Backed up pacman database"
-
-echo
-echo ----------------------------------------------------
 echo "SYSTEMCTL FAILED UNITS"
 echo ----------------------------------------------------
 systemctl --failed
@@ -51,7 +36,6 @@ echo
 echo ----------------------------------------------------
 echo "CLEARING PACMAN CACHE"
 echo ----------------------------------------------------
-
 set pacman_cache_space_used (du -sh /var/cache/pacman/pkg/)
 echo "Space currently in use: $pacman_cache_space_used"
 echo
@@ -65,7 +49,6 @@ echo
 echo ----------------------------------------------------
 echo "REMOVING ORPHANED PACKAGES"
 echo ----------------------------------------------------
-
 # Orphans are packages that were installed as a dependency and are no longer required by any package.
 set orphaned (yay -Qdtq)
 
@@ -82,50 +65,58 @@ end
 #
 # set home_cache_used "$(sudo du -sh ~/.cache)"
 # rm -rf ~/.cache/
+# echo "Clearing ~/.cache/..."
+# echo "Spaced saved: $home_cache_used"
 
-echo "Clearing ~/.cache/..."
-echo "Spaced saved: $home_cache_used"
+echo
+echo ----------------------------------------------------
+echo "BACKUP PACMAN PKGS LIST"
+echo ----------------------------------------------------
+~/scripts/backupPkgs.sh
+echo "Backed up native and foreign packages successfully"
+
+echo
+echo ----------------------------------------------------
+echo "BACKUP PACMAN DATABASE"
+echo ----------------------------------------------------
+mkdir -p ~/backup
+tar -cjf ~/backup/pacman_database.tar.bz2 /var/lib/pacman/local
+echo "Backed up pacman database"
 
 echo
 echo ----------------------------------------------------
 echo "CLEARING SYSTEM LOGS"
 echo ----------------------------------------------------
-
 sudo journalctl --vacuum-time=1y
 
 echo
 echo ----------------------------------------------------
 echo "UPDATING FISH COMPLETIONS"
 echo ----------------------------------------------------
-
 fish -c fish_update_completions
 
 echo
 echo ----------------------------------------------------
 echo "UPDATING FISHER"
 echo ----------------------------------------------------
-
 fish -c "fisher update"
 
 echo
 echo ----------------------------------------------------
 echo "UPDATING YAZI PLUGINS"
 echo ----------------------------------------------------
-
 ya pkg upgrade
 
 echo
 echo ----------------------------------------------------
 echo "GENERATING ORGFILES INDEX"
 echo ----------------------------------------------------
-
 ~/dev/snippets/makeOrgfilesIndex
 
 echo
 echo ----------------------------------------------------
 echo "KOPIA MAINTENANCE"
 echo ----------------------------------------------------
-
 kopia maintenance run --full
 
 echo
