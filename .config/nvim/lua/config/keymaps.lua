@@ -34,7 +34,7 @@ vim.keymap.set({ "i" }, "<c-f>", "<c-o>w") -- next word
 vim.keymap.set({ "i" }, "<c-z>", "<c-d>") -- deindent
 
 -- vim.keymap.set({ "i" }, "<c-u>", "<c-o>d0") -- del until start of line
-vim.keymap.set({ "i" }, "<c-k>", "<c-o>d$") -- del until end of line
+-- vim.keymap.set({ "i" }, "<c-k>", "<c-o>d$") -- del until end of line
 vim.keymap.set({ "i", "c" }, "<c-s>", "<bs>") -- del prev char
 vim.keymap.set({ "i", "c" }, "<c-d>", "<del>") -- del next char
 
