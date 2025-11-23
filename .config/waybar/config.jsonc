@@ -128,43 +128,27 @@
     // "on-scroll-up": "hyprctl dispatch workspace -1",
     // "on-scroll-down": "hyprctl dispatch workspace +1",
     "signal": 2,
+    // "show-special": true,
   },
   "hyprland/window": {
-    "format": "  {}",
-    // "format": "{}",
+    "format": "  {title}",
     "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "separate-outputs": true,
     "rewrite": {
-      //   // "cristobal@archlinux-nitro5:(.*)": "$1 ",
-      //   // "(.*)(~.*)": "  $1 $2",
-      //   // "(.*)(/.*)": "  $1 $2",
-      //   // "(.*)": " ",
-      //   "(~.*)": "  $1",
-      //   "nvim(.*)": " $1",
-      //   "yazi(.*)": "󰉋 $2",
-      //   "y\\b(.*)": "󰉋 $2",
-      "Ablaze Floorp": "󰖟",
-      "(.*) — Ablaze Floorp": "$1 󰖟",
-      //   "(.*) — Mozilla Firefox": "󰈹 $1",
-      //   "(.*)Mozilla Firefox": "󰈹 $1 Firefox",
-      //   "(.*) — Dolphin": "󰉋 $1",
-      //   "(.*)Spotify": "󰓇 $1 Spotify",
-      //   "(.*)Steam": "󰓓 $1 Steam",
-      //   "(.*) - Discord": " $1",
-      //   "(.*)Netflix": "󰝆 $1 Netflix",
-      //   "(.*) — Google chrome": " $1",
-      //   "(.*)Google chrome": " $1 Google chrome",
-      //   "(.*) — Github": " $1",
-      //   "(.*)Github": " $1 Github",
-      //   "(.*)Spotify Free": "󰓇 $1 Spotify",
-      //   "(.*)Spotify Premiun": "󰓇 $1 Spotify "
+      "  [~/](.*)": " $1",
+      "  nvim(.*)": " $1",
+      "  yazi(.*)": "󰉋 $1",
+      "  (((?!(YouTube|\\(.+\\) WhatsApp)).)*) — Ablaze Floorp": "󰖟 $1",
+      "  YouTube((?!(Music)).)* — Ablaze Floorp": " $1",
+      "  YouTube Music — Ablaze Floorp": " $1",
+      "  \\(\\d+\\) WhatsApp(.*) — Ablaze Floorp": " $1",
     },
     "max-length": 50
   },
   "pulseaudio": {
     "format": "{icon}   {volume}", // note there is an en space, a thinspace and a six-per-em space
-    "format-muted": "󰖁   <s>{volume}</s>", // note there is an en space, a thinspace and a six-per-em space
+    "format-muted": "󰖁   {volume}", // note there is an en space, a thinspace and a six-per-em space
     "on-click": "pavucontrol -t 3",
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
@@ -187,7 +171,7 @@
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}", // note there is an U+2002 : EN SPACE
-    "format-source-muted": " <s>{volume}</s>", // note there is an U+2002 : EN SPACE
+    "format-source-muted": " {volume}", // note there is an U+2002 : EN SPACE
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
@@ -308,5 +292,5 @@
     "format": "  ",
     "interval": "once",
     "tooltip": false
-  }
+ }
 }
