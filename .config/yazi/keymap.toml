@@ -26,6 +26,10 @@ keymap = [
   { on = "V", run = "visual_mode" },
   { on = "K", run = ["toggle", "arrow prev"], desc = "toggle the current selection state and go up" },
   { on = "J", run = ["toggle", "arrow next"], desc = "toggle the current selection state and go down" },
+  # links
+  { on = "i", run = "link", desc = "symlink yanked files" },
+  { on = "<c-i>", run = "link --relative", desc = "Symlink the relative path of yanked files" },
+  { on = "I", run = "hardlink", desc = "hardlink yanked files" },
   # cut/yank/paste
   { on = "x", run = "yank --cut" },
   { on = ["y", "y"], run = "yank", desc = "yank file" },
