@@ -93,8 +93,8 @@ hyprcursor
 hyprgraphics
 hypridle
 hyprland
+hyprland-guiutils
 hyprland-qt-support
-hyprland-qtutils
 hyprlang
 hyprlock
 hyprpaper
@@ -157,6 +157,12 @@ man-pages
 mariadb
 mediainfo
 milou
+minecraft-launcher
+mingw-w64-binutils
+mingw-w64-crt
+mingw-w64-gcc
+mingw-w64-headers
+mingw-w64-winpthreads
 mkinitcpio-firmware
 mpv
 mtools
@@ -224,6 +230,7 @@ sddm-kcm
 showmethekey
 sof-firmware
 speech-dispatcher
+steam
 sway-launcher-desktop
 syncthing
 system-config-printer

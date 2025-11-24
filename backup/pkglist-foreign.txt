@@ -9,6 +9,7 @@ festival-freebsoft-utils
 firefox-tridactyl-native-bin
 floorp-bin
 hours
+libfmod
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug
