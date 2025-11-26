@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=Syncthing Web
 Comment=Open Syncthing web view
-TryExec=syncthing browser
 Exec=syncthing browser
 Terminal=false
 Type=Application
