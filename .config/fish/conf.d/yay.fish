@@ -1,5 +1,5 @@
 function yayinstall
-    set pkgsToInstall (yay -Slq | fzf -i -q "$argv" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml')
+    set pkgsToInstall (yay -Slq | fzf --ignore-case --query="$argv" --multi --preview 'yay -Si {1} | bat -n --color=always -l yaml')
     if test -n "$pkgsToInstall" # If pkgsToInstall is not empty
         echo "$pkgsToInstall"
         yay -S (string split -- " " "$pkgsToInstall")
