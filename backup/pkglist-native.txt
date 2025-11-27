@@ -116,7 +116,6 @@ kde-cli-tools
 kde-gtk-config
 kdeconnect
 kdenlive
-kdeplasma-addons
 kdialog
 kfind
 kgamma
@@ -203,7 +202,6 @@ plasma-sdk
 plasma-systemmonitor
 plasma-thunderbolt
 plasma-vault
-plasma-welcome
 plasma-workspace
 plasma5support
 plymouth-kcm
@@ -241,6 +239,7 @@ testdisk
 tldr
 tlp
 tlp-rdw
+transmission-cli
 trash-cli
 tree
 ttf-hack-nerd

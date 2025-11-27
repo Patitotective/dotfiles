@@ -2,6 +2,7 @@ advcpmv
 anki-bin
 bemoji
 bluej
+brogue-ce
 brother-mfc-l2860dwe
 bzmenu-git
 dragon-drop
