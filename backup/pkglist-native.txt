@@ -25,7 +25,7 @@ chaotic-mirrorlist
 choosenim
 chromium
 clang
-cliphist
+clipse
 cmake
 cpio
 cpu-x

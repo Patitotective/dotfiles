@@ -11,6 +11,10 @@ firefox-tridactyl-native-bin
 floorp-bin
 hours
 libfmod
+manga-tui
+tray-tui
+viu-media
+wifitui-bin
 wl-gammarelay-rs
 xdg-desktop-portal-termfilechooser-hunkyburrito-git
 yay-debug
