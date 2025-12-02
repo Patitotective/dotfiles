@@ -8,5 +8,11 @@ return {
       python = { "black" },
       rust = { "rustfmt" },
     },
+    formatters = {
+      kdlfmt = {
+        inherit = false,
+        args = { "format", "--kdl-version v1", "-" },
+      },
+    },
   },
 }
