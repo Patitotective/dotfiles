@@ -32,5 +32,10 @@
     "scaleX": 9,
     "scaleY": 9,
     "heightCut": 2
+  },
+  "autoPaste": {
+    "enabled": false,
+    "keybind": "shift+insert",
+    "buffer": 5
   }
 }
