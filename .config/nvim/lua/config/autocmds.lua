@@ -91,6 +91,8 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.cmd("CsvViewEnable delimiter=;")
     elseif startswith(specialCsvDirs, path) or contains(specialCsv, path) then
       vim.opt_local.filetype = "tex"
+      -- vim.opt_local.commentstring = "# %s" -- TODO: make this work
+      -- vim.opt_local.comments = "b:#"
     else
       require("csvview").enable()
     end
@@ -101,7 +103,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = specialCsv,
   callback = function()
-    vim.cmd("silent %s/:/:\\r  /eg")
+    vim.cmd("silent /^[^#]/,$s/:/:\\r  /eg")
     vim.cmd("silent %s/<br>/<br>\\r    /eg")
     vim.cmd("silent %s/<hr>/<hr>\\r    /eg")
   end,
@@ -115,7 +117,7 @@ vim.api.nvim_create_autocmd("BufWriteCmd", {
     vim.cmd("silent %s/<br>\\n    /<br>/e")
     vim.cmd("silent %s/<hr>\\n    /<br>/e")
     vim.cmd("write")
-    vim.cmd("silent %s/:/&\\r  /eg")
+    vim.cmd("silent %s/:/:\\r  /eg") -- TODO: make it work as line 14 (    vim.cmd("silent /^[^#]/,$s/:/:\\r  /eg"))
     vim.cmd("silent %s/<br>/&\\r    /eg")
     vim.cmd("silent %s/<hr>/&\\r    /eg")
     vim.cmd("set nomodified")
@@ -269,5 +271,22 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set({ "i", "n" }, "<c-p>", "<c-o><up>", { buffer = ctx.buf, remap = true })
     vim.keymap.set({ "i", "n" }, "<c-n>", "<c-o><down>", { buffer = ctx.buf, remap = true })
     vim.keymap.set("n", "q", "<esc>", { buffer = ctx.buf, remap = true })
+  end,
+})
+vim.api.nvim_create_user_command("OverseerRestartLast", function()
+  local overseer = require("overseer")
+  local tasks = overseer.list_tasks({ recent_first = true })
+  if vim.tbl_isempty(tasks) then
+    vim.notify("No tasks found", vim.log.levels.WARN)
+  else
+    overseer.run_action(tasks[1], "restart")
+  end
+end, {})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "aerial",
+  callback = function()
+    vim.wo.number = true
+    vim.wo.relativenumber = true
   end,
 })

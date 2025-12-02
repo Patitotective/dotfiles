@@ -1,17 +1,16 @@
 return {
   "stevearc/aerial.nvim",
-  -- keys = {
-  --   {
-  --     "<leader>cs",
-  --     function()
-  --       vim.cmd("AerialToggle")
-  --       require("aerial").tree_close_all()
-  --     end,
-  --     desc = "Aerial (Symbols)",
-  --   },
-  -- },
+  keys = {
+    {
+      "<leader>cs",
+      function()
+        vim.cmd("AerialToggle")
+        -- require("aerial").tree_close_all()
+      end,
+      desc = "Aerial (Symbols)",
+    },
+  },
   opts = {
-    manage_folds = false,
     keymaps = {
       ["l"] = "actions.jump",
       ["<tab>"] = "actions.tree_toggle",
@@ -22,9 +21,32 @@ return {
       ["<c-j>"] = false,
     },
     layout = {
+      min_width = 30,
       resize_to_content = true,
       placement = "edge",
       default_direction = "right",
+      win_opts = {
+        statuscolumn = "",
+      },
     },
+    filter_kind = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "EnumMember",
+      "Struct",
+      "Function",
+      "Interface",
+      "Module",
+      "Method",
+      "Boolean",
+    },
+    manage_folds = false,
+    link_folds_to_tree = false,
+    link_tree_to_folds = false,
+    -- open_automatic = true,
+    on_attach = function(bufnr)
+      require("aerial").tree_close_all()
+    end,
   },
 }

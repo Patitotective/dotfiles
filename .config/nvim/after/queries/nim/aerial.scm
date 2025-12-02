@@ -1,149 +1,126 @@
 ;; extends
 
-(const_section
-  (variable_declaration
-    (symbol_declaration_list
-      (symbol_declaration
-        name: (_) @name)
-      )
-    ) @symbol
-  (#set! "kind" "Constant"))
-
-(let_section
-  (variable_declaration
-    (symbol_declaration_list
-      (symbol_declaration
-        name: (_) @name
-        )
-      )
-    ) @symbol
-  (#set! "kind" "Variable"))
-
-(var_section
-  (variable_declaration
-    (symbol_declaration_list
-      (symbol_declaration
-        name: (_) @name
-        )
-      )
-    ) @symbol
-  (#set! "kind" "Variable"))
-
-((proc_declaration
-   name: (_) @name) @symbol
- (#set! "kind" "Function"))
-
-((template_declaration
-   name: (_) @name) @symbol
- (#set! "kind" "Constructor"))
-
-; A version that doesn't show type in the outline
-; ((parameter_declaration
-;    (symbol_declaration_list
-;      (symbol_declaration
-;        name: (_) @name
-;        )
-;      )
-;    ) @symbol (#set! "kind" "Property"))
-
-; Don't show parameters for functions
-; ((parameter_declaration) @name @symbol (#set! "kind" "Property"))
-
-(generic_parameter_list
-  (parameter_declaration
-    (symbol_declaration_list
-      (symbol_declaration) @name @symbol)
-    (#set! "kind" "TypeParameter"))
-  )
+; TODO: add support for runnableExamples? and task (nimble)
 
 (import_statement
-  (expression_list
-    (_) @name @symbol
-    (#set! "kind" "Package"))
-  )
+  (expression_list) @name @symbol
+  (#set! "kind" "Package"))
 
 (include_statement
-  (expression_list
-    (_) @name @symbol
-    (#set! "kind" "Package"))
-  )
+  (expression_list) @name @symbol
+  (#set! "kind" "Package"))
 
-((type_declaration
-   (type_symbol_declaration
-     name: (_) @name)
-   (enum_declaration)
-   ) @symbol
- (#set! "kind" "Enum"))
+(type_declaration
+  (type_symbol_declaration
+    name: (_) @name
+  ) @symbol
+  (#set! "kind" "Class"))
 
-((type_declaration
-   (type_symbol_declaration
-     name: (_) @name)
-   (object_declaration)
-   ) @symbol
- (#set! "kind" "Class"))
+; TODO: match parameters more precisely to allow spaces in the apporpiate places (after a colon or a comma) and remove all other spaces
+((proc_declaration) @name @symbol
+  (#gsub! @name "proc%s+(.-%b()).-=.*" "%1") ; To show everything before the =
+  (#gsub! @name "proc%s+(.-%b())[^=]*" "%1") ; To match declarations that do not implement the body
+  (#gsub! @name "%s+" " ") ; To try to pretty declarations that spand multiple lines
+  (#set! "kind" "Function"))
 
-(enum_field_declaration
-  (symbol_declaration
-    name: (_) @name) @symbol
-  (#set! "kind" "EnumMember"))
+((template_declaration) @name @symbol
+  (#gsub! @name "template%s+(.-%b()).-=.*" "%1") ; To show everything before the =
+  (#gsub! @name "template%s+(.-%b())[^=]*" "%1") ; To match declarations that do not implement the body
+  (#gsub! @name "%s+" " ") ; To try to pretty declarations that spand multiple lines
+  (#set! "kind" "Constructor"))
 
-((while
-   condition: (_) @name
-   (#gsub! @name "^" "while ")
-   ) @symbol
- (#set! "kind" "Boolean"))
-
-((for
-   left: (_) @name
-   (#gsub! @name "^" "for ")
-   ) @symbol
- (#set! "kind" "Boolean"))
+((macro_declaration) @name @symbol
+  (#gsub! @name "macro%s+(.-%b()).-=.*" "%1") ; To show everything before the =
+  (#gsub! @name "macro%s+(.-%b())[^=]*" "%1") ; To match declarations that do not implement the body
+  (#gsub! @name "%s+" " ") ; To try to pretty declarations that spand multiple lines
+  (#set! "kind" "Constructor"))
 
 ((when
-   condition: (_) @name
-   ) @symbol
- (#gsub! @name "^" "when ")
- (#set! "kind" "Boolean"))
+  condition: (_) @name
+  ) @symbol
+  (#gsub! @name "^" "when ")
+  (#set! "kind" "Boolean"))
 
 ((if
-   condition: (_) @name
-   ) @symbol
- (#gsub! @name "^" "if ")
- (#set! "kind" "Boolean"))
+  condition: (_) @name
+  ) @symbol
+  (#gsub! @name "^" "if ")
+  (#set! "kind" "Boolean"))
 
-(_
+((for) @name @symbol
+  (#gsub! @name "(for%s+.-%s+in%s+.-):.*" "%1") ; To show everything before the :
+  (#set! "kind" "Boolean"))
+
+((while
+  condition: (_) @name
+  ) @symbol
+  (#gsub! @name "^" "while ") ; To show everything before the :
+  (#set! "kind" "Boolean"))
+
+
+(if
   alternative: (elif_branch
-                 condition: (_) @name
-                 ) @symbol
+    condition: (_) @name
+  ) @symbol
   (#gsub! @name "^" "elif ")
   (#set! "kind" "Boolean"))
 
-(_
+(if
   alternative: (else_branch) @name @symbol
   (#set! @name "text" "else")
   (#set! "kind" "Boolean"))
 
-; ((case
-;    value: (_) @name
-;    (#gsub! @name "^" "case ")
-;    ) @symbol
-;  (#set! "kind" "Enum"))
-;
-; (case
-;   (of_branch
-;     values: (_) @name
-;     ) @symbol
-;   (#set! "kind" "EnumMember")
-;   (#gsub! @name "^" "of "))
-;
-; (case
-;   (else_branch) @symbol @name
-;   (#set! "kind" "EnumMember")
-;   (#set! @name "text" "else"))
-
-((call
-   function: (_) @name
-   (argument_list
-     (statement_list))
+((case
+   value: (_) @name
+   (#gsub! @name "^" "case ")
    ) @symbol
- (#set! "kind" "Interface"))
+ (#set! "kind" "Enum"))
+
+(case
+  (of_branch
+    values: (_) @name
+    ) @symbol
+  (#set! "kind" "EnumMember")
+  (#gsub! @name "^" "of "))
+
+(case
+  (else_branch) @symbol @name
+  (#set! "kind" "EnumMember")
+  (#set! @name "text" "else"))
+
+((block) @name @symbol
+  (#gsub! @name "(block%s*.-):.*" "%1") ; To show everything before the :
+  (#set! "kind" "Boolean"))
+
+; (const_section
+;   (variable_declaration
+;     (symbol_declaration_list
+;       (symbol_declaration
+;         name: (_) @name)
+;       )
+;     ) @symbol
+;   (#set! "kind" "Constant")
+; )
+;
+; (let_section
+;   (variable_declaration
+;     (symbol_declaration_list
+;       (symbol_declaration
+;         name: (_) @name
+;         )
+;       )
+;     ) @symbol
+;   (#set! "kind" "Variable")
+; )
+;
+; (var_section
+;   (variable_declaration
+;     (symbol_declaration_list
+;       (symbol_declaration
+;         name: (_) @name
+;         )
+;       )
+;     ) @symbol
+;   (#set! "kind" "Variable")
+;  )
+

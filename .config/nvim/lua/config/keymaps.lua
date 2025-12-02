@@ -38,7 +38,7 @@ vim.keymap.set({ "i" }, "<c-z>", "<c-d>") -- deindent
 vim.keymap.set({ "i", "c" }, "<c-s>", "<bs>") -- del prev char
 vim.keymap.set({ "i", "c" }, "<c-d>", "<del>") -- del next char
 
-vim.keymap.set({ "i" }, "<c-x>", "<c-o>dw") -- del next word
+-- vim.keymap.set({ "i" }, "<c-x>", "<c-o>dw") -- del next word
 
 -- vim.keymap.set({ "i" }, "<c-i>", "<c-o>O")
 -- vim.keymap.set({ "i" }, "<c-m>", "<c-o>o")
