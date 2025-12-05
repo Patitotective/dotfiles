@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="123.35172397884"
-         height="2435.12579970476" />
+         width="15.7518193672663"
+         height="20.2618350794764" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -157,9 +157,11 @@
          usecurrent="1" />
       <eventcontext
          id="star"
-         magnitude="5"
+         magnitude="3"
          style="fill:yellow;"
-         usecurrent="1" />
+         usecurrent="1"
+         proportion="0.494177469044149"
+         isflatsided="0" />
       <eventcontext
          id="spiral"
          style="fill:none;stroke:black"
@@ -412,6 +414,18 @@
        mode="drag" />
     <group
        id="picker" />
+    <group
+       id="measure"
+       unit="px">
+      <group
+         id="measure-start"
+         x="2160"
+         y="1308.14754830113" />
+      <group
+         id="measure-end"
+         x="4842.83121905753"
+         y="1274.08662654253" />
+    </group>
   </group>
   <group
      id="palette">
@@ -595,7 +609,7 @@
     <group
        id="align"
        sel-as-groups="0"
-       objects-align-to="first" />
+       objects-align-to="page" />
     <group
        id="xml"
        h="500"
@@ -631,6 +645,9 @@
       <group
          id="batchexportarea"
          value="layer" />
+      <group
+         id="defaultdpi"
+         value="36.7659530639648" />
     </group>
     <group
        id="save_as"
@@ -649,11 +666,11 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/cristobal/Downloads/" />
+       path="/home/cristobal/Downloads/Rosita/" />
     <group
        id="import"
        enable_preview="1"
-       path=""
+       path="/home/cristobal/Downloads/Rosita/"
        ask="0"
        ask_svg="1"
        link="embed"
@@ -1034,16 +1051,17 @@
      org.inkscape.output.png.inkscape.png_compression="6"
      org.inkscape.output.png.inkscape.png_antialias="2"
      org.inkscape.input.gdkpixbuf.jpg.do_not_ask="1"
-     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5" />
+     org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5"
+     org.inkscape.input.svg.scale="auto" />
   <group
      id="desktop"
-     style="fill:#18182a;text-orientation:auto;-inkscape-font-specification:'Source Han Serif';font-family:'Source Han Serif';font-size:11px;line-height:1000">
+     style="fill:#86615f;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:4000px;line-height:1000;letter-spacing:20px;stroke-width:1.0015748;fill-opacity:0.68540484">
     <group
-       width="1025"
-       height="613"
+       width="900"
+       height="852"
        x="0"
        y="0"
-       maximized="0"
+       maximized="1"
        fullscreen="0"
        id="geometry" />
     <group
@@ -1179,4 +1197,7 @@
        symbolicWarningColor="4279865599"
        symbolicErrorColor="10086143" />
   </group>
+  <group
+     id="color_scales"
+     wheel_vis_hsl="0" />
 </inkscape>
