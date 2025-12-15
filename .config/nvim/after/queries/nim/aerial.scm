@@ -35,62 +35,61 @@
   (#gsub! @name "%s+" " ") ; To try to pretty declarations that spand multiple lines
   (#set! "kind" "Constructor"))
 
-((when
-  condition: (_) @name
-  ) @symbol
-  (#gsub! @name "^" "when ")
-  (#set! "kind" "Boolean"))
-
-((if
-  condition: (_) @name
-  ) @symbol
-  (#gsub! @name "^" "if ")
-  (#set! "kind" "Boolean"))
-
-((for) @name @symbol
-  (#gsub! @name "(for%s+.-%s+in%s+.-):.*" "%1") ; To show everything before the :
-  (#set! "kind" "Boolean"))
-
-((while
-  condition: (_) @name
-  ) @symbol
-  (#gsub! @name "^" "while ") ; To show everything before the :
-  (#set! "kind" "Boolean"))
-
-
-(if
-  alternative: (elif_branch
-    condition: (_) @name
-  ) @symbol
-  (#gsub! @name "^" "elif ")
-  (#set! "kind" "Boolean"))
-
-(if
-  alternative: (else_branch) @name @symbol
-  (#set! @name "text" "else")
-  (#set! "kind" "Boolean"))
-
-((case
-   value: (_) @name
-   (#gsub! @name "^" "case ")
-   ) @symbol
- (#set! "kind" "Enum"))
-
-(case
-  (of_branch
-    values: (_) @name
-    ) @symbol
-  (#set! "kind" "EnumMember")
-  (#gsub! @name "^" "of "))
-
-(case
-  (else_branch) @symbol @name
-  (#set! "kind" "EnumMember")
-  (#set! @name "text" "else"))
-
-((block) @name @symbol
-  (#gsub! @name "(block%s*.-):.*" "%1") ; To show everything before the :
-  (#set! "kind" "Boolean"))
+; ((when
+;   condition: (_) @name
+;   ) @symbol
+;   (#gsub! @name "^" "when ")
+;   (#set! "kind" "Boolean"))
+;
+; ((if
+;   condition: (_) @name
+;   ) @symbol
+;   (#gsub! @name "^" "if ")
+;   (#set! "kind" "Boolean"))
+;
+; ((for) @name @symbol
+;   (#gsub! @name "(for%s+.-%s+in%s+.-):.*" "%1") ; To show everything before the :
+;   (#set! "kind" "Boolean"))
+;
+; ((while
+;   condition: (_) @name
+;   ) @symbol
+;   (#gsub! @name "^" "while ") ; To show everything before the :
+;   (#set! "kind" "Boolean"))
+;
+; (if
+;   alternative: (elif_branch
+;     condition: (_) @name
+;   ) @symbol
+;   (#gsub! @name "^" "elif ")
+;   (#set! "kind" "Boolean"))
+;
+; (if
+;   alternative: (else_branch) @name @symbol
+;   (#set! @name "text" "else")
+;   (#set! "kind" "Boolean"))
+;
+; ((case
+;    value: (_) @name
+;    (#gsub! @name "^" "case ")
+;    ) @symbol
+;  (#set! "kind" "Enum"))
+;
+; (case
+;   (of_branch
+;     values: (_) @name
+;     ) @symbol
+;   (#set! "kind" "EnumMember")
+;   (#gsub! @name "^" "of "))
+;
+; (case
+;   (else_branch) @symbol @name
+;   (#set! "kind" "EnumMember")
+;   (#set! @name "text" "else"))
+;
+; ((block) @name @symbol
+;   (#gsub! @name "(block%s*.-):.*" "%1") ; To show everything before the :
+;   (#set! "kind" "Boolean"))
 
 ; (const_section
 ;   (variable_declaration
