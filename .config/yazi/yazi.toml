@@ -18,10 +18,10 @@ max_height = 2500
 
 [opener]
 view = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
-pdf = [{ run = 'okular "$@"', orphan = true, for = "unix" }]
-svg = [{ run = 'inkscape "$@"', orphan = true, for = "unix" }]
-play = [{ run = 'vlc "$@"', orphan = true, for = "unix" }]
-extract = [
+okular = [{ run = 'okular "$@"', orphan = true, for = "unix" }]
+inkscape = [{ run = 'inkscape "$@"', orphan = true, for = "unix" }]
+vlc = [{ run = 'vlc "$@"', orphan = true, for = "unix" }]
+ouch = [
   { run = 'ouch d -y "%*"', desc = "extract here with ouch", for = "windows" },
   { run = 'ouch d -y "$@"', desc = "extract here with ouch", for = "unix" },
 ]
@@ -29,19 +29,48 @@ onlyoffice = [
   { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "$@"', orphan = true, for = "unix" },
 ]
 appimage = [
-  { run = '"$0"', orphan = true, desc = "run appimage", for = "unix" }
+  { run = 'gearlever --integrate -y "$0"', orphan = true, desc = "install appimage", for = "unix" }
 ]
 installFont = [
-  { run = '/home/cristobal/scripts/installFont.fish "$0"', orphan = true, desc = "install font", for = "unix" }
+  { run = '$HOME/scripts/installFont.fish "$0"', orphan = true, desc = "install font", for = "unix" }
+]
+darktable = [{ run = 'darktable "$@"', orphan = true, for = "unix" }]
+default = [
+  { run = 'xdg-open "$@"' },
 ]
 
 [open]
 prepend_rules = [
-  { mime = "image/svg+xml", use = "svg" },
+  { mime = "image/svg+xml", use = "inkscape" },
   { mime = "image/*", use = "view" },
-  { mime = "application/pdf", use = "pdf" },
+  { mime = "application/pdf", use = "okular" },
   { name = "*.AppImage", use = "appimage" },
-  { mine = "font/*", use = "installFont" },  # TODO: does this work
+  { mime = "video/*", use = "vlc" },
+  { name = "*.nef", use = "darktable" },
+  # Archive
+  { mime = "application/x-tar", use = "extract" },
+  { mime = "application/x-gtar", use = "extract" },
+  { mime = "application/zip", use = "extract" },
+  { mime = "application/x-7z-compressed", use = "extract" },
+  { mime = "application/7z-compressed", use = "extract" },
+  { mime = "application/gzip", use = "extract" },
+  { mime = "application/x-xz", use = "extract" },
+  { mime = "application/x-lzma", use = "extract" },
+  { mime = "application/lzip", use = "extract" },
+  { mime = "application/x-bzip", use = "extract" },
+  { mime = "application/x-bzip2", use = "extract" },
+  { mime = "application/x-bzip3", use = "extract" },
+  { name = "*.lz4", use = "extract" },
+  { mime = "application/x-snappy-framed", use = "extract" },
+  { mime = "application/zstd", use = "extract" },
+  { mime = "application/x-rar-compressed", use = "extract" },
+  { mime = "application/x-brotli", use = "extract" },
+  # Font
+  { mime = "font/*", use = "installFont" },  # TODO: does this work
+  { mime = "application/font*", use = "installFont" },
+  { mime = "application/x-font*", use = "installFont" },
+  { mime = "application/vnd.ms-fontobject", use = "installFont" },
+  { mime = "application/ms-opentype", use = "installFont" },
   # Onlyoffice
   { mime = "application/pdf", use = "onlyoffice" },
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "onlyoffice" },
@@ -63,8 +92,8 @@ prepend_rules = [
   { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "onlyoffice" },
   { name = "*.docx", use = "onlyoffice" },
   { name = "*.xlsx", use = "onlyoffice" },
-  { name = "*.pdf", use = "onlyoffice" },
-  { mime = "video/*", use = "play" }
+  # Default
+  { mime = "*", use = "default" },
 ]
 
 [plugin]

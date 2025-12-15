@@ -20,7 +20,8 @@ keymap = [
   { on = "d", run = "remove" },  # no need for dd, since to confirm you can also do d
   { on = "D", run = "remove --permanently" },
   { on = "o", run = "create" },
-  { on = "r", run = "rename --cursor=end" },
+  { on = "O", run = "open --interactive", desc = "open files interactively" },
+  { on = "r", run = "rename --cursor=before_ext" },
   # selection/visual mode
   { on = "v", run = "toggle" },
   { on = "V", run = "visual_mode" },
@@ -221,8 +222,8 @@ keymap = [
   { on = "<C-d>", run = "arrow 50%", desc = "move cursor down half page" },
   { on = "<C-b>", run = "arrow -100%", desc = "move cursor up one page" },
   { on = "<C-f>", run = "arrow 100%", desc = "move cursor down one page" },
-  { on = "<C-p>", run = "swipe -1" },
-  { on = "<C-n>", run = "swipe 1" },
+  { on = "K", run = "swipe -1" },
+  { on = "J", run = "swipe 1" },
   { on = ["y", "y"], run = "copy cell", desc = "copy value" },
   { on = ["g", "?"], run = "help" },
 ]
@@ -231,6 +232,8 @@ keymap = [
 keymap = [
   { on = "<esc>", run = "close" },
   { on = "q", run = "close" },
+  { on = "<Enter>", run = "close --submit", desc = "submit the pick" },
+  { on = "l", run = "close --submit", desc = "submit the pick" },
   { on = "k", run = "arrow -1" },
   { on = "j", run = "arrow 1" },
   { on = "<C-u>", run = "arrow -50%", desc = "move cursor up half page" },
@@ -248,8 +251,8 @@ keymap = [
   { on = "y", run = "close --submit" },
   { on = "d", run = "close --submit" },  # so you can delete files with dd
   { on = "<enter>", run = "close --submit" },
-  { on = "<c-p>", run = "arrow -1" },
-  { on = "<c-n>", run = "arrow 1" },
+  { on = "K", run = "arrow -1" },
+  { on = "J", run = "arrow 1" },
   { on = ["g", "?"], run = "help" },
 ]
 

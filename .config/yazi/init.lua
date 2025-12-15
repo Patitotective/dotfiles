@@ -1,8 +1,6 @@
 require("full-border"):setup()
 
 function Linemode:rmtime() -- relative modified time
-	-- TODO: show yesterday when needed
-	-- TODO: show wekkday when same week
 	local time = math.floor(self._file.cha.mtime or 0)
 	local stime
 
@@ -10,16 +8,25 @@ function Linemode:rmtime() -- relative modified time
 		stime = ""
 	elseif os.date("%Y", time) == os.date("%Y") then -- same year
 		if os.date("%m", time) == os.date("%m") then -- same month
-			if os.date("%d", time) == os.date("%d") then -- same day
+			local day = tonumber(os.date("%d", time))
+			local today = tonumber(os.date("%d"))
+			if day == today then -- same day
 				stime = os.date("%H:%M", time)
 			else
-				stime = os.date("%d %H:%M", time)
+				local diff = today - day
+				if diff == 1 then
+					stime = os.date("Yesterday %H:%M", time)
+				elseif diff < 7 then -- same week
+					stime = os.date("%a %H:%M", time)
+				else
+					stime = os.date("%b %d %H:%M", time)
+				end
 			end
 		else
 			stime = os.date("%b %d %H:%M", time)
 		end
 	else
-		stime = os.date("%b %d  %Y", time)
+		stime = os.date("%b %d %Y ", time)
 	end
 
 	return string.format("%s", stime)
