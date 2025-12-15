@@ -2,6 +2,7 @@ fish_add_path /usr/local/sbin /usr/local/bin /usr/bin ~/.local/bin
 fish_add_path ~/.nimble/bin
 fish_add_path ~/.local/share/nvim/lazy/nvim_rocks/bin
 fish_add_path ~/.local/share/nvim/mason/bin
+fish_add_path ~/go/bin/
 
 set -g fish_key_bindings fish_vi_key_bindings
 
