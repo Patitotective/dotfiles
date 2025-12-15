@@ -9,6 +9,7 @@ while true; do
   case "$state" in
   "Playing") ~/scripts/hypr/toggleIdle.fish false ;;
   "Paused") ~/scripts/hypr/toggleIdle.fish true ;;
+  "Stopped") ~/scripts/hypr/toggleIdle.fish true ;;
   *) ;;
   esac
 done
