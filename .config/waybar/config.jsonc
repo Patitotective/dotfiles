@@ -116,8 +116,8 @@
       "off": "󰛊 "
     },
     "return-type": "json",
-    "exec": "$HOME/scripts/hypr/checkIdle.sh",
-    "on-click": "$HOME/scripts/hypr/toggleIdle.fish",
+    "exec": "$HOME/scripts/hypr/checkIdleInhibit.fish",
+    "on-click": "$HOME/scripts/hypr/toggleIdleInhibit.fish",
     "signal": 1,
     "tooltip": false
   },
