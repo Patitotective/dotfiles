@@ -1,3 +1,4 @@
+# By crazygolem from https://github.com/kovidgoyal/kitty/discussions/4447#discussioncomment-10988500
 """
 Provides a full-width tab bar, with evenly-sized tabs that don't vary based on
 their content.
@@ -121,10 +122,15 @@ def draw_title(
 
         if title == "{mytitle}":
             ta = TabAccessor(tab.tab_id)
+            # os.system(
+            #     f"dunstify {tab.tab_id} '{tab.title}\n{ta.active_exe}\n{ta.active_wd}'"
+            # )
             exe = ta.active_exe
+
             title = (
-                ta.active_wd.replace(os.path.expanduser("~"), "~")
-                if exe in ["", "fish", "bash"]
+                # ta.active_wd.replaceos.path.expanduser("~"), "~")
+                tab.title
+                if exe == "" or exe.startswith("fish") or exe.startswith("bash")
                 else exe
             )
 
