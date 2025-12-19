@@ -1,1 +1,2 @@
---bind=home:last,end:first,ctrl-a:last,ctrl-e:first,ctrl-y:accept,ctrl-h:backward-char,ctrl-s:backward-delete-char,ctrl-w:backward-kill-word,ctrl-d:delete-char
+--bind=home:last,end:first,ctrl-a:last,ctrl-e:first,ctrl-y:accept,ctrl-s:backward-delete-char,ctrl-w:backward-kill-word,ctrl-d:delete-char
+--preview='~/scripts/fzf-preview.sh {}'
