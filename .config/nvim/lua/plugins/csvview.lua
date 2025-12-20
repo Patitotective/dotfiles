@@ -5,9 +5,10 @@ return {
   opts = {
     parser = { comments = { "#", "//" } },
     view = {
-      header_lnum = false,
+      header_lnum = true,
       sticky_header = {
         enabled = true,
+        separator = false,
       },
     },
 

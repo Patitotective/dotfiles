@@ -1,0 +1,26 @@
+return {
+  -- { "mason-org/mason.nvim", version = "^1.0.0" },
+  -- { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
+  "mason-org/mason.nvim",
+  opts = {
+    ensure_installed = {
+      "bash-language-server",
+      "black",
+      "codelldb",
+      "fixjson",
+      "google-java-format",
+      "jdtls",
+      "json-lsp",
+      "kdlfmt",
+      "lua-language-server",
+      "markdown-toc",
+      "markdownlint-cli2",
+      "marksman",
+      "shellcheck",
+      "shfmt",
+      "stylua",
+      "tombi",
+      "tree-sitter-cli",
+    },
+  },
+}
