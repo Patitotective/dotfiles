@@ -108,8 +108,7 @@
     ]
   },
   "clock": {
-    "format": "󰥔 {:%R}",
-    // "format": "{:%R 󰃭 %d·%m·%y}",
+    "format": "󰥔 {:%H:%M}",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -369,5 +368,5 @@
   //     "█"
   //   ],
   //   "actions": {
- }
-  }
+}
+}
