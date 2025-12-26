@@ -29,15 +29,13 @@ onlyoffice = [
   { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "$@"', orphan = true, for = "unix" },
 ]
 appimage = [
-  { run = 'gearlever --integrate -y "$0"', orphan = true, desc = "install appimage", for = "unix" }
+  { run = 'gearlever --integrate -y "$0"', orphan = true, desc = "install appimage", for = "unix" },
 ]
 installFont = [
-  { run = '$HOME/scripts/installFont.fish "$0"', orphan = true, desc = "install font", for = "unix" }
+  { run = '$HOME/scripts/installFont.fish "$0"', orphan = true, desc = "install font", for = "unix" },
 ]
 darktable = [{ run = 'darktable "$@"', orphan = true, for = "unix" }]
-default = [
-  { run = 'xdg-open "$@"' },
-]
+default = [{ run = 'xdg-open "$@"' }]
 
 [open]
 prepend_rules = [
@@ -66,7 +64,7 @@ prepend_rules = [
   { mime = "application/x-rar-compressed", use = "extract" },
   { mime = "application/x-brotli", use = "extract" },
   # Font
-  { mime = "font/*", use = "installFont" },  # TODO: does this work
+  { mime = "font/*", use = "installFont" },                        # TODO: does this work
   { mime = "application/font*", use = "installFont" },
   { mime = "application/x-font*", use = "installFont" },
   { mime = "application/vnd.ms-fontobject", use = "installFont" },

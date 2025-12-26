@@ -3,7 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       nim = { "nph" },
-      toml = { "tombi" },
+      toml = { "taplo" },
       kdl = { "kdlfmt" },
       python = { "black" },
       rust = { "rustfmt" },
