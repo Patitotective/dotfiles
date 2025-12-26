@@ -31,6 +31,7 @@ keymap = [
   { on = "i", run = "link", desc = "symlink yanked files" },
   { on = "<c-i>", run = "link --relative", desc = "Symlink the relative path of yanked files" },
   { on = "I", run = "hardlink", desc = "hardlink yanked files" },
+  { on = "F", run = "follow", desc = "follow symlink" },
   # cut/yank/paste
   { on = "x", run = "yank --cut" },
   { on = ["y", "y"], run = "yank", desc = "yank file" },
