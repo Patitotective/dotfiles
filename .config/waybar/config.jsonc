@@ -12,51 +12,53 @@
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
   "modules-left": [
-    "custom/padd",
+    "custom/space",
     //
     "hyprland/submap",
     //
-    "custom/l_end",
-    "cpu",
-    "memory",
-    "custom/r_end",
-    //
-    "custom/l_end",
+    "custom/start",
     "clock",
     "custom/idle_inhibitor",
-    // "cava",
-    "custom/r_end",
+    "custom/end",
     //
-    "custom/padd"
+    "custom/start",
+    "disk",
+    "cpu",
+    "memory",
+    "temperature",
+    "custom/end",
+    //
+    //
+    "custom/space"
   ],
   "modules-center": [
-    "custom/padd",
-    "custom/l_end",
+    "custom/space",
+    "custom/start",
     "hyprland/workspaces",
     "hyprland/window",
-    "custom/r_end",
-    "custom/padd"
+    "custom/end",
+    "custom/space"
   ],
   "modules-right": [
-    "custom/padd",
-    "custom/l_end",
+    "custom/space",
+    "custom/start",
     "pulseaudio",
     "pulseaudio#microphone",
     // "custom/keybindhint",
     "custom/capslock",
     "custom/numlock",
-    "custom/r_end",
+    "custom/end",
     //
-    "custom/l_end",
+    "custom/start",
     "tray",
     "privacy",
-    "custom/r_end",
+    "custom/end",
     //
-    "custom/l_end",
+    "custom/start",
     "battery",
     "custom/power",
-    "custom/r_end",
-    "custom/padd"
+    "custom/end",
+    "custom/space"
   ],
   // sourced from modules based on config.ctl //
   "cpu": {
@@ -88,7 +90,15 @@
     "format-alt": "󰾆 {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "tooltip-format": "{temperatureF}°F\n{temperatureK} K",
+    "format": " {temperatureC}°C"
   },
   "clock": {
     "format": "󰥔 {:%R}",
@@ -123,7 +133,6 @@
     "exec": "$HOME/scripts/hypr/checkIdleInhibit.fish",
     "on-click": "$HOME/scripts/hypr/toggleIdleInhibit.fish",
     "signal": 1,
-    "tooltip": false
   },
   "hyprland/workspaces": {
     "all-outputs": true,
@@ -154,7 +163,7 @@
     "format": "<span text_transform='uppercase'>{}</span>",
     "on-click": "hyprctl dispatch submap reset",
     "tooltip": false
-    },
+  },
   "pulseaudio": {
     "format": "{icon}   {volume}", // note there is an en space, a thinspace and a six-per-em space
     "format-muted": "󰖁   {volume}", // note there is an en space, a thinspace and a six-per-em space
@@ -162,7 +171,7 @@
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
     "on-scroll-down": "~/scripts/hypr/audiocontrol.fish -0.01",
-    "tooltip-format": "{icon}  {desc} // {volume}%",
+    "tooltip-format": "{desc}",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -185,7 +194,7 @@
     "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
     "on-scroll-down": "~/scripts/hypr/miccontrol.fish -0.01",
-    "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+    "tooltip-format": "{source_desc}",
     "scroll-step": 5
   },
   "custom/keybindhint": {
@@ -213,7 +222,6 @@
   // TODO: toggle on click (there doesn't seem to be a good tool to do it, both wtype and ydotool seem abandoned and they don't work really well)
   "custom/capslock": {
     "exec": "$HOME/scripts/hypr/capslock.fish",
-    "tooltip": false,
     "format": "{icon}",
     "format-icons": [
       "<span foreground='#f2f4f87f'>󰪛</span>", // locked
@@ -224,7 +232,6 @@
   },
   "custom/numlock": {
     "exec": "$HOME/scripts/hypr/numlock.fish",
-    "tooltip": false,
     "format": "{icon}",
     "format-icons": [
       "<span foreground='#f2f4f87f'>󰎦</span>", // locked
@@ -264,15 +271,15 @@
   "custom/power": {
     "format": "",
     "on-click": "~/scripts/hypr/powerMenu.sh",
-    "tooltip": false
+    "tooltip-format": "Power menu"
   },
-  // modules for padding //
-  "custom/l_end": {
+  // modules for spaceing //
+  "custom/start": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-  "custom/r_end": {
+  "custom/end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
@@ -297,11 +304,17 @@
     "interval": "once",
     "tooltip": false
   },
-  "custom/padd": {
+  "custom/space": {
     "format": "  ",
     "interval": "once",
     "tooltip": false
   },
+  "disk": {
+    "interval": 30,
+    "format": " {percentage_free}%",
+    "tooltip-format": "{free} out of {total} available",
+    "path": "/"
+  }
   // "cava": {
   //   "cava_config": "$XDG_CONFIG_HOME/cava/config",
   //   "framerate": 30,
