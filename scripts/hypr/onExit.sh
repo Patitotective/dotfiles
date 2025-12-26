@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
+brightnessctl --save
 hyprnim monitors --all
-hyprnim brightness 1 --dontSave # Set brightness to 100%

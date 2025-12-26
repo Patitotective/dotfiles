@@ -42,6 +42,7 @@
   "modules-right": [
     "custom/space",
     "custom/start",
+    "backlight",
     "pulseaudio",
     "pulseaudio#microphone",
     // "custom/keybindhint",
@@ -314,6 +315,15 @@
     "format": " {percentage_free}%",
     "tooltip-format": "{free} out of {total} available",
     "path": "/"
+  },
+  "backlight": {
+    "device": "acpi_video1",
+    "format": "{icon} {percent}%",
+    "tooltip-format": "Monitor brightness",
+    "format-icons": [
+      "",
+      ""
+    ]
   }
   // "cava": {
   //   "cava_config": "$XDG_CONFIG_HOME/cava/config",
