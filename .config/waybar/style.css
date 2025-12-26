@@ -150,6 +150,7 @@ tooltip {
 #custom-sl_end,
 #custom-sr_end,
 #custom-rl_end,
+#submap,
 #custom-rr_end {
     color: @main-fg;
     background: @main-bg;
@@ -158,13 +159,14 @@ tooltip {
     padding-left: 4px;
     padding-right: 4px;
 }
-/* #keyboard-state label.locked, #custom-capslock.locked { */
-/*     opacity: 1; */
-/* } */
-/**/
-/* #keyboard-state label, #custom-capslock.unlocked  { */
-/*     opacity: 0.5; */
-/* } */
+
+#submap {
+    border-radius: 19px;
+    padding-right: 12px;
+    padding-left: 12px;
+    background: @submap;
+    color: @main-bg;
+}
 
 #workspaces,
 #taskbar {
