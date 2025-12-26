@@ -159,6 +159,7 @@
       "  nvim(.*)": " $1",
       "  yazi(.*)": "󰉋 $1",
       "  (((?!(YouTube|\\(.+\\) WhatsApp)).)*) — Ablaze Floorp": "󰖟 $1",
+      "  Ablaze Floorp": "󰖟",
       "  (.*)YouTube — Ablaze Floorp": "  $1",
       "  YouTube Music — Ablaze Floorp": " $1",
       "  \\(\\d+\\) WhatsApp(.*) — Ablaze Floorp": "󰖣 $1",
@@ -171,8 +172,8 @@
     "tooltip": false
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}", // note there is an en space and a six-per-em space
-    "format-muted": "󰖁  {volume}", // note there is an en space and a six-per-em space
+    "format": "{icon}  {volume}%", // note there is an en space and a six-per-em space
+    "format-muted": "󰖁  {volume}%", // note there is an en space and a six-per-em space
     "on-click": "pavucontrol -t 3",
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
@@ -201,8 +202,8 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}", // note there is an U+2002 : EN SPACE
-    "format-source-muted": " {volume}", // note there is an U+2002 : EN SPACE
+    "format-source": " {volume}%", // note there is an U+2002 : EN SPACE
+    "format-source-muted": " {volume}%", // note there is an U+2002 : EN SPACE
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
