@@ -4,10 +4,11 @@ return {
   "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
+      "prettier",
       "bash-language-server",
       "black",
+      "clangd",
       "codelldb",
-      "fixjson",
       "google-java-format",
       "jdtls",
       "json-lsp",
@@ -19,6 +20,7 @@ return {
       "shellcheck",
       "shfmt",
       "stylua",
+      "texlab",
       "tombi",
       "tree-sitter-cli",
     },
