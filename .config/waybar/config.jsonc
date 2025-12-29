@@ -158,11 +158,12 @@
       "  [~/](.*)": " $1",
       "  nvim(.*)": " $1",
       "  yazi(.*)": "󰉋 $1",
-      "  (((?!(YouTube|\\(.+\\) WhatsApp)).)*) — Ablaze Floorp": "󰖟 $1",
+      "  (((?!(YouTube|\\(.+\\) WhatsApp|WhatsApp)).)*) — Ablaze Floorp": "󰖟 $1",
       "  Ablaze Floorp": "󰖟",
       "  (.*)YouTube — Ablaze Floorp": "  $1",
       "  YouTube Music — Ablaze Floorp": " $1",
       "  \\(\\d+\\) WhatsApp(.*) — Ablaze Floorp": "󰖣 $1",
+      "  WhatsApp(.*) — Ablaze Floorp": "󰖣 $1",
     },
     "max-length": 50
   },
