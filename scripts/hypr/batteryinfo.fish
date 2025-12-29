@@ -13,7 +13,7 @@ set percentage $battery_info[2]
 if test "$bstatus" = Charging
     set charging_icons "󰢟" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"
     set icon_index (clamp (math --scale 0 "$percentage / 10") 1 10)
-    set battery_icon $charging_icon[$icon_index]
+    set battery_icon $charging_icons[$icon_index]
 else
     set battery_icons "󱃍" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰁹"
     set icon_index (clamp (math --scale 0 "$percentage / 10") 1 10)
