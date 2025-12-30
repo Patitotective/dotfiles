@@ -65,7 +65,7 @@ require("relative-motions"):setup({
 
 require("yatline"):setup({
 	tab_width = 20,
-	show_background = true,
+	show_background = false,
 
 	component_positions = { "header", "tab", "status" },
 
@@ -169,3 +169,5 @@ if os.getenv("YAZI_RESTORE") then
 		},
 	})
 end
+
+-- require("git"):setup()

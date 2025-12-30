@@ -138,6 +138,10 @@ prepend_previewers = [
   { mime = "application/postscript", run = "mediainfo" },
 ]
 append_spotters = [{ name = "*", run = "file-extra-metadata" }]
+prepend_fetchers = [
+  # { id = "git", url = "", run = "git" },
+  # { id = "git", url = "*/", run = "git" },
+]
 
 [tasks]
 # image_alloc = 1073741824  # = 1024*1024*1024 = 1024MB
