@@ -6,7 +6,7 @@ function clamp
     math "max($argv[2], min($argv[3], $argv[1]))"
 end
 
-set battery_info (string match -rg "Battery \d+: (\w+), (\d+)%, .+" (acpi -b))
+set battery_info (string match -rg "Battery \d+: (\w+), (\d+)%" (acpi -b))
 set bstatus $battery_info[1]
 set percentage $battery_info[2]
 
