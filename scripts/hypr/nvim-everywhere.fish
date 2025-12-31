@@ -5,8 +5,8 @@ set tmpdir /tmp/nvim-everywhere
 set tmpfile "$tmpdir/$(date +'%y%m%d%H%M%S')"
 
 mkdir -p $tmpdir
-wl-paste --primary --no-newline >$tmpfile
-# touch $tmpfile
+# wl-paste --primary --no-newline >$tmpfile
+touch $tmpfile
 
 chmod o-r $tmpfile # Make file only readable to you
 kitty --single-instance --wait-for-single-instance-window-close --class=nvim-everywhere --override confirm_os_window_close=0 nvim "+nnoremap q <cmd>wq<cr>" $tmpfile
