@@ -17,34 +17,33 @@ max_width = 2500
 max_height = 2500
 
 [opener]
-view = [{ run = 'gwenview "$@"', orphan = true, for = "unix" }]
-okular = [{ run = 'okular "$@"', orphan = true, for = "unix" }]
-inkscape = [{ run = 'inkscape "$@"', orphan = true, for = "unix" }]
-vlc = [{ run = 'vlc "$@"', orphan = true, for = "unix" }]
+view = [{ run = 'gwenview "%s"', orphan = true, for = "unix" }]
+okular = [{ run = 'okular "%s"', orphan = true, for = "unix" }]
+inkscape = [{ run = 'inkscape "%s"', orphan = true, for = "unix" }]
+vlc = [{ run = 'vlc "%s"', orphan = true, for = "unix" }]
 ouch = [
-  { run = 'ouch d -y "%*"', desc = "extract here with ouch", for = "windows" },
-  { run = 'ouch d -y "$@"', desc = "extract here with ouch", for = "unix" },
+  { run = 'ouch d -y "%s"', desc = "extract here with ouch", for = "unix" },
 ]
 onlyoffice = [
-  { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "$@"', orphan = true, for = "unix" },
+  { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "%s"', orphan = true, for = "unix" },
 ]
 appimage = [
-  { run = 'gearlever --integrate -y "$0"', orphan = true, desc = "install appimage", for = "unix" },
+  { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "unix" },
 ]
 installFont = [
-  { run = '$HOME/scripts/installFont.fish "$0"', orphan = true, desc = "install font", for = "unix" },
+  { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "unix" },
 ]
-darktable = [{ run = 'darktable "$@"', orphan = true, for = "unix" }]
-default = [{ run = 'xdg-open "$@"' }]
+darktable = [{ run = 'darktable "%s"', orphan = true, for = "unix" }]
+default = [{ run = 'xdg-open "%s"' }]
 
 [open]
 prepend_rules = [
   { mime = "image/svg+xml", use = "inkscape" },
   { mime = "image/*", use = "view" },
   { mime = "application/pdf", use = "okular" },
-  { name = "*.AppImage", use = "appimage" },
+  { url = "*.AppImage", use = "appimage" },
   { mime = "video/*", use = "vlc" },
-  { name = "*.nef", use = "darktable" },
+  { url = "*.nef", use = "darktable" },
   # Archive
   { mime = "application/x-tar", use = "extract" },
   { mime = "application/x-gtar", use = "extract" },
@@ -58,7 +57,7 @@ prepend_rules = [
   { mime = "application/x-bzip", use = "extract" },
   { mime = "application/x-bzip2", use = "extract" },
   { mime = "application/x-bzip3", use = "extract" },
-  { name = "*.lz4", use = "extract" },
+  { url = "*.lz4", use = "extract" },
   { mime = "application/x-snappy-framed", use = "extract" },
   { mime = "application/zstd", use = "extract" },
   { mime = "application/x-rar-compressed", use = "extract" },
@@ -88,8 +87,8 @@ prepend_rules = [
   { mime = "application/vnd.oasis.opendocument.spreadsheet-template", use = "onlyoffice" },
   { mime = "application/vnd.sun.xml.calc", use = "onlyoffice" },
   { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "onlyoffice" },
-  { name = "*.docx", use = "onlyoffice" },
-  { name = "*.xlsx", use = "onlyoffice" },
+  { url = "*.docx", use = "onlyoffice" },
+  { url = "*.xlsx", use = "onlyoffice" },
   # Default
   { mime = "*", use = "default" },
 ]
@@ -100,9 +99,9 @@ prepend_preloaders = [
   # Do not preload files in mounted locations:
   # Environment variable won't work here.
   # Using absolute path instead.
-  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+  { url = "/run/user/1000/gvfs/**/*", run = "noop" },
   # For mounted hard disk/drive
-  { name = "/run/media/cristobal/**/*", run = "noop" },
+  { url = "/run/media/cristobal/**/*", run = "noop" },
   # ################# mediainfo.yazi ##################
   # Replace magick, image, video with mediainfo
   { mime = "{audio,video,image}/*", run = "mediainfo" },
@@ -112,7 +111,7 @@ prepend_preloaders = [
 ]
 prepend_previewers = [
   # Allow to preview folder.
-  { name = "*/", run = "folder" },
+  { url = "*/", run = "folder" },
   # ################# ouch.yazi ##################
   # Archive previewer
   { mime = "application/*zip", run = "ouch" },
@@ -127,9 +126,9 @@ prepend_previewers = [
   # Uncomment the line below to allow previewing text files.
   # { mime = "{text/*,application/x-subrip}", run = "code" },
   # Using absolute path.
-  { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+  { url = "/run/user/1000/gvfs/**/*", run = "noop" },
   # For mounted hard disk/drive.
-  { name = "/run/media/cristobal/**/*", run = "noop" },
+  { url = "/run/media/cristobal/**/*", run = "noop" },
   # ################# mediainfo.yazi ##################
   # Replace magick, image, video with mediainfo
   { mime = "{audio,video,image}/*", run = "mediainfo" },
@@ -137,7 +136,7 @@ prepend_previewers = [
   # Adobe Illustrator, Adobe Photoshop is image/adobe.photoshop, already handled above
   { mime = "application/postscript", run = "mediainfo" },
 ]
-append_spotters = [{ name = "*", run = "file-extra-metadata" }]
+append_spotters = [{ url = "*", run = "file-extra-metadata" }]
 prepend_fetchers = [
   # { id = "git", url = "", run = "git" },
   # { id = "git", url = "*/", run = "git" },

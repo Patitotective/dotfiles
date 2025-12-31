@@ -1,2 +1,4 @@
-# [flavor]
-# dark = "catppuccin-frappe"
+[mgr]
+syntect_theme = "~/.config/yazi/carbonfox.tmTheme"
+[indicator]
+padding = { open = "█", close = "█" }

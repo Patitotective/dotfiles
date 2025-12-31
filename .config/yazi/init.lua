@@ -163,6 +163,7 @@ if os.getenv("YAZI_RESTORE") then
 		},
 		last = {
 			load_after_start = true,
+			update_before_quit = true,
 		},
 		notify = {
 			enable = false,
