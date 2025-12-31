@@ -64,7 +64,7 @@
   // sourced from modules based on config.ctl //
   "cpu": {
     "interval": 10,
-    "format": "󰍛 {usage}%",
+    "format": "󰍛  {usage}%", // in between there are two six-per-em space
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
     "format-icons": [
       "▁",
@@ -84,11 +84,12 @@
       "m": 30 // medium
     },
     "interval": 10,
-    "format": "󰾆 {percentage}%",
-    "format-m": "󰾅 {percentage}%",
-    "format-h": "󰓅 {percentage}%",
-    "format-c": " {percentage}%",
-    "format-alt": "󰾆 {percentage}%",
+    // in between the icons and the percentages there are two for-per-em spaces
+    "format": "󰾆  {percentage}%",
+    "format-m": "󰾅  {percentage}%",
+    "format-h": "󰓅  {percentage}%",
+    "format-c": "  {percentage}%",
+    "format-alt": "󰾆  {percentage}%",
     "max-length": 10,
     "tooltip": true,
     "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
@@ -96,9 +97,9 @@
   "temperature": {
     "critical-threshold": 80,
     "warning-threshold": 60,
-    "format-critical": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
     "tooltip-format": "{temperatureF}°F\n{temperatureK} K",
-    "format": "{icon} {temperatureC}°C",
+    "format": "{icon} {temperatureC}°C", // in between there is a three-per-em space
     "format-icons": [
       "",
       "",
@@ -165,7 +166,7 @@
       "  \\(\\d+\\) WhatsApp(.*) — Ablaze Floorp": "󰖣 $1",
       "  WhatsApp(.*) — Ablaze Floorp": "󰖣 $1",
     },
-    "max-length": 50
+    "max-length": 70
   },
   "hyprland/submap": {
     "format": "<span text_transform='uppercase'>{}</span>",
@@ -196,6 +197,10 @@
         "",
         "",
         "",
+        "",
+        "",
+        "",
+        "",
         "",
         ""
       ]
@@ -203,8 +208,8 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%", // note there is an U+2002 : EN SPACE
-    "format-source-muted": " {volume}%", // note there is an U+2002 : EN SPACE
+    "format-source": " {volume}%", // note there is a three-per-em space
+    "format-source-muted": " {volume}%", // note there is an en space
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
@@ -266,7 +271,7 @@
       "warning": 30,
       "critical": 10
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon} {capacity}%", // in between there is a three-per-em space
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": [
@@ -326,7 +331,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": " {percentage_free}%",
+    "format": "  {percentage_free}%", // in between there is an en space and a six-per-em space
     "tooltip-format": "{free} out of {total} available",
     "path": "/"
   },
