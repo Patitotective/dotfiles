@@ -80,7 +80,10 @@ require("yatline"):setup({
 		right = {
 			section_a = {},
 			section_b = {},
-			section_c = {},
+			section_c = {
+
+				{ type = "coloreds", custom = false, name = "count", params = { true } }, -- params doesn't do anything... it should show the filtered files as well
+			},
 		},
 	},
 
@@ -100,7 +103,6 @@ require("yatline"):setup({
 			section_c = {
 				{ type = "string", custom = false, name = "hovered_file_extension", params = { true } },
 				{ type = "coloreds", custom = false, name = "permissions" },
-				{ type = "coloreds", custom = false, name = "count", params = { true } }, -- params doesn't do anything... it should show the filtered files as well
 			},
 			section_b = {
 				-- { type = "string", custom = false, name = "cursor_position" }, -- since count already shows the number of total files, i don't want to show the information twice, even if this also shows the current file index
