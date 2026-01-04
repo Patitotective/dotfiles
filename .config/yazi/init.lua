@@ -18,7 +18,7 @@ function Linemode:rmtime() -- relative modified time
 					stime = os.date("Yesterday %H:%M", time)
 				elseif diff < 7 then -- same week
 					stime = os.date("%a %H:%M", time)
-				else
+				else -- same month
 					stime = os.date("%b %d %H:%M", time)
 				end
 			end
@@ -26,7 +26,7 @@ function Linemode:rmtime() -- relative modified time
 			stime = os.date("%b %d %H:%M", time)
 		end
 	else
-		stime = os.date("%b %d %Y ", time)
+		stime = os.date("%Y %b %d", time)
 	end
 
 	return string.format("%s", stime)

@@ -42,7 +42,7 @@ prepend_rules = [
   { mime = "image/*", use = "view" },
   { mime = "application/pdf", use = "okular" },
   { url = "*.AppImage", use = "appimage" },
-  { mime = "video/*", use = "vlc" },
+  { mime = "{video,audio}/*", use = "vlc" },
   { url = "*.nef", use = "darktable" },
   # Archive
   { mime = "application/x-tar", use = "extract" },

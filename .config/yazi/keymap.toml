@@ -7,6 +7,7 @@ keymap = [
   { on = "q", run = "quit" },
   { on = "h", run = "leave" },
   { on = "l", run = "plugin smart-enter", desc = "enter the child directory, or open the file" },
+  { on = "<enter>", run = "open", desc = "open, even directories" },
   { on = "k", run = "arrow -1" },
   { on = "j", run = "arrow 1" },
   { on = "<C-u>", run = "arrow -50%", desc = "move cursor up half page" },
@@ -18,7 +19,7 @@ keymap = [
     "g",
   ], run = "arrow top", desc = "go to the top" },
   { on = "G", run = "arrow bot", desc = "go to the bottom" },
-  { on = "<enter>", run = "tasks:show", desc = "show task manager" },
+  { on = "w", run = "tasks:show", desc = "show task manager" },
   { on = "<c-b>", run = "seek -1" }, # Scroll the preview window
   { on = "<c-f>", run = "seek 1" },
   { on = "<tab>", run = "spot" },
@@ -69,40 +70,35 @@ keymap = [
   { on = "p", run = "paste" },
   # linemode
   { on = [
-    "U",
-    "l",
+    "m",
     "s",
   ], run = [
     "linemode size",
     "plugin pref-by-location -- save",
   ], desc = "show size" },
   { on = [
-    "U",
-    "l",
+    "m",
     "b",
   ], run = [
     "linemode rbtime",
     "plugin pref-by-location -- save",
   ], desc = "show creation time" }, # relative birth time, custom linemode defined in init.lua
   { on = [
-    "U",
-    "l",
+    "m",
     "m",
   ], run = [
     "linemode rmtime",
     "plugin pref-by-location -- save",
   ], desc = "show modified time" }, # relative modified time, custom linemode defined in init.lua
   { on = [
-    "U",
-    "l",
+    "m",
     "p",
   ], run = [
     "linemode permissions",
     "plugin pref-by-location -- save",
   ], desc = "show permissions" },
   { on = [
-    "U",
-    "l",
+    "m",
     "o",
   ], run = [
     "linemode owner",
@@ -124,112 +120,98 @@ keymap = [
     "plugin pref-by-location -- save",
   ], desc = "don't show directories first" },
   { on = [
-    "U",
-    "s",
+    ",",
     "m",
   ], run = [
     "sort mtime --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by modified time" },
   { on = [
-    "U",
-    "s",
+    ",",
     "b",
   ], run = [
     "sort btime --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by creationg time" },
   { on = [
-    "U",
-    "s",
+    ",",
     "e",
   ], run = [
     "sort extension --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by extension" },
   { on = [
-    "U",
-    "s",
+    ",",
     "a",
   ], run = [
     "sort alphabetical --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by alphabetical" },
   { on = [
-    "U",
-    "s",
+    ",",
     "n",
   ], run = [
     "sort natural --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by natural" },
   { on = [
-    "U",
-    "s",
+    ",",
     "s",
   ], run = [
     "sort size --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by size" },
   { on = [
-    "U",
-    "s",
+    ",",
     "r",
   ], run = [
     "sort random --reverse=no",
     "plugin pref-by-location -- save",
   ], desc = "sort by random" },
   { on = [
-    "U",
-    "s",
+    ",",
     "M",
   ], run = [
     "sort mtime --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by modified time (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "B",
   ], run = [
     "sort btime --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by creation time (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "E",
   ], run = [
     "sort extension --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by extension (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "A",
   ], run = [
     "sort alphabetical --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by alphabetical (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "N",
   ], run = [
     "sort natural --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by natural (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "S",
   ], run = [
     "sort size --reverse",
     "plugin pref-by-location -- save",
   ], desc = "sort by size (reverse)" },
   { on = [
-    "U",
-    "s",
+    ",",
     "R",
   ], run = [
     "sort random --reverse",
@@ -413,7 +395,7 @@ keymap = [
 keymap = [
   { on = "<esc>", run = "close" },
   { on = "q", run = "close" },
-  { on = "<enter>", run = "close" },
+  { on = "w", run = "close" },
   { on = "k", run = "arrow -1" },
   { on = "j", run = "arrow 1" },
   { on = "<C-u>", run = "arrow -50%", desc = "move cursor up half page" },
@@ -486,6 +468,10 @@ keymap = [
 keymap = [
   { on = "<c-e>", run = "close" },
   { on = "<c-y>", run = "close --submit" },
+  { on = "<Enter>", run = [
+    "close --submit",
+    "input:close --submit",
+  ], desc = "Complete and submit the input" },
   { on = "<c-p>", run = "arrow -1" },
   { on = "<c-n>", run = "arrow 1" },
   { on = [
