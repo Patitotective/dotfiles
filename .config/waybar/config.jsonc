@@ -145,8 +145,8 @@
     "all-outputs": true,
     "active-only": false,
     "on-click": "activate",
-    // "on-scroll-up": "hyprctl dispatch workspace -1",
-    // "on-scroll-down": "hyprctl dispatch workspace +1",
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
     "signal": 2,
     // "show-special": true,
   },
@@ -198,7 +198,6 @@
         "",
         "",
         "",
-        "",
         "",
         "",
         "",
@@ -331,8 +330,8 @@
   },
   "disk": {
     "interval": 30,
-    "format": "  {percentage_free}%", // in between there is an en space and a six-per-em space
-    "tooltip-format": "{free} out of {total} available",
+    "format": "  {percentage_used}%", // in between there is an en space and a six-per-em space
+    "tooltip-format": "{used} used out of {total} available",
     "path": "/"
   },
   "backlight": {
