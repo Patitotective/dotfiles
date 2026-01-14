@@ -265,6 +265,10 @@ keymap = [
   ], run = "cd ~/Videos", desc = "go to Videos" },
   { on = [
     "g",
+    "m",
+  ], run = "cd ~/Music", desc = "go to Music" },
+  { on = [
+    "g",
     "u",
   ], run = "cd ~/Sync/spain/upv/", desc = "go to upv" },
   # tabs
