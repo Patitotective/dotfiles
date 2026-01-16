@@ -1,6 +1,13 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+local function tableConcat(t1, t2)
+  for i = 1, #t2 do
+    t1[#t1 + 1] = t2[i]
+  end
+  return t1
+end
+
 vim.keymap.set("n", "<Leader>fp", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path" })
 vim.keymap.set("n", "<leader>fi", function()
   vim.notify(vim.fn.system("ls -l " .. vim.fn.expand("%")))
@@ -86,7 +93,7 @@ vim.keymap.set("n", "<leader>soc", function()
     rg_glob = true,
     search_paths = paths,
   })
-end, { desc = "Search Inside Cheatsheets" })
+end, { desc = "search inside cheatsheets" })
 
 vim.keymap.set("n", "<leader>soo", function()
   local orgfiles = vim.fn.expand("$HOME/Documents/orgfiles/")
@@ -96,4 +103,15 @@ vim.keymap.set("n", "<leader>soo", function()
     rg_glob = true,
     search_paths = paths,
   })
-end, { desc = "Search Inside Orgfiles" })
+end, { desc = "search inside orgfiles" })
+
+vim.keymap.set("n", "<leader>soO", function()
+  local orgfiles = vim.fn.expand("$HOME/Documents/orgfiles/")
+  local paths1 = vim.split(vim.fn.glob(orgfiles .. "/*.org"), "\n", { trimempty = true })
+  local paths2 = vim.split(vim.fn.glob(orgfiles .. "/*.org_archive"), "\n", { trimempty = true })
+
+  require("fzf-lua").live_grep({
+    rg_glob = true,
+    search_paths = tableConcat(paths1, paths2),
+  })
+end, { desc = "search inside orgfiles (including archives)" })
