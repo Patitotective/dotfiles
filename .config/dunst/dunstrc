@@ -499,3 +499,6 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+[save-body]
+    summary = *
+    script = $HOME/.config/dunst/save_body.fish
