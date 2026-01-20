@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
-# Based of https://github.com/andrewathalye/hyprland-2d/blob/fe3c29b464309a8cba75a8064fe20ea2632bd8bb/hypr_matrix.sh
-# By andrewathalye
+# Based of https://github.com/andrewathalye/hyprland-2d/blob/fe3c29b464309a8cba75a8064fe20ea2632bd8bb/hypr_matrix.sh by andrewathalye
 
 set size 3
 set warp true

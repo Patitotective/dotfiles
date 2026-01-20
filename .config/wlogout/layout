@@ -1,36 +1,36 @@
 {
     "label" : "lock",
-    "action" : "sleep 0.2 && ~/scripts/hypr/lock.sh",
+    "action" : "sleep 0.2 && ~/.config/hypr/scripts/wlogout/lock.sh",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "~/scripts/hypr/hibernate.sh",
+    "action" : "~/.config/hypr/scripts/wlogout/hibernate.sh",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "~/scripts/hypr/logout.sh",
+    "action" : "~/.config/hypr/scripts/wlogout/logout.sh",
     "text" : "Exit",
     "keybind" : "e"
 }
 {
     "label" : "shutdown",
-    "action" : "~/scripts/hypr/poweroff.sh",
+    "action" : "~/.config/hypr/scripts/wlogout/poweroff.sh",
     "text" : "Power off",
     "keybind" : "p"
 }
 {
     "label" : "suspend",
-    "action" : "~/scripts/hypr/suspend.sh",
+    "action" : "~/.config/hypr/scripts/wlogout/suspend.sh",
     "text" : "Suspend",
     "keybind" : "s"
 }
 {
     "label" : "reboot",
-    "action" : "~/scripts/hypr/reboot.sh",
+    "action" : "~/.config/hypr/scripts/wlogout/reboot.sh",
     "text" : "Reboot",
     "keybind" : "r"
 }

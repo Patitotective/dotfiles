@@ -117,9 +117,9 @@
       "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
+        "months": "<span color='#f2f4f8'><b>{}</b></span>",
+        "weekdays": "<span color='#8cb6ff'><b>{}</b></span>",
+        "today": "<span color='#ff7eb6'><b>{}</b></span>"
       }
     },
     "actions": {
@@ -137,7 +137,7 @@
       "off": "󰛊 "
     },
     "return-type": "json",
-    "exec": "$HOME/scripts/hypr/checkIdleInhibit.fish",
+    "exec": "$HOME/.config/waybar/scripts/checkIdleInhibit.fish",
     "on-click": "$HOME/scripts/hypr/toggleIdleInhibit.fish",
     "signal": 1,
   },
@@ -180,7 +180,7 @@
     "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
     "on-scroll-down": "~/scripts/hypr/audiocontrol.fish -0.01",
-    "tooltip-format": "{desc}",
+    "tooltip-format": "  {desc}",
     "format-icons": {
       // "headphone": "",
       // "headphones": "",
@@ -212,7 +212,7 @@
     "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
     "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
     "on-scroll-down": "~/scripts/hypr/miccontrol.fish -0.01",
-    "tooltip-format": "{source_desc}",
+    "tooltip-format": " {source_desc}",
     "scroll-step": 5
   },
   "custom/keybindhint": {
@@ -239,7 +239,7 @@
   },
   // TODO: toggle on click (there doesn't seem to be a good tool to do it, both wtype and ydotool seem abandoned and they don't work really well)
   "custom/capslock": {
-    "exec": "$HOME/scripts/hypr/capslock.fish",
+    "exec": "$HOME/.config/waybar/scripts/capslock.fish",
     "format": "{icon}",
     "format-icons": [
       "<span foreground='#f2f4f87f'>󰪛</span>", // locked
@@ -249,7 +249,7 @@
     "return-type": "json"
   },
   "custom/numlock": {
-    "exec": "$HOME/scripts/hypr/numlock.fish",
+    "exec": "$HOME/.config/waybar/scripts/numlock.fish",
     "format": "{icon}",
     "format-icons": [
       "<span foreground='#f2f4f87f'>󰎦</span>", // locked

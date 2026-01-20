@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-~/scripts/hypr/onExit.sh
+~/.config/hypr/scripts/on_events/onExit.sh
 loginctl terminate-user "$USER"
