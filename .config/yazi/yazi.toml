@@ -25,28 +25,57 @@ ouch = [
   { run = 'ouch d -y "%s"', desc = "extract here with ouch", for = "unix" },
 ]
 onlyoffice = [
-  { run = 'onlyoffice-desktopeditors --xdg-desktop-portal=default "%s"', orphan = true, for = "unix" },
+  { run = 'onlyoffice-desktopeditors "%s"  --xdg-desktop-portal=default', orphan = true, for = "unix" },
 ]
 appimage = [
   { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "unix" },
 ]
+audacity = [{ run = 'audacity "%s"', orphan = true, for = "unix" }]
+gimp = [{ run = 'gimp "%s', orphan = true, for = "unix" }]
 installFont = [
   { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "unix" },
 ]
 darktable = [{ run = 'darktable "%s"', orphan = true, for = "unix" }]
-default = [{ run = 'xdg-open "%s"' }]
-edit = [{ run = "$EDITOR %s", block = true, for = "unix" }]
+kdenlive-import = [
+  { run = 'echo "%s" | tr " " "," | xargs kdenlive -i ', orphan = true, desc = "import into kdenlive", for = "unix" },
+]
+kdenlive = [{ run = 'kdenlive "%s', orphan = true, for = "unix" }]
+default = [{ run = 'xdg-open "%s"', desc = "default" }]
+edit = [{ run = "$EDITOR %s", desc = "edit", block = true, for = "unix" }]
 
 [open]
+append_rules = [{ url = "*", use = "default" }]
 prepend_rules = [
-  { mime = "image/svg+xml", use = "inkscape" },
-  { mime = "image/*", use = "gwenview" },
-  { mime = "application/pdf", use = "okular" },
-  { url = "*.AppImage", use = "appimage" },
-  { mime = "{video,audio}/*", use = "vlc" },
-  { mime = "image/tiff", use = "darktable" },
-  { url = "*.nef", use = "darktable" },
+  { mime = "image/svg+xml", use = [
+    "gwenview",
+    "inkscape",
+  ] },
+  { mime = "image/*", use = [
+    "gwenview",
+    "gimp",
+    "inkscape",
+    "darktable",
+  ] },
+  { mime = "application/pdf", use = [
+    "okular",
+    "onlyoffice",
+  ] },
+  { mime = "video/*", use = [
+    "vlc",
+    "gwenview",
+    "kdenlive-import",
+  ] },
+  { mime = "audio/*", use = [
+    "vlc",
+    "audacity",
+  ] },
+  { url = "*.nef", use = [
+    "gwenview",
+    "darktable",
+  ] },
   { mime = "text/*", use = "edit" },
+  { url = "*.AppImage", use = "appimage" },
+  { url = "*.kdenlive", use = "kdenlive" },
   # Archive
   { mime = "application/x-tar", use = "extract" },
   { mime = "application/x-gtar", use = "extract" },
@@ -72,7 +101,7 @@ prepend_rules = [
   { mime = "application/vnd.ms-fontobject", use = "installFont" },
   { mime = "application/ms-opentype", use = "installFont" },
   # Onlyoffice
-  { mime = "application/pdf", use = "onlyoffice" },
+  # { mime = "application/pdf", use = "onlyoffice" },
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "onlyoffice" },
   { mime = "application/msword", use = "onlyoffice" },
   { mime = "application/vnd.ms-word.document.macroenabled.12", use = "onlyoffice" },
@@ -92,8 +121,6 @@ prepend_rules = [
   { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "onlyoffice" },
   { url = "*.docx", use = "onlyoffice" },
   { url = "*.xlsx", use = "onlyoffice" },
-  # Default
-  { mime = "*", use = "default" },
 ]
 
 [plugin]
