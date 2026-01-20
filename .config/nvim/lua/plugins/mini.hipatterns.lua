@@ -165,6 +165,28 @@ return {
         end,
         extmark_opts = { priority = 1000 },
       },
+
+      pdf_rgb_color_1 = { -- matches things like 1 0 0 rg or 0 1 0 RG
+        pattern = "[10]%.?%d*%s[10]%.?%d*%s[10]%.?%d*%s[rR][gG]",
+        -- pattern = "[10]%s[10]%s[10]%s[rR][gG]",
+        group = function(_, _, data)
+          local match = data.full_match:sub(0, -3)
+          local splitted = split(match, "%s")
+          if #splitted ~= 3 then
+            return
+          end
+
+          local rx = string.format("%02x", splitted[1] * 255)
+          local gx = string.format("%02x", splitted[2] * 255)
+          local bx = string.format("%02x", splitted[3] * 255)
+
+          if #rx ~= 2 or #gx ~= 2 or #bx ~= 2 then
+            return
+          end
+          return require("mini.hipatterns").compute_hex_color_group("#" .. rx .. gx .. bx, "bg")
+        end,
+        extmark_opts = { priority = 1000 },
+      },
     },
   },
 }
