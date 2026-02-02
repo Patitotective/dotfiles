@@ -5,6 +5,7 @@ app2unit-git
 arch-wiki-docs
 arch-wiki-lite
 ark
+audacity
 aurorae
 banner
 base
@@ -195,6 +196,7 @@ pandoc-bin
 parallel
 partitionmanager
 pavucontrol
+pdftk
 perl-image-exiftool
 pipewire-alsa
 plasma-activities-stats
@@ -220,6 +222,7 @@ print-manager
 pwgen
 python-mutagen
 python-pip
+python-virtualenv
 qqc2-breeze-style
 qt5-imageformats
 qt5ct

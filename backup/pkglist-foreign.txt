@@ -5,6 +5,7 @@ bluej
 brogue-ce
 brother-mfc-l2860dwe
 bzmenu-git
+cht.sh-git
 dragon-drop
 festival-freebsoft-utils
 firefox-tridactyl-native-bin
