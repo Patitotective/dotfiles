@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="15.7518193672663"
-         height="20.2618350794764" />
+         width="327.411205862445"
+         height="399.615805318036" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -308,7 +308,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px" />
+       unit="mm" />
     <eventcontext
        id="text"
        usecurrent="1"
@@ -330,6 +330,8 @@
        id="nodes"
        selcue="1"
        gradientdrag="1"
+       changelayer="0"
+       changepage="0"
        pathflash_enabled="1"
        pathflash_unselected="0"
        pathflash_timeout="500"
@@ -399,7 +401,8 @@
        gradientdrag="0"
        changelayer="1"
        changepage="1"
-       lock_aspect_ratio="1" />
+       lock_aspect_ratio="1"
+       touch_box="0" />
     <eventcontext
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
@@ -546,7 +549,7 @@
   </group>
   <group
      id="colorselector"
-     page="1"
+     page="CMYK"
      switcher="1">
     <group
        id="RGB"
@@ -613,7 +616,9 @@
     <group
        id="xml"
        h="500"
-       w="300" />
+       w="300"
+       layout="0"
+       panedpos="732" />
     <group
        id="find" />
     <group
@@ -639,7 +644,7 @@
        path="">
       <group
          id="exportarea"
-         value="drawing" />
+         value="selection" />
       <group
          id="defaultxdpi" />
       <group
@@ -647,14 +652,14 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="36.7659530639648" />
+         value="300.000030517578" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path=""
+       path="/home/cristobal/Documents/trampantojo/photos/editable"
        use_current_dir="1"
        enable_svgexport="0" />
     <group
@@ -666,11 +671,11 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/cristobal/Downloads/Rosita/" />
+       path="/home/cristobal/Downloads/" />
     <group
        id="import"
        enable_preview="1"
-       path="/home/cristobal/Downloads/Rosita/"
+       path="/home/cristobal/Downloads/"
        ask="0"
        ask_svg="1"
        link="embed"
@@ -718,6 +723,18 @@
     <group
        id="objects"
        expand_to_layer="1" />
+    <group
+       id="attrib"
+       precision="2" />
+    <group
+       id="object-properties">
+      <group
+         id="path-panel"
+         precision="2" />
+    </group>
+    <group
+       id="object-properties-widget"
+       expand-props="1" />
   </group>
   <group
      id="printing">
@@ -1000,7 +1017,9 @@
     <group
        id="boot"
        theme="symbolic"
-       mode="0">
+       mode="0"
+       showsplash="0"
+       showwelcome="0">
       <group
          id="shown"
          ver1.4.1="1" />
@@ -1052,13 +1071,14 @@
      org.inkscape.output.png.inkscape.png_antialias="2"
      org.inkscape.input.gdkpixbuf.jpg.do_not_ask="1"
      org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5"
-     org.inkscape.input.svg.scale="auto" />
+     org.inkscape.input.svg.scale="auto"
+     org.inkscape.output.pdf.cairorenderer.resolution="96" />
   <group
      id="desktop"
-     style="fill:#86615f;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:4000px;line-height:1000;letter-spacing:20px;stroke-width:1.0015748;fill-opacity:0.68540484">
+     style="fill:#efefa4;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:8px;line-height:1000;letter-spacing:20px;stroke-width:0.75590551;stroke:#000000;paint-order:stroke fill markers;opacity:0;fill-opacity:0.67911708">
     <group
-       width="900"
-       height="852"
+       width="1025"
+       height="1050"
        x="0"
        y="0"
        maximized="1"
@@ -1092,7 +1112,8 @@
        iconsize="16"
        width="26">
       <group
-         id="buttons" />
+         id="buttons"
+         showLPETool="0" />
     </group>
     <group
        id="controlbars"
