@@ -138,7 +138,7 @@
     },
     "return-type": "json",
     "exec": "$HOME/.config/waybar/scripts/checkIdleInhibit.fish",
-    "on-click": "$HOME/scripts/hypr/toggleIdleInhibit.fish",
+    "on-click": "$HOME/.config/hypr/scripts/toggleIdleInhibit.fish",
     "signal": 1,
   },
   "hyprland/workspaces": {
@@ -177,9 +177,9 @@
     "format": "{icon}  {volume}%", // note there is an en space and a six-per-em space
     "format-muted": "󰖁  {volume}%", // note there is an en space and a six-per-em space
     "on-click": "pavucontrol -t 3",
-    "on-click-middle": "~/scripts/hypr/audiocontrol.fish toggle",
-    "on-scroll-up": "~/scripts/hypr/audiocontrol.fish +0.01",
-    "on-scroll-down": "~/scripts/hypr/audiocontrol.fish -0.01",
+    "on-click-middle": "~/.config/hypr/scripts/audiocontrol.fish toggle",
+    "on-scroll-up": "~/.config/hypr/scripts/audiocontrol.fish +0.01",
+    "on-scroll-down": "~/.config/hypr/scripts/audiocontrol.fish -0.01",
     "tooltip-format": "  {desc}",
     "format-icons": {
       // "headphone": "",
@@ -209,9 +209,9 @@
     "format-source": " {volume}%", // note there is a three-per-em space
     "format-source-muted": " {volume}%", // note there is an en space
     "on-click": "pavucontrol -t 4",
-    "on-click-middle": "~/scripts/hypr/miccontrol.fish toggle",
-    "on-scroll-up": "~/scripts/hypr/miccontrol.fish +0.01",
-    "on-scroll-down": "~/scripts/hypr/miccontrol.fish -0.01",
+    "on-click-middle": "~/.config/hypr/scripts/miccontrol.fish toggle",
+    "on-scroll-up": "~/.config/hypr/scripts/miccontrol.fish +0.01",
+    "on-scroll-down": "~/.config/hypr/scripts/miccontrol.fish -0.01",
     "tooltip-format": " {source_desc}",
     "scroll-step": 5
   },
@@ -288,7 +288,7 @@
   },
   "custom/power": {
     "format": "",
-    "on-click": "~/scripts/hypr/powerMenu.sh",
+    "on-click": "~/.config/hypr/scripts/wlogout/powerMenu.sh",
     "tooltip-format": "Power menu"
   },
   // modules for spaceing //
