@@ -12,7 +12,7 @@ title_format = "yazi {cwd}"
 [preview]
 wrap = "no"
 tab_size = 2
-image_delay = 10
+image_delay = 20
 max_width = 2500
 max_height = 2500
 
@@ -31,7 +31,7 @@ appimage = [
   { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "unix" },
 ]
 audacity = [{ run = 'audacity "%s"', orphan = true, for = "unix" }]
-gimp = [{ run = 'gimp "%s', orphan = true, for = "unix" }]
+gimp = [{ run = 'gimp "%s"', orphan = true, for = "unix" }]
 installFont = [
   { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "unix" },
 ]
@@ -173,4 +173,4 @@ prepend_fetchers = [
 ]
 
 [tasks]
-# image_alloc = 1073741824  # = 1024*1024*1024 = 1024MB
+image_alloc = 1073741824 # = 1024*1024*1024 = 1024MB
