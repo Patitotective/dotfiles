@@ -308,7 +308,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm" />
+       unit="px" />
     <eventcontext
        id="text"
        usecurrent="1"
@@ -618,7 +618,7 @@
        h="500"
        w="300"
        layout="0"
-       panedpos="732" />
+       panedpos="421" />
     <group
        id="find" />
     <group
@@ -652,7 +652,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="300.000030517578" />
+         value="159.545562744141" />
     </group>
     <group
        id="save_as"
@@ -1075,10 +1075,10 @@
      org.inkscape.output.pdf.cairorenderer.resolution="96" />
   <group
      id="desktop"
-     style="fill:#efefa4;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:8px;line-height:1000;letter-spacing:20px;stroke-width:0.75590551;stroke:#000000;paint-order:stroke fill markers;opacity:0;fill-opacity:0.67911708">
+     style="fill:#fcfcfc;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:8px;line-height:1000;letter-spacing:20px;stroke-width:0.75590551;stroke:#000000;paint-order:stroke fill markers;opacity:0;fill-opacity:0.73077339">
     <group
        width="1025"
-       height="1050"
+       height="506"
        x="0"
        y="0"
        maximized="1"
