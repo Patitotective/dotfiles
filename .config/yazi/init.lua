@@ -64,7 +64,7 @@ require("relative-motions"):setup({
 })
 
 require("yatline"):setup({
-	tab_width = 20,
+	tab_width = 40,
 	show_background = false,
 
 	component_positions = { "header", "tab", "status" },

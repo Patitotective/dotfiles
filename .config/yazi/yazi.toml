@@ -17,31 +17,43 @@ max_width = 2500
 max_height = 2500
 
 [opener]
-gwenview = [{ run = 'gwenview "%s"', orphan = true, for = "unix" }]
-okular = [{ run = 'okular "%s"', orphan = true, for = "unix" }]
-inkscape = [{ run = 'inkscape "%s"', orphan = true, for = "unix" }]
-vlc = [{ run = 'vlc "%s"', orphan = true, for = "unix" }]
+gwenview = [
+  # { run = 'gwenview "%s"', orphan = true, for = "linux" }
+  { run = 'echo "%s" > .tmp && cat .tmp | xargs gwenview && rm .tmp ', desc = "gwenview", orphan = true, for = "linux" }, # FIXME: why do i have to do this
+]
+okular = [
+  { run = 'echo "%s" > .tmp && cat .tmp | xargs okular && rm .tmp ', desc = "okular", orphan = true, for = "linux" }, # FIXME: why do i have to do this
+]
+inkscape = [{ run = 'inkscape "%s"', orphan = true, for = "linux" }]
+vlc = [
+  # { run = 'vlc "%s"', orphan = true, for = "linux" }
+  { run = 'echo "%s" > .tmp && cat .tmp | xargs vlc && rm .tmp ', desc = "vlc", orphan = true, for = "linux" }, # FIXME: why do i have to do this
+]
 ouch = [
-  { run = 'ouch d -y "%s"', desc = "extract here with ouch", for = "unix" },
+  { run = 'ouch d -y "%s"', desc = "extract here with ouch", for = "linux" },
 ]
 onlyoffice = [
-  { run = 'onlyoffice-desktopeditors "%s"  --xdg-desktop-portal=default', orphan = true, for = "unix" },
+  # { run = 'onlyoffice-desktopeditors "%s"  --xdg-desktop-portal=default', orphan = true, for = "linux" },
+  { run = 'echo "%s" > .tmp && cat .tmp | xargs onlyoffice-desktopeditors --xdg-desktop-portal=default && rm .tmp ', desc = "onlyoffice", orphan = true, for = "linux" }, # FIXME: why do i have to do this
 ]
 appimage = [
-  { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "unix" },
+  { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "linux" },
 ]
-audacity = [{ run = 'audacity "%s"', orphan = true, for = "unix" }]
-gimp = [{ run = 'gimp "%s"', orphan = true, for = "unix" }]
+audacity = [
+  # { run = 'audacity "%1"', orphan = true, for = "linux" }
+  { run = 'echo "%s" > .tmp && cat .tmp | xargs audacity && rm .tmp ', desc = "audacity", orphan = true, for = "linux" }, # FIXME: why do i have to do this
+]
+gimp = [{ run = 'gimp "%s"', orphan = true, for = "linux" }]
 installFont = [
-  { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "unix" },
+  { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "linux" },
 ]
-darktable = [{ run = 'darktable "%s"', orphan = true, for = "unix" }]
+darktable = [{ run = 'darktable "%s"', orphan = true, for = "linux" }]
 kdenlive-import = [
-  { run = 'echo "%s" | tr " " "," | xargs kdenlive -i ', orphan = true, desc = "import into kdenlive", for = "unix" },
+  { run = 'echo "%s" | tr " " "," | xargs kdenlive -i ', orphan = true, desc = "import into kdenlive", for = "linux" },
 ]
-kdenlive = [{ run = 'kdenlive "%s', orphan = true, for = "unix" }]
+kdenlive = [{ run = 'kdenlive "%s', orphan = true, for = "linux" }]
 default = [{ run = 'xdg-open "%s"', desc = "default" }]
-edit = [{ run = "$EDITOR %s", desc = "edit", block = true, for = "unix" }]
+edit = [{ run = "$EDITOR %s", desc = "editor", block = true, for = "linux" }]
 
 [open]
 append_rules = [{ url = "*", use = "default" }]
@@ -121,6 +133,7 @@ prepend_rules = [
   { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "onlyoffice" },
   { url = "*.docx", use = "onlyoffice" },
   { url = "*.xlsx", use = "onlyoffice" },
+  { mime = "application/ms-powerpoint", use = "onlyoffice" },
 ]
 
 [plugin]
