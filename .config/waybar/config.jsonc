@@ -97,7 +97,7 @@
   "temperature": {
     "critical-threshold": 80,
     "warning-threshold": 60,
-    "format-critical": " {temperatureC}°C",
+    "format-critical": "  {temperatureC}°C",
     "tooltip-format": "{temperatureF}°F\n{temperatureK} K",
     "format": "{icon} {temperatureC}°C", // in between there is a three-per-em space
     "format-icons": [
@@ -145,15 +145,15 @@
     "all-outputs": true,
     "active-only": false,
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace -1",
-    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
     "signal": 2,
     // "show-special": true,
   },
   "hyprland/window": {
     "format": "  {title}",
-    "on-scroll-up": "hyprctl dispatch workspace -1; kill -SIGRTMIN+2 $(pgrep waybar)",
-    "on-scroll-down": "hyprctl dispatch workspace +1; kill -SIGRTMIN+2 $(pgrep waybar)",
+    "on-scroll-up": "hyprctl dispatch workspace e-1; kill -SIGRTMIN+2 $(pgrep waybar)",
+    "on-scroll-down": "hyprctl dispatch workspace e+1; kill -SIGRTMIN+2 $(pgrep waybar)",
     "separate-outputs": true,
     "rewrite": {
       "  [~/](.*)": " $1",
