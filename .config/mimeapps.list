@@ -71,17 +71,16 @@ application/vnd.sun.xml.calc=onlyoffice-desktopeditors.desktop
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
 
 # Browser
-application/x-extension-htm=floorp.desktop;
-application/x-extension-html=floorp.desktop;
-application/x-extension-shtml=floorp.desktop;
-application/x-extension-xht=floorp.desktop;
-application/x-extension-xhtml=floorp.desktop;
-x-scheme-handler/mailto=floorp.desktop;
-x-scheme-handler/http=floorp.desktop;
-x-scheme-handler/https=floorp.desktop;
-x-scheme-handler/chrome=floorp.desktop;
-application/xhtml+xml=floorp.desktop;
-text/html=floorp.desktop;
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;
+text/html=zen.desktop;
+application/x-extension-htm=zen.desktop;
+application/x-extension-html=zen.desktop;
+application/x-extension-shtml=zen.desktop;
+application/xhtml+xml=zen.desktop;
+application/x-extension-xhtml=zen.desktop;
+application/x-extension-xht=zen.desktop;
 
 # File viewer
 inode/directory=yazi.desktop
