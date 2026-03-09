@@ -17,42 +17,30 @@ max_width = 2500
 max_height = 2500
 
 [opener]
-gwenview = [
-  # { run = 'gwenview "%s"', orphan = true, for = "linux" }
-  { run = 'echo "%s" > .tmp && cat .tmp | xargs gwenview && rm .tmp ', desc = "gwenview", orphan = true, for = "linux" }, # FIXME: why do i have to do this
-]
-okular = [
-  { run = 'echo "%s" > .tmp && cat .tmp | xargs okular && rm .tmp ', desc = "okular", orphan = true, for = "linux" }, # FIXME: why do i have to do this
-]
-inkscape = [{ run = 'inkscape "%s"', orphan = true, for = "linux" }]
-vlc = [
-  # { run = 'vlc "%s"', orphan = true, for = "linux" }
-  { run = 'echo "%s" > .tmp && cat .tmp | xargs vlc && rm .tmp ', desc = "vlc", orphan = true, for = "linux" }, # FIXME: why do i have to do this
-]
+gwenview = [{ run = 'gwenview %s', orphan = true, for = "linux" }]
+okular = [{ run = 'okular %s', orphan = true, for = "linux" }]
+inkscape = [{ run = 'inkscape %s', orphan = true, for = "linux" }]
+vlc = [{ run = 'vlc %s', orphan = true, for = "linux" }]
 ouch = [
-  { run = 'ouch d -y "%s"', desc = "extract here with ouch", for = "linux" },
+  { run = 'ouch d -y %s', desc = "extract here with ouch", for = "linux" },
 ]
 onlyoffice = [
-  # { run = 'onlyoffice-desktopeditors "%s"  --xdg-desktop-portal=default', orphan = true, for = "linux" },
-  { run = 'echo "%s" > .tmp && cat .tmp | xargs onlyoffice-desktopeditors --xdg-desktop-portal=default && rm .tmp ', desc = "onlyoffice", orphan = true, for = "linux" }, # FIXME: why do i have to do this
+  { run = 'onlyoffice-desktopeditors %s --xdg-desktop-portal=default', orphan = true, for = "linux" },
 ]
 appimage = [
-  { run = 'gearlever --integrate -y "%1"', orphan = true, desc = "install appimage", for = "linux" },
+  { run = 'gearlever --integrate -y %s1', orphan = true, desc = "install appimage", for = "linux" },
 ]
-audacity = [
-  # { run = 'audacity "%1"', orphan = true, for = "linux" }
-  { run = 'echo "%s" > .tmp && cat .tmp | xargs audacity && rm .tmp ', desc = "audacity", orphan = true, for = "linux" }, # FIXME: why do i have to do this
-]
-gimp = [{ run = 'gimp "%s"', orphan = true, for = "linux" }]
+audacity = [{ run = 'audacity %s1', orphan = true, for = "linux" }]
+gimp = [{ run = 'gimp %s', orphan = true, for = "linux" }]
 installFont = [
-  { run = '$HOME/scripts/installFont.fish "%s"', orphan = true, desc = "install font", for = "linux" },
+  { run = '$HOME/scripts/installFont.fish %s', orphan = true, desc = "install font", for = "linux" },
 ]
-darktable = [{ run = 'darktable "%s"', orphan = true, for = "linux" }]
+darktable = [{ run = 'darktable %s', orphan = true, for = "linux" }]
 kdenlive-import = [
-  { run = 'echo "%s" | tr " " "," | xargs kdenlive -i ', orphan = true, desc = "import into kdenlive", for = "linux" },
+  { run = 'echo %s | tr " " "," | xargs kdenlive -i ', orphan = true, desc = "import into kdenlive", for = "linux" },
 ]
-kdenlive = [{ run = 'kdenlive "%s', orphan = true, for = "linux" }]
-default = [{ run = 'xdg-open "%s"', desc = "default" }]
+kdenlive = [{ run = 'kdenlive %s', orphan = true, for = "linux" }]
+default = [{ run = 'xdg-open %s', desc = "default" }]
 edit = [{ run = "$EDITOR %s", desc = "editor", block = true, for = "linux" }]
 
 [open]

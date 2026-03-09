@@ -301,7 +301,8 @@ keymap = [
   #
   # bookmarks
   { on = [
-    "m",
+    "b",
+    "b",
   ], run = "plugin bookmarks save", desc = "save current position as a bookmark" },
   { on = [
     "'",
