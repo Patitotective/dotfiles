@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-set layouts dwindle master scrolling
+set layouts dwindle master scrolling #monocle
 set cur_layout (hyprctl -j getoption general:layout | jq --raw-output '.str')
 
 set e 0
