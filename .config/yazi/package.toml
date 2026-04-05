@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "25918dc"
-hash = "8a7c58225816a163a6e8730c0adafbc8"
+rev = "e84f4fe"
+hash = "4c0260feb50ea2437380690ffc241da7"
 
 [[plugin.deps]]
 use = "dedukun/bookmarks"
@@ -15,48 +15,48 @@ hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "594b8a2"
-hash = "c9e628fc0312d198db22ae2fa74883b"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "25918dc"
-hash = "8da0b15a97b5dfd13941d1ecc617ac7c"
+rev = "e84f4fe"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "0e56060"
-hash = "ab2e66065a94cca4886b303518e44bd8"
+rev = "8c4086c"
+hash = "85316b5e9abeae2531d3e5d02a094381"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
-rev = "4eda0bf"
-hash = "778941e7f1ebbacd60f4e254bb3c51de"
+rev = "0e08704"
+hash = "e4d7c06510b4fe5f64ae31fbb4e017d6"
 
 [[plugin.deps]]
 use = "Deepak22903/kdeconnect-send"
-rev = "7d9098d"
-hash = "498bda3e06d793f79fe1df7b28fc14a1"
+rev = "8a6936b"
+hash = "8d43ac149f5cf7b5eea4ce2ebbe8e1ba"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "9d64595"
-hash = "b6f691f01a2122bd94866800d4d12a22"
+rev = "3abc0a2"
+hash = "eed89e75671723c8f9390a2862af0e4e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "25918dc"
-hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+rev = "e84f4fe"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "25918dc"
+rev = "e84f4fe"
 hash = "6fa6a05a81c98dd000fbca3cca6e9682"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "8ab04b2"
-hash = "bdd196f71aa3e6aa02d1b1d6cad22424"
+rev = "75f93be"
+hash = "defd59f9ca77ad958e7d86ae56a2736f"
 
 [[plugin.deps]]
 use = "boydaihungst/file-extra-metadata"
@@ -70,8 +70,8 @@ hash = "5eeb4f0919ce6be5d941a9290c131d7d"
 
 [[plugin.deps]]
 use = "boydaihungst/pref-by-location"
-rev = "ad37b36"
-hash = "49f71fc79d83db5bcffe21abfef115a"
+rev = "8d355f5"
+hash = "9ddac64e0db5178e2710fa6cfc2dd004"
 
 [[plugin.deps]]
 use = "carlosedp/yatline"
