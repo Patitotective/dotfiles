@@ -83,6 +83,7 @@ local semicolonCsv = {
   "/home/cristobal/Documents/orgfiles/notasDeCorteUV.csv",
   "/home/cristobal/Documents/orgfiles/notasDeCorteUPV.csv",
 }
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
   callback = function(args)
@@ -111,7 +112,7 @@ vim.api.nvim_create_autocmd("BufRead", {
 
 vim.api.nvim_create_autocmd("BufWriteCmd", {
   pattern = specialCsv,
-  callback = function()
+  callback = function(args)
     local cursorPos = vim.api.nvim_win_get_cursor(0)
     vim.cmd("silent %s/:\\n  /:/e")
     vim.cmd("silent %s/<br>\\n    /<br>/e")

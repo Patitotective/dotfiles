@@ -20,9 +20,19 @@ vim.api.nvim_create_user_command("OverseerRestartLast", function()
 end, {})
 
 vim.api.nvim_create_user_command("LspStart", function(args)
-  vim.lsp.enable(args.fargs[1]) -- Enable the specified server
+  -- If no argument provided, enable all configured servers for the buffer
+  local name = args.fargs[1]
+  vim.lsp.enable(name and { name } or nil, true)
 end, { nargs = "?" })
 
 vim.api.nvim_create_user_command("LspStop", function(args)
-  vim.lsp.disable(args.fargs[1]) -- Disable the specified server
+  -- If no argument provided, disable all active servers for the buffer
+  local name = args.fargs[1]
+  vim.lsp.enable(name and { name } or nil, false)
 end, { nargs = "?" })
+
+vim.api.nvim_create_user_command("Anki", function()
+  local file = vim.api.nvim_buf_get_name(0)
+  os.execute("~/scripts/ankiImport.py " .. file .. "> /dev/null &") -- NOTE: triggers a corrupt collection warning
+  vim.notify("Sent data to Anki")
+end, {})
