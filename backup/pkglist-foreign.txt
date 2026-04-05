@@ -9,11 +9,11 @@ cht.sh-git
 dragon-drop
 festival-freebsoft-utils
 firefox-tridactyl-native-bin
-floorp-bin
 hours
 libfmod
 manga-tui
 powerpill
+python-pip-system-certs
 termpicker-bin
 viu-media
 wifitui-bin
