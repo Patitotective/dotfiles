@@ -48,6 +48,7 @@
     // "custom/keybindhint",
     "custom/capslock",
     "custom/numlock",
+    "custom/touchpad",
     "custom/end",
     //
     "custom/start",
@@ -256,6 +257,16 @@
       "<span foreground='#f2f4f8ff'>󰎦</span>" // unlocked
     ],
     "signal": 4,
+    "return-type": "json"
+  },
+  "custom/touchpad": {
+    "exec": "$HOME/.config/waybar/scripts/touchpad_status.fish",
+    "format": "{icon}",
+    "format-icons": [
+      "<span foreground='#f2f4f87f'></span>", // enabled
+      "<span foreground='#f2f4f8ff'></span>" // disabled
+    ],
+    "signal": 5,
     "return-type": "json"
   },
   "tray": {
