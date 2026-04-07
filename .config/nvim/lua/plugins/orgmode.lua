@@ -116,8 +116,8 @@ return {
       org = {
         org_cycle = false,
         org_global_cycle = false,
-        org_meta_return = "<leader>oih",
-        org_insert_heading_respect_content = "<leader><cr>",
+        -- org_meta_return = "<leader>oih",
+        -- org_insert_heading_respect_content = "<leader><cr>",
       },
     },
     ui = {
