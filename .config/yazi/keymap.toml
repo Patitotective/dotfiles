@@ -271,6 +271,9 @@ keymap = [
     "g",
     "u",
   ], run = "cd ~/Sync/spain/upv/", desc = "go to upv" },
+  {
+    on = ["g", "U"], run = "cd ~/Documents/upv", desc = "go to Documents/upv"
+  },
   # tabs
   { on = [
     "t",
