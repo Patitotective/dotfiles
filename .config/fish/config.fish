@@ -38,7 +38,10 @@ fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
 alias onlyoffice="onlyoffice-desktopeditors --xdg-desktop-portal=default"
 alias ls=eza
 alias jless="jless --relative-line-numbers"
-alias orgfiles="cd ~/Documents/orgfiles; nvim \"+lua require('persistence').load()\""
+function orgfiles
+    cd ~/Documents/orgfiles
+    nvim -c "lua vim.schedule(require('persistence').load)"
+end
 
 # if i run this then suddenly it won't show up
 # tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='One line' --prompt_spacing=Compact --icons='Few icons' --transient=No
