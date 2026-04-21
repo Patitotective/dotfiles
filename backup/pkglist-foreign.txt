@@ -1,5 +1,6 @@
 advcpmv
 anki-bin
+banner
 bemoji
 bluej
 brogue-ce

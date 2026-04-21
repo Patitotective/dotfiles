@@ -7,7 +7,6 @@ arch-wiki-lite
 ark
 audacity
 aurorae
-banner
 base
 base-devel
 bash-completion
@@ -33,6 +32,7 @@ cpu-x
 crawl-ncurses
 crawl-tiles
 cups
+d2
 darktable
 dconf-editor
 ddcci-driver-linux-dkms-git
@@ -86,7 +86,6 @@ gvfs
 gvfs-afc
 gvfs-dnssd
 gvfs-goa
-gvfs-google
 gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
@@ -163,6 +162,7 @@ man-db
 man-pages
 mariadb
 mediainfo
+mermaid-cli
 milou
 minecraft-launcher
 mingw-w64-binutils
@@ -174,7 +174,7 @@ mkinitcpio-firmware
 mpv
 mtools
 ncmpcpp
-neovim-git
+neovim
 network-manager-applet
 networkmanager
 networkmanager-dmenu-git
@@ -244,6 +244,7 @@ steam
 syncthing
 system-config-printer
 tabiew
+tectonic
 tela-icon-theme
 telegram-desktop
 testdisk
@@ -264,7 +265,7 @@ vlc
 vlc-plugin-ffmpeg
 w3m
 wacomtablet
-waybar
+waybar-git
 wev
 wget
 wine
