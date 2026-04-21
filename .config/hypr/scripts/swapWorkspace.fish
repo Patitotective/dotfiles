@@ -18,14 +18,15 @@ set clients (hyprctl -j clients)
 set activeWorkspaceClientsAddresses (echo $clients | jq --raw-output ".[] | select(.workspace.id==$activeWorkspaceId) | .address")
 set otherWorkspaceClientsAddresses (echo $clients | jq --raw-output ".[] | select(.workspace.id==$otherWorkspaceId) | .address")
 
-set activeWorkspaceClientsSizes (echo $clients | jq --raw-output ".[] | select(.workspace.id==$activeWorkspaceId) | .size | join(\" \")")
-set otherWorkspaceClientsSizes (echo $clients | jq --raw-output ".[] | select(.workspace.id==$otherWorkspaceId) | .size | join(\" \")")
+# set activeWorkspaceClientsSizes (echo $clients | jq --raw-output ".[] | select(.workspace.id==$activeWorkspaceId) | .size | join(\" \")")
+# set otherWorkspaceClientsSizes (echo $clients | jq --raw-output ".[] | select(.workspace.id==$otherWorkspaceId) | .size | join(\" \")")
 
 for address in $activeWorkspaceClientsAddresses
     hyprctl dispatch movetoworkspacesilent $otherWorkspaceId,address:$address
 end
 
 # TODO: resize windows to their prev sizes, even though the order isn't maintained
+# TODO: position window where they were
 
 # for i in (seq 1 (count $activeWorkspaceClientsSizes))
 #     hyprctl dispatch resizewindowpixel exact $activeWorkspaceClientsSizes[$i],address:$activeWorkspaceClientsAddresses[$i]
