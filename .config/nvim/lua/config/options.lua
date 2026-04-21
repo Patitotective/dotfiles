@@ -33,6 +33,6 @@ end, { nargs = "?" })
 
 vim.api.nvim_create_user_command("Anki", function()
   local file = vim.api.nvim_buf_get_name(0)
-  os.execute("~/scripts/ankiImport.py " .. file .. "> /dev/null &") -- NOTE: triggers a corrupt collection warning
+  os.execute("~/scripts/ankiImport.py " .. file .. "> /dev/null &") -- NOTE: triggers a corrupt collection warning if run while anki is open
   vim.notify("Sent data to Anki")
 end, {})

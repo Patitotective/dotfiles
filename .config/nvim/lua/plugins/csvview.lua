@@ -3,7 +3,12 @@ return {
   ---@module "csvview"
   ---@type CsvView.Options
   opts = {
-    parser = { comments = { "#", "//" } },
+    parser = {
+      comments = { "#", "//" },
+      delimiter = {
+        ft = {},
+      },
+    },
     view = {
       header_lnum = true,
       sticky_header = {

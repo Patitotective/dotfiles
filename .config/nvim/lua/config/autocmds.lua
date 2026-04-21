@@ -71,6 +71,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local specialCsvDirs = {
   "/home/cristobal/Sync/spain/upv/anki/",
 }
+-- Colon-delimited
 local specialCsv = {
   "/home/cristobal/Sync/data/study_mext.csv",
   "/home/cristobal/Sync/data/study_bunpou.csv",
@@ -84,6 +85,8 @@ local semicolonCsv = {
   "/home/cristobal/Documents/orgfiles/notasDeCorteUPV.csv",
 }
 
+-- TODO: for some reason this isn't triggered when opening nvim with the orgfiles fish function
+-- and the last opened buffer was a csv file
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "csv", "tsv" },
   callback = function(args)
@@ -95,7 +98,7 @@ vim.api.nvim_create_autocmd("FileType", {
       -- vim.opt_local.commentstring = "# %s" -- TODO: make this work
       -- vim.opt_local.comments = "b:#"
     else
-      require("csvview").enable()
+      vim.cmd("CsvViewEnable")
     end
   end,
 })
@@ -107,6 +110,7 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.cmd("silent /^[^#]/,$s/:/:\\r  /eg")
     vim.cmd("silent %s/<br>/<br>\\r    /eg")
     vim.cmd("silent %s/<hr>/<hr>\\r    /eg")
+    vim.cmd("silent %s/\\\\\\\\/\\\\\\\\\\r    /eg")
   end,
 })
 
@@ -117,10 +121,12 @@ vim.api.nvim_create_autocmd("BufWriteCmd", {
     vim.cmd("silent %s/:\\n  /:/e")
     vim.cmd("silent %s/<br>\\n    /<br>/e")
     vim.cmd("silent %s/<hr>\\n    /<br>/e")
+    vim.cmd("silent %s/\\\\\\\\\\n    /\\\\\\\\/e")
     vim.cmd("write")
     vim.cmd("silent %s/:/:\\r  /eg") -- TODO: make it work as line 14 (    vim.cmd("silent /^[^#]/,$s/:/:\\r  /eg"))
     vim.cmd("silent %s/<br>/&\\r    /eg")
     vim.cmd("silent %s/<hr>/&\\r    /eg")
+    vim.cmd("silent %s/\\\\\\\\/&\\r    /eg")
     vim.cmd("set nomodified")
     vim.api.nvim_win_set_cursor(0, cursorPos)
   end,
@@ -282,3 +288,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.wo.relativenumber = true
   end,
 })
+
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "PersistenceLoadPost",
+--   callback = function(args)
+--     -- We use vim.schedule to ensure the session UI is fully settled
+--     -- before we start re-triggering events.
+--     vim.notify("a")
+--     vim.schedule(function()
+--       vim.notify("b")
+--       if vim.api.nvim_buf_is_valid(args.buf) and vim.api.nvim_buf_is_loaded(args.buf) then
+--         -- Re-trigger FileType and BufReadPost for the buffer
+--         -- this will run all your autocmds (CSV, LSP, etc.)
+--         vim.api.nvim_exec_autocmds("FileType", { buffer = args.buf })
+--         vim.api.nvim_exec_autocmds("BufReadPost", { buffer = args.buf })
+--       end
+--     end)
+--   end,
+-- })
