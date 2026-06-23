@@ -118,8 +118,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="327.411205862445"
-         height="399.615805318036" />
+         width="4165.30834768656"
+         height="5928.34722563984"
+         ry="0" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -318,7 +319,7 @@
        use_svg2="1"
        style="line-height:1.25;font-family:sans-serif;font-size:40px;text-orientation:auto"
        selcue="1"
-       align_mode="0"
+       align_mode="1"
        writing_mode="0"
        orientation_mode="0"
        direction_mode="0">
@@ -422,12 +423,12 @@
        unit="px">
       <group
          id="measure-start"
-         x="2160"
-         y="1308.14754830113" />
+         x="383.142860140885"
+         y="-295.034612480469" />
       <group
          id="measure-end"
-         x="4842.83121905753"
-         y="1274.08662654253" />
+         x="383.142860140886"
+         y="-322.627029418945" />
     </group>
   </group>
   <group
@@ -549,7 +550,7 @@
   </group>
   <group
      id="colorselector"
-     page="CMYK"
+     page="HSV"
      switcher="1">
     <group
        id="RGB"
@@ -618,7 +619,7 @@
        h="500"
        w="300"
        layout="0"
-       panedpos="421" />
+       panedpos="185" />
     <group
        id="find" />
     <group
@@ -652,14 +653,14 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="159.545562744141" />
+         value="300.000030517578" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/cristobal/Documents/trampantojo/photos/editable"
+       path="/home/cristobal/Downloads"
        use_current_dir="1"
        enable_svgexport="0" />
     <group
@@ -671,7 +672,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/cristobal/Downloads/" />
+       path="/home/cristobal/Documents/trampantojo/photos/editable/" />
     <group
        id="import"
        enable_preview="1"
@@ -747,7 +748,9 @@
   <group
      id="options"
      rotationlock="1"
-     onungroup="0">
+     onungroup="0"
+     dpifixbackup="1"
+     dpiupdatemethod="0">
     <group
        id="renderingcache"
        size="512" />
@@ -1072,13 +1075,14 @@
      org.inkscape.input.gdkpixbuf.jpg.do_not_ask="1"
      org.inkscape.output.pdf.cairorenderer.PDFversion="PDF-1.5"
      org.inkscape.input.svg.scale="auto"
-     org.inkscape.output.pdf.cairorenderer.resolution="96" />
+     org.inkscape.output.pdf.cairorenderer.resolution="96"
+     org.inkscape.raster.jpg_output.quality="100" />
   <group
      id="desktop"
-     style="fill:#fcfcfc;text-orientation:auto;-inkscape-font-specification:C059;font-family:C059;font-size:8px;line-height:1000;letter-spacing:20px;stroke-width:0.75590551;stroke:#000000;paint-order:stroke fill markers;opacity:0;fill-opacity:0.73077339">
+     style="fill:none;text-orientation:auto;-inkscape-font-specification:serif;font-family:serif;font-size:21px;line-height:1.2;letter-spacing:0px;paint-order:stroke fill markers;stroke-width:3.77952756;stroke-linecap:round">
     <group
        width="1025"
-       height="506"
+       height="1024"
        x="0"
        y="0"
        maximized="1"
@@ -1220,5 +1224,6 @@
   </group>
   <group
      id="color_scales"
-     wheel_vis_hsl="0" />
+     wheel_vis_hsl="0"
+     wheel_vis_hsv="0" />
 </inkscape>

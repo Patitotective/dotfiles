@@ -11,6 +11,7 @@ return {
     },
     view = {
       header_lnum = true,
+      -- display_mode = "border",
       sticky_header = {
         enabled = true,
         separator = false,

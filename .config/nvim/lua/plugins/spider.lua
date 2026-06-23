@@ -3,7 +3,7 @@
 return {
   {
     "chrisgrieser/nvim-spider",
-    enabled = true,
+    enabled = false,
     -- lazy = false,
     opts = {},
     -- TODO: recognize when the next non-whitespace character is going to be a non-ascii character to use extend_word_motion instead of spider

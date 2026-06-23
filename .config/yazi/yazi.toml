@@ -21,6 +21,7 @@ gwenview = [{ run = 'gwenview %s', orphan = true, for = "linux" }]
 okular = [{ run = 'okular %s', orphan = true, for = "linux" }]
 inkscape = [{ run = 'inkscape %s', orphan = true, for = "linux" }]
 vlc = [{ run = 'vlc %s', orphan = true, for = "linux" }]
+mpv = [{ run = 'mpv %s', orphan = true, for = "linux" }]
 ouch = [
   { run = 'ouch d -y %s', desc = "extract here with ouch", for = "linux" },
 ]
@@ -33,7 +34,7 @@ appimage = [
 audacity = [{ run = 'audacity %s1', orphan = true, for = "linux" }]
 gimp = [{ run = 'gimp %s', orphan = true, for = "linux" }]
 installFont = [
-  { run = '$HOME/scripts/installFont.fish %s', orphan = true, desc = "install font", for = "linux" },
+  { run = '$HOME/scripts/install_font.fish %s', orphan = true, desc = "install font", for = "linux" },
 ]
 darktable = [{ run = 'darktable %s', orphan = true, for = "linux" }]
 kdenlive-import = [
@@ -61,11 +62,13 @@ prepend_rules = [
     "onlyoffice",
   ] },
   { mime = "video/*", use = [
+    "mpv",
     "vlc",
     "gwenview",
     "kdenlive-import",
   ] },
   { mime = "audio/*", use = [
+    "mpv",
     "vlc",
     "audacity",
   ] },

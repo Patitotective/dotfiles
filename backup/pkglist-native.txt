@@ -95,7 +95,6 @@ gvfs-wsdd
 gwenview
 hledger
 hledger-ui
-hledger-web
 hyprcursor
 hyprgraphics
 hypridle
@@ -221,6 +220,8 @@ powerline-fonts
 prettier
 print-manager
 pwgen
+python-build
+python-installer
 python-mutagen
 python-pip
 python-virtualenv
@@ -256,6 +257,7 @@ trash-cli
 tree
 ttf-hack-nerd
 ttf-jetbrains-mono-nerd
+ttyper
 udftools
 unzip
 uwsm
@@ -332,5 +334,3 @@ yt-dlp
 zen-browser-bin
 zenity
 zoxide
-zsh
-zsh-completions

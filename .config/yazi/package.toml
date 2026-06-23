@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "442d908"
-hash = "4c0260feb50ea2437380690ffc241da7"
+rev = "598cdb6"
+hash = "9c7987da2d2a2120dac33abb64132004"
 
 [[plugin.deps]]
 use = "dedukun/bookmarks"
@@ -20,13 +20,13 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "442d908"
+rev = "598cdb6"
 hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "8c4086c"
-hash = "85316b5e9abeae2531d3e5d02a094381"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
 
 [[plugin.deps]]
 use = "boydaihungst/restore"
@@ -35,8 +35,8 @@ hash = "e4d7c06510b4fe5f64ae31fbb4e017d6"
 
 [[plugin.deps]]
 use = "Deepak22903/kdeconnect-send"
-rev = "8a6936b"
-hash = "8d43ac149f5cf7b5eea4ce2ebbe8e1ba"
+rev = "06674d1"
+hash = "869884767c2ef592bfb7f5764f8fcae3"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
@@ -45,28 +45,28 @@ hash = "eed89e75671723c8f9390a2862af0e4e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "442d908"
+rev = "598cdb6"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "442d908"
-hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+rev = "598cdb6"
+hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "49f5ab7"
-hash = "3b9ca58d8963d7213532d155340e0244"
+rev = "a6d30a1"
+hash = "f3970de915c038d09fecf8d93d156fba"
 
 [[plugin.deps]]
 use = "boydaihungst/file-extra-metadata"
-rev = "871ba3c"
-hash = "ff02946e042df4869617edb9aa310523"
+rev = "044274c"
+hash = "14006064a6a53a1770fbdcefb97a8347"
 
 [[plugin.deps]]
 use = "MasouShizuka/projects"
-rev = "198c2ba"
-hash = "5eeb4f0919ce6be5d941a9290c131d7d"
+rev = "112a270"
+hash = "5a4e61f8cae42be53844acaa6c447d96"
 
 [[plugin.deps]]
 use = "boydaihungst/pref-by-location"

@@ -47,7 +47,7 @@ keybinding:
     prevMatch: "N"
     startSearch: /
     optionMenu: <disabled>
-    optionMenu-alt1: '?'
+    optionMenu-alt1: "?"
     select: <space>
     goInto: <enter>
     goInto-alt: l
@@ -66,7 +66,7 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeShellCommand: ':'
+    executeShellCommand: ":"
     createRebaseOptionsMenu: m
 
     # 'Files' appended for legacy reasons
@@ -80,7 +80,7 @@ keybinding:
     prevTab: H
     nextScreenMode: +
     prevScreenMode: _
-    cyclePagers: '|'
+    cyclePagers: "|"
     undo: z
     redo: Z
     filteringMenu: <c-s>
@@ -89,10 +89,10 @@ keybinding:
     copyToClipboard: <c-o>
     openRecentRepos: <c-r>
     submitEditorText: <enter>
-    extrasMenu: '@'
+    extrasMenu: "@"
     toggleWhitespaceInDiffView: <c-w>
-    increaseContextInDiffView: '}'
-    decreaseContextInDiffView: '{'
+    increaseContextInDiffView: "}"
+    decreaseContextInDiffView: "{"
     increaseRenameSimilarityThreshold: )
     decreaseRenameSimilarityThreshold: (
     openDiffTool: <c-t>
@@ -114,11 +114,11 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: '`'
+    toggleTreeView: "`"
     openMergeOptions: M
     openStatusFilter: <c-b>
     copyFileInfoToClipboard: "y"
-    collapseAll: '-'
+    collapseAll: "-"
     expandAll: =
   branches:
     createPullRequest: o
@@ -126,7 +126,7 @@ keybinding:
     copyPullRequestURL: <c-y>
     checkoutBranchByName: c
     forceCheckoutBranch: F
-    checkoutPreviousBranch: '-'
+    checkoutPreviousBranch: "-"
     rebaseBranch: r
     renameBranch: R
     mergeIntoCurrentBranch: M
@@ -159,13 +159,13 @@ keybinding:
     markCommitAsBaseForRebase: B
     tagCommit: T
     checkoutCommit: <space>
-    resetCherryPick: <c-R>
+    resetCherryPick: <c-s-r>
     copyCommitAttributeToClipboard: "y"
     openLogMenu: <c-l>
     openInBrowser: o
     viewBisectOptions: b
     startInteractiveRebase: i
-    selectCommitsOfCurrentBranch: '*'
+    selectCommitsOfCurrentBranch: "*"
   amendAttribute:
     resetAuthor: a
     setAuthor: A

@@ -13,9 +13,11 @@ firefox-tridactyl-native-bin
 hours
 libfmod
 manga-tui
+nbsdgames-git
 powerpill
 python-pip-system-certs
 termpicker-bin
+ttf-times-new-roman
 viu-media
 wifitui-bin
 xdg-desktop-portal-termfilechooser-hunkyburrito-git

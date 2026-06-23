@@ -501,4 +501,4 @@
 # vim: ft=cfg
 [save-body]
     summary = *
-    script = $HOME/.config/dunst/save_body.fish
+    script = $HOME/scripts/dunst_save_body.fish
