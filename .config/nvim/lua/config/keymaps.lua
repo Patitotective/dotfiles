@@ -77,6 +77,11 @@ vim.keymap.set("n", "<leader><tab><s-tab>", "<cmd>tabprev<cr>")
 vim.keymap.set("n", "<leader><tab>0", "<cmd>tabfirst<cr>")
 vim.keymap.set("n", "<leader><tab>$", "<cmd>tablast<cr>")
 
+-- vim.keymap.set({ "n", "x", "o" }, ",", ";", { remap = false, expr = false })
+-- vim.keymap.set({ "n", "x", "o" }, ";", ",", { remap = false, expr = false })
+-- vim.keymap.set({ "n", "v" }, ";", ",", { noremap = true, silent = true, desc = "repeat last movement forward" })
+-- vim.keymap.set({ "n", "v" }, ",", ";", { noremap = true, silent = true, desc = "repeat last movement backward" })
+
 -- Comments
 -- vim.keymap.del("n", "gco")
 -- vim.keymap.del("n", "gcO")

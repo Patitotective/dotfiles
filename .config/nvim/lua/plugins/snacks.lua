@@ -14,6 +14,7 @@ return {
     { "<leader>e", false },
   },
   opts = {
+    scroll = { enabled = false },
     explorer = {
       enabled = false,
     },

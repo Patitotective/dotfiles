@@ -2,6 +2,7 @@
 return {
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
+  lazy = true,
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {

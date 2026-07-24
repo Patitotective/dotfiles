@@ -36,3 +36,16 @@ vim.api.nvim_create_user_command("Anki", function()
   os.execute("~/scripts/ankiImport.py " .. file .. "> /dev/null &") -- NOTE: triggers a corrupt collection warning if run while anki is open
   vim.notify("Sent data to Anki")
 end, {})
+
+vim.g.clipboard = {
+  name = "WlClipboard",
+  copy = {
+    ["+"] = "wl-copy",
+    ["*"] = "wl-copy",
+  },
+  paste = {
+    ["+"] = "wl-paste --no-newline",
+    ["*"] = "wl-paste --no-newline",
+  },
+  cache_enabled = 1,
+}

@@ -1,5 +1,6 @@
 return {
   "stevearc/aerial.nvim",
+  lazy = true,
   keys = {
     {
       "<leader>cs",
@@ -45,6 +46,7 @@ return {
     link_folds_to_tree = false,
     link_tree_to_folds = false,
     -- open_automatic = true,
+    lazy_load = true,
     on_attach = function(bufnr)
       require("aerial").tree_close_all()
     end,
