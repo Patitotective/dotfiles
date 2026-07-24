@@ -1,0 +1,12 @@
+[aw-qt]
+#autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window"]
+# Tell the manager to ONLY start the core database server
+autostart_modules = ["aw-server"]
+
+[aw-qt-testing]
+#autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window"]
+
+[modules]
+# Set these to false to stop tracking your browser, apps, and mouse clicks
+aw-watcher-window = false
+aw-watcher-afk = false
