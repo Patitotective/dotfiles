@@ -4,6 +4,6 @@ mainmod = "SUPER" -- Windows key
 
 launchprefix = "app2unit --"
 
-hyprnim = "~/.nimble/bin/hyprnim"
+-- hyprnim = "~/.nimble/bin/hyprnim"
 
 bordersize = 1

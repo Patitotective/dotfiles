@@ -312,8 +312,8 @@ hl.bind(mainmod .. " + SHIFT + x", hl.dsp.exec_cmd("~/scripts/hypr/toggleEffects
 
 hl.bind(mainmod .. " + SHIFT + r", hl.dsp.exec_cmd("hyprctl reload"), { locked = true })
 
-hl.bind(mainmod .. " + f5", hl.dsp.exec_cmd("$hyprnim monitors --all"), { locked = true })
-hl.bind(mainmod .. " + f6", hl.dsp.exec_cmd("$hyprnim monitors"), { locked = true })
+-- hl.bind(mainmod .. " + f5", hl.dsp.exec_cmd(hyprnim .. " monitors --all"), { locked = true })
+-- hl.bind(mainmod .. " + f6", hl.dsp.exec_cmd(hyprnim .. " monitors"), { locked = true })
 
 hl.bind("mouse:273", hl.dsp.exec_cmd("~/scripts/hypr/desktopRightClick.fish"), { non_consuming = true })
 
@@ -488,9 +488,11 @@ hl.define_submap("resize", function()
 	hl.bind("catchall", hl.dsp.submap("reset"), { release = true })
 end)
 
-hl.bind(mainmod .. " + s", hl.dsp.workspace.toggle_special(""))
-hl.bind("xf86presentation", hl.dsp.workspace.toggle_special(""))
 hl.bind(mainmod .. " + SHIFT + s", hl.dsp.window.move({ workspace = "special" }))
+hl.bind(mainmod .. " + s", hl.dsp.workspace.toggle_special(""))
+-- nhese are the nitro button
+hl.bind("xf86presentation", hl.dsp.workspace.toggle_special(""))
+hl.bind("xf86launch1", hl.dsp.workspace.toggle_special(""))
 
 --wSwitch to the next workspace, but if a special workspace is open, close it (and don't switch worspace)
 local function switch_workspace(params)

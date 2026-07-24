@@ -20,3 +20,9 @@ hl.monitor({
 	position = "auto",
 	scale = "1",
 })
+hl.monitor({
+	output = "desc:Samsung Electric Company SAMSUNG 0x01000E00",
+	mode = "2560x1440@59.95Hz",
+	position = "auto",
+	scale = "1",
+})
