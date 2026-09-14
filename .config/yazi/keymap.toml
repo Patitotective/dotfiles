@@ -271,9 +271,10 @@ keymap = [
     "g",
     "u",
   ], run = "cd ~/Sync/spain/upv/", desc = "go to upv" },
-  {
-    on = ["g", "U"], run = "cd ~/Documents/upv", desc = "go to Documents/upv"
-  },
+  { on = [
+    "g",
+    "U",
+  ], run = "cd ~/Documents/upv", desc = "go to Documents/upv" },
   # tabs
   { on = [
     "t",
@@ -297,7 +298,7 @@ keymap = [
     "g",
     "?",
   ], run = "help" },
-  { on = "<C-n>", run = "shell -- dragon-drop --and-exit --icon-only --on-top --all \"$@\"" }, # dragon (drag and) drop
+  { on = "<C-l>", run = "shell -- dragon-drop --and-exit --icon-only --on-top --all \"$@\"" }, # dragon (drag and) drop
   { on = "<tab>", run = "spot", desc = "spot hovered file" }, # file-extra-metadata
   #
   # plugins
@@ -335,7 +336,7 @@ keymap = [
   { on = "u", run = "plugin restore", desc = "restore last deleted files/folders" },
   # kdeconnect-send
   { on = [
-    "<C-k>",
+    "<C-e>",
   ], run = "plugin kdeconnect-send", desc = "send selected files via kde connect" },
   # mount
   { on = [

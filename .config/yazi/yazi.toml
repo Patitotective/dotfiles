@@ -103,6 +103,7 @@ prepend_rules = [
   { mime = "application/x-font*", use = "installFont" },
   { mime = "application/vnd.ms-fontobject", use = "installFont" },
   { mime = "application/ms-opentype", use = "installFont" },
+  { mime = "application/octet-stream", use = "installFont" },
   # Onlyoffice
   # { mime = "application/pdf", use = "onlyoffice" },
   { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "onlyoffice" },
@@ -178,3 +179,7 @@ prepend_fetchers = [
 
 [tasks]
 image_alloc = 1073741824 # = 1024*1024*1024 = 1024MB
+
+suppress_preload = true
+fetch_workers = 4
+preload_workers = 2
