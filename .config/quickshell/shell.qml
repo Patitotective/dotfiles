@@ -15,15 +15,16 @@ PanelWindow {
     }
     color: "transparent"
 
-    // Force surface to cover the entire monitor, ignoring Waybar's exclusive zone
     WlrLayershell.layer: WlrLayer.Overlay
     exclusionMode: ExclusionMode.Ignore
-
-    // Pass all mouse events straight to windows below
-    mask: Region {}
+    mask: Region {} 
 
     WorkspaceGlow {
         id: workspaceGlow
+    }
+
+    WindowSpotlight {
+        id: windowSpotlight
     }
 
     IpcHandler {
@@ -31,6 +32,11 @@ PanelWindow {
 
         function triggerGlow() {
             workspaceGlow.trigger()
+        }
+
+        // Declare explicit types ('real' or 'int') so IPC can serialize arguments
+        function triggerSpotlight(xVal: real, yVal: real, wVal: real, hVal: real) {
+            windowSpotlight.trigger(xVal, yVal, wVal, hVal)
         }
     }
 }
