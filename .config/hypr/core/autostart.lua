@@ -1,19 +1,20 @@
 require("core.common")
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd(launchprefix .. " /usr/bin/dunst") -- Notification manager
+	hl.exec_cmd(Launchprefix .. " /usr/bin/dunst") -- Notification manager
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP") -- Updates the list of environment variables
 	hl.exec_cmd(
 		'systemd-inhibit --who="Hyprland config" --why="wlogout keybind" --what=handle-power-key --mode=block sleep infinity & echo $! > /tmp/.hyprland-systemd-inhibit'
 	) -- Inhibit shutdown when pressing the power off key, instead run wlogout
 	hl.exec_cmd("bluetoothctl power off")
 	hl.exec_cmd("~/scripts/hypr/idleInhibitManager.fish")
-	hl.exec_cmd(launchprefix .. " ~/.local/bin/clipse -listen") -- Clipboard mangaer
+	hl.exec_cmd(Launchprefix .. " ~/.local/bin/clipse -listen") -- Clipboard mangaer
 	hl.exec_cmd("brightnessctl --restore")
-	-- hl.exec_cmd(launchprefix .. " " .. hyprnim .. " watch")
+	-- hl.exec_cmd(Launchprefix .. " " .. hyprnim .. " watch")
 	-- hl.exec_cmd(hyprnim .. " monitors")
+	hl.exec_cmd("quickshell")
 	hl.exec_cmd(
-		launchprefix
+		Launchprefix
 			.. " kitty --single-instance --class=nvim --hold --override confirm_os_window_close=0 -- fish -c orgfiles",
 		{ workspace = "special silent" }
 	)
@@ -25,10 +26,10 @@ hl.on("hyprland.start", function()
 	)
 
 	-- Ensure dark theme is on
-	h.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"')
-	h.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
+	hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"')
+	hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
 
-	hl.exec_cmd(launchprefix .. " waybar") -- status bar
+	hl.exec_cmd(Launchprefix .. " waybar") -- status bar
 	hl.exec_cmd("~/scripts/hypr/events/onUnlock.sh")
 	hl.exec_cmd("aw-qt") -- Activity watcher
 end)

@@ -16,5 +16,5 @@ hl.config({
 	},
 })
 
--- just outright hard to do, just use mainmod + plus/minus
--- hl.gesture({ fingers = 2, direction = "pinch", mods = mainmod, action = "cursorZoom", zoom_level = 1, mode = "live" })
+-- just outright hard to do, just use Mainmod + plus/minus
+-- hl.gesture({ fingers = 2, direction = "pinch", mods = Mainmod, action = "cursorZoom", zoom_level = 1, mode = "live" })

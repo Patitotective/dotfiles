@@ -9,8 +9,8 @@ hl.config({
 		border_size = 0,
 		-- https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
 		col = {
-			active_border = color9,
-			inactive_border = color4,
+			active_border = Color9,
+			inactive_border = Color4,
 		},
 		resize_on_border = true, -- Set to true enable resizing windows by clicking and dragging on borders and gaps
 		hover_icon_on_border = true,

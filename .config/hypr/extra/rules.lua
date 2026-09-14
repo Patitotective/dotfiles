@@ -14,246 +14,254 @@ require("core.common")
 
 -- Fix some dragging issues with XWayland
 hl.window_rule({
-    name = "fix-xwayland-dragging-issues",
-    match = {
-        class = "negate:audacity",
-        xwayland = true,
-        float = true,
-        pin = false,
-        fullscreen = false,
-    },
-    -- match:title = ^$
-    no_focus = true,
+	name = "fix-xwayland-dragging-issues",
+	match = {
+		class = "negate:audacity",
+		xwayland = true,
+		float = true,
+		pin = false,
+		fullscreen = false,
+	},
+	-- match:title = ^$
+	no_focus = true,
 })
 
 hl.window_rule({
-    name = "anki",
-    match = {
-        class = "anki",
-        title = "Options.*",
-    },
-    float = true,
-    center = true,
-    stay_focused = true,
+	name = "anki",
+	match = {
+		class = "anki",
+		title = "Options.*",
+	},
+	float = true,
+	center = true,
+	stay_focused = true,
 })
 
 hl.window_rule({
-    name = "blueman-manager",
-    match = {
-        class = "blueman-manager",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.35) (monitor_h*0.55)",
+	name = "blueman-manager",
+	match = {
+		class = "blueman-manager",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.35) (monitor_h*0.55)",
 })
 
 hl.window_rule({
-    name = "bluetui",
-    match = {
-        class = "bluetui",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.4) (monitor_h*0.3)",
+	name = "bluetui",
+	match = {
+		class = "bluetui",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.4) (monitor_h*0.3)",
 })
 
 hl.window_rule({
-    name = "clipse",
-    match = {
-        class = "clipse",
-    },
-    float = true,
-    size = "(monitor_w*0.25) (monitor_h*0.5)",
-    center = true,
-    border_size = 1,
+	name = "clipse",
+	match = {
+		class = "clipse",
+	},
+	float = true,
+	size = "(monitor_w*0.25) (monitor_h*0.5)",
+	center = true,
+	border_size = 1,
 })
 
 local passwordDialog = "Password Required - Zen Browser"
 hl.window_rule({
-    name = "zen-password-dialog",
-    match = {
-        class = "zen",
-        title = passwordDialog,
-    },
-    float = true,
-    center = true,
-    dim_around = true,
-    border_size = 1,
+	name = "zen-password-dialog",
+	match = {
+		class = "zen",
+		title = passwordDialog,
+	},
+	float = true,
+	center = true,
+	dim_around = true,
+	border_size = 1,
 })
 
 hl.window_rule({
-    name = "zen-library",
-    match = {
-        class = "zen",
-        title = "Library",
-    },
-    float = true,
-    center = true,
+	name = "zen-library",
+	match = {
+		class = "zen",
+		title = "Library",
+	},
+	float = true,
+	center = true,
 })
 
 hl.window_rule({
-    name = "impala",
-    match = {
-        class = "impala",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.4) (monitor_h*0.5)",
+	name = "impala",
+	match = {
+		class = "impala",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.4) (monitor_h*0.5)",
 })
 
 hl.window_rule({
-    name = "itunes",
-    match = {
-        class = "itunes.exe",
-    },
-    float = true,
-    center = true,
+	name = "itunes",
+	match = {
+		class = "itunes.exe",
+	},
+	float = true,
+	center = true,
 })
 
 hl.window_rule({
-    name = "kalk",
-    match = {
-        class = "org.kde.kalk",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.26) (monitor_h*0.6)",
+	name = "kalk",
+	match = {
+		class = "org.kde.kalk",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.26) (monitor_h*0.6)",
 })
 
 hl.window_rule({
-    name = "kcolorchooser",
-    match = {
-        class = "org.kde.kcolorchooser",
-    },
-    float = true,
-    center = true,
-    border_size = 1,
+	name = "kcolorchooser",
+	match = {
+		class = "org.kde.kcolorchooser",
+	},
+	float = true,
+	center = true,
+	border_size = 1,
 })
 
 hl.window_rule({
-    name = "kdeconnect",
-    match = {
-        class = "org.kde.kdeconnect.daemon",
-    },
-    float = true,
-    center = true,
+	name = "kdeconnect",
+	match = {
+		class = "org.kde.kdeconnect.daemon",
+	},
+	float = true,
+	center = true,
 })
 
 hl.window_rule({
-    name = "khal",
-    match = {
-        class = "khal",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.35) (monitor_h*0.55)",
-    border_size = bordersize,
+	name = "khal",
+	match = {
+		class = "khal",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.35) (monitor_h*0.55)",
+	border_size = Bordersize,
 })
 
 hl.window_rule({
-    name = "nvim-everywhere",
-    match = {
-        class = "nvim-everywhere",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.45) (monitor_h*0.3)",
-    -- dim_around = on
+	name = "nvim-everywhere",
+	match = {
+		class = "nvim-everywhere",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.45) (monitor_h*0.3)",
+	-- dim_around = on
 })
 
 hl.window_rule({
-    name = "pavucontrol",
-    match = {
-        class = "org.pulseaudio.pavucontrol",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.3) (monitor_h*0.65)",
+	name = "pavucontrol",
+	match = {
+		class = "org.pulseaudio.pavucontrol",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.3) (monitor_h*0.65)",
 })
 
 hl.window_rule({
-    name = "showmetheykey",
-    match = {
-        class = "showmethekey-gtk",
-    },
-    float = true,
-    persistent_size = true,
-    no_initial_focus = true,
-    pin = true,
-    no_follow_mouse = true,
-    no_blur = true,
-    move = "(monitor_w-window_w-20) (monitor_h-window_h-20)",
-    size = "(monitor_w*0.3) (monitor_h*0.05)",
+	name = "showmetheykey",
+	match = {
+		class = "one.alynx.showmethekey",
+	},
+	float = true,
+	persistent_size = true,
+	no_initial_focus = true,
+	pin = true,
+	no_follow_mouse = true,
+	no_blur = true,
+	move = "(monitor_w-window_w-20) (monitor_h-window_h-20)",
+	size = "(monitor_w*0.3) (monitor_h*0.05)",
 })
 
 hl.window_rule({
-    name = "termpicker",
-    match = {
-        class = "termpicker",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.28) (monitor_h*0.26)",
+	name = "termpicker",
+	match = {
+		class = "termpicker",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.28) (monitor_h*0.26)",
 })
 
 hl.window_rule({
-    name = "tray-tui",
-    match = {
-        class = "tray-tui",
-    },
-    float = true,
-    center = true,
-    size = "(monitor_w*0.6) (monitor_h*0.5)",
-    border_size = bordersize,
+	name = "tray-tui",
+	match = {
+		class = "tray-tui",
+	},
+	float = true,
+	center = true,
+	size = "(monitor_w*0.6) (monitor_h*0.5)",
+	border_size = Bordersize,
 })
 
 hl.window_rule({
-    name = "dragon-drop",
-    match = {
-        class = "dragon-drop",
-    },
-    group = "barred",
+	name = "dragon-drop",
+	match = {
+		class = "dragon-drop",
+	},
+	group = "barred",
 })
 
 hl.window_rule({
-    name = "gnuplot",
-    match = {
-        class = "gnuplot_qt",
-    },
-    float = true,
+	name = "gnuplot",
+	match = {
+		class = "gnuplot_qt",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name = "zen-browser",
-    match = {
-        class = "zen",
-    },
-    opacity = "1 1",
+	name = "zen-browser",
+	match = {
+		class = "zen",
+	},
+	opacity = "1 1",
 })
 
 hl.window_rule({
-    name = "statgraphics",
-    match = {
-        class = "sgwin.exe",
-        float = true,
-    },
-    no_blur = true,
+	name = "statgraphics",
+	match = {
+		class = "sgwin.exe",
+		float = true,
+	},
+	no_blur = true,
+})
+
+hl.window_rule({
+	name = "kitty-skeleton",
+	match = {
+		class = "kitty-skeleton",
+	},
+	opacity = "0.25 0.25",
+	border_color = "rgb(AAAAAA) rgb(333333) 45deg",
 })
 
 hl.layer_rule({
-    name = "fuzzel",
-    match = {
-        namespace = "launcher",
-    },
-    dim_around = true,
+	name = "fuzzel",
+	match = {
+		namespace = "launcher",
+	},
+	dim_around = true,
 })
 
 hl.layer_rule({
-    name = "wlogout",
-    match = {
-        namespace = "logout_dialog",
-    },
-    dim_around = true,
-    blur = true,
+	name = "wlogout",
+	match = {
+		namespace = "logout_dialog",
+	},
+	dim_around = true,
+	blur = true,
 })
-

@@ -19,8 +19,8 @@ hl.config({
 			enabled = false,
 			range = 3,
 			render_power = 1,
-			color = color12,
-			color_inactive = color4,
+			color = Color12,
+			color_inactive = Color4,
 		},
 		-- https://wiki.hyprland.org/Configuring/Variables/#blur
 		blur = {

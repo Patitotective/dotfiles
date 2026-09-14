@@ -25,63 +25,93 @@
 -- Source: ~/.config/hypr/core/common.conf — convert this file to Lua and ensure it is on Lua's package.path.
 require("core.common")
 
+local function prequire(...)
+	local status, lib = pcall(require, ...)
+	if status then
+		return lib
+	end
+	return nil
+end
+
+-- 1. Grab the active major/minor Lua version embedded inside Hyprland
+local lua_ver = _VERSION:match("%d+%.%d+")
+
+-- 2. Force Hyprland to look inside Arch's system Lua paths and LuaRocks directories
+package.path = package.path .. ";/usr/share/lua/" .. lua_ver .. "/?.lua"
+package.path = package.path .. ";/usr/share/lua/" .. lua_ver .. "/?/init.lua"
+package.path = package.path .. ";/usr/lib/luarocks/rocks-" .. lua_ver .. "/?.lua"
+
+-- 3. Now, you can safely initialize the loader and external packages
+prequire("luarocks.loader")
+local inspect = prequire("inspect")
+
+function P(a)
+	if type(a) == "table" and inspect then
+		print(inspect(a))
+	else
+		print(a)
+	end
+end
+
 local appmenu = "~/scripts/hypr/appmenu.fish" -- app launcher/runner
 local powermenu = "~/scripts/hypr/powermenu.sh"
 
 local emojipicker = "pkill fuzzel || bemoji --noline --clip"
 
-local colorpicker = launchprefix .. " fish -c 'kcolorchooser --color (wl-paste) --print | wl-copy --trim-newline'"
-local clipboard = launchprefix .. " kitty --single-instance --class=clipse --override confirm_os_window_close=0 clipse"
-local terminal = launchprefix .. " kitty --single-instance"
-local filemanagerRaw = "YAZI_RESTORE=1 "
-	.. launchprefix
+local colorpicker = Openprefix .. " fish -c 'kcolorchooser --color (wl-paste) --print | wl-copy --trim-newline'"
+local clipboard = Openprefix .. " kitty --single-instance --class=clipse --override confirm_os_window_close=0 clipse"
+local terminal = Openprefix .. " kitty --single-instance"
+local filemanagerRaw = Openeffect
+	.. "&& YAZI_RESTORE=1 "
+	.. Launchprefix
 	.. " kitty --single-instance --class=yazi --override confirm_os_window_close=0 -- yazi"
 local filemanager = '~/scripts/hypr/focusOrLaunch.fish -c yazi -l "' .. filemanagerRaw .. '"'
-local browserRaw = launchprefix .. " zen-browser"
+local browserRaw = Openprefix .. " zen-browser"
+-- local browserRaw = 'kitty --class "kitty-skeleton" -e ~/scripts/hypr/launch.fish zen-browser'
 local browser = '~/scripts/hypr/focusOrLaunch.fish -c zen -l "' .. browserRaw .. '"'
-local musicRaw = launchprefix .. " zen-browser --new-window https://music.youtube.com/"
+local musicRaw = Openprefix .. " zen-browser --new-window https://music.youtube.com/"
 local music = '~/scripts/hypr/focusOrLaunch.fish -e "YouTube Music — Zen Browser" -l "' .. musicRaw .. '"'
 local mail = '~/scripts/hypr/focusOrLaunch.fish -c aerc -l "'
-	.. launchprefix
+	.. Openprefix
 	.. ' kitty --single-instance --class=aerc --override confirm_os_window_close=0 aerc"'
-local calculator = '~/scripts/hypr/focusOrLaunch.fish -c org.kde.kalk -l "' .. launchprefix .. ' kalk"'
+local calculator = '~/scripts/hypr/focusOrLaunch.fish -c org.kde.kalk -l "' .. Openprefix .. ' kalk"'
 local wifi = "networkmanager_dmenu"
 local calendar = '~/scripts/hypr/focusOrLaunch.fish -c khal -l "'
-	.. launchprefix
+	.. Openprefix
 	.. ' kitty --single-instance --class=khal --override confirm_os_window_close=0 ikhal"'
 local traymenu = '~/scripts/hypr/focusOrLaunch.fish -c tray-tui -l "'
-	.. launchprefix
+	.. Openprefix
 	.. ' kitty --single-instance --class=tray-tui --override confirm_os_window_close=0 tray-tui"'
 
-hl.bind(mainmod .. " + backspace", hl.dsp.submap("binds-inhibited"))
+hl.bind(Mainmod .. " + backspace", hl.dsp.submap("binds-inhibited"))
 hl.define_submap("binds-inhibited", function()
-	hl.bind(mainmod .. " + backspace", hl.dsp.submap("reset"))
+	hl.bind(Mainmod .. " + backspace", hl.dsp.submap("reset"))
 end)
 
-hl.bind(mainmod .. " + t", hl.dsp.exec_cmd(terminal))
-hl.bind(mainmod .. " + e", hl.dsp.exec_cmd(filemanager))
-hl.bind(mainmod .. " + SHIFT + e", hl.dsp.exec_cmd(filemanagerRaw))
-hl.bind(mainmod .. " + b", hl.dsp.exec_cmd(browser))
-hl.bind(mainmod .. " + SHIFT + b", hl.dsp.exec_cmd(browserRaw))
-hl.bind(mainmod .. " + c", hl.dsp.exec_cmd(calendar))
-hl.bind(mainmod .. " + m", hl.dsp.exec_cmd(mail))
-hl.bind(mainmod .. " + SHIFT + c", hl.dsp.exec_cmd(colorpicker))
-hl.bind(mainmod .. " + xf86audioplay", hl.dsp.send_shortcut({ mods = "alt", key = "5", window = "class:zen" }))
-hl.bind(mainmod .. " + xf86audioplay", hl.dsp.focus({ window = "class:zen" }))
+hl.bind(Mainmod .. " + t", hl.dsp.exec_cmd(terminal))
+hl.bind(Mainmod .. " + e", hl.dsp.exec_cmd(filemanager))
+hl.bind(Mainmod .. " + SHIFT + e", hl.dsp.exec_cmd(filemanagerRaw))
+hl.bind(Mainmod .. " + b", hl.dsp.exec_cmd(browser))
+hl.bind(Mainmod .. " + SHIFT + b", hl.dsp.exec_cmd(browserRaw))
+hl.bind(Mainmod .. " + c", hl.dsp.exec_cmd(calendar))
+hl.bind(Mainmod .. " + m", hl.dsp.exec_cmd(mail))
+hl.bind(Mainmod .. " + SHIFT + c", hl.dsp.exec_cmd(colorpicker))
+hl.bind(Mainmod .. " + xf86audioplay", hl.dsp.send_shortcut({ mods = "alt", key = "5", window = "class:zen" }))
+hl.bind(Mainmod .. " + xf86audioplay", hl.dsp.focus({ window = "class:zen" }))
 hl.bind("xf86tools", hl.dsp.exec_cmd(music))
-hl.bind(mainmod .. " + F11", hl.dsp.exec_cmd(calculator))
+hl.bind(Mainmod .. " + F11", hl.dsp.exec_cmd(calculator))
 
-hl.bind(mainmod .. " + n", hl.dsp.exec_cmd("~/scripts/hypr/nvim-everywhere.fish"))
+hl.bind(Mainmod .. " + n", hl.dsp.exec_cmd("~/scripts/hypr/nvim-everywhere.fish"))
 
-hl.bind(mainmod .. " + Pause", hl.dsp.exec_cmd(powermenu), { locked = true })
-hl.bind(mainmod .. " + space", hl.dsp.exec_cmd(appmenu))
-hl.bind(mainmod .. " + period", hl.dsp.exec_cmd(emojipicker))
-hl.bind(mainmod .. " + bar", hl.dsp.exec_cmd(clipboard))
+hl.bind(Mainmod .. " + Pause", hl.dsp.exec_cmd(powermenu), { locked = true })
+hl.bind(Mainmod .. " + space", hl.dsp.exec_cmd(appmenu))
+hl.bind(Mainmod .. " + period", hl.dsp.exec_cmd(emojipicker))
+hl.bind(Mainmod .. " + bar", hl.dsp.exec_cmd(clipboard))
 hl.bind("xf86poweroff", hl.dsp.exec_cmd(powermenu), { locked = true })
 
-hl.bind(mainmod .. " + SHIFT + t", hl.dsp.exec_cmd(traymenu))
+hl.bind(Mainmod .. " + SHIFT + t", hl.dsp.exec_cmd(traymenu))
 
-hl.bind(mainmod .. " + ntilde", hl.dsp.submap("connect-menu"))
+hl.bind(Mainmod .. " + ntilde", hl.dsp.submap("connect-menu"))
 hl.define_submap("connect-menu", "reset", function()
 	hl.bind("b", hl.dsp.exec_cmd("~/scripts/hypr/bluetooth.fish"))
 	hl.bind("w", hl.dsp.exec_cmd(wifi))
@@ -115,7 +145,7 @@ hl.bind(
 	{ locked = true, non_consuming = true, transparent = true, ignore_mods = true, submap_universal = true }
 )
 
-hl.bind(mainmod .. " + SHIFT + n", hl.dsp.submap("notifications"))
+hl.bind(Mainmod .. " + SHIFT + n", hl.dsp.submap("notifications"))
 hl.define_submap("notifications", function()
 	hl.bind("d", hl.dsp.exec_cmd("dunstctl close"))
 
@@ -136,7 +166,7 @@ end)
 local screenshotcmd = "grimblast --notify --openparentdir copysave"
 
 hl.bind("print", hl.dsp.exec_cmd(screenshotcmd .. " screen"), { locked = true })
-hl.bind(mainmod .. " + print", hl.dsp.exec_cmd(screenshotcmd .. " active"), { locked = true })
+hl.bind(Mainmod .. " + print", hl.dsp.exec_cmd(screenshotcmd .. " active"), { locked = true })
 hl.bind("SHIFT + print", hl.dsp.exec_cmd(screenshotcmd .. " area"), { locked = true })
 
 local function layout_bind(bind_table)
@@ -156,7 +186,7 @@ local function layout_bind(bind_table)
 end
 
 hl.bind(
-	mainmod .. " + SHIFT + p",
+	Mainmod .. " + SHIFT + p",
 	layout_bind({
 		dwindle = hl.dsp.layout("togglesplit"),
 		master = hl.dsp.layout("orientationnext"),
@@ -164,7 +194,7 @@ hl.bind(
 	})
 )
 
-hl.bind(mainmod .. " + y", function()
+hl.bind(Mainmod .. " + y", function()
 	local layouts = { "scrolling", "dwindle", "master" } -- "monocle"
 	local workspace = hl.get_active_workspace()
 	if hl.get_active_special_workspace() then
@@ -211,12 +241,12 @@ hl.bind("SHIFT + xf86audiolowervolume", hl.dsp.exec_cmd(soundbigdown), { locked 
 hl.bind("CTRL + xf86audioraisevolume", hl.dsp.exec_cmd(soundsmallup), { locked = true, repeating = true })
 hl.bind("CTRL + xf86audiolowervolume", hl.dsp.exec_cmd(soundsmalldown), { locked = true, repeating = true })
 
-hl.bind(mainmod .. " + up", hl.dsp.exec_cmd(soundup), { locked = true, repeating = true })
-hl.bind(mainmod .. " + down", hl.dsp.exec_cmd(sounddown), { locked = true, repeating = true })
-hl.bind(mainmod .. " + SHIFT + up", hl.dsp.exec_cmd(soundbigup), { locked = true, repeating = true })
-hl.bind(mainmod .. " + SHIFT + down", hl.dsp.exec_cmd(soundbigdown), { locked = true, repeating = true })
-hl.bind(mainmod .. " + CTRL + up", hl.dsp.exec_cmd(soundsmallup), { locked = true, repeating = true })
-hl.bind(mainmod .. " + CTRL + down", hl.dsp.exec_cmd(soundsmalldown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + up", hl.dsp.exec_cmd(soundup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + down", hl.dsp.exec_cmd(sounddown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + SHIFT + up", hl.dsp.exec_cmd(soundbigup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + SHIFT + down", hl.dsp.exec_cmd(soundbigdown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + CTRL + up", hl.dsp.exec_cmd(soundsmallup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + CTRL + down", hl.dsp.exec_cmd(soundsmalldown), { locked = true, repeating = true })
 
 hl.bind(
 	"xf86audiomute",
@@ -250,12 +280,12 @@ hl.bind("SHIFT + xf86monbrightnessup", hl.dsp.exec_cmd(brightnessbigup), { locke
 hl.bind("CTRL + xf86monbrightnessdown", hl.dsp.exec_cmd(brightnesssmalldown), { locked = true, repeating = true })
 hl.bind("CTRL + xf86monbrightnessup", hl.dsp.exec_cmd(brightnesssmallup), { locked = true, repeating = true })
 
-hl.bind(mainmod .. " + left", hl.dsp.exec_cmd(brightnessdown), { locked = true, repeating = true })
-hl.bind(mainmod .. " + right", hl.dsp.exec_cmd(brightnessup), { locked = true, repeating = true })
-hl.bind(mainmod .. " + SHIFT + left", hl.dsp.exec_cmd(brightnessbigdown), { locked = true, repeating = true })
-hl.bind(mainmod .. " + SHIFT + right", hl.dsp.exec_cmd(brightnessbigup), { locked = true, repeating = true })
-hl.bind(mainmod .. " + CTRL + left", hl.dsp.exec_cmd(brightnesssmalldown), { locked = true, repeating = true })
-hl.bind(mainmod .. " + CTRL + right", hl.dsp.exec_cmd(brightnesssmallup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + left", hl.dsp.exec_cmd(brightnessdown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + right", hl.dsp.exec_cmd(brightnessup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + SHIFT + left", hl.dsp.exec_cmd(brightnessbigdown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + SHIFT + right", hl.dsp.exec_cmd(brightnessbigup), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + CTRL + left", hl.dsp.exec_cmd(brightnesssmalldown), { locked = true, repeating = true })
+hl.bind(Mainmod .. " + CTRL + right", hl.dsp.exec_cmd(brightnesssmallup), { locked = true, repeating = true })
 
 hl.bind("xf86audionext", hl.dsp.exec_cmd("~/scripts/hypr/playNext.fish"), { locked = true })
 hl.bind("xf86audioprev", hl.dsp.exec_cmd("~/scripts/hypr/playPrev.fish"), { locked = true })
@@ -284,49 +314,49 @@ local function zoom(offset)
 	hl.config({ cursor = { zoom_factor = current } })
 end
 
-hl.bind(mainmod .. " + mouse_down", function()
+hl.bind(Mainmod .. " + mouse_down", function()
 	zoom(0.5)
 end)
-hl.bind(mainmod .. " + mouse_up", function()
+hl.bind(Mainmod .. " + mouse_up", function()
 	zoom(-0.5)
 end)
 
-hl.bind(mainmod .. " + minus", function()
+hl.bind(Mainmod .. " + minus", function()
 	zoom(-0.5)
 end)
-hl.bind(mainmod .. " + plus", function()
+hl.bind(Mainmod .. " + plus", function()
 	zoom(0.5)
 end)
 
-hl.bind(mainmod .. " + kp_subtract", function()
+hl.bind(Mainmod .. " + kp_subtract", function()
 	zoom(-0.5)
 end)
-hl.bind(mainmod .. " + kp_add", function()
+hl.bind(Mainmod .. " + kp_add", function()
 	zoom(0.5)
 end)
--- hl.bind(mainmod .. " + equal", zoom) -- you can't really trigger this bind since equal is shift+0 which actually triggers move window to 10th workspace
+-- hl.bind(Mainmod .. " + equal", zoom) -- you can't really trigger this bind since equal is shift+0 which actually triggers move window to 10th workspace
 
-hl.bind(mainmod .. " + CTRL + escape", hl.dsp.exec_cmd("killall waybar || waybar"))
+hl.bind(Mainmod .. " + CTRL + escape", hl.dsp.exec_cmd("killall waybar || waybar"))
 
-hl.bind(mainmod .. " + SHIFT + x", hl.dsp.exec_cmd("~/scripts/hypr/toggleEffects.sh"))
+hl.bind(Mainmod .. " + SHIFT + x", hl.dsp.exec_cmd("~/scripts/hypr/toggleEffects.sh"))
 
-hl.bind(mainmod .. " + SHIFT + r", hl.dsp.exec_cmd("hyprctl reload"), { locked = true })
+hl.bind(Mainmod .. " + SHIFT + r", hl.dsp.exec_cmd("hyprctl reload"), { locked = true })
 
--- hl.bind(mainmod .. " + f5", hl.dsp.exec_cmd(hyprnim .. " monitors --all"), { locked = true })
--- hl.bind(mainmod .. " + f6", hl.dsp.exec_cmd(hyprnim .. " monitors"), { locked = true })
+-- hl.bind(Mainmod .. " + f5", hl.dsp.exec_cmd(hyprnim .. " monitors --all"), { locked = true })
+-- hl.bind(Mainmod .. " + f6", hl.dsp.exec_cmd(hyprnim .. " monitors"), { locked = true })
 
 hl.bind("mouse:273", hl.dsp.exec_cmd("~/scripts/hypr/desktopRightClick.fish"), { non_consuming = true })
 
-hl.bind(mainmod .. " + apostrophe", hl.dsp.exec_cmd("~/scripts/hypr/cycleShaders.fish"), { locked = true })
-hl.bind(mainmod .. " + SHIFT + apostrophe", hl.dsp.exec_cmd("~/scripts/hypr/cycleShaders.fish -1"), { locked = true })
+hl.bind(Mainmod .. " + apostrophe", hl.dsp.exec_cmd("~/scripts/hypr/cycleShaders.fish"), { locked = true })
+hl.bind(Mainmod .. " + SHIFT + apostrophe", hl.dsp.exec_cmd("~/scripts/hypr/cycleShaders.fish -1"), { locked = true })
 
-hl.bind(mainmod .. " + i", hl.dsp.exec_cmd("~/scripts/hypr/toggleIdleInhibit.fish"))
+hl.bind(Mainmod .. " + i", hl.dsp.exec_cmd("~/scripts/hypr/toggleIdleInhibit.fish"))
 
 -- DONE: manual review on line 261 — changegroupactive: expected 'f', 'b', or an index (got "")
-hl.bind(mainmod .. " + CTRL + l", hl.dsp.group.next())
-hl.bind(mainmod .. " + CTRL + h", hl.dsp.group.prev())
+hl.bind(Mainmod .. " + CTRL + l", hl.dsp.group.next())
+hl.bind(Mainmod .. " + CTRL + h", hl.dsp.group.prev())
 
-hl.bind(mainmod .. " + SHIFT + g", hl.dsp.group.toggle())
+hl.bind(Mainmod .. " + SHIFT + g", hl.dsp.group.toggle())
 
 local function enable_group()
 	local active_window = hl.get_active_window()
@@ -335,10 +365,10 @@ local function enable_group()
 	end
 end
 
-hl.bind(mainmod .. " + g", function()
+hl.bind(Mainmod .. " + g", function()
 	enable_group()
 end)
-hl.bind(mainmod .. " + g", hl.dsp.submap("group"))
+hl.bind(Mainmod .. " + g", hl.dsp.submap("group"))
 hl.define_submap("group", function()
 	hl.bind("g", hl.dsp.group.toggle())
 	hl.bind("c", hl.dsp.group.lock_active({ action = "toggle" }))
@@ -388,11 +418,11 @@ hl.define_submap("group", function()
 	hl.bind("catchall", hl.dsp.submap("reset"), { release = true })
 end)
 
-hl.bind(mainmod .. " + SHIFT + q", hl.dsp.window.kill())
-hl.bind(mainmod .. " + d", hl.dsp.window.close())
+hl.bind(Mainmod .. " + SHIFT + q", hl.dsp.window.kill())
+hl.bind(Mainmod .. " + d", hl.dsp.window.close())
 
 hl.bind(
-	mainmod .. " + p",
+	Mainmod .. " + p",
 	layout_bind({
 		dwindle = hl.dsp.window.swap({ next = true }),
 		master = hl.dsp.window.swap({ next = true }),
@@ -400,10 +430,91 @@ hl.bind(
 	})
 )
 
+--[[
+---------------------- SMART CYCLING ----------------------
+local mru_stack = {}
+local is_cycling = false
+local current_mru_idx = 1
+
+-- Helper: Push workspace identifier to top of MRU stack
+local function record_workspace(ws)
+	local ws_id = type(ws) == "userdata" and ws.id or type(ws) == "number" and ws
+	if not ws_id or ws_id == "" then
+		return
+	end
+
+	for i, id in ipairs(mru_stack) do
+		if id == ws_id then
+			table.remove(mru_stack, i)
+			break
+		end
+	end
+
+	table.insert(mru_stack, 1, ws_id)
+end
+
+-- Track workspace changes (only when not cycling)
+hl.on("workspace.active", function(ws)
+	hl.exec_cmd("dunstify stack " .. inspect(mru_stack))
+	if not is_cycling then
+		record_workspace(ws)
+		current_mru_idx = 1
+	end
+end)
+
+-- Step through MRU stack while modifier is held
+local function cycle_mru_workspace(direction)
+	if #mru_stack < 2 then
+		return
+	end
+
+	is_cycling = true
+
+	if direction == "next" then
+		current_mru_idx = (current_mru_idx % #mru_stack) + 1
+	elseif direction == "prev" then
+		current_mru_idx = current_mru_idx - 1
+		if current_mru_idx < 1 then
+			current_mru_idx = #mru_stack
+		end
+	end
+
+	local target_ws = mru_stack[current_mru_idx]
+	hl.dispatch(hl.dsp.focus({ workspace = target_ws }))
+end
+
+-- Bindings for stepping
+hl.bind(Mainmod .. " + Tab", function()
+	cycle_mru_workspace("next")
+end)
+
+hl.bind(Mainmod .. " + SHIFT + Tab", function()
+	cycle_mru_workspace("prev")
+end)
+
+hl.bind("SUPER + SUPER_L", function()
+	-- Stop cycling and commit new workspace to top of MRU stack on modifier key release
+	hl.exec_cmd("dunstify stop")
+	if not is_cycling then
+		return
+	end
+
+	local selected_ws = mru_stack[current_mru_idx]
+	is_cycling = false
+
+	-- Commit chosen workspace to index 1
+	if selected_ws then
+		record_workspace(selected_ws)
+	end
+	current_mru_idx = 1
+end, { release = true })
+---------------------- SMART CYCLING END  ----------------------
+--]]
+
 hl.bind("ALT + tab", hl.dsp.focus({ last = true }))
 
 hl.bind(
-	mainmod .. " + f",
+	Mainmod .. " + f",
 	layout_bind({
 		dwindle = hl.dsp.window.cycle_next({ floating = true, tiled = true }),
 		master = hl.dsp.window.cycle_next({ floating = true, tiled = true }),
@@ -412,7 +523,7 @@ hl.bind(
 	})
 )
 hl.bind(
-	mainmod .. " + f",
+	Mainmod .. " + f",
 	layout_bind({
 		dwindle = hl.dsp.window.alter_zorder({ mode = "top" }),
 		master = hl.dsp.window.alter_zorder({ mode = "top" }),
@@ -420,7 +531,7 @@ hl.bind(
 	})
 )
 hl.bind(
-	mainmod .. " + SHIFT + f",
+	Mainmod .. " + SHIFT + f",
 	layout_bind({
 		dwindle = hl.dsp.window.cycle_next({ next = false, floating = true, tiled = true }),
 		master = hl.dsp.window.cycle_next({ next = false, floating = true, tiled = true }),
@@ -429,7 +540,7 @@ hl.bind(
 	})
 )
 hl.bind(
-	mainmod .. " + SHIFT + f",
+	Mainmod .. " + SHIFT + f",
 	layout_bind({
 		dwindle = hl.dsp.window.alter_zorder({ mode = "top" }),
 		master = hl.dsp.window.alter_zorder({ mode = "top" }),
@@ -438,7 +549,7 @@ hl.bind(
 )
 
 hl.bind(
-	mainmod .. " + h",
+	Mainmod .. " + h",
 	layout_bind({
 		dwindle = hl.dsp.focus({ direction = "left" }),
 		master = hl.dsp.focus({ direction = "left" }),
@@ -446,21 +557,21 @@ hl.bind(
 	})
 )
 hl.bind(
-	mainmod .. " + l",
+	Mainmod .. " + l",
 	layout_bind({
 		dwindle = hl.dsp.focus({ direction = "right" }),
 		master = hl.dsp.focus({ direction = "right" }),
 		scrolling = hl.dsp.layout("focus r"),
 	})
 )
-hl.bind(mainmod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainmod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(Mainmod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(Mainmod .. " + j", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainmod .. " + mouse:272", hl.dsp.window.drag())
-hl.bind(mainmod .. " + mouse:273", hl.dsp.window.resize())
+hl.bind(Mainmod .. " + mouse:272", hl.dsp.window.drag())
+hl.bind(Mainmod .. " + mouse:273", hl.dsp.window.resize())
 
-hl.bind(mainmod .. " + w", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainmod .. " + SHIFT + w", hl.dsp.window.pseudo())
+hl.bind(Mainmod .. " + w", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(Mainmod .. " + SHIFT + w", hl.dsp.window.pseudo())
 
 hl.bind("f11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
@@ -468,7 +579,7 @@ local resize_step = 99 -- 1920 / 20
 local resize_big_step = 220 -- 1980 / 8
 local resize_small_step = 20 -- 1980 / 99
 
-hl.bind(mainmod .. " + r", hl.dsp.submap("resize"))
+hl.bind(Mainmod .. " + r", hl.dsp.submap("resize"))
 hl.define_submap("resize", function()
 	hl.bind("h", hl.dsp.window.resize({ x = -resize_step, y = 0, relative = true }), { repeating = true })
 	hl.bind("l", hl.dsp.window.resize({ x = resize_step, y = 0, relative = true }), { repeating = true })
@@ -488,8 +599,8 @@ hl.define_submap("resize", function()
 	hl.bind("catchall", hl.dsp.submap("reset"), { release = true })
 end)
 
-hl.bind(mainmod .. " + SHIFT + s", hl.dsp.window.move({ workspace = "special" }))
-hl.bind(mainmod .. " + s", hl.dsp.workspace.toggle_special(""))
+hl.bind(Mainmod .. " + SHIFT + s", hl.dsp.window.move({ workspace = "special" }))
+hl.bind(Mainmod .. " + s", hl.dsp.workspace.toggle_special(""))
 -- nhese are the nitro button
 hl.bind("xf86presentation", hl.dsp.workspace.toggle_special(""))
 hl.bind("xf86launch1", hl.dsp.workspace.toggle_special(""))
@@ -504,64 +615,44 @@ local function switch_workspace(params)
 	hl.dispatch(hl.dsp.focus(params))
 end
 
-hl.bind(mainmod .. " + tab", function()
+hl.bind(Mainmod .. " + tab", function()
 	switch_workspace({ workspace = "previous" })
 end)
 
-hl.bind(mainmod .. " + SHIFT + h", function()
+-- hl.bind("SUPER + tab", function()
+-- 	print("cycling")
+-- end)
+--
+-- hl.bind("SUPER + SUPER_L", function()
+-- 	print("stop cycling")
+-- end, { release = true })
+
+hl.bind(Mainmod .. " + SHIFT + h", function()
 	switch_workspace({ workspace = "e-1" })
 end)
-hl.bind(mainmod .. " + SHIFT + l", function()
+hl.bind(Mainmod .. " + SHIFT + l", function()
 	switch_workspace({ workspace = "e+1" })
 end)
-hl.bind(mainmod .. " + SHIFT + j", function()
+hl.bind(Mainmod .. " + SHIFT + j", function()
 	switch_workspace({ workspace = "-10" })
 end)
-hl.bind(mainmod .. " + SHIFT + k", function()
+hl.bind(Mainmod .. " + SHIFT + k", function()
 	switch_workspace({ workspace = "+10" })
 end)
 
-hl.bind(mainmod .. " + 1", hl.dsp.focus({ workspace = 1 }))
-hl.bind(mainmod .. " + 2", hl.dsp.focus({ workspace = 2 }))
-hl.bind(mainmod .. " + 3", hl.dsp.focus({ workspace = 3 }))
-hl.bind(mainmod .. " + 4", hl.dsp.focus({ workspace = 4 }))
-hl.bind(mainmod .. " + 5", hl.dsp.focus({ workspace = 5 }))
-hl.bind(mainmod .. " + 6", hl.dsp.focus({ workspace = 6 }))
-hl.bind(mainmod .. " + 7", hl.dsp.focus({ workspace = 7 }))
-hl.bind(mainmod .. " + 8", hl.dsp.focus({ workspace = 8 }))
-hl.bind(mainmod .. " + 9", hl.dsp.focus({ workspace = 9 }))
-hl.bind(mainmod .. " + 0", hl.dsp.focus({ workspace = 10 }))
+hl.bind(Mainmod .. " + 1", hl.dsp.focus({ workspace = 1 }))
+hl.bind(Mainmod .. " + 2", hl.dsp.focus({ workspace = 2 }))
+hl.bind(Mainmod .. " + 3", hl.dsp.focus({ workspace = 3 }))
+hl.bind(Mainmod .. " + 4", hl.dsp.focus({ workspace = 4 }))
+hl.bind(Mainmod .. " + 5", hl.dsp.focus({ workspace = 5 }))
+hl.bind(Mainmod .. " + 6", hl.dsp.focus({ workspace = 6 }))
+hl.bind(Mainmod .. " + 7", hl.dsp.focus({ workspace = 7 }))
+hl.bind(Mainmod .. " + 8", hl.dsp.focus({ workspace = 8 }))
+hl.bind(Mainmod .. " + 9", hl.dsp.focus({ workspace = 9 }))
+hl.bind(Mainmod .. " + 0", hl.dsp.focus({ workspace = 10 }))
 
-hl.bind(mainmod .. " + braceleft", hl.dsp.window.move({ workspace = "-1" }))
-hl.bind(mainmod .. " + braceright", hl.dsp.window.move({ workspace = "+1" }))
-
-function prequire(...)
-	local status, lib = pcall(require, ...)
-	if status then
-		return lib
-	end
-	return nil
-end
-
--- 1. Grab the active major/minor Lua version embedded inside Hyprland
-local lua_ver = _VERSION:match("%d+%.%d+")
-
--- 2. Force Hyprland to look inside Arch's system Lua paths and LuaRocks directories
-package.path = package.path .. ";/usr/share/lua/" .. lua_ver .. "/?.lua"
-package.path = package.path .. ";/usr/share/lua/" .. lua_ver .. "/?/init.lua"
-package.path = package.path .. ";/usr/lib/luarocks/rocks-" .. lua_ver .. "/?.lua"
-
--- 3. Now, you can safely initialize the loader and external packages
-prequire("luarocks.loader")
-local inspect = prequire("inspect")
-
-function P(a)
-	if type(a) == "table" and inspect then
-		print(inspect(a))
-	else
-		print(a)
-	end
-end
+hl.bind(Mainmod .. " + braceleft", hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(Mainmod .. " + braceright", hl.dsp.window.move({ workspace = "+1" }))
 
 local function swap_workspace(other_workspace_selector)
 	local active_window = hl.get_active_window()
@@ -572,35 +663,35 @@ local function swap_workspace(other_workspace_selector)
 
 	local other_windows = hl.get_workspace_windows(other_workspace)
 
-	for i, window in pairs(active_windows) do
+	for _, window in pairs(active_windows) do
 		-- here we use other_workspace_selector and not other_workspace, as that would fail when swapping to an empty workspace
 		hl.dispatch(hl.dsp.window.move({ workspace = other_workspace_selector, follow = false, window = window }))
 	end
 
-	for i, window in pairs(other_windows) do
+	for _, window in pairs(other_windows) do
 		hl.dispatch(hl.dsp.window.move({ workspace = active_workspace, follow = false, window = window }))
 	end
 
 	hl.dispatch(hl.dsp.focus({ window = active_window }))
 end
 
-hl.bind(mainmod .. " + SHIFT + braceleft", function()
+hl.bind(Mainmod .. " + SHIFT + braceleft", function()
 	swap_workspace("-1")
 end)
-hl.bind(mainmod .. " + SHIFT + braceright", function()
+hl.bind(Mainmod .. " + SHIFT + braceright", function()
 	swap_workspace("+1")
 end)
 
-hl.bind(mainmod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
-hl.bind(mainmod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
-hl.bind(mainmod .. " + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
-hl.bind(mainmod .. " + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
-hl.bind(mainmod .. " + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
-hl.bind(mainmod .. " + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
-hl.bind(mainmod .. " + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
-hl.bind(mainmod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
-hl.bind(mainmod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
-hl.bind(mainmod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+hl.bind(Mainmod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
+hl.bind(Mainmod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
+hl.bind(Mainmod .. " + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
+hl.bind(Mainmod .. " + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
+hl.bind(Mainmod .. " + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
+hl.bind(Mainmod .. " + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
+hl.bind(Mainmod .. " + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
+hl.bind(Mainmod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
+hl.bind(Mainmod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
+hl.bind(Mainmod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
 hl.config({
 	binds = {
@@ -615,15 +706,15 @@ hl.config({
 	-- --noline -> to prevent a new line at the end
 	-- --clip -> to copy the emoji as well
 	-- $colorpicker = pkill hyprpicker || hyprpicker --autocopy --format=hex
-	-- $coloreditor = $launchprefix kitty --single-instance --class=termpicker --override confirm_os_window_close=0 termpicker
-	-- $musicRaw = $launchprefix spotify
-	-- $musicRaw = $launchprefix kitty --single-instance --class=spotify_player --override confirm_os_window_close=0 spotify_player
-	-- $musicRaw = $launchprefix env 'WINEPREFIX=/home/cristobal/.wine' wine 'C:\\\\users\\\\cristobal\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\iTunes\\\\iTunes.lnk'
+	-- $coloreditor = $Launchprefix kitty --single-instance --class=termpicker --override confirm_os_window_close=0 termpicker
+	-- $musicRaw = $Launchprefix spotify
+	-- $musicRaw = $Launchprefix kitty --single-instance --class=spotify_player --override confirm_os_window_close=0 spotify_player
+	-- $musicRaw = $Launchprefix env 'WINEPREFIX=/home/cristobal/.wine' wine 'C:\\\\users\\\\cristobal\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\iTunes\\\\iTunes.lnk'
 	--################# BINDS INHIBITOR ##################
 	--################# APPLICATIONS ##################
-	-- bind = $mainmod, xf86audioplay, exec, $music
+	-- bind = $Mainmod, xf86audioplay, exec, $music
 	--################# MENUS ##################
-	-- bindl = $mainmod, escape, exec, $powermenu # I end up pressing this on accident
+	-- bindl = $Mainmod, escape, exec, $powermenu # I end up pressing this on accident
 	--################# SYSTEM TRAY MENU? ##################
 	-- bind = shift, b, exec, $bluetooth
 	--################# KEYBOARD STATE INDICATORS ##################
@@ -634,8 +725,8 @@ hl.config({
 	-- printf %s removes the trailing newline
 	--################# SCREENSHOTS ##################
 	--################# LAYOUT ##################
-	-- bind = $mainmod shift, mouse_down, exec, layoutmsg, move +200
-	-- bind = $mainmod shift, mouse_up, exec, layoutmsg, move -200
+	-- bind = $Mainmod shift, mouse_down, exec, layoutmsg, move +200
+	-- bind = $Mainmod shift, mouse_up, exec, layoutmsg, move -200
 	--################# SOUND ##################
 	--################# BRIGHTNESS ##################
 	--################# PLAYER CONTROL ##################
@@ -647,21 +738,21 @@ hl.config({
 	--################# ZOOM ##################
 	-- NOTE: Doesn't really work but you can just zoom out...
 	--################# HYPR ##################
-	-- bind = $mainmod, m, exec, ~/scripts/hypr/onExit.sh && uwsm stop # Exit hyprland
-	-- bindl = $mainmod, f6, exec, $hyprnim monitors --disableEnable
+	-- bind = $Mainmod, m, exec, ~/scripts/hypr/onExit.sh && uwsm stop # Exit hyprland
+	-- bindl = $Mainmod, f6, exec, $hyprnim monitors --disableEnable
 	--################# GROUPS ##################
 	--################# WINDOWS ##################
-	-- bind = $mainmod ctrl, h, swapnext, prev
-	-- bind = $mainmod ctrl, l, swapnext
+	-- bind = $Mainmod ctrl, h, swapnext, prev
+	-- bind = $Mainmod ctrl, l, swapnext
 	-- TODO: make y cycle between layouts
 	-- Move/resize windows with mainMod + LMB/RMB and dragging
-	-- bind = $mainmod, f, fullscreen
-	-- bind = $mainmod, backspace, toggleswallow
+	-- bind = $Mainmod, f, fullscreen
+	-- bind = $Mainmod, backspace, toggleswallow
 	--################# WINDOW RESIZE ##################
 	--################# WORKSPACES ##################
-	-- bind = $mainmod shift, braceleft, movetoworkspace, -10
-	-- bind = $mainmod shift, braceright, movetoworkspace, +10
+	-- bind = $Mainmod shift, braceleft, movetoworkspace, -10
+	-- bind = $Mainmod shift, braceright, movetoworkspace, +10
 	-- TODO: make '$maindmod ctrl, braceleft work' and add bindings to move workspace to a specific id
 	--################# HYPREXPO ##################
-	-- bind = $mainmod, o, hyprexpo:expo, toggle
+	-- bind = $Mainmod, o, hyprexpo:expo, toggle
 })

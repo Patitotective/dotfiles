@@ -5,10 +5,10 @@ require("core.colors")
 hl.config({
 	group = {
 		col = {
-			border_active = color14,
-			border_locked_active = color15,
-			border_inactive = color4,
-			border_locked_inactive = color4,
+			border_active = Color14,
+			border_locked_active = Color15,
+			border_inactive = Color4,
+			border_locked_inactive = Color4,
 		},
 		groupbar = {
 			enabled = true,
@@ -19,10 +19,10 @@ hl.config({
 			gaps_in = 4,
 			rounding = 10,
 			col = {
-				active = "rgba(" .. unlockedgroupbar .. "ff)",
-				inactive = "rgba(" .. unlockedgroupbar .. "77)",
-				locked_active = "rgba(" .. lockedgroupbar .. "ff)",
-				locked_inactive = "rgba(" .. lockedgroupbar .. "77)",
+				active = "rgba(" .. Unlockedgroupbar .. "ff)",
+				inactive = "rgba(" .. Unlockedgroupbar .. "77)",
+				locked_active = "rgba(" .. Lockedgroupbar .. "ff)",
+				locked_inactive = "rgba(" .. Lockedgroupbar .. "77)",
 			},
 		},
 	},
