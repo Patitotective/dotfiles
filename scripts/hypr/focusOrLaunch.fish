@@ -35,7 +35,7 @@ if set -ql _flag_launch
         end
 
         set nextAddress (echo $windowsAddresses[$nextIndex])
-        hyprctl dispatch focuswindow address:$nextAddress
+        hyprctl dispatch "hl.dsp.focus({ window = 'address:$nextAddress' })"
     else
         eval $_flag_launch
     end
