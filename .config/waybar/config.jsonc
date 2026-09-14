@@ -110,7 +110,8 @@
     ]
   },
   "clock": {
-    "format": "󰥔 {:%H:%M}",
+    "format": "󰥔 {0:%H}:{0:%M}・{0:%a} {0:%e}",
+    //  {:%a} {:%d} {:%b}
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -159,7 +160,7 @@
     "rewrite": {
       "  [~/](.*)": " $1",
       "  nvim(.*)": " $1",
-      "  yazi(.*)": "󰉋 $1",
+      "  yazi: (.*)": "󰉋 $1",
       "  (((?!(YouTube|\\(.+\\) WhatsApp|WhatsApp)).)*) — Zen Browser": "󰖟 $1",
       "  Zen Browser": "󰖟",
       "  (.*)YouTube — Zen Browser": "  $1",
