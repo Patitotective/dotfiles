@@ -4,8 +4,8 @@ gui:
   shorTimeFormat: 15:04
   nerdFontsVersion: "3"
 git:
-  pagers:
-    - pager: delta --dark --paging=never
+  diffRenderers:
+    - command: delta --dark --paging=never
   parseEmoji: true
 keybinding:
   universal:
@@ -78,7 +78,7 @@ keybinding:
     prevTab: H
     nextScreenMode: +
     prevScreenMode: _
-    cyclePagers: "|"
+    cycleDiffRenderers: "|"
     undo: z
     redo: Z
     filteringMenu: <c-s>
