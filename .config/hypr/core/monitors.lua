@@ -17,6 +17,7 @@ hl.monitor({
 hl.monitor({
 	output = "desc:Chimei Innolux Corporation 0x1521",
 	mode = "1920x1080@144.00Hz",
+	-- mode = "1920x1080@60.02Hz",
 	position = "auto",
 	scale = "1",
 })
