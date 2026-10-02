@@ -213,6 +213,8 @@ hl.window_rule({
 		class = "dragon-drop",
 	},
 	group = "barred",
+	float = true,
+	pin = true,
 })
 
 hl.window_rule({
