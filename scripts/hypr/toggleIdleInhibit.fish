@@ -22,6 +22,7 @@ end
 if test \( $inhibit = 0 -o $inhibit = false \) -a $isInhibited = true
     kill $MANUAL_IDLE_INHIBIT_PID
     set -U MANUAL_IDLE_INHIBIT_PID 0
+    kill -SIGRTMIN+1 $(pgrep waybar) # So that waybar updates the icon
     echo "🔓 Idle inhibition released"
 else if test \( $inhibit = 0 -o $inhibit = true \) -a $isInhibited = false
     systemd-inhibit \
@@ -31,5 +32,6 @@ else if test \( $inhibit = 0 -o $inhibit = true \) -a $isInhibited = false
         sleep infinity &
 
     set -U MANUAL_IDLE_INHIBIT_PID $last_pid
+    kill -SIGRTMIN+1 $(pgrep waybar) # So that waybar updates the icon
     echo "🔒 Idle inhibited (PID: $MANUAL_IDLE_INHIBIT_PID)"
 end

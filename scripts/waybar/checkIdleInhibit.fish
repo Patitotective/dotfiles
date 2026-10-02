@@ -5,4 +5,4 @@ if set -q MANUAL_IDLE_INHIBIT_PID; and test $MANUAL_IDLE_INHIBIT_PID -ne 0 && ps
 else
     echo '{"alt": "off", "tooltip": "Idle uninhibited"}'
 end
-kill -SIGRTMIN+1 $(pgrep waybar) # So that waybar updates the icon
+# kill -SIGRTMIN+1 $(pgrep waybar) # So that waybar updates the icon

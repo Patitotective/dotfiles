@@ -18,7 +18,7 @@
     //
     "custom/start",
     "clock",
-    "custom/idle_inhibitor",
+       "custom/idle_inhibitor",
     "custom/end",
     //
     "custom/start",
@@ -110,7 +110,7 @@
     ]
   },
   "clock": {
-    "format": "󰥔 {0:%H}:{0:%M}・{0:%a} {0:%e}",
+    "format": "󰥔 {0:%H}:{0:%M}・{0:%a} {0:%d}",
     //  {:%a} {:%d} {:%b}
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
@@ -142,6 +142,7 @@
     "exec": "~/scripts/waybar/checkIdleInhibit.fish",
     "on-click": "~/scripts/hypr/toggleIdleInhibit.fish",
     "signal": 1,
+    "interval": "once",
   },
   "hyprland/workspaces": {
     "all-outputs": true,
