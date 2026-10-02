@@ -12,7 +12,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("brightnessctl --restore")
 	-- hl.exec_cmd(Launchprefix .. " " .. hyprnim .. " watch")
 	-- hl.exec_cmd(hyprnim .. " monitors")
-	hl.exec_cmd("quickshell")
+	-- hl.exec_cmd("quickshell")
 	hl.exec_cmd(
 		Launchprefix
 			.. " kitty --single-instance --class=nvim --hold --override confirm_os_window_close=0 -- fish -c orgfiles",

@@ -3,8 +3,9 @@
 Mainmod = "SUPER" -- Windows key
 
 Launchprefix = "app2unit -- "
-Openeffect = "quickshell ipc call main triggerGlow "
-Openprefix = Openeffect .. "&& " .. Launchprefix
+-- Openeffect = "quickshell ipc call main triggerGlow "
+-- Openprefix = Openeffect .. "&& " .. Launchprefix
+Openprefix = Launchprefix
 
 -- hyprnim = "~/.nimble/bin/hyprnim"
 

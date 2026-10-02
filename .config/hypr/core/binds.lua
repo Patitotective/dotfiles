@@ -59,12 +59,15 @@ local powermenu = "~/scripts/hypr/powermenu.sh"
 local emojipicker = "pkill fuzzel || bemoji --noline --clip"
 
 local colorpicker = Openprefix .. " fish -c 'kcolorchooser --color (wl-paste) --print | wl-copy --trim-newline'"
-local clipboard = Openprefix .. " kitty --single-instance --class=clipse --override confirm_os_window_close=0 clipse"
-local terminal = Openprefix .. " kitty --single-instance"
-local filemanagerRaw = Openeffect
-	.. "&& YAZI_RESTORE=1 "
+local clipboard = Openprefix .. " kitty --class=clipse --override confirm_os_window_close=0 clipse"
+local terminal = Openprefix .. " kitty"
+local filemanagerRaw = "YAZI_RESTORE=1 "
 	.. Launchprefix
-	.. " kitty --single-instance --class=yazi --override confirm_os_window_close=0 -- yazi"
+	.. "  kitty --class=yazi --override confirm_os_window_close=0 -- yazi"
+-- local filemanagerRaw = Openeffect
+-- 	.. "&& YAZI_RESTORE=1 "
+-- 	.. Launchprefix
+-- 	.. " kitty --class=yazi --override confirm_os_window_close=0 -- yazi"
 local filemanager = '~/scripts/hypr/focusOrLaunch.fish -c yazi -l "' .. filemanagerRaw .. '"'
 local browserRaw = Openprefix .. " zen-browser"
 -- local browserRaw = 'kitty --class "kitty-skeleton" -e ~/scripts/hypr/launch.fish zen-browser'
@@ -73,15 +76,15 @@ local musicRaw = Openprefix .. " zen-browser --new-window https://music.youtube.
 local music = '~/scripts/hypr/focusOrLaunch.fish -e "YouTube Music — Zen Browser" -l "' .. musicRaw .. '"'
 local mail = '~/scripts/hypr/focusOrLaunch.fish -c aerc -l "'
 	.. Openprefix
-	.. ' kitty --single-instance --class=aerc --override confirm_os_window_close=0 aerc"'
+	.. ' kitty --class=aerc --override confirm_os_window_close=0 aerc"'
 local calculator = '~/scripts/hypr/focusOrLaunch.fish -c org.kde.kalk -l "' .. Openprefix .. ' kalk"'
 local wifi = "networkmanager_dmenu"
 local calendar = '~/scripts/hypr/focusOrLaunch.fish -c khal -l "'
 	.. Openprefix
-	.. ' kitty --single-instance --class=khal --override confirm_os_window_close=0 ikhal"'
+	.. ' kitty --class=khal --override confirm_os_window_close=0 ikhal"'
 local traymenu = '~/scripts/hypr/focusOrLaunch.fish -c tray-tui -l "'
 	.. Openprefix
-	.. ' kitty --single-instance --class=tray-tui --override confirm_os_window_close=0 tray-tui"'
+	.. ' kitty --class=tray-tui --override confirm_os_window_close=0 tray-tui"'
 
 hl.bind(Mainmod .. " + backspace", hl.dsp.submap("binds-inhibited"))
 hl.define_submap("binds-inhibited", function()
@@ -706,9 +709,9 @@ hl.config({
 	-- --noline -> to prevent a new line at the end
 	-- --clip -> to copy the emoji as well
 	-- $colorpicker = pkill hyprpicker || hyprpicker --autocopy --format=hex
-	-- $coloreditor = $Launchprefix kitty --single-instance --class=termpicker --override confirm_os_window_close=0 termpicker
+	-- $coloreditor = $Launchprefix kitty --class=termpicker --override confirm_os_window_close=0 termpicker
 	-- $musicRaw = $Launchprefix spotify
-	-- $musicRaw = $Launchprefix kitty --single-instance --class=spotify_player --override confirm_os_window_close=0 spotify_player
+	-- $musicRaw = $Launchprefix kitty --class=spotify_player --override confirm_os_window_close=0 spotify_player
 	-- $musicRaw = $Launchprefix env 'WINEPREFIX=/home/cristobal/.wine' wine 'C:\\\\users\\\\cristobal\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\iTunes\\\\iTunes.lnk'
 	--################# BINDS INHIBITOR ##################
 	--################# APPLICATIONS ##################

@@ -4,5 +4,6 @@ hl.config({
 	debug = {
 		disable_logs = false,
 		damage_tracking = false, -- Since some shaders need this
+		vfr = true,
 	},
 })
