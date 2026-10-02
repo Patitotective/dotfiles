@@ -1,3 +1,5 @@
 export HYPRCURSOR_SIZE=30
 # Set the integrated GPU as the primary renderer as this preserves battery life. Must set the dedicated GPU as secondary for external monitors to work.
-export AQ_DRM_DEVICES="$HOME/.config/hypr/intel-igpu:$HOME/.config/hypr/nvidia-gpu"
+# export AQ_DRM_DEVICES="$HOME/.config/hypr/intel-igpu:$HOME/.config/hypr/nvidia-gpu"
+# export AQ_DRM_DEVICES="/dev/dri/by-path/pci-0000:00:02.0-card:/dev/dri/by-path/pci-0000:01:00.0-card"
+export AQ_DRM_DEVICES="/dev/dri/card1:/dev/dri/card0"

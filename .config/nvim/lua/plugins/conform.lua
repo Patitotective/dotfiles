@@ -23,6 +23,8 @@ return {
       typescript = { "prettier" },
       vue = { "prettier" },
       yaml = { "prettier" },
+
+      asm = { "asmfmt" },
     },
     formatters = {
       kdlfmt = {
