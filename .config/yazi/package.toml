@@ -10,8 +10,8 @@ hash = "92fbb5483657fa7976cdf4e0104e18e0"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "cfe4f50"
-hash = "eff5702573b6cfba61e4ac8b1969629a"
+rev = "596b666"
+hash = "c2f4f4aca257dcceafa9e3b828dbf1c9"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"

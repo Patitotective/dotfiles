@@ -8,15 +8,16 @@ brother-mfc-l2860dwe
 bzmenu-git
 cht.sh-git
 dragon-drop
+fcitx5-mozc-with-jp-dict
 festival-freebsoft-utils
 firefox-tridactyl-native-bin
 hours
 libfmod
 manga-tui
 nbsdgames-git
+ocs-url
 powerpill
 python-pip-system-certs
-termpicker-bin
 ttf-times-new-roman
 viu-media
 wifitui-bin

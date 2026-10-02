@@ -1,4 +1,5 @@
 acpi
+activitywatch-bin
 adobe-source-han-serif-otc-fonts
 aerc
 app2unit-git
@@ -58,9 +59,10 @@ eza
 f2fs-tools
 fastfetch
 fcitx5
+fcitx5-chinese-addons
 fcitx5-configtool
 fcitx5-gtk
-fcitx5-mozc
+fcitx5-pinyin-zhwiki
 fcitx5-qt
 fd
 feh
@@ -102,6 +104,7 @@ hyprland
 hyprland-guiutils
 hyprland-qt-support
 hyprlang
+hyprlang2lua
 hyprlock
 hyprpaper
 hyprpicker
@@ -156,6 +159,7 @@ linux-firmware
 linux-headers
 lnav
 lostfiles
+luarocks
 ly
 man-db
 man-pages
@@ -184,7 +188,6 @@ nvidia-settings
 nwg-displays
 nwg-look
 ocean-sound-theme
-ocs-url
 okular
 onlyoffice-bin
 os-prober
@@ -229,6 +232,7 @@ qqc2-breeze-style
 qt5-imageformats
 qt5ct
 qt6ct-kde
+quickshell
 rclone
 rmpc
 rsync
@@ -274,6 +278,7 @@ wine
 wine-gecko
 winetricks-git
 wireless-regdb
+wit
 wl-clipboard
 wlogout
 xdg-desktop-portal-hyprland
